@@ -57,14 +57,14 @@ Important:
 
 JSON_SCHEMA = {
     "name": "triproute_recommendations",
-    "strict": True,
+    #"strict": False,
     "schema": {
         "type": "object",
-        "additionalProperties": False,   # lock down root
+        "additionalProperties": False, 
         "properties": {
             "trip_meta": {
                 "type": "object",
-                "additionalProperties": False,  # lock down trip_meta
+                "additionalProperties": False,
                 "properties": {
                     "cities": {
                         "type": "array",
@@ -74,12 +74,11 @@ JSON_SCHEMA = {
                         "type": "string",
                         "description": "As provided or inferred (e.g., 2025-10-12 to 2025-10-14)"
                     },
-                    "duration_days": {"type": "integer"},
-                    "theme": {"type": "string"},
-                    "transport": {"type": "string"},
-                    "details": {"type": "string"}
+                    "duration_days": {"type": ["string", "null"]},
+                    "theme": {"type": ["string", "null"]},
+                    "transport": {"type": ["string", "null"]}
                 },
-                "required": ["cities"]
+                "required": ["cities", "dates", "duration_days", "theme", "transport"]
             },
             "recommendations": {
                 "type": "array",
@@ -87,27 +86,34 @@ JSON_SCHEMA = {
                     "type": "object",
                     "additionalProperties": False,  # lock down each recommendation object
                     "properties": {
-                        "name": {"type": "string"},
-                        "address": {"type": "string"},
-                        "city": {"type": "string"},
+                        "name": {"type": ["string", "null"]},
+                        "address": {"type": ["string", "null"]},
+                        "city": {"type": ["string", "null"]},
                         "reason": {
-                            "type": "string",
+                            "type": ["string", "null"],
                             "description": "Why this place is recommended"
-                        },
-                        "category": {
-                            "type": "string",
-                            "description": "e.g., ice cream, café, museum"
-                        },
-                        "google_rating": {"type": "number"},
-                        "google_review_count": {"type": "integer"},
-                        "suggested_visit_time_minutes": {"type": "integer"},
-                        "notes": {"type": "string"}
+                        }
                     },
                     "required": ["name", "address", "city", "reason"]
                 }
             }
         },
         "required": ["trip_meta", "recommendations"]
+    }
+}
+
+JSON_SCHEMA = {
+    "name": "triproute_recommendations",
+    #"strict": False,
+    "schema": {
+        "type": "object",
+        "additionalProperties": False, 
+        "properties": {
+            "trip_meta": {
+                "type": "string",
+
+            },
+        }
     }
 }
 
