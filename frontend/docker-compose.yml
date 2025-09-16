@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # Frontend React App
+  frontend:
+    build: .
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - backend
+    networks:
+      - travel-app-network
+
+  # Backend API (placeholder for your teammate)
+  backend:
+    image: node:18-alpine
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+    command: sh -c "npm install && npm start"
+    networks:
+      - travel-app-network
+
+  # Database (placeholder for your teammate)
+  database:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=travel_app
+      - POSTGRES_USER=travel_user
+      - POSTGRES_PASSWORD=travel_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - travel-app-network
+
+volumes:
+  postgres_data:
+
+networks:
+  travel-app-network:
+    driver: bridge
