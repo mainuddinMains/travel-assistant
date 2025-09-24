@@ -1,8 +1,14 @@
 from openai import OpenAI
 from pydantic import BaseModel
+from dotenv import load_dotenv
+import os
+
+load_dotenv(dotenv_path="api.env")
+api_key = os.getenv("OPENAI_API_KEY")
+
 
 client = OpenAI(
-  api_key="***REMOVED***"
+  api_key=api_key
 )
 
 CHAT_SYSTEM = """
