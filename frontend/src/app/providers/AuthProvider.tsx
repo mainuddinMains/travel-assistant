@@ -1,5 +1,6 @@
 
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { logout as logoutApi } from '../../features/auth/api'
 
 type User = { id: string | number; name: string }
 type AuthCtx = {
@@ -48,10 +49,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       localStorage.setItem('auth', JSON.stringify({ user: u, token: t }))
       console.log('Auth state updated, localStorage saved')
     },
-    logout: () => {
+    logout: async () => {
       console.log('AuthProvider logout called')
-      setUser(null); setToken(null)
-      localStorage.removeItem('auth')
+      try {
+        if (token) {
+          await logoutApi()
+        }
+      } catch (error) {
+        console.error('Logout API call failed:', error)
+      } finally {
+        setUser(null); setToken(null)
+        localStorage.removeItem('auth')
+      }
     }
   }), [user, token])
 

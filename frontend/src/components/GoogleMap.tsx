@@ -73,7 +73,7 @@ export function GoogleMap({
       if (script.parentNode) {
         script.parentNode.removeChild(script)
       }
-      delete window.initMap
+      delete (window as any).initMap
     }
   }, [])
 

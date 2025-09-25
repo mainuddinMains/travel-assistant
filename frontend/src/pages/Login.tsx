@@ -54,7 +54,7 @@ export function Login() {
         <h1 className="text-xl font-semibold mb-4">{t('auth:loginTitle')}</h1>
         {serverError && <div className="mb-3 text-red-700">{serverError}</div>}
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          <TextField label={t('auth:name')} {...register('name')} error={errors.name && t('validation:name') as string} />
+          <TextField label={t('auth:email')} {...register('email')} error={errors.email && t('validation:email') as string} />
           <PasswordField label={t('auth:password')} {...register('password')} error={errors.password && t('validation:password') as string} />
           <button className="btn btn-primary w-full" type="submit" disabled={isSubmitting}>
             {t('auth:login')}
