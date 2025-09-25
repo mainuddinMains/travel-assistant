@@ -5,18 +5,10 @@ import { signupSchema, type SignupInput } from '../features/auth/schemas'
 import { signup } from '../features/auth/api'
 import { TextField } from '../components/forms/TextField'
 import { PasswordField } from '../components/forms/PasswordField'
-import { Select } from '../components/forms/Select'
 import { useAuth } from '../app/providers/AuthProvider'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-
-const genderOptions = [
-  { value: 'female', label: 'Female' },
-  { value: 'male', label: 'Male' },
-  { value: 'nonbinary', label: 'Non-binary' },
-  { value: 'na', label: 'Prefer not to say' }
-]
 
 export function Signup() {
   const { t } = useTranslation(['auth','validation','common'])
@@ -47,15 +39,7 @@ export function Signup() {
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <TextField label={t('auth:name')} {...register('name')} error={errors.name && t('validation:name') as string} />
           <TextField label={t('auth:email')} type="email" {...register('email')} error={errors.email && t('validation:email') as string} />
-          <TextField label={t('auth:age')} type="number" inputMode="numeric" {...register('age')} error={errors.age && t('validation:age') as string} />
-          <Select label={t('auth:gender')} {...register('gender')} error={errors.gender && t('validation:gender') as string} options={genderOptions} />
-          <TextField label={t('auth:phone')} placeholder="+14155552671" {...register('phone')} error={errors.phone && t('validation:phone') as string} />
           <PasswordField label={t('auth:password')} {...register('password')} error={errors.password && t('validation:password') as string} />
-          <div className="flex items-center gap-2">
-            <input id="agree" type="checkbox" {...register('agree')} className="h-4 w-4" />
-            <label htmlFor="agree" className="text-sm">{t('auth:agree')}</label>
-          </div>
-          {errors.agree && <p className="error">{t('validation:agree')}</p>}
           <button className="btn btn-primary w-full" type="submit" disabled={isSubmitting}>
             {t('auth:createAccount')}
           </button>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { type Place } from '../services/googleMaps'
 
 interface SimpleGoogleMapProps {
@@ -40,13 +40,12 @@ export function SimpleGoogleMap({
   const [loading, setLoading] = useState(true)
 
   // Callback ref to ensure container is ready
-  const setMapRef = (node: HTMLDivElement | null) => {
+  const setMapRef = useCallback((node: HTMLDivElement | null) => {
     if (node) {
       console.log('Map container ref set:', node)
-      mapRef.current = node
       setContainerReady(true)
     }
-  }
+  }, [])
 
   // Ensure container is ready
   useEffect(() => {
@@ -177,7 +176,7 @@ export function SimpleGoogleMap({
       if (script.parentNode) {
         script.parentNode.removeChild(script)
       }
-      delete window.initMap
+      delete (window as any).initMap
       
       // Remove event listeners
       window.removeEventListener('error', handleGoogleMapsError)
