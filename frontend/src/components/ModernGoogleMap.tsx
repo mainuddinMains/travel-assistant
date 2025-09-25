@@ -113,9 +113,9 @@ export function ModernGoogleMap({
 
     // Add new markers
     places.forEach((place, index) => {
-      if (place.lat && place.lng) {
+      if (place.coordinates.lat && place.coordinates.lng) {
         const marker = new window.google.maps.Marker({
-          position: { lat: place.lat, lng: place.lng },
+          position: { lat: place.coordinates.lat, lng: place.coordinates.lng },
           map: mapInstanceRef.current,
           title: place.name,
           label: {
@@ -153,13 +153,13 @@ export function ModernGoogleMap({
 
     if (showRoute && places.length >= 2) {
       const waypoints = places.slice(1, -1).map(place => ({
-        location: { lat: place.lat!, lng: place.lng! },
+        location: { lat: place.coordinates.lat!, lng: place.coordinates.lng! },
         stopover: true
       }))
 
       const request = {
-        origin: { lat: places[0].lat!, lng: places[0].lng! },
-        destination: { lat: places[places.length - 1].lat!, lng: places[places.length - 1].lng! },
+        origin: { lat: places[0].coordinates.lat!, lng: places[0].coordinates.lng! },
+        destination: { lat: places[places.length - 1].coordinates.lat!, lng: places[places.length - 1].coordinates.lng! },
         waypoints: waypoints,
         travelMode: window.google.maps.TravelMode.DRIVING,
         optimizeWaypoints: true

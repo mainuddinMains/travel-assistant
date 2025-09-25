@@ -7,9 +7,9 @@ import './styles/index.css'
 import './features/i18n'
 import { router } from './app/router'
 import { AuthProvider } from './app/providers/AuthProvider'
-import { enableMSW } from './mocks/enable'
+// import { enableMSW } from './mocks/enable'
 
-enableMSW()
+// enableMSW() // Disabled to use real backend
 
 const client = new QueryClient()
 

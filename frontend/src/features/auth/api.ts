@@ -16,3 +16,7 @@ export async function getCurrentUser(token: string) {
     headers: { 'Authorization': `Bearer ${token}` }
   })
 }
+
+export async function logout() {
+  return api('/auth/signout', { method: 'POST' })
+}
