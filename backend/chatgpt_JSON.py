@@ -2,6 +2,7 @@ from openai import OpenAI
 from pydantic import BaseModel
 from dotenv import load_dotenv
 import os
+import json
 
 load_dotenv(dotenv_path="api.env")
 api_key = os.getenv("OPENAI_API_KEY")
@@ -10,6 +11,8 @@ api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(
   api_key=api_key
 )
+
+FILE_PATH = "backend/triproute_recommendations.json"
 
 CHAT_SYSTEM = """
 You are TripRoute Chat, a friendly routing assistant.
@@ -79,7 +82,7 @@ def chat_reply_streaming(user_text: str) -> str:
   messages_chat.append({"role": "user", "content": user_text})
   
   with client.responses.create(
-      model="gpt-5-nano",
+      model="gpt-5-mini",
       tools=[{"type": "web_search"}],
       input=messages_chat,
       stream=True,
@@ -113,7 +116,7 @@ def structure_reply(user_text: str, response_chat: str) -> str:
   response_json = response.output_text
 
   return response_json
-    
+
 if __name__ == "__main__":
   
   user_text = input("""
@@ -128,6 +131,8 @@ You: """).strip()
   while user_text:
     response_chat = chat_reply_streaming(user_text)
     response_structure = structure_reply(user_text, response_chat)
+    with open(FILE_PATH, "w", encoding="utf-8") as f:
+      f.write(response_structure)
     user_text = input("\nYou: ").strip()
 
-# Vancouver, Friday morning to Sunday night, The best ice cream scoop shops, I have a car.
+# Toronto, Friday morning to Sunday night, try the best ice cream scoop shops as many as possible and if there is sightseeing that I should not miss on my way, recommend attractions. I have a car.
