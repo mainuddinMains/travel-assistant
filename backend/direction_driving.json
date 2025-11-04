@@ -1,0 +1,964 @@
+{
+    "mode": "driving",
+    "optimized_route": [
+        "Sweet Jesus, 92 King St E, Toronto",
+        "St. Lawrence Market, 92\u201395 Front St E, Toronto",
+        "CN Tower, 290 Bremner Blvd, Toronto",
+        "Trinity Bellwoods Park, Queen St W & Crawford St, Toronto",
+        "Bang Bang Ice Cream & Bakery, 93A Ossington Ave, Toronto",
+        "Death in Venice Gelato Co., 1418 Dundas St W, Toronto",
+        "Ruru Baked, 659 Lansdowne Ave, Toronto",
+        "Dutch Dreams, 36 Vaughan Rd, Toronto",
+        "Casa Loma, 1 Austin Terrace, Toronto",
+        "Kawartha Dairy (Danforth), 888 Danforth Ave, Toronto",
+        "Ed\u2019s Real Scoop (Beaches), Beaches: 2224 Queen St E; Leslieville: 920 Queen St E, Toronto",
+        "Scarborough Bluffs, Beaches/Scarborough Bluffs (e.g., Bluffer's Park), 1 Brimley Rd S, Toronto"
+    ],
+    "total_distance": 39898,
+    "total_duration": 6578,
+    "legs": [
+        {
+            "start_location": {
+                "lat": 43.6499189,
+                "lng": -79.3743915
+            },
+            "start_address": "92 King St E, Toronto, ON M5C 1G3, Canada",
+            "end_location": {
+                "lat": 43.6491544,
+                "lng": -79.3719893
+            },
+            "end_address": "95 Front St E #92, Toronto, ON M5E 1M6, Canada",
+            "distance": 339,
+            "duration": 115,
+            "steps": [
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6499189,
+                        "lng": -79.3743915
+                    },
+                    "end_location": {
+                        "lat": 43.6486135,
+                        "lng": -79.3738487
+                    },
+                    "distance": 152,
+                    "duration": 49
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6486135,
+                        "lng": -79.3738487
+                    },
+                    "end_location": {
+                        "lat": 43.6491544,
+                        "lng": -79.3719893
+                    },
+                    "distance": 187,
+                    "duration": 66
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6491544,
+                "lng": -79.3719893
+            },
+            "start_address": "95 Front St E #92, Toronto, ON M5E 1M6, Canada",
+            "end_location": {
+                "lat": 43.6439336,
+                "lng": -79.3888881
+            },
+            "end_address": "290 Bremner Blvd, Toronto, ON M5V 3L9, Canada",
+            "distance": 3235,
+            "duration": 469,
+            "steps": [
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6491544,
+                        "lng": -79.3719893
+                    },
+                    "end_location": {
+                        "lat": 43.6493477,
+                        "lng": -79.37145679999999
+                    },
+                    "distance": 48,
+                    "duration": 19
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6493477,
+                        "lng": -79.37145679999999
+                    },
+                    "end_location": {
+                        "lat": 43.6462452,
+                        "lng": -79.3701253
+                    },
+                    "distance": 362,
+                    "duration": 78
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6462452,
+                        "lng": -79.3701253
+                    },
+                    "end_location": {
+                        "lat": 43.6442077,
+                        "lng": -79.3760214
+                    },
+                    "distance": 545,
+                    "duration": 58
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6442077,
+                        "lng": -79.3760214
+                    },
+                    "end_location": {
+                        "lat": 43.639526,
+                        "lng": -79.3877487
+                    },
+                    "distance": 1088,
+                    "duration": 58
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.639526,
+                        "lng": -79.3877487
+                    },
+                    "end_location": {
+                        "lat": 43.6393133,
+                        "lng": -79.38982829999999
+                    },
+                    "distance": 170,
+                    "duration": 13
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6393133,
+                        "lng": -79.38982829999999
+                    },
+                    "end_location": {
+                        "lat": 43.6400117,
+                        "lng": -79.3926536
+                    },
+                    "distance": 313,
+                    "duration": 56
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6400117,
+                        "lng": -79.3926536
+                    },
+                    "end_location": {
+                        "lat": 43.6413477,
+                        "lng": -79.3931607
+                    },
+                    "distance": 154,
+                    "duration": 51
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6413477,
+                        "lng": -79.3931607
+                    },
+                    "end_location": {
+                        "lat": 43.6434316,
+                        "lng": -79.3912327
+                    },
+                    "distance": 358,
+                    "duration": 89
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6434316,
+                        "lng": -79.3912327
+                    },
+                    "end_location": {
+                        "lat": 43.6439336,
+                        "lng": -79.3888881
+                    },
+                    "distance": 197,
+                    "duration": 47
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6439336,
+                "lng": -79.3888881
+            },
+            "start_address": "290 Bremner Blvd, Toronto, ON M5V 3L9, Canada",
+            "end_location": {
+                "lat": 43.6464424,
+                "lng": -79.4153573
+            },
+            "end_address": "Trinity Bellwoods Park, 790 Queen St W, Toronto, ON M6J 1G3, Canada",
+            "distance": 2881,
+            "duration": 673,
+            "steps": [
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6439336,
+                        "lng": -79.3888881
+                    },
+                    "end_location": {
+                        "lat": 43.6407524,
+                        "lng": -79.4014179
+                    },
+                    "distance": 1069,
+                    "duration": 264
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6407524,
+                        "lng": -79.4014179
+                    },
+                    "end_location": {
+                        "lat": 43.6426297,
+                        "lng": -79.4021618
+                    },
+                    "distance": 217,
+                    "duration": 68
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6426297,
+                        "lng": -79.4021618
+                    },
+                    "end_location": {
+                        "lat": 43.6415786,
+                        "lng": -79.40737639999999
+                    },
+                    "distance": 436,
+                    "duration": 104
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6415786,
+                        "lng": -79.40737639999999
+                    },
+                    "end_location": {
+                        "lat": 43.6426982,
+                        "lng": -79.4086834
+                    },
+                    "distance": 164,
+                    "duration": 35
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6426982,
+                        "lng": -79.4086834
+                    },
+                    "end_location": {
+                        "lat": 43.64166549999999,
+                        "lng": -79.4138104
+                    },
+                    "distance": 428,
+                    "duration": 82
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.64166549999999,
+                        "lng": -79.4138104
+                    },
+                    "end_location": {
+                        "lat": 43.6460424,
+                        "lng": -79.4154744
+                    },
+                    "distance": 508,
+                    "duration": 106
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6460424,
+                        "lng": -79.4154744
+                    },
+                    "end_location": {
+                        "lat": 43.6464424,
+                        "lng": -79.4153573
+                    },
+                    "distance": 59,
+                    "duration": 14
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6464424,
+                "lng": -79.4153573
+            },
+            "start_address": "Trinity Bellwoods Park, 790 Queen St W, Toronto, ON M6J 1G3, Canada",
+            "end_location": {
+                "lat": 43.6462541,
+                "lng": -79.4195766
+            },
+            "end_address": "93A Ossington Ave, Toronto, ON M6J 0G1, Canada",
+            "distance": 880,
+            "duration": 213,
+            "steps": [
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6464424,
+                        "lng": -79.4153573
+                    },
+                    "end_location": {
+                        "lat": 43.64639500000001,
+                        "lng": -79.4156163
+                    },
+                    "distance": 22,
+                    "duration": 5
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.64639500000001,
+                        "lng": -79.4156163
+                    },
+                    "end_location": {
+                        "lat": 43.6471718,
+                        "lng": -79.41591
+                    },
+                    "distance": 90,
+                    "duration": 24
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6471718,
+                        "lng": -79.41591
+                    },
+                    "end_location": {
+                        "lat": 43.6469411,
+                        "lng": -79.4170594
+                    },
+                    "distance": 96,
+                    "duration": 21
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6469411,
+                        "lng": -79.4170594
+                    },
+                    "end_location": {
+                        "lat": 43.6488368,
+                        "lng": -79.4177826
+                    },
+                    "distance": 219,
+                    "duration": 40
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6488368,
+                        "lng": -79.4177826
+                    },
+                    "end_location": {
+                        "lat": 43.6483147,
+                        "lng": -79.4203617
+                    },
+                    "distance": 215,
+                    "duration": 57
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6483147,
+                        "lng": -79.4203617
+                    },
+                    "end_location": {
+                        "lat": 43.6462541,
+                        "lng": -79.4195766
+                    },
+                    "distance": 238,
+                    "duration": 66
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6462541,
+                "lng": -79.4195766
+            },
+            "start_address": "93A Ossington Ave, Toronto, ON M6J 0G1, Canada",
+            "end_location": {
+                "lat": 43.6495687,
+                "lng": -79.42930779999999
+            },
+            "end_address": "1418 Dundas St W, Toronto, ON M6J 1Y5, Canada",
+            "distance": 1044,
+            "duration": 267,
+            "steps": [
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6462541,
+                        "lng": -79.4195766
+                    },
+                    "end_location": {
+                        "lat": 43.6493394,
+                        "lng": -79.4207678
+                    },
+                    "distance": 356,
+                    "duration": 98
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6493394,
+                        "lng": -79.4207678
+                    },
+                    "end_location": {
+                        "lat": 43.6495687,
+                        "lng": -79.42930779999999
+                    },
+                    "distance": 688,
+                    "duration": 169
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6495687,
+                "lng": -79.42930779999999
+            },
+            "start_address": "1418 Dundas St W, Toronto, ON M6J 1Y5, Canada",
+            "end_location": {
+                "lat": 43.6580833,
+                "lng": -79.44274949999999
+            },
+            "end_address": "659 Lansdowne Ave, Toronto, ON M6H 3Y2, Canada",
+            "distance": 1756,
+            "duration": 360,
+            "steps": [
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6495687,
+                        "lng": -79.42930779999999
+                    },
+                    "end_location": {
+                        "lat": 43.6501696,
+                        "lng": -79.43974519999999
+                    },
+                    "distance": 843,
+                    "duration": 208
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6501696,
+                        "lng": -79.43974519999999
+                    },
+                    "end_location": {
+                        "lat": 43.6580833,
+                        "lng": -79.44274949999999
+                    },
+                    "distance": 913,
+                    "duration": 152
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6580833,
+                "lng": -79.44274949999999
+            },
+            "start_address": "659 Lansdowne Ave, Toronto, ON M6H 3Y2, Canada",
+            "end_location": {
+                "lat": 43.6821406,
+                "lng": -79.4188317
+            },
+            "end_address": "36 Vaughan Rd, Toronto, ON M6G 2N3, Canada",
+            "distance": 4824,
+            "duration": 885,
+            "steps": [
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6580833,
+                        "lng": -79.44274949999999
+                    },
+                    "end_location": {
+                        "lat": 43.6667251,
+                        "lng": -79.44644819999999
+                    },
+                    "distance": 1015,
+                    "duration": 187
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6667251,
+                        "lng": -79.44644819999999
+                    },
+                    "end_location": {
+                        "lat": 43.6731355,
+                        "lng": -79.41435030000001
+                    },
+                    "distance": 2714,
+                    "duration": 473
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6731355,
+                        "lng": -79.41435030000001
+                    },
+                    "end_location": {
+                        "lat": 43.6815406,
+                        "lng": -79.41767209999999
+                    },
+                    "distance": 972,
+                    "duration": 196
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6815406,
+                        "lng": -79.41767209999999
+                    },
+                    "end_location": {
+                        "lat": 43.6821406,
+                        "lng": -79.4188317
+                    },
+                    "distance": 123,
+                    "duration": 29
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6821406,
+                "lng": -79.4188317
+            },
+            "start_address": "36 Vaughan Rd, Toronto, ON M6G 2N3, Canada",
+            "end_location": {
+                "lat": 43.6784635,
+                "lng": -79.41006999999999
+            },
+            "end_address": "1 Austin Terrace, Toronto, ON M5R 1X8, Canada",
+            "distance": 1335,
+            "duration": 241,
+            "steps": [
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6821406,
+                        "lng": -79.4188317
+                    },
+                    "end_location": {
+                        "lat": 43.6810659,
+                        "lng": -79.41747939999999
+                    },
+                    "distance": 162,
+                    "duration": 34
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6810659,
+                        "lng": -79.41747939999999
+                    },
+                    "end_location": {
+                        "lat": 43.6766965,
+                        "lng": -79.41575569999999
+                    },
+                    "distance": 505,
+                    "duration": 79
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6766965,
+                        "lng": -79.41575569999999
+                    },
+                    "end_location": {
+                        "lat": 43.6768401,
+                        "lng": -79.4103615
+                    },
+                    "distance": 435,
+                    "duration": 80
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6768401,
+                        "lng": -79.4103615
+                    },
+                    "end_location": {
+                        "lat": 43.67824479999999,
+                        "lng": -79.4108084
+                    },
+                    "distance": 162,
+                    "duration": 28
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.67824479999999,
+                        "lng": -79.4108084
+                    },
+                    "end_location": {
+                        "lat": 43.6785046,
+                        "lng": -79.4100912
+                    },
+                    "distance": 66,
+                    "duration": 10
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6785046,
+                        "lng": -79.4100912
+                    },
+                    "end_location": {
+                        "lat": 43.6784635,
+                        "lng": -79.41006999999999
+                    },
+                    "distance": 5,
+                    "duration": 10
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6784635,
+                "lng": -79.41006999999999
+            },
+            "start_address": "1 Austin Terrace, Toronto, ON M5R 1X8, Canada",
+            "end_location": {
+                "lat": 43.6800018,
+                "lng": -79.3396454
+            },
+            "end_address": "888 Danforth Ave, Toronto, ON M4J 1L8, Canada",
+            "distance": 9455,
+            "duration": 1350,
+            "steps": [
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6784635,
+                        "lng": -79.41006999999999
+                    },
+                    "end_location": {
+                        "lat": 43.6785046,
+                        "lng": -79.4100912
+                    },
+                    "distance": 5,
+                    "duration": 2
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6785046,
+                        "lng": -79.4100912
+                    },
+                    "end_location": {
+                        "lat": 43.6788745,
+                        "lng": -79.40875779999999
+                    },
+                    "distance": 117,
+                    "duration": 25
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6788745,
+                        "lng": -79.40875779999999
+                    },
+                    "end_location": {
+                        "lat": 43.6845574,
+                        "lng": -79.4110946
+                    },
+                    "distance": 660,
+                    "duration": 88
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6845574,
+                        "lng": -79.4110946
+                    },
+                    "end_location": {
+                        "lat": 43.6903618,
+                        "lng": -79.3833281
+                    },
+                    "distance": 2326,
+                    "duration": 415
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6903618,
+                        "lng": -79.3833281
+                    },
+                    "end_location": {
+                        "lat": 43.69356639999999,
+                        "lng": -79.38462849999999
+                    },
+                    "distance": 371,
+                    "duration": 58
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.69356639999999,
+                        "lng": -79.38462849999999
+                    },
+                    "end_location": {
+                        "lat": 43.6966752,
+                        "lng": -79.37179019999999
+                    },
+                    "distance": 1101,
+                    "duration": 142
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6966752,
+                        "lng": -79.37179019999999
+                    },
+                    "end_location": {
+                        "lat": 43.6879184,
+                        "lng": -79.36364379999999
+                    },
+                    "distance": 1528,
+                    "duration": 135
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6879184,
+                        "lng": -79.36364379999999
+                    },
+                    "end_location": {
+                        "lat": 43.6839171,
+                        "lng": -79.3569574
+                    },
+                    "distance": 912,
+                    "duration": 115
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6839171,
+                        "lng": -79.3569574
+                    },
+                    "end_location": {
+                        "lat": 43.6876198,
+                        "lng": -79.3402412
+                    },
+                    "distance": 1411,
+                    "duration": 218
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6876198,
+                        "lng": -79.3402412
+                    },
+                    "end_location": {
+                        "lat": 43.68046890000001,
+                        "lng": -79.3373087
+                    },
+                    "distance": 829,
+                    "duration": 112
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.68046890000001,
+                        "lng": -79.3373087
+                    },
+                    "end_location": {
+                        "lat": 43.6800018,
+                        "lng": -79.3396454
+                    },
+                    "distance": 195,
+                    "duration": 40
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6800018,
+                "lng": -79.3396454
+            },
+            "start_address": "888 Danforth Ave, Toronto, ON M4J 1L8, Canada",
+            "end_location": {
+                "lat": 43.6725636,
+                "lng": -79.2879718
+            },
+            "end_address": "2224 Queen St E, Toronto, ON M4E 1E9, Canada",
+            "distance": 5704,
+            "duration": 1006,
+            "steps": [
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6800018,
+                        "lng": -79.3396454
+                    },
+                    "end_location": {
+                        "lat": 43.6799024,
+                        "lng": -79.3401555
+                    },
+                    "distance": 42,
+                    "duration": 9
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6799024,
+                        "lng": -79.3401555
+                    },
+                    "end_location": {
+                        "lat": 43.6661631,
+                        "lng": -79.3342782
+                    },
+                    "distance": 1599,
+                    "duration": 252
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6661631,
+                        "lng": -79.3342782
+                    },
+                    "end_location": {
+                        "lat": 43.6686999,
+                        "lng": -79.3175392
+                    },
+                    "distance": 1386,
+                    "duration": 204
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6686999,
+                        "lng": -79.3175392
+                    },
+                    "end_location": {
+                        "lat": 43.6663331,
+                        "lng": -79.3165649
+                    },
+                    "distance": 275,
+                    "duration": 61
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6663331,
+                        "lng": -79.3165649
+                    },
+                    "end_location": {
+                        "lat": 43.6725636,
+                        "lng": -79.2879718
+                    },
+                    "distance": 2402,
+                    "duration": 480
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6725636,
+                "lng": -79.2879718
+            },
+            "start_address": "2224 Queen St E, Toronto, ON M4E 1E9, Canada",
+            "end_location": {
+                "lat": 43.7060658,
+                "lng": -79.23566319999999
+            },
+            "end_address": "Bluffers Park, 1 Brimley Rd S, Scarborough, ON M1M 3H4, Canada",
+            "distance": 8445,
+            "duration": 999,
+            "steps": [
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6725636,
+                        "lng": -79.2879718
+                    },
+                    "end_location": {
+                        "lat": 43.6748032,
+                        "lng": -79.2787587
+                    },
+                    "distance": 784,
+                    "duration": 127
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.6748032,
+                        "lng": -79.2787587
+                    },
+                    "end_location": {
+                        "lat": 43.68146369999999,
+                        "lng": -79.2813558
+                    },
+                    "distance": 772,
+                    "duration": 119
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.68146369999999,
+                        "lng": -79.2813558
+                    },
+                    "end_location": {
+                        "lat": 43.7181692,
+                        "lng": -79.2403331
+                    },
+                    "distance": 5350,
+                    "duration": 532
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.7181692,
+                        "lng": -79.2403331
+                    },
+                    "end_location": {
+                        "lat": 43.7076822,
+                        "lng": -79.23643059999999
+                    },
+                    "distance": 1272,
+                    "duration": 148
+                },
+                {
+                    "mode": "DRIVING",
+                    "start_location": {
+                        "lat": 43.7076822,
+                        "lng": -79.23643059999999
+                    },
+                    "end_location": {
+                        "lat": 43.7060658,
+                        "lng": -79.23566319999999
+                    },
+                    "distance": 267,
+                    "duration": 73
+                }
+            ]
+        }
+    ]
+}
