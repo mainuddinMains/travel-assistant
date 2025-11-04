@@ -1,0 +1,1770 @@
+{
+    "mode": "bicycling",
+    "optimized_route": [
+        "Sweet Jesus, 92 King St E, Toronto",
+        "St. Lawrence Market, 92\u201395 Front St E, Toronto",
+        "CN Tower, 290 Bremner Blvd, Toronto",
+        "Trinity Bellwoods Park, Queen St W & Crawford St, Toronto",
+        "Bang Bang Ice Cream & Bakery, 93A Ossington Ave, Toronto",
+        "Death in Venice Gelato Co., 1418 Dundas St W, Toronto",
+        "Ruru Baked, 659 Lansdowne Ave, Toronto",
+        "Dutch Dreams, 36 Vaughan Rd, Toronto",
+        "Casa Loma, 1 Austin Terrace, Toronto",
+        "Kawartha Dairy (Danforth), 888 Danforth Ave, Toronto",
+        "Ed\u2019s Real Scoop (Beaches), Beaches: 2224 Queen St E; Leslieville: 920 Queen St E, Toronto",
+        "Scarborough Bluffs, Beaches/Scarborough Bluffs (e.g., Bluffer's Park), 1 Brimley Rd S, Toronto"
+    ],
+    "total_distance": 41972,
+    "total_duration": 9371,
+    "legs": [
+        {
+            "start_location": {
+                "lat": 43.6498377,
+                "lng": -79.3747563
+            },
+            "start_address": "92 King St E, Toronto, ON M5C 1G3, Canada",
+            "end_location": {
+                "lat": 43.6485717,
+                "lng": -79.3719309
+            },
+            "end_address": "95 Front St E #92, Toronto, ON M5E 1M6, Canada",
+            "distance": 727,
+            "duration": 152,
+            "steps": [
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6498377,
+                        "lng": -79.3747563
+                    },
+                    "end_location": {
+                        "lat": 43.6499189,
+                        "lng": -79.3743915
+                    },
+                    "distance": 31,
+                    "duration": 5
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6499189,
+                        "lng": -79.3743915
+                    },
+                    "end_location": {
+                        "lat": 43.6467254,
+                        "lng": -79.37288010000002
+                    },
+                    "distance": 382,
+                    "duration": 87
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6467254,
+                        "lng": -79.37288010000002
+                    },
+                    "end_location": {
+                        "lat": 43.6469984,
+                        "lng": -79.3712986
+                    },
+                    "distance": 132,
+                    "duration": 24
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6469984,
+                        "lng": -79.3712986
+                    },
+                    "end_location": {
+                        "lat": 43.6485717,
+                        "lng": -79.3719309
+                    },
+                    "distance": 182,
+                    "duration": 36
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6485717,
+                "lng": -79.3719309
+            },
+            "start_address": "95 Front St E #92, Toronto, ON M5E 1M6, Canada",
+            "end_location": {
+                "lat": 43.642855,
+                "lng": -79.38718730000001
+            },
+            "end_address": "290 Bremner Blvd, Toronto, ON M5V 3L9, Canada",
+            "distance": 2453,
+            "duration": 715,
+            "steps": [
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6485717,
+                        "lng": -79.3719309
+                    },
+                    "end_location": {
+                        "lat": 43.6469984,
+                        "lng": -79.3712986
+                    },
+                    "distance": 182,
+                    "duration": 29
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6469984,
+                        "lng": -79.3712986
+                    },
+                    "end_location": {
+                        "lat": 43.6467254,
+                        "lng": -79.37288010000002
+                    },
+                    "distance": 132,
+                    "duration": 21
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6467254,
+                        "lng": -79.37288010000002
+                    },
+                    "end_location": {
+                        "lat": 43.6486135,
+                        "lng": -79.3738487
+                    },
+                    "distance": 230,
+                    "duration": 51
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6486135,
+                        "lng": -79.3738487
+                    },
+                    "end_location": {
+                        "lat": 43.6460702,
+                        "lng": -79.3855226
+                    },
+                    "distance": 981,
+                    "duration": 309
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6460702,
+                        "lng": -79.3855226
+                    },
+                    "end_location": {
+                        "lat": 43.6447774,
+                        "lng": -79.3850078
+                    },
+                    "distance": 150,
+                    "duration": 21
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6447774,
+                        "lng": -79.3850078
+                    },
+                    "end_location": {
+                        "lat": 43.64239449999999,
+                        "lng": -79.3840129
+                    },
+                    "distance": 277,
+                    "duration": 77
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.64239449999999,
+                        "lng": -79.3840129
+                    },
+                    "end_location": {
+                        "lat": 43.6416689,
+                        "lng": -79.3866841
+                    },
+                    "distance": 232,
+                    "duration": 73
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6416689,
+                        "lng": -79.3866841
+                    },
+                    "end_location": {
+                        "lat": 43.64197420000001,
+                        "lng": -79.38701130000001
+                    },
+                    "distance": 44,
+                    "duration": 6
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.64197420000001,
+                        "lng": -79.38701130000001
+                    },
+                    "end_location": {
+                        "lat": 43.6420251,
+                        "lng": -79.3869064
+                    },
+                    "distance": 10,
+                    "duration": 2
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6420251,
+                        "lng": -79.3869064
+                    },
+                    "end_location": {
+                        "lat": 43.6429503,
+                        "lng": -79.38672960000001
+                    },
+                    "distance": 177,
+                    "duration": 91
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6429503,
+                        "lng": -79.38672960000001
+                    },
+                    "end_location": {
+                        "lat": 43.642855,
+                        "lng": -79.38718730000001
+                    },
+                    "distance": 38,
+                    "duration": 35
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.642855,
+                "lng": -79.38718730000001
+            },
+            "start_address": "290 Bremner Blvd, Toronto, ON M5V 3L9, Canada",
+            "end_location": {
+                "lat": 43.6469557,
+                "lng": -79.41368419999999
+            },
+            "end_address": "Trinity Bellwoods Park, 790 Queen St W, Toronto, ON M6J 1G3, Canada",
+            "distance": 3861,
+            "duration": 981,
+            "steps": [
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.642855,
+                        "lng": -79.38718730000001
+                    },
+                    "end_location": {
+                        "lat": 43.6429469,
+                        "lng": -79.3861395
+                    },
+                    "distance": 86,
+                    "duration": 78
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6429469,
+                        "lng": -79.3861395
+                    },
+                    "end_location": {
+                        "lat": 43.64197420000001,
+                        "lng": -79.38701130000001
+                    },
+                    "distance": 139,
+                    "duration": 33
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.64197420000001,
+                        "lng": -79.38701130000001
+                    },
+                    "end_location": {
+                        "lat": 43.6416689,
+                        "lng": -79.3866841
+                    },
+                    "distance": 44,
+                    "duration": 8
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6416689,
+                        "lng": -79.3866841
+                    },
+                    "end_location": {
+                        "lat": 43.640623,
+                        "lng": -79.3932044
+                    },
+                    "distance": 582,
+                    "duration": 135
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.640623,
+                        "lng": -79.3932044
+                    },
+                    "end_location": {
+                        "lat": 43.6375645,
+                        "lng": -79.4041104
+                    },
+                    "distance": 953,
+                    "duration": 231
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6375645,
+                        "lng": -79.4041104
+                    },
+                    "end_location": {
+                        "lat": 43.637671,
+                        "lng": -79.40857009999999
+                    },
+                    "distance": 380,
+                    "duration": 83
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.637671,
+                        "lng": -79.40857009999999
+                    },
+                    "end_location": {
+                        "lat": 43.6378434,
+                        "lng": -79.40841879999999
+                    },
+                    "distance": 23,
+                    "duration": 5
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6378434,
+                        "lng": -79.40841879999999
+                    },
+                    "end_location": {
+                        "lat": 43.6379172,
+                        "lng": -79.40875319999999
+                    },
+                    "distance": 29,
+                    "duration": 5
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6379172,
+                        "lng": -79.40875319999999
+                    },
+                    "end_location": {
+                        "lat": 43.6387764,
+                        "lng": -79.4077213
+                    },
+                    "distance": 135,
+                    "duration": 23
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6387764,
+                        "lng": -79.4077213
+                    },
+                    "end_location": {
+                        "lat": 43.6404733,
+                        "lng": -79.4085298
+                    },
+                    "distance": 213,
+                    "duration": 38
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6404733,
+                        "lng": -79.4085298
+                    },
+                    "end_location": {
+                        "lat": 43.6424195,
+                        "lng": -79.4100721
+                    },
+                    "distance": 274,
+                    "duration": 49
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6424195,
+                        "lng": -79.4100721
+                    },
+                    "end_location": {
+                        "lat": 43.64166549999999,
+                        "lng": -79.4138104
+                    },
+                    "distance": 312,
+                    "duration": 108
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.64166549999999,
+                        "lng": -79.4138104
+                    },
+                    "end_location": {
+                        "lat": 43.6429648,
+                        "lng": -79.4143127
+                    },
+                    "distance": 150,
+                    "duration": 27
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6429648,
+                        "lng": -79.4143127
+                    },
+                    "end_location": {
+                        "lat": 43.6429713,
+                        "lng": -79.4142741
+                    },
+                    "distance": 3,
+                    "duration": 2
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6429713,
+                        "lng": -79.4142741
+                    },
+                    "end_location": {
+                        "lat": 43.64546259999999,
+                        "lng": -79.41524989999999
+                    },
+                    "distance": 288,
+                    "duration": 109
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.64546259999999,
+                        "lng": -79.41524989999999
+                    },
+                    "end_location": {
+                        "lat": 43.6460972,
+                        "lng": -79.4140532
+                    },
+                    "distance": 124,
+                    "duration": 25
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6460972,
+                        "lng": -79.4140532
+                    },
+                    "end_location": {
+                        "lat": 43.6469557,
+                        "lng": -79.41368419999999
+                    },
+                    "distance": 126,
+                    "duration": 22
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6469557,
+                "lng": -79.41368419999999
+            },
+            "start_address": "Trinity Bellwoods Park, 790 Queen St W, Toronto, ON M6J 1G3, Canada",
+            "end_location": {
+                "lat": 43.6462541,
+                "lng": -79.4195766
+            },
+            "end_address": "93A Ossington Ave, Toronto, ON M6J 0G1, Canada",
+            "distance": 655,
+            "duration": 147,
+            "steps": [
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6469557,
+                        "lng": -79.41368419999999
+                    },
+                    "end_location": {
+                        "lat": 43.6466316,
+                        "lng": -79.4142311
+                    },
+                    "distance": 60,
+                    "duration": 10
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6466316,
+                        "lng": -79.4142311
+                    },
+                    "end_location": {
+                        "lat": 43.6471395,
+                        "lng": -79.41589379999999
+                    },
+                    "distance": 147,
+                    "duration": 26
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6471395,
+                        "lng": -79.41589379999999
+                    },
+                    "end_location": {
+                        "lat": 43.6471718,
+                        "lng": -79.41591
+                    },
+                    "distance": 4,
+                    "duration": 1
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6471718,
+                        "lng": -79.41591
+                    },
+                    "end_location": {
+                        "lat": 43.6469411,
+                        "lng": -79.4170594
+                    },
+                    "distance": 96,
+                    "duration": 17
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6469411,
+                        "lng": -79.4170594
+                    },
+                    "end_location": {
+                        "lat": 43.64744,
+                        "lng": -79.4172458
+                    },
+                    "distance": 57,
+                    "duration": 14
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.64744,
+                        "lng": -79.4172458
+                    },
+                    "end_location": {
+                        "lat": 43.6469146,
+                        "lng": -79.4198136
+                    },
+                    "distance": 215,
+                    "duration": 36
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6469146,
+                        "lng": -79.4198136
+                    },
+                    "end_location": {
+                        "lat": 43.6462541,
+                        "lng": -79.4195766
+                    },
+                    "distance": 76,
+                    "duration": 43
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6462541,
+                "lng": -79.4195766
+            },
+            "start_address": "93A Ossington Ave, Toronto, ON M6J 0G1, Canada",
+            "end_location": {
+                "lat": 43.6495687,
+                "lng": -79.42930779999999
+            },
+            "end_address": "1418 Dundas St W, Toronto, ON M6J 1Y5, Canada",
+            "distance": 1317,
+            "duration": 313,
+            "steps": [
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6462541,
+                        "lng": -79.4195766
+                    },
+                    "end_location": {
+                        "lat": 43.6469146,
+                        "lng": -79.4198136
+                    },
+                    "distance": 76,
+                    "duration": 14
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6469146,
+                        "lng": -79.4198136
+                    },
+                    "end_location": {
+                        "lat": 43.6452225,
+                        "lng": -79.4281532
+                    },
+                    "distance": 697,
+                    "duration": 143
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6452225,
+                        "lng": -79.4281532
+                    },
+                    "end_location": {
+                        "lat": 43.6495821,
+                        "lng": -79.4298201
+                    },
+                    "distance": 503,
+                    "duration": 122
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6495821,
+                        "lng": -79.4298201
+                    },
+                    "end_location": {
+                        "lat": 43.6495687,
+                        "lng": -79.42930779999999
+                    },
+                    "distance": 41,
+                    "duration": 34
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6495687,
+                "lng": -79.42930779999999
+            },
+            "start_address": "1418 Dundas St W, Toronto, ON M6J 1Y5, Canada",
+            "end_location": {
+                "lat": 43.6580833,
+                "lng": -79.44274949999999
+            },
+            "end_address": "659 Lansdowne Ave, Toronto, ON M6H 3Y2, Canada",
+            "distance": 1756,
+            "duration": 348,
+            "steps": [
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6495687,
+                        "lng": -79.42930779999999
+                    },
+                    "end_location": {
+                        "lat": 43.6501696,
+                        "lng": -79.43974519999999
+                    },
+                    "distance": 843,
+                    "duration": 161
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6501696,
+                        "lng": -79.43974519999999
+                    },
+                    "end_location": {
+                        "lat": 43.6580833,
+                        "lng": -79.44274949999999
+                    },
+                    "distance": 913,
+                    "duration": 187
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6580833,
+                "lng": -79.44274949999999
+            },
+            "start_address": "659 Lansdowne Ave, Toronto, ON M6H 3Y2, Canada",
+            "end_location": {
+                "lat": 43.6821406,
+                "lng": -79.4188317
+            },
+            "end_address": "36 Vaughan Rd, Toronto, ON M6G 2N3, Canada",
+            "distance": 4622,
+            "duration": 1127,
+            "steps": [
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6580833,
+                        "lng": -79.44274949999999
+                    },
+                    "end_location": {
+                        "lat": 43.6583452,
+                        "lng": -79.4427339
+                    },
+                    "distance": 29,
+                    "duration": 5
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6583452,
+                        "lng": -79.4427339
+                    },
+                    "end_location": {
+                        "lat": 43.6635591,
+                        "lng": -79.4184063
+                    },
+                    "distance": 2042,
+                    "duration": 437
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6635591,
+                        "lng": -79.4184063
+                    },
+                    "end_location": {
+                        "lat": 43.6794857,
+                        "lng": -79.4248229
+                    },
+                    "distance": 1847,
+                    "duration": 527
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6794857,
+                        "lng": -79.4248229
+                    },
+                    "end_location": {
+                        "lat": 43.6798224,
+                        "lng": -79.4232421
+                    },
+                    "distance": 133,
+                    "duration": 22
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6798224,
+                        "lng": -79.4232421
+                    },
+                    "end_location": {
+                        "lat": 43.6802806,
+                        "lng": -79.4227258
+                    },
+                    "distance": 91,
+                    "duration": 16
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6802806,
+                        "lng": -79.4227258
+                    },
+                    "end_location": {
+                        "lat": 43.6812745,
+                        "lng": -79.423131
+                    },
+                    "distance": 115,
+                    "duration": 24
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6812745,
+                        "lng": -79.423131
+                    },
+                    "end_location": {
+                        "lat": 43.6822068,
+                        "lng": -79.4189777
+                    },
+                    "distance": 351,
+                    "duration": 68
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6822068,
+                        "lng": -79.4189777
+                    },
+                    "end_location": {
+                        "lat": 43.6821406,
+                        "lng": -79.4188317
+                    },
+                    "distance": 14,
+                    "duration": 28
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6821406,
+                "lng": -79.4188317
+            },
+            "start_address": "36 Vaughan Rd, Toronto, ON M6G 2N3, Canada",
+            "end_location": {
+                "lat": 43.6783312,
+                "lng": -79.4096715
+            },
+            "end_address": "1 Austin Terrace, Toronto, ON M5R 1X8, Canada",
+            "distance": 1126,
+            "duration": 270,
+            "steps": [
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6821406,
+                        "lng": -79.4188317
+                    },
+                    "end_location": {
+                        "lat": 43.6810659,
+                        "lng": -79.41747939999999
+                    },
+                    "distance": 162,
+                    "duration": 23
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6810659,
+                        "lng": -79.41747939999999
+                    },
+                    "end_location": {
+                        "lat": 43.6798112,
+                        "lng": -79.41698730000002
+                    },
+                    "distance": 145,
+                    "duration": 35
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6798112,
+                        "lng": -79.41698730000002
+                    },
+                    "end_location": {
+                        "lat": 43.680637,
+                        "lng": -79.412868
+                    },
+                    "distance": 344,
+                    "duration": 105
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.680637,
+                        "lng": -79.412868
+                    },
+                    "end_location": {
+                        "lat": 43.6784104,
+                        "lng": -79.41203349999999
+                    },
+                    "distance": 257,
+                    "duration": 31
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6784104,
+                        "lng": -79.41203349999999
+                    },
+                    "end_location": {
+                        "lat": 43.6782924,
+                        "lng": -79.4111191
+                    },
+                    "distance": 75,
+                    "duration": 10
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6782924,
+                        "lng": -79.4111191
+                    },
+                    "end_location": {
+                        "lat": 43.6783635,
+                        "lng": -79.4106323
+                    },
+                    "distance": 45,
+                    "duration": 9
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6783635,
+                        "lng": -79.4106323
+                    },
+                    "end_location": {
+                        "lat": 43.6785046,
+                        "lng": -79.4100912
+                    },
+                    "distance": 46,
+                    "duration": 45
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6785046,
+                        "lng": -79.4100912
+                    },
+                    "end_location": {
+                        "lat": 43.6782642,
+                        "lng": -79.4099442
+                    },
+                    "distance": 29,
+                    "duration": 6
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6782642,
+                        "lng": -79.4099442
+                    },
+                    "end_location": {
+                        "lat": 43.6783312,
+                        "lng": -79.4096715
+                    },
+                    "distance": 23,
+                    "duration": 6
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6783312,
+                "lng": -79.4096715
+            },
+            "start_address": "1 Austin Terrace, Toronto, ON M5R 1X8, Canada",
+            "end_location": {
+                "lat": 43.6800018,
+                "lng": -79.3396454
+            },
+            "end_address": "888 Danforth Ave, Toronto, ON M4J 1L8, Canada",
+            "distance": 10115,
+            "duration": 2067,
+            "steps": [
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6783312,
+                        "lng": -79.4096715
+                    },
+                    "end_location": {
+                        "lat": 43.6784745,
+                        "lng": -79.4093936
+                    },
+                    "distance": 32,
+                    "duration": 6
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6784745,
+                        "lng": -79.4093936
+                    },
+                    "end_location": {
+                        "lat": 43.67864910000001,
+                        "lng": -79.40948
+                    },
+                    "distance": 21,
+                    "duration": 4
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.67864910000001,
+                        "lng": -79.40948
+                    },
+                    "end_location": {
+                        "lat": 43.6788745,
+                        "lng": -79.40875779999999
+                    },
+                    "distance": 65,
+                    "duration": 44
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6788745,
+                        "lng": -79.40875779999999
+                    },
+                    "end_location": {
+                        "lat": 43.6867768,
+                        "lng": -79.4120418
+                    },
+                    "distance": 918,
+                    "duration": 239
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6867768,
+                        "lng": -79.4120418
+                    },
+                    "end_location": {
+                        "lat": 43.690177,
+                        "lng": -79.3949098
+                    },
+                    "distance": 1429,
+                    "duration": 276
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.690177,
+                        "lng": -79.3949098
+                    },
+                    "end_location": {
+                        "lat": 43.6920501,
+                        "lng": -79.3953028
+                    },
+                    "distance": 211,
+                    "duration": 106
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6920501,
+                        "lng": -79.3953028
+                    },
+                    "end_location": {
+                        "lat": 43.6921205,
+                        "lng": -79.3949061
+                    },
+                    "distance": 33,
+                    "duration": 6
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6921205,
+                        "lng": -79.3949061
+                    },
+                    "end_location": {
+                        "lat": 43.6923953,
+                        "lng": -79.39499119999999
+                    },
+                    "distance": 31,
+                    "duration": 4
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6923953,
+                        "lng": -79.39499119999999
+                    },
+                    "end_location": {
+                        "lat": 43.693952,
+                        "lng": -79.39447679999999
+                    },
+                    "distance": 260,
+                    "duration": 40
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.693952,
+                        "lng": -79.39447679999999
+                    },
+                    "end_location": {
+                        "lat": 43.6941818,
+                        "lng": -79.3943238
+                    },
+                    "distance": 29,
+                    "duration": 10
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6941818,
+                        "lng": -79.3943238
+                    },
+                    "end_location": {
+                        "lat": 43.6940373,
+                        "lng": -79.3921305
+                    },
+                    "distance": 192,
+                    "duration": 43
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6940373,
+                        "lng": -79.3921305
+                    },
+                    "end_location": {
+                        "lat": 43.6956413,
+                        "lng": -79.38895459999999
+                    },
+                    "distance": 341,
+                    "duration": 63
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6956413,
+                        "lng": -79.38895459999999
+                    },
+                    "end_location": {
+                        "lat": 43.6958288,
+                        "lng": -79.3882842
+                    },
+                    "distance": 58,
+                    "duration": 10
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6958288,
+                        "lng": -79.3882842
+                    },
+                    "end_location": {
+                        "lat": 43.6954698,
+                        "lng": -79.38795789999999
+                    },
+                    "distance": 48,
+                    "duration": 9
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6954698,
+                        "lng": -79.38795789999999
+                    },
+                    "end_location": {
+                        "lat": 43.6953691,
+                        "lng": -79.3853673
+                    },
+                    "distance": 212,
+                    "duration": 31
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6953691,
+                        "lng": -79.3853673
+                    },
+                    "end_location": {
+                        "lat": 43.69356639999999,
+                        "lng": -79.38462849999999
+                    },
+                    "distance": 209,
+                    "duration": 64
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.69356639999999,
+                        "lng": -79.38462849999999
+                    },
+                    "end_location": {
+                        "lat": 43.6976532,
+                        "lng": -79.3672933
+                    },
+                    "distance": 1480,
+                    "duration": 297
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6976532,
+                        "lng": -79.3672933
+                    },
+                    "end_location": {
+                        "lat": 43.7024935,
+                        "lng": -79.3615495
+                    },
+                    "distance": 712,
+                    "duration": 112
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.7024935,
+                        "lng": -79.3615495
+                    },
+                    "end_location": {
+                        "lat": 43.703162,
+                        "lng": -79.3606257
+                    },
+                    "distance": 106,
+                    "duration": 13
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.703162,
+                        "lng": -79.3606257
+                    },
+                    "end_location": {
+                        "lat": 43.697177,
+                        "lng": -79.34918619999999
+                    },
+                    "distance": 1296,
+                    "duration": 232
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.697177,
+                        "lng": -79.34918619999999
+                    },
+                    "end_location": {
+                        "lat": 43.68046890000001,
+                        "lng": -79.3373087
+                    },
+                    "distance": 2237,
+                    "duration": 406
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.68046890000001,
+                        "lng": -79.3373087
+                    },
+                    "end_location": {
+                        "lat": 43.6800018,
+                        "lng": -79.3396454
+                    },
+                    "distance": 195,
+                    "duration": 52
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6800018,
+                "lng": -79.3396454
+            },
+            "start_address": "888 Danforth Ave, Toronto, ON M4J 1L8, Canada",
+            "end_location": {
+                "lat": 43.6725636,
+                "lng": -79.2879718
+            },
+            "end_address": "2224 Queen St E, Toronto, ON M4E 1E9, Canada",
+            "distance": 6821,
+            "duration": 1425,
+            "steps": [
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6800018,
+                        "lng": -79.3396454
+                    },
+                    "end_location": {
+                        "lat": 43.6799024,
+                        "lng": -79.3401555
+                    },
+                    "distance": 42,
+                    "duration": 7
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6799024,
+                        "lng": -79.3401555
+                    },
+                    "end_location": {
+                        "lat": 43.6626752,
+                        "lng": -79.3328051
+                    },
+                    "distance": 2005,
+                    "duration": 372
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6626752,
+                        "lng": -79.3328051
+                    },
+                    "end_location": {
+                        "lat": 43.6632538,
+                        "lng": -79.3302021
+                    },
+                    "distance": 219,
+                    "duration": 84
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6632538,
+                        "lng": -79.3302021
+                    },
+                    "end_location": {
+                        "lat": 43.6589702,
+                        "lng": -79.3282909
+                    },
+                    "distance": 501,
+                    "duration": 111
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6589702,
+                        "lng": -79.3282909
+                    },
+                    "end_location": {
+                        "lat": 43.6590654,
+                        "lng": -79.32799279999999
+                    },
+                    "distance": 26,
+                    "duration": 58
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6590654,
+                        "lng": -79.32799279999999
+                    },
+                    "end_location": {
+                        "lat": 43.65898749999999,
+                        "lng": -79.3279331
+                    },
+                    "distance": 10,
+                    "duration": 2
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.65898749999999,
+                        "lng": -79.3279331
+                    },
+                    "end_location": {
+                        "lat": 43.6616299,
+                        "lng": -79.3125032
+                    },
+                    "distance": 1339,
+                    "duration": 234
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6616299,
+                        "lng": -79.3125032
+                    },
+                    "end_location": {
+                        "lat": 43.6615283,
+                        "lng": -79.31170209999999
+                    },
+                    "distance": 70,
+                    "duration": 13
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6615283,
+                        "lng": -79.31170209999999
+                    },
+                    "end_location": {
+                        "lat": 43.6638486,
+                        "lng": -79.30702339999999
+                    },
+                    "distance": 464,
+                    "duration": 84
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6638486,
+                        "lng": -79.30702339999999
+                    },
+                    "end_location": {
+                        "lat": 43.6678169,
+                        "lng": -79.29316279999999
+                    },
+                    "distance": 1217,
+                    "duration": 212
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6678169,
+                        "lng": -79.29316279999999
+                    },
+                    "end_location": {
+                        "lat": 43.6701541,
+                        "lng": -79.28660789999999
+                    },
+                    "distance": 595,
+                    "duration": 117
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6701541,
+                        "lng": -79.28660789999999
+                    },
+                    "end_location": {
+                        "lat": 43.6705834,
+                        "lng": -79.28693050000001
+                    },
+                    "distance": 54,
+                    "duration": 11
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6705834,
+                        "lng": -79.28693050000001
+                    },
+                    "end_location": {
+                        "lat": 43.6706909,
+                        "lng": -79.2867766
+                    },
+                    "distance": 20,
+                    "duration": 7
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6706909,
+                        "lng": -79.2867766
+                    },
+                    "end_location": {
+                        "lat": 43.67264309999999,
+                        "lng": -79.2875902
+                    },
+                    "distance": 227,
+                    "duration": 76
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.67264309999999,
+                        "lng": -79.2875902
+                    },
+                    "end_location": {
+                        "lat": 43.6725636,
+                        "lng": -79.2879718
+                    },
+                    "distance": 32,
+                    "duration": 37
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6725636,
+                "lng": -79.2879718
+            },
+            "start_address": "2224 Queen St E, Toronto, ON M4E 1E9, Canada",
+            "end_location": {
+                "lat": 43.7055493,
+                "lng": -79.23613089999999
+            },
+            "end_address": "Bluffers Park, 1 Brimley Rd S, Scarborough, ON M1M 3H4, Canada",
+            "distance": 8519,
+            "duration": 1826,
+            "steps": [
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6725636,
+                        "lng": -79.2879718
+                    },
+                    "end_location": {
+                        "lat": 43.67264309999999,
+                        "lng": -79.2875902
+                    },
+                    "distance": 32,
+                    "duration": 6
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.67264309999999,
+                        "lng": -79.2875902
+                    },
+                    "end_location": {
+                        "lat": 43.67908190000001,
+                        "lng": -79.2902179
+                    },
+                    "distance": 747,
+                    "duration": 303
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.67908190000001,
+                        "lng": -79.2902179
+                    },
+                    "end_location": {
+                        "lat": 43.6799989,
+                        "lng": -79.2892262
+                    },
+                    "distance": 131,
+                    "duration": 21
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6799989,
+                        "lng": -79.2892262
+                    },
+                    "end_location": {
+                        "lat": 43.6803478,
+                        "lng": -79.2892573
+                    },
+                    "distance": 40,
+                    "duration": 7
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6803478,
+                        "lng": -79.2892573
+                    },
+                    "end_location": {
+                        "lat": 43.6977498,
+                        "lng": -79.2565517
+                    },
+                    "distance": 3362,
+                    "duration": 704
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6977498,
+                        "lng": -79.2565517
+                    },
+                    "end_location": {
+                        "lat": 43.6994766,
+                        "lng": -79.2538371
+                    },
+                    "distance": 299,
+                    "duration": 52
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.6994766,
+                        "lng": -79.2538371
+                    },
+                    "end_location": {
+                        "lat": 43.7009103,
+                        "lng": -79.24687899999999
+                    },
+                    "distance": 607,
+                    "duration": 89
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.7009103,
+                        "lng": -79.24687899999999
+                    },
+                    "end_location": {
+                        "lat": 43.70261319999999,
+                        "lng": -79.2466196
+                    },
+                    "distance": 244,
+                    "duration": 46
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.70261319999999,
+                        "lng": -79.2466196
+                    },
+                    "end_location": {
+                        "lat": 43.7031173,
+                        "lng": -79.2465826
+                    },
+                    "distance": 66,
+                    "duration": 15
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.7031173,
+                        "lng": -79.2465826
+                    },
+                    "end_location": {
+                        "lat": 43.70382050000001,
+                        "lng": -79.24515939999999
+                    },
+                    "distance": 139,
+                    "duration": 23
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.70382050000001,
+                        "lng": -79.24515939999999
+                    },
+                    "end_location": {
+                        "lat": 43.7038967,
+                        "lng": -79.2451911
+                    },
+                    "distance": 9,
+                    "duration": 2
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.7038967,
+                        "lng": -79.2451911
+                    },
+                    "end_location": {
+                        "lat": 43.7041384,
+                        "lng": -79.2440542
+                    },
+                    "distance": 95,
+                    "duration": 16
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.7041384,
+                        "lng": -79.2440542
+                    },
+                    "end_location": {
+                        "lat": 43.7047468,
+                        "lng": -79.2442966
+                    },
+                    "distance": 70,
+                    "duration": 20
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.7047468,
+                        "lng": -79.2442966
+                    },
+                    "end_location": {
+                        "lat": 43.70632,
+                        "lng": -79.24094500000001
+                    },
+                    "distance": 321,
+                    "duration": 50
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.70632,
+                        "lng": -79.24094500000001
+                    },
+                    "end_location": {
+                        "lat": 43.7084279,
+                        "lng": -79.2421262
+                    },
+                    "distance": 261,
+                    "duration": 141
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.7084279,
+                        "lng": -79.2421262
+                    },
+                    "end_location": {
+                        "lat": 43.7088461,
+                        "lng": -79.2397558
+                    },
+                    "distance": 213,
+                    "duration": 36
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.7088461,
+                        "lng": -79.2397558
+                    },
+                    "end_location": {
+                        "lat": 43.7145198,
+                        "lng": -79.2391559
+                    },
+                    "distance": 649,
+                    "duration": 116
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.7145198,
+                        "lng": -79.2391559
+                    },
+                    "end_location": {
+                        "lat": 43.71457849999999,
+                        "lng": -79.2388461
+                    },
+                    "distance": 26,
+                    "duration": 4
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.71457849999999,
+                        "lng": -79.2388461
+                    },
+                    "end_location": {
+                        "lat": 43.7083008,
+                        "lng": -79.2375175
+                    },
+                    "distance": 744,
+                    "duration": 105
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.7083008,
+                        "lng": -79.2375175
+                    },
+                    "end_location": {
+                        "lat": 43.7076489,
+                        "lng": -79.2357595
+                    },
+                    "distance": 167,
+                    "duration": 28
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.7076489,
+                        "lng": -79.2357595
+                    },
+                    "end_location": {
+                        "lat": 43.706093,
+                        "lng": -79.2357727
+                    },
+                    "distance": 230,
+                    "duration": 33
+                },
+                {
+                    "mode": "BICYCLING",
+                    "start_location": {
+                        "lat": 43.706093,
+                        "lng": -79.2357727
+                    },
+                    "end_location": {
+                        "lat": 43.7055493,
+                        "lng": -79.23613089999999
+                    },
+                    "distance": 67,
+                    "duration": 9
+                }
+            ]
+        }
+    ]
+}
