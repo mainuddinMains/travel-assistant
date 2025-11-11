@@ -1,476 +1,20 @@
 {
     "mode": "walking",
     "optimized_route": [
-        "Sweet Jesus, 92 King St E, Toronto",
-        "St. Lawrence Market, 92\u201395 Front St E, Toronto",
-        "CN Tower, 290 Bremner Blvd, Toronto",
-        "Trinity Bellwoods Park, Queen St W & Crawford St, Toronto",
-        "Bang Bang Ice Cream & Bakery, 93A Ossington Ave, Toronto",
-        "Death in Venice Gelato Co., 1418 Dundas St W, Toronto",
-        "Ruru Baked, 659 Lansdowne Ave, Toronto",
-        "Dutch Dreams, 36 Vaughan Rd, Toronto",
-        "Casa Loma, 1 Austin Terrace, Toronto",
-        "Kawartha Dairy (Danforth), 888 Danforth Ave, Toronto",
-        "Ed\u2019s Real Scoop (Beaches), Beaches: 2224 Queen St E; Leslieville: 920 Queen St E, Toronto",
-        "Scarborough Bluffs, Beaches/Scarborough Bluffs (e.g., Bluffer's Park), 1 Brimley Rd S, Toronto"
+        "Bang Bang Ice Cream & Bakery, 93A Ossington Ave, Toronto, ON M6J 0G1, Canada, Toronto",
+        "High Park, 1873 Bloor St W, Toronto, ON M6R 2Z3, Canada, Toronto",
+        "Dutch Dreams, 36 Vaughan Rd, Toronto, ON M6G 2N3, Canada, Toronto",
+        "Sweet Jesus, 1 Promenade Cir, Thornhill, ON L4J 4P8, Canada, Thornhill",
+        "Rouge National Urban Park, 7277 14th Ave, Markham, ON L6B 1A8, Canada, Markham",
+        "Distillery District, Distillery District, Toronto, ON M5A, Canada, Toronto",
+        "Ripley's Aquarium of Canada, 288 Bremner Blvd, Toronto, ON M5V 3L9, Canada, Toronto",
+        "CN Tower, 290 Bremner Blvd, Toronto, ON M5V 3L9, Canada, Toronto",
+        "Good Behaviour Ice Cream and Sub Sandwiches, 335 Queen St W, Toronto, ON M5V 2A1, Canada, Toronto",
+        "Kensington Market, Kensington Market, Toronto, ON M5T, Canada, Toronto"
     ],
-    "total_distance": 34636,
-    "total_duration": 28958,
+    "total_distance": 86609,
+    "total_duration": 72144,
     "legs": [
-        {
-            "start_location": {
-                "lat": 43.6499064,
-                "lng": -79.3747855
-            },
-            "start_address": "92 King St E, Toronto, ON M5C 1G3, Canada",
-            "end_location": {
-                "lat": 43.6485804,
-                "lng": -79.3718928
-            },
-            "end_address": "95 Front St E #92, Toronto, ON M5E 1M6, Canada",
-            "distance": 415,
-            "duration": 358,
-            "steps": [
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6499064,
-                        "lng": -79.3747855
-                    },
-                    "end_location": {
-                        "lat": 43.6499384,
-                        "lng": -79.3745337
-                    },
-                    "distance": 31,
-                    "duration": 24
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6499384,
-                        "lng": -79.3745337
-                    },
-                    "end_location": {
-                        "lat": 43.6482933,
-                        "lng": -79.37382769999999
-                    },
-                    "distance": 173,
-                    "duration": 156
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6482933,
-                        "lng": -79.37382769999999
-                    },
-                    "end_location": {
-                        "lat": 43.649047,
-                        "lng": -79.3720958
-                    },
-                    "distance": 150,
-                    "duration": 133
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.649047,
-                        "lng": -79.3720958
-                    },
-                    "end_location": {
-                        "lat": 43.6485804,
-                        "lng": -79.3718928
-                    },
-                    "distance": 61,
-                    "duration": 45
-                }
-            ]
-        },
-        {
-            "start_location": {
-                "lat": 43.6485804,
-                "lng": -79.3718928
-            },
-            "start_address": "95 Front St E #92, Toronto, ON M5E 1M6, Canada",
-            "end_location": {
-                "lat": 43.642855,
-                "lng": -79.38718730000001
-            },
-            "end_address": "290 Bremner Blvd, Toronto, ON M5V 3L9, Canada",
-            "distance": 1593,
-            "duration": 1356,
-            "steps": [
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6485804,
-                        "lng": -79.3718928
-                    },
-                    "end_location": {
-                        "lat": 43.649047,
-                        "lng": -79.3720958
-                    },
-                    "distance": 61,
-                    "duration": 53
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.649047,
-                        "lng": -79.3720958
-                    },
-                    "end_location": {
-                        "lat": 43.6458649,
-                        "lng": -79.3791537
-                    },
-                    "distance": 668,
-                    "duration": 566
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6458649,
-                        "lng": -79.3791537
-                    },
-                    "end_location": {
-                        "lat": 43.6456487,
-                        "lng": -79.3790652
-                    },
-                    "distance": 36,
-                    "duration": 35
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6456487,
-                        "lng": -79.3790652
-                    },
-                    "end_location": {
-                        "lat": 43.64499199999999,
-                        "lng": -79.381638
-                    },
-                    "distance": 239,
-                    "duration": 197
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.64499199999999,
-                        "lng": -79.381638
-                    },
-                    "end_location": {
-                        "lat": 43.6429469,
-                        "lng": -79.3861395
-                    },
-                    "distance": 503,
-                    "duration": 438
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6429469,
-                        "lng": -79.3861395
-                    },
-                    "end_location": {
-                        "lat": 43.6429503,
-                        "lng": -79.38672960000001
-                    },
-                    "distance": 48,
-                    "duration": 35
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6429503,
-                        "lng": -79.38672960000001
-                    },
-                    "end_location": {
-                        "lat": 43.642855,
-                        "lng": -79.38718730000001
-                    },
-                    "distance": 38,
-                    "duration": 32
-                }
-            ]
-        },
-        {
-            "start_location": {
-                "lat": 43.642855,
-                "lng": -79.38718730000001
-            },
-            "start_address": "290 Bremner Blvd, Toronto, ON M5V 3L9, Canada",
-            "end_location": {
-                "lat": 43.6469557,
-                "lng": -79.41368419999999
-            },
-            "end_address": "Trinity Bellwoods Park, 790 Queen St W, Toronto, ON M6J 1G3, Canada",
-            "distance": 2710,
-            "duration": 2322,
-            "steps": [
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.642855,
-                        "lng": -79.38718730000001
-                    },
-                    "end_location": {
-                        "lat": 43.6426102,
-                        "lng": -79.3879419
-                    },
-                    "distance": 69,
-                    "duration": 59
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6426102,
-                        "lng": -79.3879419
-                    },
-                    "end_location": {
-                        "lat": 43.6426857,
-                        "lng": -79.3881348
-                    },
-                    "distance": 19,
-                    "duration": 23
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6426857,
-                        "lng": -79.3881348
-                    },
-                    "end_location": {
-                        "lat": 43.6434017,
-                        "lng": -79.38851199999999
-                    },
-                    "distance": 87,
-                    "duration": 73
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6434017,
-                        "lng": -79.38851199999999
-                    },
-                    "end_location": {
-                        "lat": 43.6436435,
-                        "lng": -79.3888822
-                    },
-                    "distance": 43,
-                    "duration": 40
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6436435,
-                        "lng": -79.3888822
-                    },
-                    "end_location": {
-                        "lat": 43.6437306,
-                        "lng": -79.38939289999999
-                    },
-                    "distance": 60,
-                    "duration": 49
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6437306,
-                        "lng": -79.38939289999999
-                    },
-                    "end_location": {
-                        "lat": 43.6414893,
-                        "lng": -79.39894799999999
-                    },
-                    "distance": 793,
-                    "duration": 678
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6414893,
-                        "lng": -79.39894799999999
-                    },
-                    "end_location": {
-                        "lat": 43.642399,
-                        "lng": -79.39930749999999
-                    },
-                    "distance": 119,
-                    "duration": 108
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.642399,
-                        "lng": -79.39930749999999
-                    },
-                    "end_location": {
-                        "lat": 43.6460567,
-                        "lng": -79.4100418
-                    },
-                    "distance": 1143,
-                    "duration": 968
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6460567,
-                        "lng": -79.4100418
-                    },
-                    "end_location": {
-                        "lat": 43.6457087,
-                        "lng": -79.4115283
-                    },
-                    "distance": 129,
-                    "duration": 110
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6457087,
-                        "lng": -79.4115283
-                    },
-                    "end_location": {
-                        "lat": 43.6467558,
-                        "lng": -79.4130462
-                    },
-                    "distance": 189,
-                    "duration": 167
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6467558,
-                        "lng": -79.4130462
-                    },
-                    "end_location": {
-                        "lat": 43.6469557,
-                        "lng": -79.41368419999999
-                    },
-                    "distance": 59,
-                    "duration": 47
-                }
-            ]
-        },
-        {
-            "start_location": {
-                "lat": 43.6469557,
-                "lng": -79.41368419999999
-            },
-            "start_address": "Trinity Bellwoods Park, 790 Queen St W, Toronto, ON M6J 1G3, Canada",
-            "end_location": {
-                "lat": 43.646269,
-                "lng": -79.4194916
-            },
-            "end_address": "93A Ossington Ave, Toronto, ON M6J 0G1, Canada",
-            "distance": 646,
-            "duration": 529,
-            "steps": [
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6469557,
-                        "lng": -79.41368419999999
-                    },
-                    "end_location": {
-                        "lat": 43.6466316,
-                        "lng": -79.4142311
-                    },
-                    "distance": 60,
-                    "duration": 49
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6466316,
-                        "lng": -79.4142311
-                    },
-                    "end_location": {
-                        "lat": 43.6471478,
-                        "lng": -79.4158448
-                    },
-                    "distance": 147,
-                    "duration": 119
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6471478,
-                        "lng": -79.4158448
-                    },
-                    "end_location": {
-                        "lat": 43.6471841,
-                        "lng": -79.415863
-                    },
-                    "distance": 4,
-                    "duration": 3
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6471841,
-                        "lng": -79.415863
-                    },
-                    "end_location": {
-                        "lat": 43.6469658,
-                        "lng": -79.41724909999999
-                    },
-                    "distance": 106,
-                    "duration": 89
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6469658,
-                        "lng": -79.41724909999999
-                    },
-                    "end_location": {
-                        "lat": 43.6472334,
-                        "lng": -79.4173548
-                    },
-                    "distance": 40,
-                    "duration": 37
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6472334,
-                        "lng": -79.4173548
-                    },
-                    "end_location": {
-                        "lat": 43.6472925,
-                        "lng": -79.41782049999999
-                    },
-                    "distance": 44,
-                    "duration": 36
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6472925,
-                        "lng": -79.41782049999999
-                    },
-                    "end_location": {
-                        "lat": 43.6469082,
-                        "lng": -79.4197208
-                    },
-                    "distance": 169,
-                    "duration": 137
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6469082,
-                        "lng": -79.4197208
-                    },
-                    "end_location": {
-                        "lat": 43.646269,
-                        "lng": -79.4194916
-                    },
-                    "distance": 76,
-                    "duration": 59
-                }
-            ]
-        },
         {
             "start_location": {
                 "lat": 43.646269,
@@ -478,12 +22,12 @@
             },
             "start_address": "93A Ossington Ave, Toronto, ON M6J 0G1, Canada",
             "end_location": {
-                "lat": 43.6496577,
-                "lng": -79.4293034
+                "lat": 43.64464359999999,
+                "lng": -79.4619317
             },
-            "end_address": "1418 Dundas St W, Toronto, ON M6J 1Y5, Canada",
-            "distance": 1044,
-            "duration": 905,
+            "end_address": "1873 Bloor St W, Toronto, ON M6R 2Z3, Canada",
+            "distance": 4246,
+            "duration": 3567,
             "steps": [
                 {
                     "mode": "WALKING",
@@ -492,108 +36,300 @@
                         "lng": -79.4194916
                     },
                     "end_location": {
-                        "lat": 43.6492657,
-                        "lng": -79.4206559
+                        "lat": 43.6442986,
+                        "lng": -79.4187926
                     },
-                    "distance": 356,
-                    "duration": 312
+                    "distance": 239,
+                    "duration": 192
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.6492657,
-                        "lng": -79.4206559
+                        "lat": 43.6442986,
+                        "lng": -79.4187926
                     },
                     "end_location": {
-                        "lat": 43.6496577,
-                        "lng": -79.4293034
+                        "lat": 43.6388565,
+                        "lng": -79.44597089999999
                     },
-                    "distance": 688,
-                    "duration": 593
+                    "distance": 2258,
+                    "duration": 1874
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6388565,
+                        "lng": -79.44597089999999
+                    },
+                    "end_location": {
+                        "lat": 43.6397578,
+                        "lng": -79.45216909999999
+                    },
+                    "distance": 535,
+                    "duration": 435
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6397578,
+                        "lng": -79.45216909999999
+                    },
+                    "end_location": {
+                        "lat": 43.6399939,
+                        "lng": -79.4521091
+                    },
+                    "distance": 32,
+                    "duration": 22
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6399939,
+                        "lng": -79.4521091
+                    },
+                    "end_location": {
+                        "lat": 43.64000739999999,
+                        "lng": -79.4541113
+                    },
+                    "distance": 167,
+                    "duration": 131
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.64000739999999,
+                        "lng": -79.4541113
+                    },
+                    "end_location": {
+                        "lat": 43.6410716,
+                        "lng": -79.4545713
+                    },
+                    "distance": 115,
+                    "duration": 97
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6410716,
+                        "lng": -79.4545713
+                    },
+                    "end_location": {
+                        "lat": 43.6408755,
+                        "lng": -79.45565479999999
+                    },
+                    "distance": 80,
+                    "duration": 68
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6408755,
+                        "lng": -79.45565479999999
+                    },
+                    "end_location": {
+                        "lat": 43.6414591,
+                        "lng": -79.4562394
+                    },
+                    "distance": 86,
+                    "duration": 72
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6414591,
+                        "lng": -79.4562394
+                    },
+                    "end_location": {
+                        "lat": 43.6432049,
+                        "lng": -79.4580532
+                    },
+                    "distance": 245,
+                    "duration": 198
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6432049,
+                        "lng": -79.4580532
+                    },
+                    "end_location": {
+                        "lat": 43.6431154,
+                        "lng": -79.4585724
+                    },
+                    "distance": 46,
+                    "duration": 36
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6431154,
+                        "lng": -79.4585724
+                    },
+                    "end_location": {
+                        "lat": 43.6430959,
+                        "lng": -79.45861
+                    },
+                    "distance": 4,
+                    "duration": 3
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6430959,
+                        "lng": -79.45861
+                    },
+                    "end_location": {
+                        "lat": 43.6432131,
+                        "lng": -79.4586483
+                    },
+                    "distance": 10,
+                    "duration": 8
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6432131,
+                        "lng": -79.4586483
+                    },
+                    "end_location": {
+                        "lat": 43.6428086,
+                        "lng": -79.46007829999999
+                    },
+                    "distance": 126,
+                    "duration": 105
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6428086,
+                        "lng": -79.46007829999999
+                    },
+                    "end_location": {
+                        "lat": 43.64464359999999,
+                        "lng": -79.4619317
+                    },
+                    "distance": 303,
+                    "duration": 326
                 }
             ]
         },
         {
             "start_location": {
-                "lat": 43.6496577,
-                "lng": -79.4293034
+                "lat": 43.64464359999999,
+                "lng": -79.4619317
             },
-            "start_address": "1418 Dundas St W, Toronto, ON M6J 1Y5, Canada",
-            "end_location": {
-                "lat": 43.6580979,
-                "lng": -79.4426032
-            },
-            "end_address": "659 Lansdowne Ave, Toronto, ON M6H 3Y2, Canada",
-            "distance": 1756,
-            "duration": 1476,
-            "steps": [
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6496577,
-                        "lng": -79.4293034
-                    },
-                    "end_location": {
-                        "lat": 43.6502437,
-                        "lng": -79.4396452
-                    },
-                    "distance": 843,
-                    "duration": 710
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6502437,
-                        "lng": -79.4396452
-                    },
-                    "end_location": {
-                        "lat": 43.6580979,
-                        "lng": -79.4426032
-                    },
-                    "distance": 913,
-                    "duration": 766
-                }
-            ]
-        },
-        {
-            "start_location": {
-                "lat": 43.6580979,
-                "lng": -79.4426032
-            },
-            "start_address": "659 Lansdowne Ave, Toronto, ON M6H 3Y2, Canada",
+            "start_address": "1873 Bloor St W, Toronto, ON M6R 2Z3, Canada",
             "end_location": {
                 "lat": 43.6820876,
                 "lng": -79.4188846
             },
             "end_address": "36 Vaughan Rd, Toronto, ON M6G 2N3, Canada",
-            "distance": 4553,
-            "duration": 3922,
+            "distance": 7512,
+            "duration": 6397,
             "steps": [
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.6580979,
-                        "lng": -79.4426032
+                        "lat": 43.64464359999999,
+                        "lng": -79.4619317
                     },
                     "end_location": {
-                        "lat": 43.6584507,
-                        "lng": -79.4426084
+                        "lat": 43.64461800000001,
+                        "lng": -79.4621931
                     },
-                    "distance": 29,
-                    "duration": 23
+                    "distance": 23,
+                    "duration": 19
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.6584507,
-                        "lng": -79.4426084
+                        "lat": 43.64461800000001,
+                        "lng": -79.4621931
+                    },
+                    "end_location": {
+                        "lat": 43.645291,
+                        "lng": -79.4629633
+                    },
+                    "distance": 95,
+                    "duration": 73
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.645291,
+                        "lng": -79.4629633
+                    },
+                    "end_location": {
+                        "lat": 43.64566809999999,
+                        "lng": -79.4646435
+                    },
+                    "distance": 156,
+                    "duration": 145
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.64566809999999,
+                        "lng": -79.4646435
+                    },
+                    "end_location": {
+                        "lat": 43.6523251,
+                        "lng": -79.4647066
+                    },
+                    "distance": 749,
+                    "duration": 623
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6523251,
+                        "lng": -79.4647066
+                    },
+                    "end_location": {
+                        "lat": 43.6539589,
+                        "lng": -79.4629705
+                    },
+                    "distance": 260,
+                    "duration": 209
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6539589,
+                        "lng": -79.4629705
+                    },
+                    "end_location": {
+                        "lat": 43.6562107,
+                        "lng": -79.4526295
+                    },
+                    "distance": 864,
+                    "duration": 725
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6562107,
+                        "lng": -79.4526295
+                    },
+                    "end_location": {
+                        "lat": 43.6569964,
+                        "lng": -79.4488792
+                    },
+                    "distance": 327,
+                    "duration": 271
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6569964,
+                        "lng": -79.4488792
                     },
                     "end_location": {
                         "lat": 43.66289769999999,
                         "lng": -79.4217403
                     },
-                    "distance": 1765,
-                    "duration": 1481
+                    "distance": 2279,
+                    "duration": 1914
                 },
                 {
                     "mode": "WALKING",
@@ -799,12 +535,12 @@
             },
             "start_address": "36 Vaughan Rd, Toronto, ON M6G 2N3, Canada",
             "end_location": {
-                "lat": 43.6783312,
-                "lng": -79.4096715
+                "lat": 43.807064,
+                "lng": -79.4524862
             },
-            "end_address": "1 Austin Terrace, Toronto, ON M5R 1X8, Canada",
-            "distance": 1410,
-            "duration": 1189,
+            "end_address": "1 Promenade Cir, Thornhill, ON L4J 4P8, Canada",
+            "distance": 14679,
+            "duration": 12402,
             "steps": [
                 {
                     "mode": "WALKING",
@@ -813,498 +549,47 @@
                         "lng": -79.4188846
                     },
                     "end_location": {
-                        "lat": 43.68106179999999,
-                        "lng": -79.4175765
+                        "lat": 43.6826421,
+                        "lng": -79.42002459999999
                     },
-                    "distance": 162,
-                    "duration": 129
+                    "distance": 114,
+                    "duration": 95
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.68106179999999,
-                        "lng": -79.4175765
+                        "lat": 43.6826421,
+                        "lng": -79.42002459999999
                     },
                     "end_location": {
-                        "lat": 43.6768149,
-                        "lng": -79.4159155
+                        "lat": 43.68300360000001,
+                        "lng": -79.41837129999999
                     },
-                    "distance": 505,
-                    "duration": 374
+                    "distance": 146,
+                    "duration": 128
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.6768149,
-                        "lng": -79.4159155
+                        "lat": 43.68300360000001,
+                        "lng": -79.41837129999999
                     },
                     "end_location": {
-                        "lat": 43.6769686,
-                        "lng": -79.4101587
+                        "lat": 43.7704675,
+                        "lng": -79.442285
                     },
-                    "distance": 456,
-                    "duration": 385
+                    "distance": 9924,
+                    "duration": 8370
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.6769686,
-                        "lng": -79.4101587
+                        "lat": 43.7704675,
+                        "lng": -79.442285
                     },
                     "end_location": {
-                        "lat": 43.6770766,
-                        "lng": -79.4103283
-                    },
-                    "distance": 40,
-                    "duration": 49
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6770766,
-                        "lng": -79.4103283
-                    },
-                    "end_location": {
-                        "lat": 43.67830290000001,
-                        "lng": -79.4106482
-                    },
-                    "distance": 129,
-                    "duration": 143
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.67830290000001,
-                        "lng": -79.4106482
-                    },
-                    "end_location": {
-                        "lat": 43.678465,
-                        "lng": -79.4100708
-                    },
-                    "distance": 66,
-                    "duration": 61
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.678465,
-                        "lng": -79.4100708
-                    },
-                    "end_location": {
-                        "lat": 43.6782642,
-                        "lng": -79.4099442
-                    },
-                    "distance": 29,
-                    "duration": 26
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6782642,
-                        "lng": -79.4099442
-                    },
-                    "end_location": {
-                        "lat": 43.6783312,
-                        "lng": -79.4096715
-                    },
-                    "distance": 23,
-                    "duration": 22
-                }
-            ]
-        },
-        {
-            "start_location": {
-                "lat": 43.6783312,
-                "lng": -79.4096715
-            },
-            "start_address": "1 Austin Terrace, Toronto, ON M5R 1X8, Canada",
-            "end_location": {
-                "lat": 43.6800348,
-                "lng": -79.339658
-            },
-            "end_address": "888 Danforth Ave, Toronto, ON M4J 1L8, Canada",
-            "distance": 6449,
-            "duration": 5363,
-            "steps": [
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6783312,
-                        "lng": -79.4096715
-                    },
-                    "end_location": {
-                        "lat": 43.6784745,
-                        "lng": -79.4093936
-                    },
-                    "distance": 32,
-                    "duration": 27
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6784745,
-                        "lng": -79.4093936
-                    },
-                    "end_location": {
-                        "lat": 43.6786144,
-                        "lng": -79.4094628
-                    },
-                    "distance": 21,
-                    "duration": 18
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6786144,
-                        "lng": -79.4094628
-                    },
-                    "end_location": {
-                        "lat": 43.6788051,
-                        "lng": -79.40874339999999
-                    },
-                    "distance": 62,
-                    "duration": 56
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6788051,
-                        "lng": -79.40874339999999
-                    },
-                    "end_location": {
-                        "lat": 43.6774796,
-                        "lng": -79.40819429999999
-                    },
-                    "distance": 176,
-                    "duration": 163
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6774796,
-                        "lng": -79.40819429999999
-                    },
-                    "end_location": {
-                        "lat": 43.6767388,
-                        "lng": -79.4036697
-                    },
-                    "distance": 431,
-                    "duration": 333
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6767388,
-                        "lng": -79.4036697
-                    },
-                    "end_location": {
-                        "lat": 43.6768226,
-                        "lng": -79.4029418
-                    },
-                    "distance": 52,
-                    "duration": 40
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6768226,
-                        "lng": -79.4029418
-                    },
-                    "end_location": {
-                        "lat": 43.6729658,
-                        "lng": -79.387806
-                    },
-                    "distance": 1466,
-                    "duration": 1222
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6729658,
-                        "lng": -79.387806
-                    },
-                    "end_location": {
-                        "lat": 43.6711343,
-                        "lng": -79.3830689
-                    },
-                    "distance": 486,
-                    "duration": 419
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6711343,
-                        "lng": -79.3830689
-                    },
-                    "end_location": {
-                        "lat": 43.6756411,
-                        "lng": -79.3612376
-                    },
-                    "distance": 1925,
-                    "duration": 1575
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6756411,
-                        "lng": -79.3612376
-                    },
-                    "end_location": {
-                        "lat": 43.6788698,
-                        "lng": -79.3457676
-                    },
-                    "distance": 1304,
-                    "duration": 1102
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6788698,
-                        "lng": -79.3457676
-                    },
-                    "end_location": {
-                        "lat": 43.6800348,
-                        "lng": -79.339658
-                    },
-                    "distance": 494,
-                    "duration": 408
-                }
-            ]
-        },
-        {
-            "start_location": {
-                "lat": 43.6800348,
-                "lng": -79.339658
-            },
-            "start_address": "888 Danforth Ave, Toronto, ON M4J 1L8, Canada",
-            "end_location": {
-                "lat": 43.6726532,
-                "lng": -79.28800749999999
-            },
-            "end_address": "2224 Queen St E, Toronto, ON M4E 1E9, Canada",
-            "distance": 5601,
-            "duration": 4556,
-            "steps": [
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6800348,
-                        "lng": -79.339658
-                    },
-                    "end_location": {
-                        "lat": 43.6833973,
-                        "lng": -79.3237872
-                    },
-                    "distance": 1345,
-                    "duration": 1108
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6833973,
-                        "lng": -79.3237872
-                    },
-                    "end_location": {
-                        "lat": 43.6729542,
-                        "lng": -79.31941909999999
-                    },
-                    "distance": 1215,
-                    "duration": 921
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6729542,
-                        "lng": -79.31941909999999
-                    },
-                    "end_location": {
-                        "lat": 43.6737623,
-                        "lng": -79.3152004
-                    },
-                    "distance": 347,
-                    "duration": 301
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6737623,
-                        "lng": -79.3152004
-                    },
-                    "end_location": {
-                        "lat": 43.6701116,
-                        "lng": -79.313226
-                    },
-                    "distance": 440,
-                    "duration": 334
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6701116,
-                        "lng": -79.313226
-                    },
-                    "end_location": {
-                        "lat": 43.6699583,
-                        "lng": -79.3123966
-                    },
-                    "distance": 79,
-                    "duration": 64
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6699583,
-                        "lng": -79.3123966
-                    },
-                    "end_location": {
-                        "lat": 43.6700093,
-                        "lng": -79.3110495
-                    },
-                    "distance": 89,
-                    "duration": 74
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6700093,
-                        "lng": -79.3110495
-                    },
-                    "end_location": {
-                        "lat": 43.6697478,
-                        "lng": -79.3098517
-                    },
-                    "distance": 109,
-                    "duration": 94
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6697478,
-                        "lng": -79.3098517
-                    },
-                    "end_location": {
-                        "lat": 43.6680915,
-                        "lng": -79.30915999999999
-                    },
-                    "distance": 195,
-                    "duration": 149
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6680915,
-                        "lng": -79.30915999999999
-                    },
-                    "end_location": {
-                        "lat": 43.6726532,
-                        "lng": -79.28800749999999
-                    },
-                    "distance": 1782,
-                    "duration": 1511
-                }
-            ]
-        },
-        {
-            "start_location": {
-                "lat": 43.6726532,
-                "lng": -79.28800749999999
-            },
-            "start_address": "2224 Queen St E, Toronto, ON M4E 1E9, Canada",
-            "end_location": {
-                "lat": 43.7055493,
-                "lng": -79.23613089999999
-            },
-            "end_address": "Bluffers Park, 1 Brimley Rd S, Scarborough, ON M1M 3H4, Canada",
-            "distance": 8459,
-            "duration": 6982,
-            "steps": [
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6726532,
-                        "lng": -79.28800749999999
-                    },
-                    "end_location": {
-                        "lat": 43.6748523,
-                        "lng": -79.278874
-                    },
-                    "distance": 784,
-                    "duration": 688
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6748523,
-                        "lng": -79.278874
-                    },
-                    "end_location": {
-                        "lat": 43.681355,
-                        "lng": -79.2813925
-                    },
-                    "distance": 772,
-                    "duration": 706
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.681355,
-                        "lng": -79.2813925
-                    },
-                    "end_location": {
-                        "lat": 43.694002,
-                        "lng": -79.2608936
-                    },
-                    "distance": 2175,
-                    "duration": 1777
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.694002,
-                        "lng": -79.2608936
-                    },
-                    "end_location": {
-                        "lat": 43.6976849,
-                        "lng": -79.2564786
-                    },
-                    "distance": 536,
-                    "duration": 431
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6976849,
-                        "lng": -79.2564786
-                    },
-                    "end_location": {
-                        "lat": 43.6994315,
-                        "lng": -79.2538178
-                    },
-                    "distance": 299,
-                    "duration": 245
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6994315,
-                        "lng": -79.2538178
-                    },
-                    "end_location": {
-                        "lat": 43.7020042,
-                        "lng": -79.2444569
-                    },
-                    "distance": 843,
-                    "duration": 665
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.7020042,
-                        "lng": -79.2444569
-                    },
-                    "end_location": {
-                        "lat": 43.7020042,
-                        "lng": -79.2444569
+                        "lat": 43.77045510000001,
+                        "lng": -79.4423438
                     },
                     "distance": 11,
                     "duration": 9
@@ -1312,171 +597,956 @@
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.7020042,
-                        "lng": -79.2444569
+                        "lat": 43.77045510000001,
+                        "lng": -79.4423438
                     },
                     "end_location": {
-                        "lat": 43.70391559999999,
-                        "lng": -79.245282
+                        "lat": 43.7708761,
+                        "lng": -79.4424259
                     },
-                    "distance": 212,
-                    "duration": 183
+                    "distance": 58,
+                    "duration": 47
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.70391559999999,
-                        "lng": -79.245282
+                        "lat": 43.7708761,
+                        "lng": -79.4424259
                     },
                     "end_location": {
-                        "lat": 43.7041723,
-                        "lng": -79.24412810000001
+                        "lat": 43.7847368,
+                        "lng": -79.4455091
                     },
-                    "distance": 95,
-                    "duration": 76
+                    "distance": 1568,
+                    "duration": 1320
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.7041723,
-                        "lng": -79.24412810000001
+                        "lat": 43.7847368,
+                        "lng": -79.4455091
                     },
                     "end_location": {
-                        "lat": 43.7047829,
-                        "lng": -79.2443806
+                        "lat": 43.7916921,
+                        "lng": -79.4457292
                     },
-                    "distance": 70,
-                    "duration": 63
+                    "distance": 794,
+                    "duration": 674
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.7047829,
-                        "lng": -79.2443806
+                        "lat": 43.7916921,
+                        "lng": -79.4457292
                     },
                     "end_location": {
-                        "lat": 43.7063882,
-                        "lng": -79.2409584
+                        "lat": 43.7985786,
+                        "lng": -79.4474969
                     },
-                    "distance": 321,
-                    "duration": 256
+                    "distance": 802,
+                    "duration": 672
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.7063882,
-                        "lng": -79.2409584
+                        "lat": 43.7985786,
+                        "lng": -79.4474969
                     },
                     "end_location": {
-                        "lat": 43.7084279,
-                        "lng": -79.2421262
+                        "lat": 43.7986091,
+                        "lng": -79.4473551
                     },
-                    "distance": 261,
-                    "duration": 279
+                    "distance": 17,
+                    "duration": 13
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.7084279,
-                        "lng": -79.2421262
+                        "lat": 43.7986091,
+                        "lng": -79.4473551
                     },
                     "end_location": {
-                        "lat": 43.7088461,
-                        "lng": -79.2397558
+                        "lat": 43.8066714,
+                        "lng": -79.4493966
                     },
-                    "distance": 213,
-                    "duration": 168
+                    "distance": 882,
+                    "duration": 763
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.7088461,
-                        "lng": -79.2397558
+                        "lat": 43.8066714,
+                        "lng": -79.4493966
                     },
                     "end_location": {
-                        "lat": 43.7145198,
-                        "lng": -79.2391559
+                        "lat": 43.8071211,
+                        "lng": -79.44948699999999
                     },
-                    "distance": 649,
-                    "duration": 526
+                    "distance": 83,
+                    "duration": 71
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.7145198,
-                        "lng": -79.2391559
+                        "lat": 43.8071211,
+                        "lng": -79.44948699999999
                     },
                     "end_location": {
-                        "lat": 43.7145659,
-                        "lng": -79.2388902
+                        "lat": 43.8069479,
+                        "lng": -79.4516864
                     },
-                    "distance": 26,
+                    "distance": 190,
+                    "duration": 153
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8069479,
+                        "lng": -79.4516864
+                    },
+                    "end_location": {
+                        "lat": 43.807064,
+                        "lng": -79.4524862
+                    },
+                    "distance": 90,
+                    "duration": 87
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.807064,
+                "lng": -79.4524862
+            },
+            "start_address": "1 Promenade Cir, Thornhill, ON L4J 4P8, Canada",
+            "end_location": {
+                "lat": 43.8606171,
+                "lng": -79.2113626
+            },
+            "end_address": "Rouge National Urban Park, 7277 14th Ave, Markham, ON L6B 1A8, Canada",
+            "distance": 21331,
+            "duration": 17596,
+            "steps": [
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.807064,
+                        "lng": -79.4524862
+                    },
+                    "end_location": {
+                        "lat": 43.8069479,
+                        "lng": -79.4516864
+                    },
+                    "distance": 90,
+                    "duration": 87
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8069479,
+                        "lng": -79.4516864
+                    },
+                    "end_location": {
+                        "lat": 43.80706470000001,
+                        "lng": -79.4501674
+                    },
+                    "distance": 123,
+                    "duration": 101
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.80706470000001,
+                        "lng": -79.4501674
+                    },
+                    "end_location": {
+                        "lat": 43.8071181,
+                        "lng": -79.44904389999999
+                    },
+                    "distance": 81,
+                    "duration": 81
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8071181,
+                        "lng": -79.44904389999999
+                    },
+                    "end_location": {
+                        "lat": 43.80613040000001,
+                        "lng": -79.4488421
+                    },
+                    "distance": 117,
+                    "duration": 97
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.80613040000001,
+                        "lng": -79.4488421
+                    },
+                    "end_location": {
+                        "lat": 43.806242,
+                        "lng": -79.4486501
+                    },
+                    "distance": 40,
+                    "duration": 33
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.806242,
+                        "lng": -79.4486501
+                    },
+                    "end_location": {
+                        "lat": 43.8114254,
+                        "lng": -79.4232677
+                    },
+                    "distance": 2112,
+                    "duration": 1652
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8114254,
+                        "lng": -79.4232677
+                    },
+                    "end_location": {
+                        "lat": 43.814121,
+                        "lng": -79.4104026
+                    },
+                    "distance": 1083,
+                    "duration": 870
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.814121,
+                        "lng": -79.4104026
+                    },
+                    "end_location": {
+                        "lat": 43.8159064,
+                        "lng": -79.4110638
+                    },
+                    "distance": 207,
+                    "duration": 182
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8159064,
+                        "lng": -79.4110638
+                    },
+                    "end_location": {
+                        "lat": 43.83840989999999,
+                        "lng": -79.32680069999999
+                    },
+                    "distance": 7553,
+                    "duration": 6344
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.83840989999999,
+                        "lng": -79.32680069999999
+                    },
+                    "end_location": {
+                        "lat": 43.843401,
+                        "lng": -79.30586269999999
+                    },
+                    "distance": 1769,
+                    "duration": 1516
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.843401,
+                        "lng": -79.30586269999999
+                    },
+                    "end_location": {
+                        "lat": 43.8624755,
+                        "lng": -79.2124992
+                    },
+                    "distance": 7910,
+                    "duration": 6434
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8624755,
+                        "lng": -79.2124992
+                    },
+                    "end_location": {
+                        "lat": 43.860755,
+                        "lng": -79.2111736
+                    },
+                    "distance": 224,
+                    "duration": 181
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.860755,
+                        "lng": -79.2111736
+                    },
+                    "end_location": {
+                        "lat": 43.8606171,
+                        "lng": -79.2113626
+                    },
+                    "distance": 22,
                     "duration": 18
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.8606171,
+                "lng": -79.2113626
+            },
+            "start_address": "Rouge National Urban Park, 7277 14th Ave, Markham, ON L6B 1A8, Canada",
+            "end_location": {
+                "lat": 43.65031159999999,
+                "lng": -79.35955349999999
+            },
+            "end_address": "Distillery District, Toronto, ON M5A, Canada",
+            "distance": 33650,
+            "duration": 27712,
+            "steps": [
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8606171,
+                        "lng": -79.2113626
+                    },
+                    "end_location": {
+                        "lat": 43.860755,
+                        "lng": -79.2111736
+                    },
+                    "distance": 22,
+                    "duration": 19
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.7145659,
-                        "lng": -79.2388902
+                        "lat": 43.860755,
+                        "lng": -79.2111736
                     },
                     "end_location": {
-                        "lat": 43.7076501,
-                        "lng": -79.2364426
+                        "lat": 43.8624755,
+                        "lng": -79.2124992
                     },
-                    "distance": 855,
-                    "duration": 642
+                    "distance": 224,
+                    "duration": 181
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.7076501,
-                        "lng": -79.2364426
+                        "lat": 43.8624755,
+                        "lng": -79.2124992
                     },
                     "end_location": {
-                        "lat": 43.7073323,
-                        "lng": -79.2355345
+                        "lat": 43.85599680000001,
+                        "lng": -79.2557666
                     },
-                    "distance": 87,
-                    "duration": 61
+                    "distance": 3623,
+                    "duration": 2979
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.7073323,
-                        "lng": -79.2355345
+                        "lat": 43.85599680000001,
+                        "lng": -79.2557666
                     },
                     "end_location": {
-                        "lat": 43.7065758,
-                        "lng": -79.2351202
+                        "lat": 43.8403655,
+                        "lng": -79.25200889999999
+                    },
+                    "distance": 1777,
+                    "duration": 1486
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8403655,
+                        "lng": -79.25200889999999
+                    },
+                    "end_location": {
+                        "lat": 43.83806120000001,
+                        "lng": -79.25153399999999
+                    },
+                    "distance": 290,
+                    "duration": 224
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.83806120000001,
+                        "lng": -79.25153399999999
+                    },
+                    "end_location": {
+                        "lat": 43.7894369,
+                        "lng": -79.2371831
+                    },
+                    "distance": 5600,
+                    "duration": 4607
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.7894369,
+                        "lng": -79.2371831
+                    },
+                    "end_location": {
+                        "lat": 43.7900604,
+                        "lng": -79.2343184
+                    },
+                    "distance": 240,
+                    "duration": 220
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.7900604,
+                        "lng": -79.2343184
+                    },
+                    "end_location": {
+                        "lat": 43.78238109999999,
+                        "lng": -79.2330656
+                    },
+                    "distance": 942,
+                    "duration": 732
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.78238109999999,
+                        "lng": -79.2330656
+                    },
+                    "end_location": {
+                        "lat": 43.7820372,
+                        "lng": -79.23369269999999
+                    },
+                    "distance": 78,
+                    "duration": 62
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.7820372,
+                        "lng": -79.23369269999999
+                    },
+                    "end_location": {
+                        "lat": 43.7771082,
+                        "lng": -79.23218709999999
+                    },
+                    "distance": 553,
+                    "duration": 521
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.7771082,
+                        "lng": -79.23218709999999
+                    },
+                    "end_location": {
+                        "lat": 43.7712409,
+                        "lng": -79.2298866
+                    },
+                    "distance": 676,
+                    "duration": 589
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.7712409,
+                        "lng": -79.2298866
+                    },
+                    "end_location": {
+                        "lat": 43.76012799999999,
+                        "lng": -79.24698130000002
+                    },
+                    "distance": 1909,
+                    "duration": 1537
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.76012799999999,
+                        "lng": -79.24698130000002
+                    },
+                    "end_location": {
+                        "lat": 43.7558482,
+                        "lng": -79.2456516
+                    },
+                    "distance": 470,
+                    "duration": 392
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.7558482,
+                        "lng": -79.2456516
+                    },
+                    "end_location": {
+                        "lat": 43.7527798,
+                        "lng": -79.2445724
+                    },
+                    "distance": 386,
+                    "duration": 344
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.7527798,
+                        "lng": -79.2445724
+                    },
+                    "end_location": {
+                        "lat": 43.7384111,
+                        "lng": -79.2455035
+                    },
+                    "distance": 1596,
+                    "duration": 1322
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.7384111,
+                        "lng": -79.2455035
+                    },
+                    "end_location": {
+                        "lat": 43.7384092,
+                        "lng": -79.2454934
+                    },
+                    "distance": 11,
+                    "duration": 9
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.7384092,
+                        "lng": -79.2454934
+                    },
+                    "end_location": {
+                        "lat": 43.73814,
+                        "lng": -79.2456217
+                    },
+                    "distance": 32,
+                    "duration": 26
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.73814,
+                        "lng": -79.2456217
+                    },
+                    "end_location": {
+                        "lat": 43.7381413,
+                        "lng": -79.2456268
+                    },
+                    "distance": 9,
+                    "duration": 7
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.7381413,
+                        "lng": -79.2456268
+                    },
+                    "end_location": {
+                        "lat": 43.7373449,
+                        "lng": -79.2460232
                     },
                     "distance": 96,
-                    "duration": 66
+                    "duration": 93
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.7065758,
-                        "lng": -79.2351202
+                        "lat": 43.7373449,
+                        "lng": -79.2460232
                     },
                     "end_location": {
-                        "lat": 43.7066072,
-                        "lng": -79.2352624
+                        "lat": 43.6972044,
+                        "lng": -79.2747164
                     },
-                    "distance": 16,
-                    "duration": 12
+                    "distance": 5075,
+                    "duration": 4172
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.7066072,
-                        "lng": -79.2352624
+                        "lat": 43.6972044,
+                        "lng": -79.2747164
                     },
                     "end_location": {
-                        "lat": 43.7055493,
-                        "lng": -79.23613089999999
+                        "lat": 43.6877308,
+                        "lng": -79.2708127
                     },
-                    "distance": 138,
-                    "duration": 111
+                    "distance": 1099,
+                    "duration": 909
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6877308,
+                        "lng": -79.2708127
+                    },
+                    "end_location": {
+                        "lat": 43.6673481,
+                        "lng": -79.3125111
+                    },
+                    "distance": 4319,
+                    "duration": 3404
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6673481,
+                        "lng": -79.3125111
+                    },
+                    "end_location": {
+                        "lat": 43.6576188,
+                        "lng": -79.35504929999999
+                    },
+                    "distance": 3573,
+                    "duration": 3016
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6576188,
+                        "lng": -79.35504929999999
+                    },
+                    "end_location": {
+                        "lat": 43.6555372,
+                        "lng": -79.35827979999999
+                    },
+                    "distance": 355,
+                    "duration": 281
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6555372,
+                        "lng": -79.35827979999999
+                    },
+                    "end_location": {
+                        "lat": 43.6538726,
+                        "lng": -79.3583977
+                    },
+                    "distance": 189,
+                    "duration": 149
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6538726,
+                        "lng": -79.3583977
+                    },
+                    "end_location": {
+                        "lat": 43.6523255,
+                        "lng": -79.36064240000002
+                    },
+                    "distance": 248,
+                    "duration": 225
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6523255,
+                        "lng": -79.36064240000002
+                    },
+                    "end_location": {
+                        "lat": 43.65031159999999,
+                        "lng": -79.35955349999999
+                    },
+                    "distance": 258,
+                    "duration": 206
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.65031159999999,
+                "lng": -79.35955349999999
+            },
+            "start_address": "Distillery District, Toronto, ON M5A, Canada",
+            "end_location": {
+                "lat": 43.6420735,
+                "lng": -79.3868485
+            },
+            "end_address": "288 Bremner Blvd, Toronto, ON M5V 3L9, Canada",
+            "distance": 2787,
+            "duration": 2366,
+            "steps": [
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.65031159999999,
+                        "lng": -79.35955349999999
+                    },
+                    "end_location": {
+                        "lat": 43.65204019999999,
+                        "lng": -79.3604343
+                    },
+                    "distance": 209,
+                    "duration": 174
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.65204019999999,
+                        "lng": -79.3604343
+                    },
+                    "end_location": {
+                        "lat": 43.6458649,
+                        "lng": -79.3791537
+                    },
+                    "distance": 1679,
+                    "duration": 1432
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6458649,
+                        "lng": -79.3791537
+                    },
+                    "end_location": {
+                        "lat": 43.6456487,
+                        "lng": -79.3790652
+                    },
+                    "distance": 36,
+                    "duration": 35
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6456487,
+                        "lng": -79.3790652
+                    },
+                    "end_location": {
+                        "lat": 43.64499199999999,
+                        "lng": -79.381638
+                    },
+                    "distance": 239,
+                    "duration": 197
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.64499199999999,
+                        "lng": -79.381638
+                    },
+                    "end_location": {
+                        "lat": 43.6420735,
+                        "lng": -79.3868485
+                    },
+                    "distance": 624,
+                    "duration": 528
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6420735,
+                "lng": -79.3868485
+            },
+            "start_address": "288 Bremner Blvd, Toronto, ON M5V 3L9, Canada",
+            "end_location": {
+                "lat": 43.642855,
+                "lng": -79.38718730000001
+            },
+            "end_address": "290 Bremner Blvd, Toronto, ON M5V 3L9, Canada",
+            "distance": 170,
+            "duration": 145,
+            "steps": [
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6420735,
+                        "lng": -79.3868485
+                    },
+                    "end_location": {
+                        "lat": 43.6420241,
+                        "lng": -79.3869083
+                    },
+                    "distance": 7,
+                    "duration": 5
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6420241,
+                        "lng": -79.3869083
+                    },
+                    "end_location": {
+                        "lat": 43.64297320000001,
+                        "lng": -79.3865746
+                    },
+                    "distance": 112,
+                    "duration": 98
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.64297320000001,
+                        "lng": -79.3865746
+                    },
+                    "end_location": {
+                        "lat": 43.642855,
+                        "lng": -79.38718730000001
+                    },
+                    "distance": 51,
+                    "duration": 42
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.642855,
+                "lng": -79.38718730000001
+            },
+            "start_address": "290 Bremner Blvd, Toronto, ON M5V 3L9, Canada",
+            "end_location": {
+                "lat": 43.6495665,
+                "lng": -79.3921263
+            },
+            "end_address": "335 Queen St W, Toronto, ON M5V 2A1, Canada",
+            "distance": 1025,
+            "duration": 896,
+            "steps": [
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.642855,
+                        "lng": -79.38718730000001
+                    },
+                    "end_location": {
+                        "lat": 43.6426102,
+                        "lng": -79.3879419
+                    },
+                    "distance": 69,
+                    "duration": 59
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6426102,
+                        "lng": -79.3879419
+                    },
+                    "end_location": {
+                        "lat": 43.6426857,
+                        "lng": -79.3881348
+                    },
+                    "distance": 19,
+                    "duration": 23
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6426857,
+                        "lng": -79.3881348
+                    },
+                    "end_location": {
+                        "lat": 43.6438753,
+                        "lng": -79.3887209
+                    },
+                    "distance": 153,
+                    "duration": 120
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6438753,
+                        "lng": -79.3887209
+                    },
+                    "end_location": {
+                        "lat": 43.643941,
+                        "lng": -79.38851149999999
+                    },
+                    "distance": 11,
+                    "duration": 9
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.643941,
+                        "lng": -79.38851149999999
+                    },
+                    "end_location": {
+                        "lat": 43.6498109,
+                        "lng": -79.3909666
+                    },
+                    "distance": 682,
+                    "duration": 609
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6498109,
+                        "lng": -79.3909666
+                    },
+                    "end_location": {
+                        "lat": 43.6495665,
+                        "lng": -79.3921263
+                    },
+                    "distance": 91,
+                    "duration": 76
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6495665,
+                "lng": -79.3921263
+            },
+            "start_address": "335 Queen St W, Toronto, ON M5V 2A1, Canada",
+            "end_location": {
+                "lat": 43.65482069999999,
+                "lng": -79.4002605
+            },
+            "end_address": "160 Baldwin St, Toronto, ON M5T 3K7, Canada",
+            "distance": 1209,
+            "duration": 1063,
+            "steps": [
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6495665,
+                        "lng": -79.3921263
+                    },
+                    "end_location": {
+                        "lat": 43.6486198,
+                        "lng": -79.39655499999999
+                    },
+                    "distance": 363,
+                    "duration": 307
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6486198,
+                        "lng": -79.39655499999999
+                    },
+                    "end_location": {
+                        "lat": 43.6550602,
+                        "lng": -79.39912009999999
+                    },
+                    "distance": 741,
+                    "duration": 666
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6550602,
+                        "lng": -79.39912009999999
+                    },
+                    "end_location": {
+                        "lat": 43.65482069999999,
+                        "lng": -79.4002605
+                    },
+                    "distance": 105,
+                    "duration": 90
                 }
             ]
         }

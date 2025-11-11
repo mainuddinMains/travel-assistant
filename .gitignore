@@ -1,3 +1,34 @@
 node_modules/
 __pycache__/
+
+# API Keys - never commit these!
+backend/api.env
+frontend/config.js
 *.env
+.env
+
+# Python cache
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test files
+test_*.py
+*_test.py
+
+# Output files
+backend/*.json
+backend/direction_*.json
+backend/triproute_recommendations.json

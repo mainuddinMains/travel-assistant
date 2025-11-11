@@ -1,173 +1,1224 @@
 {
     "mode": "transit",
     "optimized_route": [
-        "Sweet Jesus, 92 King St E, Toronto",
-        "St. Lawrence Market, 92\u201395 Front St E, Toronto",
-        "CN Tower, 290 Bremner Blvd, Toronto",
-        "Trinity Bellwoods Park, Queen St W & Crawford St, Toronto",
-        "Bang Bang Ice Cream & Bakery, 93A Ossington Ave, Toronto",
-        "Death in Venice Gelato Co., 1418 Dundas St W, Toronto",
-        "Ruru Baked, 659 Lansdowne Ave, Toronto",
-        "Dutch Dreams, 36 Vaughan Rd, Toronto",
-        "Casa Loma, 1 Austin Terrace, Toronto",
-        "Kawartha Dairy (Danforth), 888 Danforth Ave, Toronto",
-        "Ed\u2019s Real Scoop (Beaches), Beaches: 2224 Queen St E; Leslieville: 920 Queen St E, Toronto",
-        "Scarborough Bluffs, Beaches/Scarborough Bluffs (e.g., Bluffer's Park), 1 Brimley Rd S, Toronto"
+        "Bang Bang Ice Cream & Bakery, 93A Ossington Ave, Toronto, ON M6J 0G1, Canada, Toronto",
+        "High Park, 1873 Bloor St W, Toronto, ON M6R 2Z3, Canada, Toronto",
+        "Dutch Dreams, 36 Vaughan Rd, Toronto, ON M6G 2N3, Canada, Toronto",
+        "Sweet Jesus, 1 Promenade Cir, Thornhill, ON L4J 4P8, Canada, Thornhill",
+        "Rouge National Urban Park, 7277 14th Ave, Markham, ON L6B 1A8, Canada, Markham",
+        "Distillery District, Distillery District, Toronto, ON M5A, Canada, Toronto",
+        "Ripley's Aquarium of Canada, 288 Bremner Blvd, Toronto, ON M5V 3L9, Canada, Toronto",
+        "CN Tower, 290 Bremner Blvd, Toronto, ON M5V 3L9, Canada, Toronto",
+        "Good Behaviour Ice Cream and Sub Sandwiches, 335 Queen St W, Toronto, ON M5V 2A1, Canada, Toronto",
+        "Kensington Market, Kensington Market, Toronto, ON M5T, Canada, Toronto"
     ],
-    "total_distance": 38427,
-    "total_duration": 16443,
+    "total_distance": 106131,
+    "total_duration": 24698,
     "legs": [
         {
             "start_location": {
-                "lat": 43.6499064,
-                "lng": -79.3747855
+                "lat": 43.646269,
+                "lng": -79.4194916
             },
-            "start_address": "92 King St E, Toronto, ON M5C 1G3, Canada",
+            "start_address": "93A Ossington Ave, Toronto, ON M6J 0G1, Canada",
             "end_location": {
-                "lat": 43.6485804,
-                "lng": -79.3718928
+                "lat": 43.64464359999999,
+                "lng": -79.4619317
             },
-            "end_address": "95 Front St E #92, Toronto, ON M5E 1M6, Canada",
-            "distance": 415,
-            "duration": 358,
+            "end_address": "1873 Bloor St W, Toronto, ON M6R 2Z3, Canada",
+            "distance": 4247,
+            "duration": 2229,
             "steps": [
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.6499064,
-                        "lng": -79.3747855
+                        "lat": 43.646269,
+                        "lng": -79.4194916
                     },
                     "end_location": {
-                        "lat": 43.6499384,
-                        "lng": -79.3745337
+                        "lat": 43.6443028,
+                        "lng": -79.4187941
                     },
-                    "distance": 31,
-                    "duration": 24
+                    "distance": 227,
+                    "duration": 184
+                },
+                {
+                    "mode": "TRANSIT",
+                    "start_location": {
+                        "lat": 43.6442905,
+                        "lng": -79.418712
+                    },
+                    "end_location": {
+                        "lat": 43.639748,
+                        "lng": -79.454178
+                    },
+                    "distance": 2972,
+                    "duration": 1103,
+                    "transit_details": {
+                        "departure_stop_name": "Queen St West at Ossington Ave",
+                        "arrival_stop_name": "The Queensway at Parkside Dr",
+                        "departure_time": "2025-11-11 13:42:48 EST",
+                        "arrival_time": "2025-11-11 14:01:11 EST",
+                        "line_name": "501 Queen",
+                        "line_short_name": "501",
+                        "line_color": "#ed1c24",
+                        "line_text_color": "#ffffff",
+                        "vehicle_name": "Streetcar",
+                        "vehicle_type": "TRAM",
+                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/tram2.png",
+                        "num_stops": 12
+                    }
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.6499384,
-                        "lng": -79.3745337
+                        "lat": 43.6397571,
+                        "lng": -79.4540705
                     },
                     "end_location": {
-                        "lat": 43.6482933,
-                        "lng": -79.37382769999999
+                        "lat": 43.6397584,
+                        "lng": -79.45399189999999
                     },
-                    "distance": 173,
-                    "duration": 156
+                    "distance": 3,
+                    "duration": 2
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.6482933,
-                        "lng": -79.37382769999999
+                        "lat": 43.6397584,
+                        "lng": -79.45399189999999
                     },
                     "end_location": {
-                        "lat": 43.649047,
-                        "lng": -79.3720958
+                        "lat": 43.6410716,
+                        "lng": -79.4545713
                     },
-                    "distance": 150,
-                    "duration": 133
+                    "distance": 145,
+                    "duration": 123
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.649047,
-                        "lng": -79.3720958
+                        "lat": 43.6410716,
+                        "lng": -79.4545713
                     },
                     "end_location": {
-                        "lat": 43.6485804,
-                        "lng": -79.3718928
+                        "lat": 43.6408755,
+                        "lng": -79.45565479999999
                     },
-                    "distance": 61,
-                    "duration": 45
+                    "distance": 80,
+                    "duration": 68
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6408755,
+                        "lng": -79.45565479999999
+                    },
+                    "end_location": {
+                        "lat": 43.6414591,
+                        "lng": -79.4562394
+                    },
+                    "distance": 86,
+                    "duration": 72
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6414591,
+                        "lng": -79.4562394
+                    },
+                    "end_location": {
+                        "lat": 43.6432049,
+                        "lng": -79.4580532
+                    },
+                    "distance": 245,
+                    "duration": 198
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6432049,
+                        "lng": -79.4580532
+                    },
+                    "end_location": {
+                        "lat": 43.6431154,
+                        "lng": -79.4585724
+                    },
+                    "distance": 46,
+                    "duration": 36
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6431154,
+                        "lng": -79.4585724
+                    },
+                    "end_location": {
+                        "lat": 43.6430959,
+                        "lng": -79.45861
+                    },
+                    "distance": 4,
+                    "duration": 3
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6430959,
+                        "lng": -79.45861
+                    },
+                    "end_location": {
+                        "lat": 43.6432131,
+                        "lng": -79.4586483
+                    },
+                    "distance": 10,
+                    "duration": 8
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6432131,
+                        "lng": -79.4586483
+                    },
+                    "end_location": {
+                        "lat": 43.6428086,
+                        "lng": -79.46007829999999
+                    },
+                    "distance": 126,
+                    "duration": 105
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6428086,
+                        "lng": -79.46007829999999
+                    },
+                    "end_location": {
+                        "lat": 43.64464359999999,
+                        "lng": -79.4619317
+                    },
+                    "distance": 303,
+                    "duration": 326
                 }
             ]
         },
         {
             "start_location": {
-                "lat": 43.6485804,
-                "lng": -79.3718928
+                "lat": 43.64464359999999,
+                "lng": -79.4619317
             },
-            "start_address": "95 Front St E #92, Toronto, ON M5E 1M6, Canada",
+            "start_address": "1873 Bloor St W, Toronto, ON M6R 2Z3, Canada",
             "end_location": {
-                "lat": 43.642855,
-                "lng": -79.38718730000001
+                "lat": 43.6820876,
+                "lng": -79.4188846
             },
-            "end_address": "290 Bremner Blvd, Toronto, ON M5V 3L9, Canada",
-            "distance": 2471,
-            "duration": 1491,
+            "end_address": "36 Vaughan Rd, Toronto, ON M6G 2N3, Canada",
+            "distance": 8132,
+            "duration": 3165,
             "steps": [
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.6485804,
-                        "lng": -79.3718928
+                        "lat": 43.64464359999999,
+                        "lng": -79.4619317
                     },
                     "end_location": {
-                        "lat": 43.6490599,
-                        "lng": -79.37210139999999
+                        "lat": 43.6445865,
+                        "lng": -79.4622606
                     },
-                    "distance": 61,
-                    "duration": 53
+                    "distance": 23,
+                    "duration": 19
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.6490599,
-                        "lng": -79.37210139999999
+                        "lat": 43.6445865,
+                        "lng": -79.4622606
                     },
                     "end_location": {
-                        "lat": 43.6492904,
-                        "lng": -79.3715021
+                        "lat": 43.6451968,
+                        "lng": -79.463015
                     },
-                    "distance": 63,
-                    "duration": 50
+                    "distance": 95,
+                    "duration": 75
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.6492904,
-                        "lng": -79.3715021
+                        "lat": 43.6451968,
+                        "lng": -79.463015
                     },
                     "end_location": {
-                        "lat": 43.6505189,
-                        "lng": -79.3720417
+                        "lat": 43.6456396,
+                        "lng": -79.4648465
                     },
-                    "distance": 131,
-                    "duration": 130
+                    "distance": 156,
+                    "duration": 143
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.6505189,
-                        "lng": -79.3720417
+                        "lat": 43.6456396,
+                        "lng": -79.4648465
                     },
                     "end_location": {
-                        "lat": 43.6506212,
-                        "lng": -79.3715777
+                        "lat": 43.6534532,
+                        "lng": -79.4653759
+                    },
+                    "distance": 896,
+                    "duration": 747
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6534532,
+                        "lng": -79.4653759
+                    },
+                    "end_location": {
+                        "lat": 43.6541524,
+                        "lng": -79.4656148
+                    },
+                    "distance": 78,
+                    "duration": 73
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6541524,
+                        "lng": -79.4656148
+                    },
+                    "end_location": {
+                        "lat": 43.65401199999999,
+                        "lng": -79.4662318
+                    },
+                    "distance": 59,
+                    "duration": 45
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.65394999999999,
+                        "lng": -79.466438
+                    },
+                    "end_location": {
+                        "lat": 43.653851,
+                        "lng": -79.466988
+                    },
+                    "distance": 45,
+                    "duration": 87
+                },
+                {
+                    "mode": "TRANSIT",
+                    "start_location": {
+                        "lat": 43.653851,
+                        "lng": -79.466988
+                    },
+                    "end_location": {
+                        "lat": 43.6655787,
+                        "lng": -79.4112724
+                    },
+                    "distance": 4703,
+                    "duration": 666,
+                    "transit_details": {
+                        "departure_stop_name": "High Park",
+                        "arrival_stop_name": "Bathurst",
+                        "departure_time": "2025-11-11 13:57:01 EST",
+                        "arrival_time": "2025-11-11 14:08:07 EST",
+                        "line_name": "Line 2 Bloor\u2013Danforth",
+                        "line_short_name": "2",
+                        "line_color": "#009247",
+                        "line_text_color": "#ffffff",
+                        "vehicle_name": "Subway",
+                        "vehicle_type": "SUBWAY",
+                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
+                        "num_stops": 7
+                    }
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6655787,
+                        "lng": -79.4112724
+                    },
+                    "end_location": {
+                        "lat": 43.6660712,
+                        "lng": -79.41105270000001
+                    },
+                    "distance": 57,
+                    "duration": 80
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6660712,
+                        "lng": -79.41105270000001
+                    },
+                    "end_location": {
+                        "lat": 43.66606400000001,
+                        "lng": -79.41107960000001
+                    },
+                    "distance": 2,
+                    "duration": 2
+                },
+                {
+                    "mode": "TRANSIT",
+                    "start_location": {
+                        "lat": 43.66606489999999,
+                        "lng": -79.4110747
+                    },
+                    "end_location": {
+                        "lat": 43.679714,
+                        "lng": -79.416855
+                    },
+                    "distance": 1698,
+                    "duration": 631,
+                    "transit_details": {
+                        "departure_stop_name": "Bathurst Station",
+                        "arrival_stop_name": "Bathurst St at Nina St",
+                        "departure_time": "2025-11-11 14:14:35 EST",
+                        "arrival_time": "2025-11-11 14:25:06 EST",
+                        "line_name": "Bathurst",
+                        "line_short_name": "7",
+                        "line_color": "#ed1c24",
+                        "line_text_color": "#ffffff",
+                        "vehicle_name": "Bus",
+                        "vehicle_type": "BUS",
+                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                        "num_stops": 6
+                    }
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6797165,
+                        "lng": -79.41684269999999
+                    },
+                    "end_location": {
+                        "lat": 43.68106179999999,
+                        "lng": -79.4175765
+                    },
+                    "distance": 158,
+                    "duration": 151
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.68106179999999,
+                        "lng": -79.4175765
+                    },
+                    "end_location": {
+                        "lat": 43.6820876,
+                        "lng": -79.4188846
+                    },
+                    "distance": 162,
+                    "duration": 138
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6820876,
+                "lng": -79.4188846
+            },
+            "start_address": "36 Vaughan Rd, Toronto, ON M6G 2N3, Canada",
+            "end_location": {
+                "lat": 43.807064,
+                "lng": -79.4524862
+            },
+            "end_address": "1 Promenade Cir, Thornhill, ON L4J 4P8, Canada",
+            "distance": 20215,
+            "duration": 3583,
+            "steps": [
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6820876,
+                        "lng": -79.4188846
+                    },
+                    "end_location": {
+                        "lat": 43.6826429,
+                        "lng": -79.4200261
+                    },
+                    "distance": 114,
+                    "duration": 95
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6826429,
+                        "lng": -79.4200261
+                    },
+                    "end_location": {
+                        "lat": 43.6826067,
+                        "lng": -79.4203805
+                    },
+                    "distance": 33,
+                    "duration": 26
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6826067,
+                        "lng": -79.4203805
+                    },
+                    "end_location": {
+                        "lat": 43.6828393,
+                        "lng": -79.4204338
                     },
                     "distance": 32,
                     "duration": 46
                 },
                 {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6828393,
+                        "lng": -79.4204338
+                    },
+                    "end_location": {
+                        "lat": 43.6829945,
+                        "lng": -79.4205928
+                    },
+                    "distance": 35,
+                    "duration": 29
+                },
+                {
                     "mode": "TRANSIT",
                     "start_location": {
-                        "lat": 43.6506242,
-                        "lng": -79.3715398
+                        "lat": 43.682999,
+                        "lng": -79.420586
+                    },
+                    "end_location": {
+                        "lat": 43.726425,
+                        "lng": -79.482384
+                    },
+                    "distance": 6927,
+                    "duration": 24,
+                    "transit_details": {
+                        "departure_stop_name": "Vaughan Rd at St Clair Ave West",
+                        "arrival_stop_name": "Wilson Ave at Keele St",
+                        "departure_time": "2025-11-11 14:02:32 EST",
+                        "arrival_time": "2025-11-11 14:02:56 EST",
+                        "line_name": "Vaughan",
+                        "line_short_name": "90",
+                        "line_color": "#ed1c24",
+                        "line_text_color": "#ffffff",
+                        "vehicle_name": "Bus",
+                        "vehicle_type": "BUS",
+                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                        "num_stops": 1
+                    }
+                },
+                {
+                    "mode": "TRANSIT",
+                    "start_location": {
+                        "lat": 43.726425,
+                        "lng": -79.482384
+                    },
+                    "end_location": {
+                        "lat": 43.734764,
+                        "lng": -79.445831
+                    },
+                    "distance": 3729,
+                    "duration": 971,
+                    "transit_details": {
+                        "departure_stop_name": "Wilson Ave at Keele St",
+                        "arrival_stop_name": "Wilson Ave at Faywood Blvd East Side",
+                        "departure_time": "2025-11-11 14:08:21 EST",
+                        "arrival_time": "2025-11-11 14:22:47 EST",
+                        "line_name": "Wilson",
+                        "line_short_name": "96A",
+                        "line_color": "#ffffff",
+                        "line_text_color": "#ed3237",
+                        "vehicle_name": "Bus",
+                        "vehicle_type": "BUS",
+                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                        "num_stops": 8
+                    }
+                },
+                {
+                    "mode": "TRANSIT",
+                    "start_location": {
+                        "lat": 43.734764,
+                        "lng": -79.445831
+                    },
+                    "end_location": {
+                        "lat": 43.807584,
+                        "lng": -79.450141
+                    },
+                    "distance": 9063,
+                    "duration": 1671,
+                    "transit_details": {
+                        "departure_stop_name": "Wilson Ave at Faywood Blvd East Side",
+                        "arrival_stop_name": "Promenade Cir at East Promenade North Side - Mall East Entrance",
+                        "departure_time": "2025-11-11 14:27:04 EST",
+                        "arrival_time": "2025-11-11 14:54:55 EST",
+                        "line_name": "Bathurst North",
+                        "line_short_name": "160",
+                        "line_color": "#ffffff",
+                        "line_text_color": "#ed1c24",
+                        "vehicle_name": "Bus",
+                        "vehicle_type": "BUS",
+                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                        "num_stops": 31
+                    }
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.80762439999999,
+                        "lng": -79.4501473
+                    },
+                    "end_location": {
+                        "lat": 43.8075001,
+                        "lng": -79.45167789999999
+                    },
+                    "distance": 124,
+                    "duration": 98
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8075001,
+                        "lng": -79.45167789999999
+                    },
+                    "end_location": {
+                        "lat": 43.8069504,
+                        "lng": -79.4516015
+                    },
+                    "distance": 61,
+                    "duration": 52
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8069504,
+                        "lng": -79.4516015
+                    },
+                    "end_location": {
+                        "lat": 43.8069479,
+                        "lng": -79.4516864
+                    },
+                    "distance": 7,
+                    "duration": 6
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8069479,
+                        "lng": -79.4516864
+                    },
+                    "end_location": {
+                        "lat": 43.807064,
+                        "lng": -79.4524862
+                    },
+                    "distance": 90,
+                    "duration": 87
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.807064,
+                "lng": -79.4524862
+            },
+            "start_address": "1 Promenade Cir, Thornhill, ON L4J 4P8, Canada",
+            "end_location": {
+                "lat": 43.8606171,
+                "lng": -79.2113626
+            },
+            "end_address": "Rouge National Urban Park, 7277 14th Ave, Markham, ON L6B 1A8, Canada",
+            "distance": 29366,
+            "duration": 6462,
+            "steps": [
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.807064,
+                        "lng": -79.4524862
+                    },
+                    "end_location": {
+                        "lat": 43.8069479,
+                        "lng": -79.4516864
+                    },
+                    "distance": 90,
+                    "duration": 87
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8069479,
+                        "lng": -79.4516864
+                    },
+                    "end_location": {
+                        "lat": 43.80706470000001,
+                        "lng": -79.4501674
+                    },
+                    "distance": 123,
+                    "duration": 101
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.80706470000001,
+                        "lng": -79.4501674
+                    },
+                    "end_location": {
+                        "lat": 43.80712760000001,
+                        "lng": -79.4494103
+                    },
+                    "distance": 67,
+                    "duration": 59
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.80712760000001,
+                        "lng": -79.4494103
+                    },
+                    "end_location": {
+                        "lat": 43.807402,
+                        "lng": -79.44946159999999
+                    },
+                    "distance": 31,
+                    "duration": 28
+                },
+                {
+                    "mode": "TRANSIT",
+                    "start_location": {
+                        "lat": 43.807404,
+                        "lng": -79.44944699999999
+                    },
+                    "end_location": {
+                        "lat": 43.79149,
+                        "lng": -79.41831599999999
+                    },
+                    "distance": 4589,
+                    "duration": 864,
+                    "transit_details": {
+                        "departure_stop_name": "Bathurst St / East Promenade",
+                        "arrival_stop_name": "Yonge St / Centre Av",
+                        "departure_time": "2025-11-11 13:45:53 EST",
+                        "arrival_time": "2025-11-11 13:59:35 EST",
+                        "line_name": "Bathurst",
+                        "line_short_name": "088",
+                        "line_color": "#00a88e",
+                        "line_text_color": "#ffffff",
+                        "vehicle_name": "Bus",
+                        "vehicle_type": "BUS",
+                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                        "num_stops": 14
+                    }
+                },
+                {
+                    "mode": "TRANSIT",
+                    "start_location": {
+                        "lat": 43.79149,
+                        "lng": -79.41831599999999
+                    },
+                    "end_location": {
+                        "lat": 43.827824,
+                        "lng": -79.34163199999999
+                    },
+                    "distance": 9216,
+                    "duration": 1446,
+                    "transit_details": {
+                        "departure_stop_name": "Yonge St / Centre Av",
+                        "arrival_stop_name": "Esna Park Dr / Alden Rd",
+                        "departure_time": "2025-11-11 14:03:54 EST",
+                        "arrival_time": "2025-11-11 14:28:00 EST",
+                        "line_name": "Milliken",
+                        "line_short_name": "002",
+                        "line_color": "#c4a006",
+                        "line_text_color": "#ffffff",
+                        "vehicle_name": "Bus",
+                        "vehicle_type": "BUS",
+                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                        "num_stops": 33
+                    }
+                },
+                {
+                    "mode": "TRANSIT",
+                    "start_location": {
+                        "lat": 43.827824,
+                        "lng": -79.34163199999999
+                    },
+                    "end_location": {
+                        "lat": 43.86212,
+                        "lng": -79.218586
+                    },
+                    "distance": 14490,
+                    "duration": 1961,
+                    "transit_details": {
+                        "departure_stop_name": "Esna Park Dr / Alden Rd",
+                        "arrival_stop_name": "14th Av / Vettise Av",
+                        "departure_time": "2025-11-11 14:45:40 EST",
+                        "arrival_time": "2025-11-11 15:18:21 EST",
+                        "line_name": "14th Avenue",
+                        "line_short_name": "014",
+                        "line_color": "#66a6bc",
+                        "line_text_color": "#ffffff",
+                        "vehicle_name": "Bus",
+                        "vehicle_type": "BUS",
+                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                        "num_stops": 46
+                    }
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8621294,
+                        "lng": -79.2185899
+                    },
+                    "end_location": {
+                        "lat": 43.8624755,
+                        "lng": -79.2124992
+                    },
+                    "distance": 514,
+                    "duration": 439
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8624755,
+                        "lng": -79.2124992
+                    },
+                    "end_location": {
+                        "lat": 43.860755,
+                        "lng": -79.2111736
+                    },
+                    "distance": 224,
+                    "duration": 181
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.860755,
+                        "lng": -79.2111736
+                    },
+                    "end_location": {
+                        "lat": 43.8606171,
+                        "lng": -79.2113626
+                    },
+                    "distance": 22,
+                    "duration": 18
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.8606171,
+                "lng": -79.2113626
+            },
+            "start_address": "Rouge National Urban Park, 7277 14th Ave, Markham, ON L6B 1A8, Canada",
+            "end_location": {
+                "lat": 43.6502874,
+                "lng": -79.3595428
+            },
+            "end_address": "Distillery District, Toronto, ON M5A, Canada",
+            "distance": 37484,
+            "duration": 5546,
+            "steps": [
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8606171,
+                        "lng": -79.2113626
+                    },
+                    "end_location": {
+                        "lat": 43.860755,
+                        "lng": -79.2111736
+                    },
+                    "distance": 22,
+                    "duration": 19
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.860755,
+                        "lng": -79.2111736
+                    },
+                    "end_location": {
+                        "lat": 43.8624755,
+                        "lng": -79.2124992
+                    },
+                    "distance": 224,
+                    "duration": 181
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8624755,
+                        "lng": -79.2124992
+                    },
+                    "end_location": {
+                        "lat": 43.8622912,
+                        "lng": -79.2162101
+                    },
+                    "distance": 305,
+                    "duration": 254
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8622912,
+                        "lng": -79.2162101
+                    },
+                    "end_location": {
+                        "lat": 43.8626021,
+                        "lng": -79.2159867
+                    },
+                    "distance": 25,
+                    "duration": 40
+                },
+                {
+                    "mode": "TRANSIT",
+                    "start_location": {
+                        "lat": 43.862601,
+                        "lng": -79.21598399999999
+                    },
+                    "end_location": {
+                        "lat": 43.856361,
+                        "lng": -79.25541700000001
+                    },
+                    "distance": 5692,
+                    "duration": 788,
+                    "transit_details": {
+                        "departure_stop_name": "Box Grove Collector / 14th Av",
+                        "arrival_stop_name": "14th Av / Markham Rd",
+                        "departure_time": "2025-11-11 14:04:54 EST",
+                        "arrival_time": "2025-11-11 14:18:02 EST",
+                        "line_name": "14th Avenue",
+                        "line_short_name": "014",
+                        "line_color": "#66a6bc",
+                        "line_text_color": "#ffffff",
+                        "vehicle_name": "Bus",
+                        "vehicle_type": "BUS",
+                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                        "num_stops": 20
+                    }
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8563688,
+                        "lng": -79.2554162
+                    },
+                    "end_location": {
+                        "lat": 43.8561623,
+                        "lng": -79.25585219999999
+                    },
+                    "distance": 35,
+                    "duration": 38
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8561623,
+                        "lng": -79.25585219999999
+                    },
+                    "end_location": {
+                        "lat": 43.8563228,
+                        "lng": -79.25588920000001
+                    },
+                    "distance": 24,
+                    "duration": 30
+                },
+                {
+                    "mode": "TRANSIT",
+                    "start_location": {
+                        "lat": 43.85631009999999,
+                        "lng": -79.255932
+                    },
+                    "end_location": {
+                        "lat": 43.813202,
+                        "lng": -79.24336199999999
+                    },
+                    "distance": 4947,
+                    "duration": 763,
+                    "transit_details": {
+                        "departure_stop_name": "Markham Rd at 14th Ave",
+                        "arrival_stop_name": "Markham Rd at Finch Ave East",
+                        "departure_time": "2025-11-11 14:28:24 EST",
+                        "arrival_time": "2025-11-11 14:41:07 EST",
+                        "line_name": "Markham Rd",
+                        "line_short_name": "102",
+                        "line_color": "#ed1c24",
+                        "line_text_color": "#ffffff",
+                        "vehicle_name": "Bus",
+                        "vehicle_type": "BUS",
+                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                        "num_stops": 12
+                    }
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.81319269999999,
+                        "lng": -79.2434087
+                    },
+                    "end_location": {
+                        "lat": 43.8130464,
+                        "lng": -79.2433525
+                    },
+                    "distance": 24,
+                    "duration": 18
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8130464,
+                        "lng": -79.2433525
+                    },
+                    "end_location": {
+                        "lat": 43.8130467,
+                        "lng": -79.2433508
+                    },
+                    "distance": 12,
+                    "duration": 10
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8130467,
+                        "lng": -79.2433508
+                    },
+                    "end_location": {
+                        "lat": 43.8128336,
+                        "lng": -79.2432635
+                    },
+                    "distance": 11,
+                    "duration": 18
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8128336,
+                        "lng": -79.2432635
+                    },
+                    "end_location": {
+                        "lat": 43.8128095,
+                        "lng": -79.2433745
+                    },
+                    "distance": 21,
+                    "duration": 28
+                },
+                {
+                    "mode": "TRANSIT",
+                    "start_location": {
+                        "lat": 43.812756,
+                        "lng": -79.24336199999999
+                    },
+                    "end_location": {
+                        "lat": 43.819229,
+                        "lng": -79.220757
+                    },
+                    "distance": 2075,
+                    "duration": 380,
+                    "transit_details": {
+                        "departure_stop_name": "Finch Ave East at Markham Rd",
+                        "arrival_stop_name": "Finch Ave East at Morningside Ave",
+                        "departure_time": "2025-11-11 14:47:53 EST",
+                        "arrival_time": "2025-11-11 14:54:13 EST",
+                        "line_name": "Finch Express",
+                        "line_short_name": "939C",
+                        "line_color": "#02a651",
+                        "line_text_color": "#ffffff",
+                        "vehicle_name": "Bus",
+                        "vehicle_type": "BUS",
+                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                        "num_stops": 6
+                    }
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8192343,
+                        "lng": -79.220787
+                    },
+                    "end_location": {
+                        "lat": 43.8196079,
+                        "lng": -79.2208496
+                    },
+                    "distance": 47,
+                    "duration": 39
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.8196079,
+                        "lng": -79.2208496
+                    },
+                    "end_location": {
+                        "lat": 43.8187975,
+                        "lng": -79.21538460000001
+                    },
+                    "distance": 494,
+                    "duration": 387
+                },
+                {
+                    "mode": "TRANSIT",
+                    "start_location": {
+                        "lat": 43.818821,
+                        "lng": -79.215363
+                    },
+                    "end_location": {
+                        "lat": 43.6639402,
+                        "lng": -79.36774559999999
+                    },
+                    "distance": 21563,
+                    "duration": 150,
+                    "transit_details": {
+                        "departure_stop_name": "Morningside Ave at Old Finch Ave",
+                        "arrival_stop_name": "Parliament St at Carlton St",
+                        "departure_time": "2025-11-11 15:07:00 EST",
+                        "arrival_time": "2025-11-11 15:09:30 EST",
+                        "line_name": "Parliament",
+                        "line_short_name": "65",
+                        "line_color": "#ed1c24",
+                        "line_text_color": "#ffffff",
+                        "vehicle_name": "Bus",
+                        "vehicle_type": "BUS",
+                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                        "num_stops": 2
+                    }
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.663947,
+                        "lng": -79.3677148
+                    },
+                    "end_location": {
+                        "lat": 43.6643542,
+                        "lng": -79.3681313
+                    },
+                    "distance": 53,
+                    "duration": 56
+                },
+                {
+                    "mode": "TRANSIT",
+                    "start_location": {
+                        "lat": 43.66435999999999,
+                        "lng": -79.36810299999999
+                    },
+                    "end_location": {
+                        "lat": 43.650272,
+                        "lng": -79.362282
+                    },
+                    "distance": 1651,
+                    "duration": 575,
+                    "transit_details": {
+                        "departure_stop_name": "Parliament St at Carlton St",
+                        "arrival_stop_name": "Parliament St at Mill St",
+                        "departure_time": "2025-11-11 15:15:55 EST",
+                        "arrival_time": "2025-11-11 15:25:30 EST",
+                        "line_name": "Parliament",
+                        "line_short_name": "65",
+                        "line_color": "#ed1c24",
+                        "line_text_color": "#ffffff",
+                        "vehicle_name": "Bus",
+                        "vehicle_type": "BUS",
+                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                        "num_stops": 10
+                    }
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6502726,
+                        "lng": -79.362279
+                    },
+                    "end_location": {
+                        "lat": 43.650094,
+                        "lng": -79.3619743
+                    },
+                    "distance": 23,
+                    "duration": 27
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.650094,
+                        "lng": -79.3619743
+                    },
+                    "end_location": {
+                        "lat": 43.6500976,
+                        "lng": -79.359465
+                    },
+                    "distance": 214,
+                    "duration": 171
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6500976,
+                        "lng": -79.359465
+                    },
+                    "end_location": {
+                        "lat": 43.6502874,
+                        "lng": -79.3595428
+                    },
+                    "distance": 22,
+                    "duration": 18
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6502874,
+                "lng": -79.3595428
+            },
+            "start_address": "Distillery District, Toronto, ON M5A, Canada",
+            "end_location": {
+                "lat": 43.6420735,
+                "lng": -79.3868485
+            },
+            "end_address": "288 Bremner Blvd, Toronto, ON M5V 3L9, Canada",
+            "distance": 4204,
+            "duration": 1896,
+            "steps": [
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6502874,
+                        "lng": -79.3595428
+                    },
+                    "end_location": {
+                        "lat": 43.6508517,
+                        "lng": -79.3572614
+                    },
+                    "distance": 200,
+                    "duration": 158
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6508517,
+                        "lng": -79.3572614
+                    },
+                    "end_location": {
+                        "lat": 43.6523644,
+                        "lng": -79.3581133
+                    },
+                    "distance": 183,
+                    "duration": 153
+                },
+                {
+                    "mode": "TRANSIT",
+                    "start_location": {
+                        "lat": 43.6524233,
+                        "lng": -79.35778560000001
                     },
                     "end_location": {
                         "lat": 43.646563,
                         "lng": -79.3902579
                     },
-                    "distance": 1588,
-                    "duration": 562,
+                    "distance": 3168,
+                    "duration": 998,
                     "transit_details": {
-                        "departure_stop_name": "King St East At Jarvis St West Side",
+                        "departure_stop_name": "Cherry St at Front St East",
                         "arrival_stop_name": "King St West at John St West Side",
-                        "departure_time": "2025-11-03 19:12:23 EST",
-                        "arrival_time": "2025-11-03 19:23:57 EST",
+                        "departure_time": "2025-11-11 13:44:41 EST",
+                        "arrival_time": "2025-11-11 14:01:19 EST",
                         "line_name": "King",
                         "line_short_name": "504A",
                         "line_color": "#ed1c24",
@@ -175,7 +1226,7 @@
                         "vehicle_name": "Streetcar",
                         "vehicle_type": "TRAM",
                         "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/tram2.png",
-                        "num_stops": 5
+                        "num_stops": 10
                     }
                 },
                 {
@@ -250,11 +1301,79 @@
                         "lng": -79.3879419
                     },
                     "end_location": {
+                        "lat": 43.64197420000001,
+                        "lng": -79.38701130000001
+                    },
+                    "distance": 109,
+                    "duration": 95
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.64197420000001,
+                        "lng": -79.38701130000001
+                    },
+                    "end_location": {
+                        "lat": 43.6420735,
+                        "lng": -79.3868485
+                    },
+                    "distance": 17,
+                    "duration": 14
+                }
+            ]
+        },
+        {
+            "start_location": {
+                "lat": 43.6420735,
+                "lng": -79.3868485
+            },
+            "start_address": "288 Bremner Blvd, Toronto, ON M5V 3L9, Canada",
+            "end_location": {
+                "lat": 43.642855,
+                "lng": -79.38718730000001
+            },
+            "end_address": "290 Bremner Blvd, Toronto, ON M5V 3L9, Canada",
+            "distance": 170,
+            "duration": 145,
+            "steps": [
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6420735,
+                        "lng": -79.3868485
+                    },
+                    "end_location": {
+                        "lat": 43.6420241,
+                        "lng": -79.3869083
+                    },
+                    "distance": 7,
+                    "duration": 5
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.6420241,
+                        "lng": -79.3869083
+                    },
+                    "end_location": {
+                        "lat": 43.64297320000001,
+                        "lng": -79.3865746
+                    },
+                    "distance": 112,
+                    "duration": 98
+                },
+                {
+                    "mode": "WALKING",
+                    "start_location": {
+                        "lat": 43.64297320000001,
+                        "lng": -79.3865746
+                    },
+                    "end_location": {
                         "lat": 43.642855,
                         "lng": -79.38718730000001
                     },
-                    "distance": 69,
-                    "duration": 52
+                    "distance": 51,
+                    "duration": 42
                 }
             ]
         },
@@ -265,12 +1384,12 @@
             },
             "start_address": "290 Bremner Blvd, Toronto, ON M5V 3L9, Canada",
             "end_location": {
-                "lat": 43.6469557,
-                "lng": -79.41368419999999
+                "lat": 43.6495665,
+                "lng": -79.3921263
             },
-            "end_address": "Trinity Bellwoods Park, 790 Queen St W, Toronto, ON M6J 1G3, Canada",
-            "distance": 3046,
-            "duration": 1699,
+            "end_address": "335 Queen St W, Toronto, ON M5V 2A1, Canada",
+            "distance": 1025,
+            "duration": 895,
             "steps": [
                 {
                     "mode": "WALKING",
@@ -331,286 +1450,74 @@
                         "lng": -79.38851149999999
                     },
                     "end_location": {
-                        "lat": 43.6467014,
-                        "lng": -79.3896707
+                        "lat": 43.6498109,
+                        "lng": -79.3909666
                     },
-                    "distance": 304,
-                    "duration": 263
+                    "distance": 682,
+                    "duration": 609
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.6467014,
-                        "lng": -79.3896707
+                        "lat": 43.6498109,
+                        "lng": -79.3909666
                     },
                     "end_location": {
-                        "lat": 43.64656960000001,
-                        "lng": -79.39025830000001
+                        "lat": 43.6495665,
+                        "lng": -79.3921263
                     },
-                    "distance": 40,
-                    "duration": 44
-                },
-                {
-                    "mode": "TRANSIT",
-                    "start_location": {
-                        "lat": 43.646563,
-                        "lng": -79.3902579
-                    },
-                    "end_location": {
-                        "lat": 43.6421731,
-                        "lng": -79.4117323
-                    },
-                    "distance": 1811,
-                    "duration": 637,
-                    "transit_details": {
-                        "departure_stop_name": "King St West at John St West Side",
-                        "arrival_stop_name": "King St West at Strachan Ave",
-                        "departure_time": "2025-11-03 19:14:24 EST",
-                        "arrival_time": "2025-11-03 19:25:01 EST",
-                        "line_name": "King",
-                        "line_short_name": "504B",
-                        "line_color": "#ed1c24",
-                        "line_text_color": "#ffffff",
-                        "vehicle_name": "Streetcar",
-                        "vehicle_type": "TRAM",
-                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/tram2.png",
-                        "num_stops": 7
-                    }
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6421785,
-                        "lng": -79.41172809999999
-                    },
-                    "end_location": {
-                        "lat": 43.6421473,
-                        "lng": -79.41187490000002
-                    },
-                    "distance": 21,
-                    "duration": 17
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6421473,
-                        "lng": -79.41187490000002
-                    },
-                    "end_location": {
-                        "lat": 43.6454377,
-                        "lng": -79.41322459999999
-                    },
-                    "distance": 391,
-                    "duration": 339
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6454377,
-                        "lng": -79.41322459999999
-                    },
-                    "end_location": {
-                        "lat": 43.6460176,
-                        "lng": -79.413867
-                    },
-                    "distance": 84,
-                    "duration": 70
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6460176,
-                        "lng": -79.413867
-                    },
-                    "end_location": {
-                        "lat": 43.6469557,
-                        "lng": -79.41368419999999
-                    },
-                    "distance": 143,
-                    "duration": 116
+                    "distance": 91,
+                    "duration": 76
                 }
             ]
         },
         {
             "start_location": {
-                "lat": 43.6469557,
-                "lng": -79.41368419999999
+                "lat": 43.6495665,
+                "lng": -79.3921263
             },
-            "start_address": "Trinity Bellwoods Park, 790 Queen St W, Toronto, ON M6J 1G3, Canada",
+            "start_address": "335 Queen St W, Toronto, ON M5V 2A1, Canada",
             "end_location": {
-                "lat": 43.646269,
-                "lng": -79.4194916
+                "lat": 43.65482069999999,
+                "lng": -79.4002605
             },
-            "end_address": "93A Ossington Ave, Toronto, ON M6J 0G1, Canada",
-            "distance": 646,
-            "duration": 528,
+            "end_address": "160 Baldwin St, Toronto, ON M5T 3K7, Canada",
+            "distance": 1288,
+            "duration": 777,
             "steps": [
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.6469557,
-                        "lng": -79.41368419999999
+                        "lat": 43.6495665,
+                        "lng": -79.3921263
                     },
                     "end_location": {
-                        "lat": 43.6466316,
-                        "lng": -79.4142311
+                        "lat": 43.6489199,
+                        "lng": -79.39620409999999
                     },
-                    "distance": 60,
-                    "duration": 49
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6466316,
-                        "lng": -79.4142311
-                    },
-                    "end_location": {
-                        "lat": 43.6471478,
-                        "lng": -79.4158448
-                    },
-                    "distance": 147,
-                    "duration": 119
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6471478,
-                        "lng": -79.4158448
-                    },
-                    "end_location": {
-                        "lat": 43.6471841,
-                        "lng": -79.415863
-                    },
-                    "distance": 4,
-                    "duration": 3
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6471841,
-                        "lng": -79.415863
-                    },
-                    "end_location": {
-                        "lat": 43.6469658,
-                        "lng": -79.41724909999999
-                    },
-                    "distance": 106,
-                    "duration": 89
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6469658,
-                        "lng": -79.41724909999999
-                    },
-                    "end_location": {
-                        "lat": 43.6472334,
-                        "lng": -79.4173548
-                    },
-                    "distance": 40,
-                    "duration": 37
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6472334,
-                        "lng": -79.4173548
-                    },
-                    "end_location": {
-                        "lat": 43.6472925,
-                        "lng": -79.41782049999999
-                    },
-                    "distance": 44,
-                    "duration": 36
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6472925,
-                        "lng": -79.41782049999999
-                    },
-                    "end_location": {
-                        "lat": 43.6469082,
-                        "lng": -79.4197208
-                    },
-                    "distance": 169,
-                    "duration": 137
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6469082,
-                        "lng": -79.4197208
-                    },
-                    "end_location": {
-                        "lat": 43.646269,
-                        "lng": -79.4194916
-                    },
-                    "distance": 76,
-                    "duration": 59
-                }
-            ]
-        },
-        {
-            "start_location": {
-                "lat": 43.646269,
-                "lng": -79.4194916
-            },
-            "start_address": "93A Ossington Ave, Toronto, ON M6J 0G1, Canada",
-            "end_location": {
-                "lat": 43.6496577,
-                "lng": -79.4293034
-            },
-            "end_address": "1418 Dundas St W, Toronto, ON M6J 1Y5, Canada",
-            "distance": 1188,
-            "duration": 649,
-            "steps": [
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.646269,
-                        "lng": -79.4194916
-                    },
-                    "end_location": {
-                        "lat": 43.6494323,
-                        "lng": -79.4206639
-                    },
-                    "distance": 356,
-                    "duration": 312
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6494323,
-                        "lng": -79.4206639
-                    },
-                    "end_location": {
-                        "lat": 43.6494633,
-                        "lng": -79.42049910000001
-                    },
-                    "distance": 25,
-                    "duration": 29
+                    "distance": 346,
+                    "duration": 293
                 },
                 {
                     "mode": "TRANSIT",
                     "start_location": {
-                        "lat": 43.649429,
-                        "lng": -79.420486
+                        "lat": 43.64912959999999,
+                        "lng": -79.3964688
                     },
                     "end_location": {
-                        "lat": 43.64965919999999,
-                        "lng": -79.4296286
+                        "lat": 43.655603,
+                        "lng": -79.3990467
                     },
-                    "distance": 753,
-                    "duration": 260,
+                    "distance": 754,
+                    "duration": 313,
                     "transit_details": {
-                        "departure_stop_name": "Dundas St West at Ossington Ave",
-                        "arrival_stop_name": "Dundas St West at Gladstone Ave",
-                        "departure_time": "2025-11-03 19:19:50 EST",
-                        "arrival_time": "2025-11-03 19:24:10 EST",
-                        "line_name": "Dundas",
-                        "line_short_name": "505",
-                        "line_color": "#ed1c24",
+                        "departure_stop_name": "Spadina Ave At Queen St West South Side",
+                        "arrival_stop_name": "Spadina Ave at Nassau St",
+                        "departure_time": "2025-11-11 13:52:52 EST",
+                        "arrival_time": "2025-11-11 13:58:05 EST",
+                        "line_name": "Spadina",
+                        "line_short_name": "510",
+                        "line_color": "#ee1d23",
                         "line_text_color": "#ffffff",
                         "vehicle_name": "Streetcar",
                         "vehicle_type": "TRAM",
@@ -621,926 +1528,28 @@
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.64967,
-                        "lng": -79.42997559999999
+                        "lat": 43.6558054,
+                        "lng": -79.3992995
                     },
                     "end_location": {
-                        "lat": 43.6496577,
-                        "lng": -79.4293034
+                        "lat": 43.65505900000001,
+                        "lng": -79.39912629999999
                     },
-                    "distance": 54,
-                    "duration": 45
-                }
-            ]
-        },
-        {
-            "start_location": {
-                "lat": 43.6496577,
-                "lng": -79.4293034
-            },
-            "start_address": "1418 Dundas St W, Toronto, ON M6J 1Y5, Canada",
-            "end_location": {
-                "lat": 43.658218,
-                "lng": -79.442627
-            },
-            "end_address": "659 Lansdowne Ave, Toronto, ON M6H 3Y2, Canada",
-            "distance": 1839,
-            "duration": 941,
-            "steps": [
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6496577,
-                        "lng": -79.4293034
-                    },
-                    "end_location": {
-                        "lat": 43.6502425,
-                        "lng": -79.4396283
-                    },
-                    "distance": 843,
-                    "duration": 710
+                    "distance": 83,
+                    "duration": 64
                 },
                 {
                     "mode": "WALKING",
                     "start_location": {
-                        "lat": 43.6502425,
-                        "lng": -79.4396283
+                        "lat": 43.65505900000001,
+                        "lng": -79.39912629999999
                     },
                     "end_location": {
-                        "lat": 43.6499937,
-                        "lng": -79.43958320000002
-                    },
-                    "distance": 22,
-                    "duration": 26
-                },
-                {
-                    "mode": "TRANSIT",
-                    "start_location": {
-                        "lat": 43.649963,
-                        "lng": -79.43955199999999
-                    },
-                    "end_location": {
-                        "lat": 43.658218,
-                        "lng": -79.442627
-                    },
-                    "distance": 974,
-                    "duration": 164,
-                    "transit_details": {
-                        "departure_stop_name": "Lansdowne Ave at Dundas St West",
-                        "arrival_stop_name": "Lansdowne Ave at Bloor St West",
-                        "departure_time": "2025-11-03 19:17:54 EST",
-                        "arrival_time": "2025-11-03 19:20:38 EST",
-                        "line_name": "Lansdowne",
-                        "line_short_name": "47A",
-                        "line_color": "#ed1c24",
-                        "line_text_color": "#ffffff",
-                        "vehicle_name": "Bus",
-                        "vehicle_type": "BUS",
-                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
-                        "num_stops": 4
-                    }
-                }
-            ]
-        },
-        {
-            "start_location": {
-                "lat": 43.6580979,
-                "lng": -79.4426032
-            },
-            "start_address": "659 Lansdowne Ave, Toronto, ON M6H 3Y2, Canada",
-            "end_location": {
-                "lat": 43.6820876,
-                "lng": -79.4188846
-            },
-            "end_address": "36 Vaughan Rd, Toronto, ON M6G 2N3, Canada",
-            "distance": 4868,
-            "duration": 1720,
-            "steps": [
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6580979,
-                        "lng": -79.4426032
-                    },
-                    "end_location": {
-                        "lat": 43.6590347,
-                        "lng": -79.4428539
-                    },
-                    "distance": 107,
-                    "duration": 96
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.659042,
-                        "lng": -79.442818
-                    },
-                    "end_location": {
-                        "lat": 43.6591,
-                        "lng": -79.44278
-                    },
-                    "distance": 7,
-                    "duration": 80
-                },
-                {
-                    "mode": "TRANSIT",
-                    "start_location": {
-                        "lat": 43.6591,
-                        "lng": -79.44278
-                    },
-                    "end_location": {
-                        "lat": 43.6655787,
-                        "lng": -79.4112724
-                    },
-                    "distance": 2677,
-                    "duration": 347,
-                    "transit_details": {
-                        "departure_stop_name": "Lansdowne",
-                        "arrival_stop_name": "Bathurst",
-                        "departure_time": "2025-11-03 19:08:24 EST",
-                        "arrival_time": "2025-11-03 19:14:11 EST",
-                        "line_name": "Line 2 Bloor\u2013Danforth",
-                        "line_short_name": "2",
-                        "line_color": "#009247",
-                        "line_text_color": "#ffffff",
-                        "vehicle_name": "Subway",
-                        "vehicle_type": "SUBWAY",
-                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
-                        "num_stops": 4
-                    }
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6655787,
-                        "lng": -79.4112724
-                    },
-                    "end_location": {
-                        "lat": 43.6660712,
-                        "lng": -79.41105270000001
-                    },
-                    "distance": 57,
-                    "duration": 80
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6660712,
-                        "lng": -79.41105270000001
-                    },
-                    "end_location": {
-                        "lat": 43.66606400000001,
-                        "lng": -79.41107960000001
-                    },
-                    "distance": 2,
-                    "duration": 2
-                },
-                {
-                    "mode": "TRANSIT",
-                    "start_location": {
-                        "lat": 43.66606489999999,
-                        "lng": -79.4110747
-                    },
-                    "end_location": {
-                        "lat": 43.679714,
-                        "lng": -79.416855
-                    },
-                    "distance": 1698,
-                    "duration": 437,
-                    "transit_details": {
-                        "departure_stop_name": "Bathurst Station",
-                        "arrival_stop_name": "Bathurst St at Nina St",
-                        "departure_time": "2025-11-03 19:22:00 EST",
-                        "arrival_time": "2025-11-03 19:29:17 EST",
-                        "line_name": "Bathurst",
-                        "line_short_name": "7",
-                        "line_color": "#ed1c24",
-                        "line_text_color": "#ffffff",
-                        "vehicle_name": "Bus",
-                        "vehicle_type": "BUS",
-                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
-                        "num_stops": 6
-                    }
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6797165,
-                        "lng": -79.41684269999999
-                    },
-                    "end_location": {
-                        "lat": 43.68106179999999,
-                        "lng": -79.4175765
-                    },
-                    "distance": 158,
-                    "duration": 151
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.68106179999999,
-                        "lng": -79.4175765
-                    },
-                    "end_location": {
-                        "lat": 43.6820876,
-                        "lng": -79.4188846
-                    },
-                    "distance": 162,
-                    "duration": 138
-                }
-            ]
-        },
-        {
-            "start_location": {
-                "lat": 43.6820876,
-                "lng": -79.4188846
-            },
-            "start_address": "36 Vaughan Rd, Toronto, ON M6G 2N3, Canada",
-            "end_location": {
-                "lat": 43.6783312,
-                "lng": -79.4096715
-            },
-            "end_address": "1 Austin Terrace, Toronto, ON M5R 1X8, Canada",
-            "distance": 1549,
-            "duration": 1145,
-            "steps": [
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6820876,
-                        "lng": -79.4188846
-                    },
-                    "end_location": {
-                        "lat": 43.6826421,
-                        "lng": -79.42002459999999
-                    },
-                    "distance": 114,
-                    "duration": 95
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6826421,
-                        "lng": -79.42002459999999
-                    },
-                    "end_location": {
-                        "lat": 43.682806,
-                        "lng": -79.41972729999999
-                    },
-                    "distance": 25,
-                    "duration": 40
-                },
-                {
-                    "mode": "TRANSIT",
-                    "start_location": {
-                        "lat": 43.6828684,
-                        "lng": -79.41949
-                    },
-                    "end_location": {
-                        "lat": 43.6841843,
-                        "lng": -79.4153858
-                    },
-                    "distance": 442,
-                    "duration": 108,
-                    "transit_details": {
-                        "departure_stop_name": "St Clair Ave West at Vaughan Rd East Side",
-                        "arrival_stop_name": "St Clair West Station",
-                        "departure_time": "2025-11-03 19:10:05 EST",
-                        "arrival_time": "2025-11-03 19:13:09 EST",
-                        "line_name": "Vaughan",
-                        "line_short_name": "90",
-                        "line_color": "#ed1c24",
-                        "line_text_color": "#ffffff",
-                        "vehicle_name": "Bus",
-                        "vehicle_type": "BUS",
-                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
-                        "num_stops": 2
-                    }
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6836448,
-                        "lng": -79.4151757
-                    },
-                    "end_location": {
-                        "lat": 43.6836726,
-                        "lng": -79.4150173
-                    },
-                    "distance": 12,
-                    "duration": 9
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6836726,
-                        "lng": -79.4150173
-                    },
-                    "end_location": {
-                        "lat": 43.6823813,
-                        "lng": -79.4103264
-                    },
-                    "distance": 417,
-                    "duration": 329
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6823813,
-                        "lng": -79.4103264
-                    },
-                    "end_location": {
-                        "lat": 43.6817225,
-                        "lng": -79.41006949999999
-                    },
-                    "distance": 75,
-                    "duration": 99
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6817225,
-                        "lng": -79.41006949999999
-                    },
-                    "end_location": {
-                        "lat": 43.681728,
-                        "lng": -79.4099901
-                    },
-                    "distance": 13,
-                    "duration": 13
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.681728,
-                        "lng": -79.4099901
-                    },
-                    "end_location": {
-                        "lat": 43.6788974,
-                        "lng": -79.4086772
-                    },
-                    "distance": 333,
-                    "duration": 285
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6788974,
-                        "lng": -79.4086772
-                    },
-                    "end_location": {
-                        "lat": 43.6786144,
-                        "lng": -79.4094628
-                    },
-                    "distance": 65,
-                    "duration": 49
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6786144,
-                        "lng": -79.4094628
-                    },
-                    "end_location": {
-                        "lat": 43.6784745,
-                        "lng": -79.4093936
-                    },
-                    "distance": 21,
-                    "duration": 16
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6784745,
-                        "lng": -79.4093936
-                    },
-                    "end_location": {
-                        "lat": 43.6783312,
-                        "lng": -79.4096715
-                    },
-                    "distance": 32,
-                    "duration": 25
-                }
-            ]
-        },
-        {
-            "start_location": {
-                "lat": 43.6783312,
-                "lng": -79.4096715
-            },
-            "start_address": "1 Austin Terrace, Toronto, ON M5R 1X8, Canada",
-            "end_location": {
-                "lat": 43.6800348,
-                "lng": -79.339658
-            },
-            "end_address": "888 Danforth Ave, Toronto, ON M4J 1L8, Canada",
-            "distance": 7427,
-            "duration": 2072,
-            "steps": [
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6783312,
-                        "lng": -79.4096715
-                    },
-                    "end_location": {
-                        "lat": 43.6784745,
-                        "lng": -79.4093936
-                    },
-                    "distance": 32,
-                    "duration": 27
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6784745,
-                        "lng": -79.4093936
-                    },
-                    "end_location": {
-                        "lat": 43.6786144,
-                        "lng": -79.4094628
-                    },
-                    "distance": 21,
-                    "duration": 18
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6786144,
-                        "lng": -79.4094628
-                    },
-                    "end_location": {
-                        "lat": 43.6788051,
-                        "lng": -79.40874339999999
-                    },
-                    "distance": 62,
-                    "duration": 56
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6788051,
-                        "lng": -79.40874339999999
-                    },
-                    "end_location": {
-                        "lat": 43.6773408,
-                        "lng": -79.4081583
-                    },
-                    "distance": 176,
-                    "duration": 163
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6773408,
-                        "lng": -79.4081583
-                    },
-                    "end_location": {
-                        "lat": 43.6773719,
-                        "lng": -79.4080079
-                    },
-                    "distance": 6,
-                    "duration": 14
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6773719,
-                        "lng": -79.4080079
-                    },
-                    "end_location": {
-                        "lat": 43.6747908,
-                        "lng": -79.4069354
-                    },
-                    "distance": 297,
-                    "duration": 232
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6747908,
-                        "lng": -79.4069354
-                    },
-                    "end_location": {
-                        "lat": 43.6748282,
-                        "lng": -79.4067501
-                    },
-                    "distance": 25,
-                    "duration": 30
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6747749,
-                        "lng": -79.4067295
-                    },
-                    "end_location": {
-                        "lat": 43.6744608,
-                        "lng": -79.40688329999999
-                    },
-                    "distance": 37,
-                    "duration": 80
-                },
-                {
-                    "mode": "TRANSIT",
-                    "start_location": {
-                        "lat": 43.6744608,
-                        "lng": -79.40688329999999
-                    },
-                    "end_location": {
-                        "lat": 43.6685114,
-                        "lng": -79.3989156
-                    },
-                    "distance": 1279,
-                    "duration": 168,
-                    "transit_details": {
-                        "departure_stop_name": "Dupont",
-                        "arrival_stop_name": "St George",
-                        "departure_time": "2025-11-03 19:16:52 EST",
-                        "arrival_time": "2025-11-03 19:19:40 EST",
-                        "line_name": "Line 1 Yonge\u2013University",
-                        "line_short_name": "1",
-                        "line_color": "#f2bf14",
-                        "line_text_color": "#000000",
-                        "vehicle_name": "Subway",
-                        "vehicle_type": "SUBWAY",
-                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
-                        "num_stops": 2
-                    }
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6685114,
-                        "lng": -79.3989156
-                    },
-                    "end_location": {
-                        "lat": 43.6686015,
-                        "lng": -79.39870169999999
-                    },
-                    "distance": 19,
-                    "duration": 46
-                },
-                {
-                    "mode": "TRANSIT",
-                    "start_location": {
-                        "lat": 43.6686015,
-                        "lng": -79.39870169999999
-                    },
-                    "end_location": {
-                        "lat": 43.681149,
-                        "lng": -79.337486
-                    },
-                    "distance": 5194,
-                    "duration": 731,
-                    "transit_details": {
-                        "departure_stop_name": "St George",
-                        "arrival_stop_name": "Donlands",
-                        "departure_time": "2025-11-03 19:24:07 EST",
-                        "arrival_time": "2025-11-03 19:36:18 EST",
-                        "line_name": "Line 2 Bloor\u2013Danforth",
-                        "line_short_name": "2",
-                        "line_color": "#009247",
-                        "line_text_color": "#ffffff",
-                        "vehicle_name": "Subway",
-                        "vehicle_type": "SUBWAY",
-                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
-                        "num_stops": 8
-                    }
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.681149,
-                        "lng": -79.337486
-                    },
-                    "end_location": {
-                        "lat": 43.680935,
-                        "lng": -79.33764599999999
-                    },
-                    "distance": 27,
-                    "duration": 77
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6809445,
-                        "lng": -79.3376014
-                    },
-                    "end_location": {
-                        "lat": 43.6804766,
-                        "lng": -79.3374163
-                    },
-                    "distance": 57,
-                    "duration": 50
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6804766,
-                        "lng": -79.3374163
-                    },
-                    "end_location": {
-                        "lat": 43.6800348,
-                        "lng": -79.339658
-                    },
-                    "distance": 195,
-                    "duration": 158
-                }
-            ]
-        },
-        {
-            "start_location": {
-                "lat": 43.6800348,
-                "lng": -79.339658
-            },
-            "start_address": "888 Danforth Ave, Toronto, ON M4J 1L8, Canada",
-            "end_location": {
-                "lat": 43.6726532,
-                "lng": -79.28800749999999
-            },
-            "end_address": "2224 Queen St E, Toronto, ON M4E 1E9, Canada",
-            "distance": 5931,
-            "duration": 2398,
-            "steps": [
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6800348,
-                        "lng": -79.339658
-                    },
-                    "end_location": {
-                        "lat": 43.6799094,
-                        "lng": -79.3402959
-                    },
-                    "distance": 42,
-                    "duration": 34
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6799094,
-                        "lng": -79.3402959
-                    },
-                    "end_location": {
-                        "lat": 43.6793819,
-                        "lng": -79.3400529
-                    },
-                    "distance": 58,
-                    "duration": 65
-                },
-                {
-                    "mode": "TRANSIT",
-                    "start_location": {
-                        "lat": 43.679386,
-                        "lng": -79.340034
-                    },
-                    "end_location": {
-                        "lat": 43.663136,
-                        "lng": -79.333046
-                    },
-                    "distance": 1903,
-                    "duration": 509,
-                    "transit_details": {
-                        "departure_stop_name": "Jones Ave at Danforth Ave South Side",
-                        "arrival_stop_name": "Jones Ave at Queen St East",
-                        "departure_time": "2025-11-03 19:12:12 EST",
-                        "arrival_time": "2025-11-03 19:20:41 EST",
-                        "line_name": "Jones",
-                        "line_short_name": "83",
-                        "line_color": "#ed3237",
-                        "line_text_color": "#ffffff",
-                        "vehicle_name": "Bus",
-                        "vehicle_type": "BUS",
-                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
-                        "num_stops": 8
-                    }
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.66312019999999,
-                        "lng": -79.3331254
-                    },
-                    "end_location": {
-                        "lat": 43.6625818,
-                        "lng": -79.332888
-                    },
-                    "distance": 55,
-                    "duration": 43
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6625818,
-                        "lng": -79.332888
-                    },
-                    "end_location": {
-                        "lat": 43.66257239999999,
-                        "lng": -79.3329206
-                    },
-                    "distance": 13,
-                    "duration": 21
-                },
-                {
-                    "mode": "TRANSIT",
-                    "start_location": {
-                        "lat": 43.662579,
-                        "lng": -79.332924
-                    },
-                    "end_location": {
-                        "lat": 43.672554,
-                        "lng": -79.287689
-                    },
-                    "distance": 3818,
-                    "duration": 1258,
-                    "transit_details": {
-                        "departure_stop_name": "Queen St East at Jones Ave",
-                        "arrival_stop_name": "Queen St East at Beech Ave",
-                        "departure_time": "2025-11-03 19:28:55 EST",
-                        "arrival_time": "2025-11-03 19:49:53 EST",
-                        "line_name": "501 Queen",
-                        "line_short_name": "501",
-                        "line_color": "#ed1c24",
-                        "line_text_color": "#ffffff",
-                        "vehicle_name": "Streetcar",
-                        "vehicle_type": "TRAM",
-                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/tram2.png",
-                        "num_stops": 13
-                    }
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6725561,
-                        "lng": -79.2876898
-                    },
-                    "end_location": {
-                        "lat": 43.6725624,
-                        "lng": -79.2876596
-                    },
-                    "distance": 10,
-                    "duration": 9
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6725624,
-                        "lng": -79.2876596
-                    },
-                    "end_location": {
-                        "lat": 43.6726532,
-                        "lng": -79.28800749999999
-                    },
-                    "distance": 32,
-                    "duration": 35
-                }
-            ]
-        },
-        {
-            "start_location": {
-                "lat": 43.6726532,
-                "lng": -79.28800749999999
-            },
-            "start_address": "2224 Queen St E, Toronto, ON M4E 1E9, Canada",
-            "end_location": {
-                "lat": 43.7055493,
-                "lng": -79.23613089999999
-            },
-            "end_address": "Bluffers Park, 1 Brimley Rd S, Scarborough, ON M1M 3H4, Canada",
-            "distance": 9047,
-            "duration": 3442,
-            "steps": [
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6726532,
-                        "lng": -79.28800749999999
-                    },
-                    "end_location": {
-                        "lat": 43.6736443,
-                        "lng": -79.28321679999999
-                    },
-                    "distance": 408,
-                    "duration": 338
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6736443,
-                        "lng": -79.28321679999999
-                    },
-                    "end_location": {
-                        "lat": 43.6805641,
-                        "lng": -79.2860264
-                    },
-                    "distance": 820,
-                    "duration": 772
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.6805641,
-                        "lng": -79.2860264
-                    },
-                    "end_location": {
-                        "lat": 43.6807836,
-                        "lng": -79.2835788
-                    },
-                    "distance": 193,
-                    "duration": 172
-                },
-                {
-                    "mode": "TRANSIT",
-                    "start_location": {
-                        "lat": 43.680775,
-                        "lng": -79.28357700000001
-                    },
-                    "end_location": {
-                        "lat": 43.719185,
-                        "lng": -79.24065399999999
-                    },
-                    "distance": 5901,
-                    "duration": 855,
-                    "transit_details": {
-                        "departure_stop_name": "Kingston Rd at Victoria Park Ave East Side",
-                        "arrival_stop_name": "Brimley Rd at Kingston Rd North Side",
-                        "departure_time": "2025-11-03 19:31:05 EST",
-                        "arrival_time": "2025-11-03 19:45:20 EST",
-                        "line_name": "Kingston Road",
-                        "line_short_name": "12A",
-                        "line_color": "#ed1c24",
-                        "line_text_color": "#ffffff",
-                        "vehicle_name": "Bus",
-                        "vehicle_type": "BUS",
-                        "vehicle_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
-                        "num_stops": 19
-                    }
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.7191816,
-                        "lng": -79.24066959999999
-                    },
-                    "end_location": {
-                        "lat": 43.707715,
-                        "lng": -79.23641049999999
-                    },
-                    "distance": 1388,
-                    "duration": 1052
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.707715,
-                        "lng": -79.23641049999999
-                    },
-                    "end_location": {
-                        "lat": 43.7073323,
-                        "lng": -79.2355345
-                    },
-                    "distance": 87,
-                    "duration": 63
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.7073323,
-                        "lng": -79.2355345
-                    },
-                    "end_location": {
-                        "lat": 43.7065758,
-                        "lng": -79.2351202
-                    },
-                    "distance": 96,
-                    "duration": 66
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.7065758,
-                        "lng": -79.2351202
-                    },
-                    "end_location": {
-                        "lat": 43.7066072,
-                        "lng": -79.2352624
-                    },
-                    "distance": 16,
-                    "duration": 12
-                },
-                {
-                    "mode": "WALKING",
-                    "start_location": {
-                        "lat": 43.7066072,
-                        "lng": -79.2352624
-                    },
-                    "end_location": {
-                        "lat": 43.7055493,
-                        "lng": -79.23613089999999
-                    },
-                    "distance": 138,
-                    "duration": 111
+                        "lat": 43.65482069999999,
+                        "lng": -79.4002605
+                    },
+                    "distance": 105,
+                    "duration": 92
                 }
             ]
         }

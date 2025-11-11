@@ -1,17 +1,9 @@
 from openai import OpenAI
 from pydantic import BaseModel
 from dotenv import load_dotenv
+
+from typing import List, Tuple, Dict, Any, Optional
 import os
-
-load_dotenv(dotenv_path="api.env")
-api_key = os.getenv("OPENAI_API_KEY")
-
-
-client = OpenAI(
-  api_key=api_key
-)
-
-FILE_PATH = "backend/triproute_recommendations.json"
 
 CHAT_SYSTEM = """
 You are TripRoute Chat, a friendly routing assistant.
@@ -26,6 +18,7 @@ HARD RULES:
 - Do not provide places' hyperlinks or URLs before the user wants
 - Recommend must-go places or top-rated places with many reviews in the Google Maps Reviews.
 - All the recommendations need very sound and solid reasons.
+- Place the valuable recommendations first. 
 
 STYLE
 - If you don't think you can personalize the recommendations well, ask the user more questions.
@@ -74,16 +67,13 @@ class TripRouteRecommendations(BaseModel):
   trip_meta: TripMeta
   recommendations: list[RecommendationItem]
 
-messages_chat = [{"role": "system", "content": CHAT_SYSTEM}]
-messages_json = [{"role": "system", "content": STRUCTURE_SYSTEM}]
-
-def chat_reply_streaming(user_text: str) -> str:
-  messages_chat.append({"role": "user", "content": user_text})
+def chat_reply_streaming(user_chat: List[Dict], user_text: str) -> str:
+  user_chat.append({"role": "user", "content": user_text})
   
   with client.responses.create(
       model="gpt-5-mini",
       tools=[{"type": "web_search"}],
-      input=messages_chat,
+      input=user_chat,
       stream=True,
     ) as stream:
     response_chat = ""
@@ -94,12 +84,12 @@ def chat_reply_streaming(user_text: str) -> str:
         response_chat += event.delta
     print("\n")
 
-  messages_chat.append({"role": "assistant", "content": response_chat})
+  user_chat.append({"role": "assistant", "content": response_chat})
 
   return response_chat
 
-def structure_reply(user_text: str, response_chat: str) -> str:
-  messages_json.append(
+def structure_reply(user_json: List[Dict], user_text: str, response_chat: str) -> str:
+  user_json.append(
     {
       "role": "user", "content": user_text,
       "role": "assistant", "content": response_chat
@@ -108,7 +98,7 @@ def structure_reply(user_text: str, response_chat: str) -> str:
   
   response = client.responses.parse(
       model="gpt-5-nano",
-      input=messages_json,
+      input=user_json,
       text_format=TripRouteRecommendations,
   )
 
@@ -118,6 +108,19 @@ def structure_reply(user_text: str, response_chat: str) -> str:
 
 if __name__ == "__main__":
   
+  load_dotenv(dotenv_path="backend/api.env")
+  api_key = os.getenv("OPENAI_API_KEY")
+
+
+  client = OpenAI(
+    api_key=api_key
+  )
+
+  FILE_PATH = "backend/triproute_recommendations.json"
+
+  user_chat = [{"role": "system", "content": CHAT_SYSTEM}]
+  user_json = [{"role": "system", "content": STRUCTURE_SYSTEM}]
+
   user_text = input("""
 TA : Hi, I am your travel agent, 
      I can assist you to plan your trip.
@@ -128,8 +131,8 @@ TA : Hi, I am your travel agent,
      5. Any other details? (e.g., budget, pace, etc.)
 You: """).strip()
   while user_text:
-    response_chat = chat_reply_streaming(user_text)
-    response_structure = structure_reply(user_text, response_chat)
+    response_chat = chat_reply_streaming(user_chat, user_text)
+    response_structure = structure_reply(user_json, user_text, response_chat)
     with open(FILE_PATH, "w", encoding="utf-8") as f:
       f.write(response_structure)
     user_text = input("\nYou: ").strip()
