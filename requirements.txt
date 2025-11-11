@@ -1,0 +1,25 @@
+# TripRoute Backend Dependencies
+# Python 3.11+
+
+# Web Framework
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.3
+pydantic-settings==2.6.1
+
+# OpenAI
+openai==1.77.0
+
+# Google AI (Gemini) - New SDK
+google-genai>=0.3.0
+
+# Google Maps
+googlemaps==4.10.0
+
+# Utilities
+python-dotenv==1.1.0
+python-dateutil==2.9.0
+
+# AWS (for Phase 2 - DynamoDB)
+# boto3==1.36.3
+# Uncomment when ready for DynamoDB integration
