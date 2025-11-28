@@ -1,7 +1,7 @@
 # Environment variables
-api.env
-.env
-.env.*
+**/api.env
+**/.env
+**/.env.*
 
 # Python
 __pycache__/
@@ -17,6 +17,7 @@ ENV/
 # IDE
 .vscode/
 .idea/
+.claude/
 *.swp
 *.swo
 
