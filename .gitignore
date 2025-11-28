@@ -1,18 +1,18 @@
-node_modules/
-__pycache__/
-
-# API Keys - never commit these!
-backend/api.env
-frontend/config.js
-*.env
+# Environment variables
+api.env
 .env
+.env.*
 
-# Python cache
-*.pyc
-*.pyo
-*.pyd
-.Python
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
 *.so
+.Python
+venv/
+env/
+.venv/
+ENV/
 
 # IDE
 .vscode/
@@ -23,12 +23,3 @@ frontend/config.js
 # OS
 .DS_Store
 Thumbs.db
-
-# Test files
-test_*.py
-*_test.py
-
-# Output files
-backend/*.json
-backend/direction_*.json
-backend/triproute_recommendations.json

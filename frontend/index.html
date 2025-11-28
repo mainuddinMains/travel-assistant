@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripRoute - AI Travel Planner</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            background: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title-section {
+            background: white;
+            color: #333;
+            padding: 12px 40px 12px 60px;
+            border-bottom: 1px solid #e0e0e0;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .title-section h1 {
+            position: absolute;
+            left: 60px;
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .trip-meta {
+            display: flex;
+            align-items: center;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .meta-btn {
+            padding: 12px 40px;
+            background: white;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.2s;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .meta-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: #f5f5f5;
+        }
+
+        .meta-btn:hover:not(:disabled) {
+            background: #f5f5f5;
+        }
+
+        .meta-btn:first-child {
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 360px 1fr 400px;
+            flex: 1;
+            gap: 0;
+            overflow: hidden;
+        }
+
+        /* Left Section - Route Planning */
+        .left-section {
+            background: #f8f9fa;
+            border-right: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            gap: 0;
+        }
+
+        /* Box 1: Transportation Mode */
+        .transport-mode-box {
+            padding: 6px 10px;
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .transport-modes {
+            display: flex;
+            gap: 5px;
+        }
+
+        .mode-btn {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1px;
+            padding: 4px 3px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 5px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .mode-btn:hover {
+            border-color: #2196F3;
+            background: #f5f9ff;
+        }
+
+        .mode-btn.active {
+            border-color: #2196F3;
+            background: #e3f2fd;
+        }
+
+        .mode-btn .mode-icon {
+            width: 16px;
+            height: 16px;
+            color: #666;
+        }
+
+        .mode-btn.active .mode-icon {
+            color: #2196F3;
+        }
+
+        .mode-btn .mode-label {
+            font-size: 10px;
+            font-weight: 600;
+            color: #666;
+        }
+
+        .mode-btn.active .mode-label {
+            color: #2196F3;
+        }
+
+        /* Box 2: Places List (takes 2/5 of remaining space) */
+        .places-box {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .places-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .places-header h3 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .places-count {
+            font-size: 12px;
+            color: #666;
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .places-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 8px;
+        }
+
+        .place-item-placeholder {
+            padding: 8px;
+        }
+
+        .place-item-placeholder .placeholder-box {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 36px;
+            padding-right: 8px;
+            background: #fafafa;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+        }
+
+        .place-item-placeholder .drag-handle {
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            color: #ccc;
+            cursor: default;
+            padding: 0;
+        }
+
+        .place-item-placeholder .drag-handle svg {
+            width: 12px;
+            height: 12px;
+        }
+
+        .place-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            background: #f9f9f9;
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            margin-bottom: 6px;
+            cursor: grab;
+            transition: all 0.2s;
+        }
+
+        .place-item:hover {
+            border-color: #2196F3;
+            background: #fafcff;
+        }
+
+        .place-item.dragging {
+            opacity: 0.5;
+            cursor: grabbing;
+        }
+
+        .place-item .place-number {
+            width: 24px;
+            height: 24px;
+            background: #2196F3;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        /* Start marker - green */
+        .place-item .place-number.start {
+            background: #4CAF50;
+        }
+
+        /* End marker - red */
+        .place-item .place-number.end {
+            background: #f44336;
+        }
+
+        .place-item .place-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .place-item .place-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .place-item .place-type {
+            font-size: 11px;
+            color: #888;
+            margin-top: 2px;
+        }
+
+        .place-item .place-remove {
+            width: 24px;
+            height: 24px;
+            border: none;
+            background: none;
+            color: #ccc;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .place-item .place-remove:hover {
+            background: #fee;
+            color: #f44336;
+        }
+
+        .place-item .drag-handle {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            color: #bbb;
+            cursor: grab;
+            padding: 0;
+            flex-shrink: 0;
+        }
+
+        .place-item .drag-handle:hover {
+            color: #888;
+        }
+
+        .place-item .drag-handle:active {
+            cursor: grabbing;
+        }
+
+        .place-item .drag-handle svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .places-actions {
+            display: flex;
+            gap: 8px;
+            padding: 12px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .action-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 10px 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .action-btn.optimize-btn {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .action-btn.optimize-btn:hover:not(:disabled) {
+            background: #43a047;
+        }
+
+        .action-btn.direction-btn {
+            background: #2196F3;
+            color: white;
+        }
+
+        .action-btn.direction-btn:hover:not(:disabled) {
+            background: #1e88e5;
+        }
+
+        .action-btn:disabled {
+            background: #e0e0e0;
+            color: #999;
+            cursor: not-allowed;
+        }
+
+        /* Box 3: Route Details (takes 3/5 of remaining space) */
+        .route-details-box {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .route-details-header {
+            padding: 12px 16px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .route-details-header h3 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .route-legs {
+            flex: 1;
+            overflow-y: auto;
+            padding: 8px 12px;
+        }
+
+        .route-empty {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+            font-size: 13px;
+        }
+
+        .route-empty p {
+            margin: 0;
+        }
+
+        .route-leg {
+            padding: 10px 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .route-leg:last-child {
+            border-bottom: none;
+        }
+
+        /* Non-transit leg layout (row) */
+        .route-leg:not(:has(.route-leg-header)) {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        /* Non-transit leg styles */
+        .route-leg > .leg-icon {
+            width: 28px;
+            height: 28px;
+            background: #f5f5f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .route-leg > .leg-info {
+            flex: 1;
+        }
+
+        /* Transit leg header */
+        .route-leg-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .leg-number {
+            width: 22px;
+            height: 22px;
+            background: #2196F3;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .leg-header-info {
+            flex: 1;
+        }
+
+        .leg-places {
+            font-size: 12px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .leg-places .arrow {
+            color: #999;
+            margin: 0 4px;
+        }
+
+        .leg-stats {
+            display: flex;
+            gap: 6px;
+            margin-top: 4px;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .leg-stats span {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        /* Transit steps container */
+        .route-steps {
+            margin-left: 10px;
+            padding-left: 12px;
+            border-left: 2px solid #e0e0e0;
+        }
+
+        .route-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px 0;
+        }
+
+        .step-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .step-icon.walk-icon {
+            background: #e8f5e9;
+            color: #4caf50;
+        }
+
+        .step-icon.transit-icon {
+            background: #e3f2fd;
+            color: #2196F3;
+        }
+
+        .step-icon.transit-icon.bus {
+            background: #fff3e0;
+            color: #ff9800;
+        }
+
+        .step-icon.transit-icon.subway {
+            background: #e3f2fd;
+            color: #2196F3;
+        }
+
+        .step-icon.transit-icon.rail {
+            background: #fce4ec;
+            color: #e91e63;
+        }
+
+        .step-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .step-title {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #333;
+            flex-wrap: wrap;
+        }
+
+        .line-badge {
+            background: #2196F3;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .step-icon.transit-icon.bus + .step-info .line-badge {
+            background: #ff9800;
+        }
+
+        .headsign {
+            font-size: 12px;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .step-stops {
+            margin-top: 6px;
+            font-size: 12px;
+        }
+
+        .step-stops .stop {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 3px 0;
+        }
+
+        .step-stops .stop-time {
+            font-weight: 600;
+            color: #333;
+            min-width: 60px;
+        }
+
+        .step-stops .stop-name {
+            color: #555;
+        }
+
+        .step-stops .stop.departure {
+            position: relative;
+        }
+
+        .step-stops .stop.departure::before {
+            content: '';
+            position: absolute;
+            left: -18px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: #4caf50;
+            border-radius: 50%;
+        }
+
+        .step-stops .stop.arrival::before {
+            content: '';
+            position: absolute;
+            left: -18px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: #f44336;
+            border-radius: 50%;
+        }
+
+        .step-stops .stop.arrival {
+            position: relative;
+        }
+
+        .step-details {
+            margin-top: 4px;
+            font-size: 11px;
+            color: #888;
+        }
+
+        /* Place stop in route details */
+        .route-place-stop {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+        }
+
+        .route-place-stop .stop-number {
+            width: 24px;
+            height: 24px;
+            background: #2196F3;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .route-place-stop .stop-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            flex: 1;
+        }
+
+        /* Travel segment between places */
+        .route-travel-segment {
+            margin-left: 12px;
+            padding: 8px 0 8px 22px;
+            border-left: 2px dashed #e0e0e0;
+        }
+
+        .travel-segment-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .travel-segment-header .segment-icon {
+            width: 24px;
+            height: 24px;
+            background: #f5f5f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        .travel-segment-header .segment-summary {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .travel-segment-header .segment-summary strong {
+            color: #333;
+        }
+
+        /* Transit steps within segment */
+        .segment-steps {
+            margin-left: 32px;
+        }
+
+        .segment-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 6px 0;
+        }
+
+        .segment-step .mini-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 10px;
+        }
+
+        .segment-step .mini-icon.walk {
+            background: #e8f5e9;
+            color: #4caf50;
+        }
+
+        .segment-step .mini-icon.transit {
+            background: #fff3e0;
+            color: #ff9800;
+        }
+
+        .segment-step .mini-icon.subway {
+            background: #e3f2fd;
+            color: #2196F3;
+        }
+
+        .segment-step-info {
+            flex: 1;
+            font-size: 12px;
+        }
+
+        /* Walk step - compact horizontal layout */
+        .walk-step {
+            align-items: center;
+        }
+
+        .walk-step .segment-step-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .walk-duration {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .walk-distance {
+            color: #888;
+            font-size: 11px;
+        }
+
+        /* Transit step - vertical layout with stops detail */
+        .transit-step {
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .transit-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .transit-line {
+            font-weight: 600;
+            color: #333;
+            flex: 1;
+        }
+
+        .transit-duration {
+            font-size: 11px;
+            color: #666;
+        }
+
+        .transit-stops-detail {
+            margin-left: 28px;
+            padding-left: 10px;
+            border-left: 2px solid #e0e0e0;
+        }
+
+        .stop-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 0;
+        }
+
+        .stop-row .stop-name {
+            flex: 1;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .stop-time {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .stops-count {
+            font-size: 11px;
+            color: #888;
+            padding: 2px 0 2px 16px;
+        }
+
+        .route-summary {
+            display: flex;
+            border-top: 1px solid #e0e0e0;
+            padding: 8px 12px;
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .summary-label {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .summary-value {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Center Section - Google Map */
+        .center-section {
+            position: relative;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Right Section - Chat */
+        .right-section {
+            background: white;
+            border-left: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            min-height: 0; /* Important for flex scrolling */
+            scroll-behavior: smooth; /* Smooth scrolling animation */
+        }
+
+        .message {
+            max-width: 100%;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message.user {
+            align-self: flex-end;
+            max-width: 80%;
+        }
+
+        .message.assistant {
+            align-self: flex-start;
+            width: 100%;
+        }
+
+        .message-content {
+            padding: 12px 16px;
+            border-radius: 18px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* Set base font size for regular text and paragraphs */
+        .message-content p,
+        .message-content li {
+            font-size: 14px;
+        }
+
+        .message.user .message-content {
+            background: #2196F3;
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message.assistant .message-content {
+            background: transparent;
+            color: #333;
+            padding: 8px 0;
+        }
+
+        /* HTML/Markdown formatting in messages */
+        .message-content p {
+            margin: 0 0 4px 0;
+        }
+
+        .message-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .message-content ul, .message-content ol {
+            margin: 8px 0;
+            padding-left: 24px;
+        }
+
+        .message-content li {
+            margin: 4px 0;
+        }
+
+        .message-content strong, .message-content b {
+            font-weight: 600;
+        }
+
+        .message-content em, .message-content i {
+            font-style: italic;
+        }
+
+        .message-content code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Consolas, monospace;
+            font-size: 13px;
+        }
+
+        .message.user .message-content code {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .message.assistant .message-content code {
+            background: #f0f0f0;
+            color: #d63384;
+        }
+
+        .message-content a {
+            color: inherit;
+            text-decoration: underline;
+        }
+
+        .message.user .message-content a {
+            color: white;
+        }
+
+        .message.assistant .message-content a {
+            color: #2196F3;
+        }
+
+        .place-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 8px;
+            max-width: 100%;
+        }
+
+        .place-card .place-name {
+            font-weight: 600;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .place-card .place-address {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .place-card .place-rating {
+            font-size: 12px;
+            color: #ff9800;
+            margin-bottom: 8px;
+        }
+
+        .place-card .add-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .place-card .add-btn:hover {
+            background: #45a049;
+        }
+
+        .place-card .add-btn:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .chat-input {
+            border-top: 1px solid #e0e0e0;
+            padding: 20px;
+            background: white;
+            flex-shrink: 0;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        #messageInput {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            resize: none;
+            min-height: 44px;
+            max-height: 120px;
+        }
+
+        #messageInput:focus {
+            outline: none;
+            border-color: #2196F3;
+        }
+
+        #sendBtn {
+            padding: 12px 24px;
+            background: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        #sendBtn:hover {
+            background: #1976D2;
+        }
+
+        #sendBtn:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #2196F3;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #bbb;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #888;
+        }
+
+        /* For Firefox */
+        .chat-messages {
+            scrollbar-width: thin;
+            scrollbar-color: #bbb #f1f1f1;
+        }
+
+        /* Interactive place links in chat */
+        .place-link {
+            color: #2196F3;
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .place-link:hover {
+            color: #1976D2;
+            text-decoration: underline;
+        }
+
+        /* Hover card for place mentions */
+        #place-hover-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            z-index: 10000;
+            width: 320px;
+            max-width: 320px;
+            overflow: hidden;
+            animation: fadeIn 0.2s;
+            position: relative;
+        }
+
+        .place-card-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: auto !important;
+            height: auto;
+            border: none;
+            background: none !important;
+            background-color: transparent !important;
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10001;
+            padding: 4px !important;
+            line-height: 1;
+            transition: all 0.15s;
+            text-shadow:
+                0 1px 3px rgba(0, 0, 0, 0.9),
+                0 2px 5px rgba(0, 0, 0, 0.7),
+                0 0 10px rgba(0, 0, 0, 0.5);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        .place-card-close:hover {
+            background: none !important;
+            background-color: transparent !important;
+            transform: scale(1.2);
+            text-shadow:
+                0 2px 5px rgba(0, 0, 0, 1),
+                0 3px 8px rgba(0, 0, 0, 0.8),
+                0 0 15px rgba(0, 0, 0, 0.6);
+        }
+
+        #place-hover-card .place-info {
+            padding: 12px;
+        }
+
+        #place-hover-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            line-height: 1.3;
+        }
+
+        #place-hover-card .place-name-link {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        #place-hover-card .place-name-link:hover {
+            color: #2196F3;
+            text-decoration: underline;
+        }
+
+        #place-hover-card .rating {
+            margin: 0 0 6px 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #ff9800;
+        }
+
+        #place-hover-card .review-count {
+            color: #666;
+            font-weight: 400;
+            font-size: 13px;
+        }
+
+        #place-hover-card .primary-type {
+            margin: 0 0 6px 0;
+            font-size: 13px;
+            color: #666;
+        }
+
+        #place-hover-card .opening-hours-status {
+            margin: 0 0 8px 0;
+            font-size: 13px;
+            color: #333;
+        }
+
+        #place-hover-card .status-open {
+            font-weight: 700;
+            color: #28a745;
+        }
+
+        #place-hover-card .status-closed {
+            font-weight: 700;
+            color: #dc3545;
+        }
+
+        #place-hover-card button:not(.place-card-close) {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            width: 100%;
+        }
+
+        #place-hover-card button:not(.place-card-close):hover {
+            background: #45a049;
+        }
+
+        /* Photo container in place card - at the top */
+        #place-hover-card .photo-container {
+            width: 100%;
+            height: 200px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        #place-hover-card .photo-loading {
+            font-size: 13px;
+            color: #999;
+            font-style: italic;
+        }
+
+        #place-hover-card .place-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        #place-hover-card .no-photo {
+            font-size: 13px;
+            color: #999;
+            font-style: italic;
+        }
+
+        /* Place Window - Dynamically positioned based on chat visibility */
+        .place-window {
+            position: fixed;
+            top: 0;
+            /* right position set dynamically by JavaScript */
+            width: 450px;
+            height: 100vh;
+            background: white;
+            box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            display: none;
+            flex-direction: column;
+            transition: right 0.3s ease-in-out; /* Smooth transition when repositioning */
+        }
+
+        .place-window.visible {
+            display: flex; /* Show when visible class is added */
+        }
+
+        .place-window-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            background: #f9f9f9;
+        }
+
+        .place-window-header h2 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            flex: 1;
+            padding-right: 10px;
+        }
+
+        .place-window .close-btn {
+            background: none;
+            border: none;
+            font-size: 32px;
+            color: #666;
+            cursor: pointer;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            line-height: 28px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .place-window .close-btn:hover {
+            color: #333;
+        }
+
+        .place-window-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .place-window-photo {
+            width: 100%;
+            height: 300px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .place-window-photo .place-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .place-window-photo .photo-loading,
+        .place-window-photo .no-photo {
+            font-size: 14px;
+            color: #999;
+            font-style: italic;
+        }
+
+        .place-window-details {
+            margin-bottom: 20px;
+        }
+
+        .place-window-details p {
+            margin: 8px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .place-window-details .address {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .place-window-details .rating {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ff9800;
+        }
+
+        .place-window-details .review-count {
+            color: #666;
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        .place-window-details .type,
+        .place-window-details .price {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .place-window-details .status-open {
+            font-weight: 700;
+            color: #28a745;
+        }
+
+        .place-window-details .status-closed {
+            font-weight: 700;
+            color: #dc3545;
+        }
+
+        .place-window-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .place-window-actions .add-to-route-btn {
+            width: 100%;
+            padding: 12px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .place-window-actions .add-to-route-btn:hover {
+            background: #45a049;
+        }
+
+        .place-window-actions .view-on-maps-btn {
+            width: 100%;
+            padding: 12px;
+            background: #2196F3;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+        }
+
+        .place-window-actions .view-on-maps-btn:hover {
+            background: #1976D2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Title Section -->
+    <div class="title-section">
+        <h1>TripRoute Chat</h1>
+        <div class="trip-meta">
+            <button class="meta-btn" id="cityBtn" disabled>City</button>
+            <button class="meta-btn" id="scheduleBtn" disabled>Schedule</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Left Section: Route Planning -->
+        <div class="left-section">
+            <!-- Box 1: Transportation Mode -->
+            <div class="transport-mode-box">
+                <div class="transport-modes">
+                    <button class="mode-btn active" data-mode="driving" title="Driving">
+                        <svg class="mode-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                        </svg>
+                        <span class="mode-label">Drive</span>
+                    </button>
+                    <button class="mode-btn" data-mode="transit" title="Transit">
+                        <svg class="mode-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-6H6V6h5v5zm2 0V6h5v5h-5zm3.5 6c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                        </svg>
+                        <span class="mode-label">Transit</span>
+                    </button>
+                    <button class="mode-btn" data-mode="walking" title="Walking">
+                        <svg class="mode-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/>
+                        </svg>
+                        <span class="mode-label">Walk</span>
+                    </button>
+                    <button class="mode-btn" data-mode="bicycling" title="Bicycling">
+                        <svg class="mode-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M15.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM5 12c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5zm5.8-10l2.4 2.4-2.4 2.4 1.4 1.4 3.8-3.8-3.8-3.8-1.4 1.4zm8.2 1.5c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5z"/>
+                        </svg>
+                        <span class="mode-label">Bike</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Box 2: Places List -->
+            <div class="places-box">
+                <div class="places-header">
+                    <h3>Places</h3>
+                    <span class="places-count"><span id="selectedCount">0</span> stops</span>
+                </div>
+                <div class="places-list" id="selectedPlacesList">
+                    <div class="place-item-placeholder">
+                        <div class="placeholder-box">
+                            <button class="drag-handle" disabled>
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="places-actions">
+                    <button class="action-btn optimize-btn" id="optimizeBtn" disabled>
+                        Optimize
+                    </button>
+                    <button class="action-btn direction-btn" id="directionBtn" disabled>
+                        Directions
+                    </button>
+                </div>
+            </div>
+
+            <!-- Box 3: Route Details -->
+            <div class="route-details-box">
+                <div class="route-details-header">
+                    <h3>Route Details</h3>
+                </div>
+                <div class="route-legs" id="routeLegs">
+                </div>
+                <div class="route-summary">
+                    <div class="summary-item">
+                        <span class="summary-label">Total Distance</span>
+                        <span class="summary-value" id="totalDistance">--</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Total Time</span>
+                        <span class="summary-value" id="totalTime">--</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Center Section: Google Map -->
+        <div class="center-section">
+            <div id="map"></div>
+        </div>
+
+        <!-- Right Section: Chat Interface -->
+        <div class="right-section">
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will be added here -->
+            </div>
+            <div class="chat-input">
+                <div class="input-container">
+                    <textarea
+                        id="messageInput"
+                        placeholder="Ask for travel recommendations..."
+                        rows="1"
+                    ></textarea>
+                    <button id="sendBtn">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Markdown parser (marked.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Load configuration -->
+    <script src="config.js"></script>
+
+    <!-- Load Trip Meta module -->
+    <script src="tripmeta.js"></script>
+
+    <!-- Load Place Card module (must load before maps.js and chat.js) -->
+    <script src="placeicons.js"></script>
+    <script src="placecard.js"></script>
+
+    <!-- Load Place Window module -->
+    <!-- <script src="placewindow.js"></script> -->
+    <!-- Temporarily disabled - keeping code for future use -->
+    <script>
+        // Stub function to prevent errors when placewindow.js is disabled
+        function showPlaceWindow(placeData) {
+            console.log('[Place Window] Disabled - place data:', placeData);
+            // Do nothing - place window functionality is temporarily disabled
+        }
+    </script>
+
+    <!-- Load Google Maps functionality -->
+    <script src="maps.js"></script>
+
+    <!-- Load Route module (place selection, transport modes, route computation, polylines) -->
+    <script src="route.js"></script>
+
+    <!-- Load Chat Agent functionality -->
+    <script src="chat.js"></script>
+
+    <script>
+        // Initialize on page load
+        window.addEventListener('load', () => {
+            loadGoogleMapsAPI();  // Load Google Maps with API key from config.js
+            initChat();
+            setupChatEventListeners();
+        });
+
+        // Initialize trip metadata after Google Maps loads
+        window.onGoogleMapsLoaded = function() {
+            initTripMeta();
+        };
+    </script>
+</body>
+</html>

@@ -1,37 +1,68 @@
 """
-TripRoute Backend API - Phase 1 (Simple EC2 deployment)
+TravelAgent Backend API Server
 FastAPI server with in-memory session storage
-Uses Gemini 2.5 Flash Lite with Google Search grounding
+Integrates chat.py and gmaps_requests.py for frontend communication
 """
-from fastapi import FastAPI, HTTPException, BackgroundTasks
+from fastapi import FastAPI, HTTPException, Response
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 from typing import Optional, List, Dict, Any
 from datetime import datetime
 import json
 import uuid
+import asyncio
+from concurrent.futures import ThreadPoolExecutor
 from dotenv import load_dotenv
+from pathlib import Path
 import os
-import googlemaps
-from google import genai
-from google.genai import types
 
-# Import existing modules
-from gemini import CHAT_SYSTEM, STRUCTURE_SYSTEM, TripRouteRecommendations, REINFORCED_GROUNDING_RULES, WELCOME_MESSAGE, AGENT_NAME
-from optimization import parse_trip, enrich_place_with_details, optimize_with_direction, Place, normalize_place_id
+# Import backend modules
+from chat import AGENT_NAME, WELCOME_MESSAGE, chatting_agent, initialize_chat_history
+from gmaps_requests import (
+    enrich_place_with_details,
+    fetch_place_photo,
+    compute_routes_drive_walk_bicycle,
+    compute_routes_transit
+)
 
 # Load environment variables
-load_dotenv(dotenv_path="api.env")
+load_dotenv(dotenv_path=Path(__file__).parent / "api.env")
 gemini_api_key = os.getenv("GEMINI_API_KEY")
 gmap_api_key = os.getenv("GMAP_API_KEY")
 
-# Initialize Google Maps client and Gemini client (shared across all requests)
-gmaps = googlemaps.Client(key=gmap_api_key)
-gemini_client = genai.Client(api_key=gemini_api_key)
+# Validate API keys
+print("\n" + "="*60)
+print("TravelAgent Backend Server - Initializing...")
+print("="*60)
+
+if not gemini_api_key:
+    print("⚠️  WARNING: GEMINI_API_KEY not found in environment. Chat functionality will fail.")
+else:
+    print("✓ GEMINI_API_KEY loaded")
+
+if not gmap_api_key:
+    print("⚠️  WARNING: GMAP_API_KEY not found in environment. Maps functionality will fail.")
+else:
+    print("✓ GMAP_API_KEY loaded")
+
+# Initialize API clients
+try:
+    from google import genai
+    from google.genai import types
+    gemini_client = genai.Client(api_key=gemini_api_key) if gemini_api_key else None
+    if gemini_client:
+        print("✓ Gemini AI client initialized")
+except Exception as e:
+    print(f"❌ Error initializing Gemini client: {e}")
+    gemini_client = None
+
+# Thread pool executor for async enrichment
+executor = ThreadPoolExecutor(max_workers=5)
 
 app = FastAPI(
-    title="TripRoute API",
-    description="AI-powered trip planning with route optimization",
+    title="TravelAgent API",
+    description="AI-powered travel planning with route optimization",
     version="1.0.0"
 )
 
@@ -45,139 +76,59 @@ app.add_middleware(
 )
 
 # ============================================================================
-# IN-MEMORY SESSION STORAGE (Phase 1)
+# IN-MEMORY SESSION STORAGE
 # ============================================================================
 sessions_db: Dict[str, Dict[str, Any]] = {}
 
+
 def get_or_create_session(session_id: Optional[str] = None) -> tuple[str, Dict[str, Any]]:
-    """Get existing session or create new one with welcome message."""
+    """Get existing session or create new one."""
     if session_id and session_id in sessions_db:
         return session_id, sessions_db[session_id]
 
-    # Create new session with welcome message
+    # Create new session with chat history initialized
     new_session_id = session_id or str(uuid.uuid4())
     sessions_db[new_session_id] = {
         "session_id": new_session_id,
         "created_at": datetime.now().isoformat(),
-        "chat_history": [
-            {
-                "role": "model",
-                "content": WELCOME_MESSAGE,
-                "timestamp": datetime.now().isoformat()
-            }
-        ],
-        "recommendations": None,
+        "chat_history": initialize_chat_history(),  # Initialize with welcome message
+        "trip_context": None,  # Trip context (cities, dates) extracted from conversation
+        "all_places": [],
         "enriched_places": [],
+        "selected_places": [],
         "optimized_routes": {}
     }
     return new_session_id, sessions_db[new_session_id]
 
 # ============================================================================
-# BACKGROUND TASK: STRUCTURE EXTRACTION
+# ASYNC ENRICHMENT HELPER
 # ============================================================================
 
-async def extract_structure(session_id: str, grounding_places: list):
+async def enrich_place_async(
+    api_key: str,
+    place: Dict[str, Any]
+) -> Dict[str, Any]:
     """
-    Background task to extract structured recommendations from conversation.
-    Runs asynchronously so user can continue chatting.
+    Async wrapper for enrich_place_with_details.
+
+    Runs the synchronous Google Maps API calls in a thread pool executor
+    to avoid blocking the event loop.
+
+    Args:
+        api_key: Google Maps API key
+        place: Place dict with displayName and formattedAddress
+
+    Returns:
+        Enriched place dict with Google Maps data
     """
-    try:
-        session = sessions_db.get(session_id)
-        if not session:
-            print(f"⚠️  Session {session_id} not found for background extraction")
-            return
-
-        # Build conversation text for extraction
-        conversation_text = ""
-        for msg in session["chat_history"]:
-            role_name = "Model" if msg["role"] == "model" else "User"
-            conversation_text += f"{role_name}: {msg['content']}\n\n"
-
-        # Use Gemini structured extraction
-        extraction_prompt = f"""{STRUCTURE_SYSTEM}
-
-Here is the full conversation history:
-
-{conversation_text}
-
-Extract the trip recommendations matching the schema."""
-
-        extraction_config = types.GenerateContentConfig(
-            response_mime_type="application/json",
-            response_schema=TripRouteRecommendations
-        )
-
-        print(f"\n🔄 [Background] Starting structure extraction for session {session_id}...")
-
-        structured_response = gemini_client.models.generate_content(
-            model='gemini-2.5-flash-lite',
-            contents=extraction_prompt,
-            config=extraction_config
-        )
-
-        # Parse JSON response and ENRICH with grounding data
-        data = json.loads(structured_response.text)
-
-        # If we have grounding places, match by URL and inject place_id
-        if grounding_places and data.get('recommendations'):
-            print(f"\n🔧 [Background] Enriching {len(data['recommendations'])} recommendations with grounding place_id...")
-
-            # Build URL -> place_id mapping from grounding data
-            url_to_place_id = {}
-            for gplace in grounding_places:
-                url = gplace.get('url', '')
-                place_id = gplace.get('place_id', '')
-                if url and place_id:
-                    url_to_place_id[url] = {
-                        'place_id': place_id,
-                        'title': gplace.get('title', '')
-                    }
-
-            # Match recommendations by exact URL
-            for rec in data['recommendations']:
-                rec_url = rec.get('url', '')
-
-                # Find matching place_id from grounding data by URL
-                if rec_url in url_to_place_id:
-                    place_id = url_to_place_id[rec_url]['place_id']
-                    rec['place_id'] = place_id
-                    print(f"  ✅ [Background] Injected place_id for {rec['name']}: {place_id}")
-
-        # Check if we have valid recommendations
-        if data.get("recommendations") and len(data["recommendations"]) > 0:
-            # Enrich with Google Maps data
-            meta, places = parse_trip(data)
-            print(f"\n🔧 [Background] Enriching places with Google Maps API (if needed)...")
-            enrich_place_with_details(gmaps, places)
-
-            # Convert Place objects to dicts
-            places_data = []
-            for place in places:
-                places_data.append({
-                    "name": place.name,
-                    "category": place.category,
-                    "address": place.address,
-                    "formatted_address": place.formatted_address,
-                    "city": place.city,
-                    "reason": place.reason,
-                    "rating": place.rating,
-                    "number_of_reviews": place.number_of_reviews,
-                    "business_hours": place.business_hours,
-                    "map_url": place.map_url,
-                    "place_id": place.place_id
-                })
-
-            # Save to session
-            session["recommendations"] = data
-            session["enriched_places"] = places_data
-
-            print(f"✅ [Background] Extracted {len(places_data)} recommendations for session {session_id}")
-        else:
-            print(f"ℹ️  [Background] No recommendations found yet for session {session_id}")
-
-    except Exception as e:
-        # No recommendations yet - this is normal during early conversation
-        print(f"⚠️  [Background] No recommendations extracted for session {session_id}: {e}")
+    loop = asyncio.get_event_loop()
+    enriched_place = await loop.run_in_executor(
+        executor,
+        enrich_place_with_details,
+        api_key,
+        place
+    )
+    return enriched_place
 
 # ============================================================================
 # REQUEST/RESPONSE MODELS
@@ -185,49 +136,29 @@ Extract the trip recommendations matching the schema."""
 
 class ChatRequest(BaseModel):
     message: str
-    session_id: Optional[str] = None
 
-class ChatResponse(BaseModel):
-    response: str
-    session_id: str
-    has_recommendations: bool
-    is_new_session: bool = False
-    welcome_message: Optional[str] = None
-
-class PlaceDetail(BaseModel):
+class PlaceCard(BaseModel):
+    place_id: str
     name: str
-    category: Optional[str] = None
-    address: str
     formatted_address: Optional[str] = None
-    city: str
-    reason: str
     rating: Optional[float] = None
-    number_of_reviews: Optional[int] = None
-    business_hours: Optional[List[str]] = None
-    map_url: Optional[str] = None
-    place_id: Optional[str] = None
-
-class RecommendationsResponse(BaseModel):
-    session_id: str
-    trip_meta: Dict[str, Any]
-    places: List[PlaceDetail]
+    user_rating_count: Optional[int] = None
+    location: Optional[Dict[str, float]] = None
 
 class OptimizeRequest(BaseModel):
     session_id: str
     mode: str  # "driving", "walking", "bicycling", "transit"
-    departure_time: Optional[str] = None  # ISO format
 
-class RouteResponse(BaseModel):
-    session_id: str
-    mode: str
-    optimized_route: List[str]
-    total_distance: int  # meters
-    total_duration: int  # seconds
-    legs: List[Dict[str, Any]]
+class RoutePlace(BaseModel):
+    placeId: str
+    displayName: str
+    formattedAddress: str
 
-class UpdatePlacesRequest(BaseModel):
-    session_id: str
-    places: List[PlaceDetail]
+class ComputeRouteRequest(BaseModel):
+    places: List[RoutePlace]
+    mode: str  # "DRIVE", "WALK", "BICYCLE", "TRANSIT"
+    optimize_waypoint_order: bool = True
+    departure_time: Optional[str] = None  # ISO datetime for TRANSIT
 
 # ============================================================================
 # API ENDPOINTS
@@ -237,7 +168,7 @@ class UpdatePlacesRequest(BaseModel):
 async def root():
     """Health check endpoint."""
     return {
-        "service": "TripRoute API",
+        "service": "TravelAgent API",
         "status": "running",
         "version": "1.0.0"
     }
@@ -252,218 +183,319 @@ async def health_check():
         "gmaps_configured": bool(gmap_api_key)
     }
 
-@app.post("/chat")
-async def chat(request: ChatRequest, background_tasks: BackgroundTasks):
+@app.post("/chat/init")
+async def init_chat():
     """
-    Chat with the AI travel agent (non-streaming to capture grounding metadata).
-    Extracts recommendations in background so user can continue chatting.
+    Initialize a new chat session.
+    Returns session_id and welcome message.
     """
-    try:
-        # Get or create session
-        is_new_session = request.session_id is None or request.session_id not in sessions_db
-        session_id, session = get_or_create_session(request.session_id)
+    session_id, session = get_or_create_session()
 
-        # Build conversation history in Gemini format (types.Content)
-        conversation_history = []
-        for msg in session["chat_history"]:
-            role = msg["role"]  # Already "model" or "user"
-            conversation_history.append(types.Content(
-                role=role,
-                parts=[types.Part(text=msg["content"])]
-            ))
+    print(f"\n[Chat Session] New session created: {session_id}")
+    print(f"[Chat Session] ✓ Chat agent ready")
 
-        # Add user message WITHOUT reformulation (keep it clean)
-        conversation_history.append(types.Content(
-            role="user",
-            parts=[types.Part(text=request.message)]
-        ))
+    return {
+        "session_id": session_id,
+        "welcome_message": WELCOME_MESSAGE
+    }
 
-        # CRITICAL: Create a REINFORCED system instruction that's injected fresh on EVERY turn
-        # This prevents context dilution where the AI forgets grounding requirements in later turns
-        reinforced_system = CHAT_SYSTEM + REINFORCED_GROUNDING_RULES
+@app.post("/chat/stream/{session_id}")
+async def chat_stream(session_id: str, request: ChatRequest):
+    """
+    Streaming chat endpoint with async enrichment:
+    1. Call chatting_agent to get structured output (chatting text + places)
+    2. Start async enrichment tasks for all places
+    3. Stream chatting text to user immediately
+    4. Stream enriched place cards as they complete
+    """
+    if not gemini_client:
+        raise HTTPException(status_code=503, detail="Gemini API not initialized")
 
-        # Configure Gemini with Google Maps grounding and REINFORCED system instruction
-        # Maps: place data (place_id, ratings, hours, etc.) - $25/1k
-        # 1,500 RPD free (enough for most usage)
-        # More cost-effective than Search ($35/1k) + Place API ($20/1k)
-        config = types.GenerateContentConfig(
-            tools=[
-                types.Tool(google_maps=types.GoogleMaps())  # Place information with grounding_metadata
-            ],
-            system_instruction=reinforced_system  # Use reinforced version that's fresh each turn
+    if session_id not in sessions_db:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Session not found. Server may have restarted. Please refresh the page. (Looking for: {session_id[:8]}...)"
         )
 
-        # NON-STREAMING request (same as chat_reply_non_streaming in gemini.py)
+    session = sessions_db[session_id]
+
+    async def generate():
         try:
-            response = gemini_client.models.generate_content(
-                model='gemini-2.5-flash',  # Use flash (not lite) for reliable grounding tool usage
-                contents=conversation_history,
-                config=config,
+            # Step 1: Get AI response with structured output (1-2 seconds)
+            print(f"\n[Chat Message] User: {request.message[:50]}...")
+            print(f"[Chat Message] Calling Gemini AI...")
+
+            # Call chatting_agent (synchronous, but fast ~1-2 seconds)
+            chat_history, trip_context, chatting_text, places = await asyncio.to_thread(
+                chatting_agent,
+                gemini_client,
+                session["chat_history"],
+                request.message
             )
+
+            # Update session chat history (now includes user message and AI response)
+            session["chat_history"] = chat_history
+
+            # Update session trip context
+            session["trip_context"] = trip_context
+
+            print(f"[Chat Message] ✓ AI response received ({len(places)} places)")
+
+            # Stream trip context to frontend immediately
+            if trip_context:
+                yield f"data: {json.dumps({'type': 'trip_context', 'trip_context': trip_context})}\n\n"
+                print(f"📍 Trip Context: {trip_context}")
+
+            # Step 2: Start async enrichment tasks for all places (parallel with streaming)
+            enrichment_tasks = []
+            if places and gmap_api_key:
+                print(f"🗺️  Starting enrichment for {len(places)} places...")
+                for place in places:
+                    task = asyncio.create_task(enrich_place_async(gmap_api_key, place))
+                    enrichment_tasks.append(task)
+
+            # Step 3 & 4: Stream text AND process enrichment results in parallel
+            # This creates two truly concurrent streams
+
+            words = chatting_text.split(' ')
+            word_index = 0
+            current_text = ""
+            completed_tasks = set()
+
+            # Keep streaming until both text is done AND all enrichment is done
+            text_done = False
+            enrichment_done = len(enrichment_tasks) == 0
+
+            while not (text_done and enrichment_done):
+                # Stream next word if not done
+                if not text_done and word_index < len(words):
+                    if word_index == 0:
+                        current_text = words[word_index]
+                    else:
+                        current_text += " " + words[word_index]
+
+                    yield f"data: {json.dumps({'type': 'text_chunk', 'content': current_text})}\n\n"
+                    word_index += 1
+
+                    if word_index >= len(words):
+                        text_done = True
+                        yield f"data: {json.dumps({'type': 'text_complete', 'content': chatting_text})}\n\n"
+                        print(f"✓ Text streaming complete")
+
+                # Check for completed enrichment tasks
+                if enrichment_tasks and not enrichment_done:
+                    for i, task in enumerate(enrichment_tasks):
+                        if task.done() and i not in completed_tasks:
+                            completed_tasks.add(i)
+
+                            try:
+                                enriched_place = task.result()
+
+                                if isinstance(enriched_place, Exception):
+                                    print(f"  ❌ Error enriching place {i+1}: {str(enriched_place)}")
+                                    continue
+
+                                if "_error" in enriched_place:
+                                    print(f"  ❌ Error: {enriched_place.get('_error')}")
+                                    continue
+
+                                # Save to session
+                                session["enriched_places"].append(enriched_place)
+
+                                # Extract names and ID
+                                # _displayName: Original name from chatting_agent (e.g., "Rain or Shine Ice Cream")
+                                # displayName: Official Google Maps name (e.g., "Rain Or Shine Ice Cream")
+                                original_name = enriched_place.get('_displayName', 'Unknown')
+                                official_name = enriched_place.get('displayName', {}).get('text', original_name)
+                                place_id = enriched_place.get('_id')
+
+                                print(f"  ✅ Enriched: {official_name} (ID: {place_id})")
+
+                                # Prepare marker data for map
+                                # Use official name for display, but include original for text matching
+                                marker_data = {
+                                    "type": "marker",
+                                    "place_id": place_id,
+                                    "name": official_name,  # Official Google Maps name for display
+                                    "original_name": original_name,  # Original name for text matching
+                                    "formatted_address": enriched_place.get('_formattedAddress'),
+                                    "rating": enriched_place.get('rating'),
+                                    "user_rating_count": enriched_place.get('userRatingCount'),
+                                    "location": enriched_place.get('location'),
+                                    "business_status": enriched_place.get('businessStatus'),
+                                    "primary_type": enriched_place.get('primaryTypeDisplayName', {}).get('text') if enriched_place.get('primaryTypeDisplayName') else None,
+                                    "icon_id": enriched_place.get('_icon_id', 7),  # Icon category ID (0-7) from enrichment
+                                    "price_level": enriched_place.get('priceLevel'),
+                                    "current_opening_hours": enriched_place.get('currentOpeningHours'),
+                                    "google_maps_uri": enriched_place.get('googleMapsUri')  # Official Google Maps URL
+                                }
+
+                                # Stream marker immediately when ready
+                                yield f"data: {json.dumps(marker_data)}\n\n"
+
+                            except Exception as e:
+                                print(f"  ❌ Error processing enriched place {i+1}: {e}")
+
+                    # Check if all enrichment is done
+                    if len(completed_tasks) >= len(enrichment_tasks):
+                        enrichment_done = True
+                        print(f"✓ Enrichment complete")
+
+                # Small delay to avoid tight loop
+                await asyncio.sleep(0.02)
+
+            # Send completion
+            yield f"data: {json.dumps({'type': 'done'})}\n\n"
+
         except Exception as e:
-            print(f"\n❌ Error calling Gemini API: {e}")
-            raise HTTPException(status_code=500, detail=f"Gemini API error: {str(e)}")
+            import traceback
+            print(f"❌ Error in chat stream: {e}")
+            print(traceback.format_exc())
+            yield f"data: {json.dumps({'type': 'error', 'message': str(e)})}\n\n"
 
-        # Print full response to inspect (same as gemini.py)
-        print("\n" + "="*80)
-        print("🔍 DEBUG: Full Response Object (Non-Streaming)")
-        print("="*80)
+    return StreamingResponse(generate(), media_type="text/event-stream")
 
-        # Extract grounding chunks with place data (same as gemini.py)
-        grounding_places = []
-
-        if hasattr(response, 'candidates') and response.candidates:
-            print(f"\n✓ Candidates found: {len(response.candidates)}")
-            candidate = response.candidates[0]
-
-            if hasattr(candidate, 'grounding_metadata') and candidate.grounding_metadata:
-                if hasattr(candidate.grounding_metadata, 'grounding_chunks') and candidate.grounding_metadata.grounding_chunks:
-                    print("\n🗺️  GROUNDING CHUNKS IN GROUNDING METADATA FOUND!")
-
-                    # Extract place_id, title, and URL from each chunk
-                    for chunk in candidate.grounding_metadata.grounding_chunks:
-                        place_data = {}
-
-                        # Get place_id
-                        if hasattr(chunk, 'maps') and hasattr(chunk.maps, 'place_id'):
-                            place_data['place_id'] = chunk.maps.place_id
-
-                        # Get title
-                        if hasattr(chunk, 'maps') and hasattr(chunk.maps, 'title'):
-                            place_data['title'] = chunk.maps.title
-
-                        # Get URL
-                        if hasattr(chunk, 'maps') and hasattr(chunk.maps, 'uri'):
-                            place_data['url'] = chunk.maps.uri
-
-                        if place_data:
-                            grounding_places.append(place_data)
-                            print(f"  📍 Extracted: {place_data.get('title', 'Unknown')} - Place ID: {place_data.get('place_id', 'Not found')}, URL: {place_data.get('url', 'Not found')}")
-                else:
-                    print("\n⚠️  No grounding_chunks in grounding_metadata")
-            else:
-                print("\n⚠️  No grounding_metadata in candidate")
-
-        print("\nFull response text:")
-        print(response.text)
-        print("="*80 + "\n")
-
-        assistant_reply = response.text
-
-        # Add assistant response to conversation (same as gemini.py)
-        conversation_history.append(types.Content(
-            role="model",
-            parts=[types.Part(text=assistant_reply)]
-        ))
-
-        # Save to chat history
-        session["chat_history"].append({
-            "role": "user",
-            "content": request.message,
-            "timestamp": datetime.now().isoformat()
-        })
-        session["chat_history"].append({
-            "role": "model",
-            "content": assistant_reply,
-            "timestamp": datetime.now().isoformat()
-        })
-
-        # Schedule background task to extract recommendations
-        # This runs asynchronously so user can continue chatting
-        background_tasks.add_task(extract_structure, session_id, grounding_places)
-
-        # Check if recommendations already exist (from previous background extraction)
-        has_recommendations = bool(session.get("enriched_places"))
-
-        # Return JSON response immediately (not streaming, not waiting for extraction)
-        return ChatResponse(
-            response=assistant_reply,
-            session_id=session_id,
-            has_recommendations=has_recommendations,
-            is_new_session=is_new_session,
-            welcome_message=WELCOME_MESSAGE if is_new_session else None
-        )
-
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Chat error: {str(e)}")
-
-@app.get("/recommendations/{session_id}", response_model=RecommendationsResponse)
-async def get_recommendations(session_id: str):
+@app.post("/places/select/{session_id}")
+async def select_place(session_id: str, place_data: Dict[str, Any]):
     """
-    Get enriched recommendations for a session.
+    Add a place to the selected places list for route optimization.
     """
     if session_id not in sessions_db:
         raise HTTPException(status_code=404, detail="Session not found")
 
     session = sessions_db[session_id]
 
-    if not session.get("recommendations") or not session.get("enriched_places"):
-        raise HTTPException(status_code=404, detail="No recommendations available. Chat first to get recommendations.")
+    # Add to selected places if not already there
+    place_id = place_data.get("place_id")
+    place_name = place_data.get("name", "Unknown")
 
-    # Convert to response model
-    places = [PlaceDetail(**place) for place in session["enriched_places"]]
+    if not any(p.get("place_id") == place_id for p in session["selected_places"]):
+        session["selected_places"].append(place_data)
+        print(f"[Place Selection] Added to route: {place_name}")
 
-    return RecommendationsResponse(
-        session_id=session_id,
-        trip_meta=session["recommendations"]["trip_meta"],
-        places=places
-    )
+    return {
+        "status": "success",
+        "selected_count": len(session["selected_places"])
+    }
 
-@app.post("/update-places")
-async def update_places(request: UpdatePlacesRequest):
+@app.delete("/places/select/{session_id}/{place_id}")
+async def deselect_place(session_id: str, place_id: str):
     """
-    Update the places list in the session (after user removes or reorders places).
+    Remove a place from selected places list.
     """
-    if request.session_id not in sessions_db:
+    if session_id not in sessions_db:
         raise HTTPException(status_code=404, detail="Session not found")
 
-    session = sessions_db[request.session_id]
+    session = sessions_db[session_id]
 
-    # Convert PlaceDetail objects to dict format
-    places_data = [place.dict() for place in request.places]
+    # Find place name before removing
+    removed_place = next((p for p in session["selected_places"] if p.get("place_id") == place_id), None)
 
-    # Update session
-    session["enriched_places"] = places_data
+    session["selected_places"] = [p for p in session["selected_places"] if p.get("place_id") != place_id]
 
-    # Also update recommendations list with all enriched fields
-    # Note: business_hours must be converted from list to string to match RecommendationItem schema
-    if session.get("recommendations"):
-        session["recommendations"]["recommendations"] = [
-            {
-                "name": p["name"],
-                "category": p.get("category"),
-                "address": p["address"],
-                "city": p["city"],
-                "reason": p["reason"],
-                "place_id": p.get("place_id"),
-                "url": p.get("map_url"),
-                "rating": p.get("rating"),
-                "number_of_reviews": p.get("number_of_reviews"),
-                "business_hours": ", ".join(p["business_hours"]) if p.get("business_hours") and isinstance(p["business_hours"], list) else p.get("business_hours")
-            }
-            for p in places_data
-        ]
+    if removed_place:
+        print(f"[Place Selection] Removed from route: {removed_place.get('name', 'Unknown')}")
 
-    print(f"✓ Updated places list for session {request.session_id}: {len(places_data)} places")
+    return {
+        "status": "success",
+        "selected_count": len(session["selected_places"])
+    }
 
-    return {"status": "success", "places_count": len(places_data)}
+@app.get("/places/selected/{session_id}")
+async def get_selected_places(session_id: str):
+    """
+    Get all selected places for a session.
+    """
+    if session_id not in sessions_db:
+        raise HTTPException(status_code=404, detail="Session not found")
 
-@app.post("/optimize", response_model=RouteResponse)
+    return {
+        "session_id": session_id,
+        "selected_places": sessions_db[session_id]["selected_places"]
+    }
+
+@app.get("/api/places/{place_id}/photo")
+async def get_place_photo(place_id: str, max_width: int = 400):
+    """
+    Get photo URL for a place from enriched data.
+
+    Args:
+        place_id: Google Maps Place ID
+        max_width: Maximum width in pixels (default: 400, max: 4800)
+
+    Returns:
+        JSON with photo_url and place_name
+
+    Note:
+        Photo references are fetched fresh during enrichment per Google Maps Platform Terms.
+        No caching of photo URLs to comply with Section 3.2.3(b) (No Caching) policy.
+        Photo references can expire and must be retrieved fresh from API responses.
+    """
+    if not gmap_api_key:
+        raise HTTPException(status_code=503, detail="Google Maps API not configured")
+
+    # Validate max_width
+    if max_width < 1 or max_width > 4800:
+        raise HTTPException(status_code=400, detail="max_width must be between 1 and 4800")
+
+    try:
+        # Search through all sessions for this place's enriched data
+        photo_name = None
+        place_name = None
+
+        for session_id, session in sessions_db.items():
+            for enriched_place in session.get("enriched_places", []):
+                if enriched_place.get("_id") == place_id:
+                    # Found the enriched place
+                    photos = enriched_place.get("photos", [])
+                    if photos:
+                        photo_name = photos[0].get("name")
+                        place_name = enriched_place.get("_displayName")
+                        break
+            if photo_name:
+                break
+
+        if not photo_name:
+            raise HTTPException(status_code=404, detail="No photo reference found for this place")
+
+        # Construct photo URL using the photo name
+        # This makes the actual API call to Google Maps Photo API ($7/1000)
+        # No caching per Google Maps Platform Terms of Service
+        photo_url = await asyncio.to_thread(
+            fetch_place_photo,
+            gmap_api_key,
+            photo_name,
+            max_width,
+            skip_http_redirect=True
+        )
+
+        return {
+            "photo_url": photo_url,
+            "place_id": place_id,
+            "place_name": place_name
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"Error fetching photo for place {place_id}: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to fetch photo: {str(e)}")
+
+@app.post("/optimize")
 async def optimize_route(request: OptimizeRequest):
     """
-    Optimize route for a specific transportation mode.
-    Automatically called by frontend when recommendations are ready.
+    Optimize route for selected places with specific transportation mode.
     """
+    if not gmap_api_key:
+        raise HTTPException(status_code=503, detail="Google Maps API not initialized")
+
     if request.session_id not in sessions_db:
         raise HTTPException(status_code=404, detail="Session not found")
 
     session = sessions_db[request.session_id]
-    enriched_places_data = session.get("enriched_places", [])
+    selected_places = session.get("selected_places", [])
 
-    if not enriched_places_data:
-        raise HTTPException(status_code=404, detail="No places to optimize. Get recommendations first.")
-
-    if len(enriched_places_data) < 2:
+    if len(selected_places) < 2:
         raise HTTPException(status_code=400, detail="Need at least 2 places to create a route")
 
     # Validate mode
@@ -471,94 +503,86 @@ async def optimize_route(request: OptimizeRequest):
     if request.mode not in valid_modes:
         raise HTTPException(status_code=400, detail=f"Invalid mode. Must be one of: {valid_modes}")
 
-    # Parse departure time
-    if request.departure_time:
-        try:
-            departure_time = datetime.fromisoformat(request.departure_time.replace('Z', '+00:00'))
-        except:
-            departure_time = datetime.now()
-    else:
-        departure_time = datetime.now()
-
     try:
-        # Convert dict data back to Place objects
-        places = []
-        for p_data in enriched_places_data:
-            # Normalize place_id from Gemini's "places/ChIJ..." format to "ChIJ..." format
-            raw_place_id = p_data.get("place_id")
-            normalized_place_id = normalize_place_id(raw_place_id)
+        print(f"\n[Route Optimization] Optimizing route for {len(selected_places)} places (mode: {request.mode})")
 
-            # Use updated Place constructor that accepts optional fields
-            place = Place(
-                name=p_data["name"],
-                address=p_data["address"],
-                city=p_data["city"],
-                reason=p_data["reason"],
-                place_id=normalized_place_id,  # Normalized from Gemini grounding
-                url=p_data.get("map_url"),
-                rating=p_data.get("rating"),
-                number_of_reviews=p_data.get("number_of_reviews"),
-                business_hours=", ".join(p_data["business_hours"]) if p_data.get("business_hours") and isinstance(p_data["business_hours"], list) else None,
-                category=p_data.get("category")
-            )
-            # Set formatted_address separately (not in constructor)
-            place.formatted_address = p_data.get("formatted_address")
-            places.append(place)
-
-        # Optimize route
-        optimized = optimize_with_direction(gmaps, places, mode=request.mode, departure_time=departure_time)
+        # TODO: Implement route optimization with Google Maps Directions API
+        # For now, return placeholder data
+        optimized_route = {
+            "session_id": request.session_id,
+            "mode": request.mode,
+            "optimized_route": [p["name"] for p in selected_places],
+            "total_distance": 5000,  # meters (placeholder)
+            "total_duration": 600,   # seconds (placeholder)
+            "legs": []
+        }
 
         # Save to session
-        session["optimized_routes"][request.mode] = optimized
+        session["optimized_routes"][request.mode] = optimized_route
 
-        print(f"✓ Optimized {request.mode} route for session {request.session_id}")
+        print(f"[Route Optimization] ✓ Route optimized: {optimized_route['total_distance']/1000:.2f} km, {optimized_route['total_duration']/60:.0f} min")
 
-        return RouteResponse(
-            session_id=request.session_id,
-            mode=optimized["mode"],
-            optimized_route=optimized["optimized_route"],
-            total_distance=optimized["total_distance"],
-            total_duration=optimized["total_duration"],
-            legs=optimized["legs"]
-        )
+        return optimized_route
 
     except Exception as e:
+        print(f"[Route Optimization] ❌ Error: {e}")
         raise HTTPException(status_code=500, detail=f"Optimization failed: {str(e)}")
 
-@app.get("/routes/{session_id}/{mode}")
-async def get_route(session_id: str, mode: str):
-    """
-    Get a previously optimized route.
-    """
-    if session_id not in sessions_db:
-        raise HTTPException(status_code=404, detail="Session not found")
 
-    session = sessions_db[session_id]
-    route = session.get("optimized_routes", {}).get(mode)
-
-    if not route:
-        raise HTTPException(status_code=404, detail=f"No optimized route for mode '{mode}'. Run /optimize first.")
-
-    return route
-
-@app.get("/welcome")
-async def get_welcome_message():
+@app.post("/routes/compute")
+async def compute_route(request: ComputeRouteRequest):
     """
-    Get the welcome message without creating a session.
-    Useful for displaying on page load.
-    """
-    return {"welcome_message": WELCOME_MESSAGE}
+    Compute route for a list of places.
 
-@app.delete("/sessions/{session_id}")
-async def delete_session(session_id: str):
+    Supports DRIVE, WALK, BICYCLE, and TRANSIT modes.
+    Returns optimized places order and leg details.
     """
-    Delete a session (clear all data).
-    """
-    if session_id in sessions_db:
-        del sessions_db[session_id]
-        return {"message": "Session deleted"}
-    else:
-        raise HTTPException(status_code=404, detail="Session not found")
+    if not gmap_api_key:
+        raise HTTPException(status_code=503, detail="Google Maps API not initialized")
+
+    if len(request.places) < 2:
+        raise HTTPException(status_code=400, detail="At least 2 places required")
+
+    # Validate mode
+    valid_modes = ["DRIVE", "WALK", "BICYCLE", "TRANSIT"]
+    if request.mode not in valid_modes:
+        raise HTTPException(status_code=400, detail=f"Invalid mode. Must be one of: {valid_modes}")
+
+    try:
+        # Convert Pydantic models to dicts
+        places = [p.model_dump() for p in request.places]
+
+        print(f"\n[Route Compute] Computing {request.mode} route for {len(places)} places (optimize={request.optimize_waypoint_order})")
+
+        if request.mode == "TRANSIT":
+            # Use transit-specific function
+            result = compute_routes_transit(
+                api_key=gmap_api_key,
+                places=places,
+                optimize_waypoint_order=request.optimize_waypoint_order,
+                departure_time=request.departure_time
+            )
+        else:
+            # Use DRIVE/WALK/BICYCLE function
+            result = compute_routes_drive_walk_bicycle(
+                api_key=gmap_api_key,
+                places=places,
+                travel_mode=request.mode,
+                optimize_waypoint_order=request.optimize_waypoint_order,
+                departure_time=request.departure_time
+            )
+
+        # Log summary
+        total_duration = result.get("totalDuration") or result.get("duration", 0)
+        total_distance = result.get("totalDistanceMeters") or result.get("distanceMeters", 0)
+        print(f"[Route Compute] ✓ Route computed: {total_distance/1000:.2f} km, {total_duration/60:.0f} min")
+
+        return result
+
+    except Exception as e:
+        print(f"[Route Compute] ❌ Error: {e}")
+        raise HTTPException(status_code=500, detail=f"Route computation failed: {str(e)}")
+
 
 @app.get("/sessions")
 async def list_sessions():
@@ -572,11 +596,22 @@ async def list_sessions():
                 "session_id": sid,
                 "created_at": data["created_at"],
                 "messages_count": len(data["chat_history"]),
-                "has_recommendations": bool(data["recommendations"])
+                "selected_places_count": len(data["selected_places"])
             }
             for sid, data in sessions_db.items()
         ]
     }
+
+@app.delete("/sessions/{session_id}")
+async def delete_session(session_id: str):
+    """
+    Delete a session (clear all data).
+    """
+    if session_id in sessions_db:
+        del sessions_db[session_id]
+        return {"message": "Session deleted"}
+    else:
+        raise HTTPException(status_code=404, detail="Session not found")
 
 # ============================================================================
 # SERVER STARTUP
@@ -586,7 +621,7 @@ if __name__ == "__main__":
     import uvicorn
 
     print("=" * 60)
-    print("TripRoute Backend API - Phase 1 (Gemini)")
+    print("TravelAgent Backend API")
     print("=" * 60)
     print(f"Gemini API Key: {'Configured' if gemini_api_key else 'Missing'}")
     print(f"Google Maps Key: {'Configured' if gmap_api_key else 'Missing'}")
@@ -596,6 +631,6 @@ if __name__ == "__main__":
         "server:app",
         host="0.0.0.0",
         port=8000,
-        reload=True,  # Auto-reload on code changes (disable in production)
+        reload=True,  # Auto-reload on code changes
         log_level="info"
     )
