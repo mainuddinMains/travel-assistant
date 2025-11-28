@@ -1,0 +1,43 @@
+{
+  "places": [
+    {
+      "placeId": "ChIJo-QmrYxxhlQRFuIJtJ1jSjY",
+      "displayName": "Stanley Park",
+      "formattedAddress": "Vancouver, BC V6G 1Z4, Canada"
+    },
+    {
+      "placeId": "ChIJfVy9DmtxhlQR1BerabiOlCU",
+      "displayName": "La Casa Gelato",
+      "formattedAddress": "1033 Venables St, Vancouver, BC V6A 3R9, Canada"
+    },
+    {
+      "placeId": "ChIJ28IkUs5zhlQRua6hLV7S3jY",
+      "displayName": "Granville Island",
+      "formattedAddress": "Granville Island, Vancouver, BC, Canada"
+    },
+    {
+      "placeId": "ChIJSd7cANJvhlQRXg8TheyzUPM",
+      "displayName": "Capilano Suspension Bridge Park",
+      "formattedAddress": "3735 Capilano Rd, North Vancouver, BC V7R 4J1, Canada"
+    }
+  ],
+  "duration": 16254,
+  "distanceMeters": 19539,
+  "legs": [
+    {
+      "duration": 4031,
+      "distanceMeters": 4827,
+      "polyline": "gvzkH`}pnVYc@h@_Ar@cAh@gA^i@HNlBkDEGlGaLb@a@`ByCBBf@y@?e@t@yDR_@CIxNyt@pB_KLa@^s@CEb@k@@BrA_C\\e@AAzB{DPa@@B`CkE@@hBaD?ChC{E@@rBoDAALUzB}DvAiCHOECPg@@@lAsLAAfAiJFYASh@{EI?No@D?@YFyIAAHyNA?D_EByG?s@ZE?B`AKXA`AM?EVAxCMbAMxBG?SF[@kEIM\\co@AKBs@H[H@HuMBgC@aEBmA@{@Ai@BgEhAA"
+    },
+    {
+      "duration": 3999,
+      "distanceMeters": 4797,
+      "polyline": "ukwkHhjfnViA@CfE@h@AdBCb@CdHAxAI~KIAKb@Aj@@\\]pn@HLAjEGZ?RI??n@B?EhEB`@CjGG??^H??JF@Cf@@`BQL?rCFf@B~AE?Dj@D?RhESf@WxAeAbMKt@Y~@_A`CCPE?QdAEnAHnABT@ATbAvBfFVhAJjBK|A@r@Ft@VjAhAxC`@z@l@j@`@XlA\\`BzBID`@^@?nBnCj@|@V\\ABp@lARz@Fz@ClAGt@bAXWfCA|AIf@HTV`Cx@tELz@hBpKBCHn@@CJl@Dd@l@hDB\\BxACfA@@Cf@G?E\\BH?ZWfAa@bAQPC?K|Br@nAFn@Ib@@v@H~@Gf@On@O\\SLaBnCWd@Oz@{ArCj@bAYn@p@RGXFVFJAZHNWj@PP\\l@?Pu@zAQYEBBLh@z@RPzH{ACFFVB?N\\FGpAbCVOBM|BcDFJ"
+    },
+    {
+      "duration": 8225,
+      "distanceMeters": 9915,
+      "polyline": "wgvkHjrpnV?LGK}BbDCL[RgA~A{@bAEDId@}ABc@g@s@e@}AQkAJuAr@iB|AaDrAe@@[QWmAiBWWL}@jBIV_@f@kBjBaBpBw@r@}@`As@lA[f@GF{A`@wBdDGCc@j@U\\c@h@Yp@]^i@Va@@S?w@h@uArA?SMYG?w@x@sBrAaBp@eAFeAE}Ek@_ASSAYWSEOMeFPK@i@f@UXIPOPi@`AERqBlDeAkBKWeAeBgAkBIJy@wAHOcAgBeAgBKQeCeEIQ_C{DKUiAkBEFa@BOo@e@}@UCMAMq@S][YYIAF_@]w@mAUk@_Aa@oAo@cA]ED}@JAToAb@mAz@qAjA]h@_A~BgAhEWdAS^Sv@CT_AjCo@|AwAzCq@`A[n@cChDcD~CwAhA{Ap@aAl@mDbAyAP_CDmFMqDg@uA[_F{AwBkAMIKMOCq@c@GKa@G}E{DqBiBSc@]GABya@s^ca@u^qEeEoAgAUe@y@k@EMkBcBQa@Mk@Wi@Y_BAaAFcAPwAGETaAhBwJ~A}HL]^iB@g@[UUYQz@{AcBUe@_@a@DOUOeE}EKUwCiDi@_@uDwBqCqA[Su@m@qBuAo@Q{@GeCCeD@SEkBGmAU_Bs@gB{A_BaAs@WmEM]KkE_AwCy@w@k@wAcB_Aa@q@@mBb@q@C_@C{IuB}A]MJ"
+    }
+  ]
+}

@@ -1,9 +1,23 @@
 {
   "permissions": {
     "allow": [
-      "Bash(unzip:*)",
       "Bash(python:*)",
-      "WebSearch"
+      "WebFetch(domain:developers.google.com)",
+      "WebSearch",
+      "WebFetch(domain:stackoverflow.com)",
+      "WebFetch(domain:mindtrip.ai)",
+      "Bash(python3:*)",
+      "Bash(conda activate:*)",
+      "Bash(C:Userspirstanaconda3envsTravelAgentpython.exe \"c:\\Users\\pirst\\OneDrive\\Desktop\\TravelAgent\\backend\\gmaps_requests.py\")",
+      "Bash(\"C:/Users/pirst/anaconda3/envs/TravelAgent/python.exe\" \"c:/Users/pirst/OneDrive/Desktop/TravelAgent/backend/gmaps_requests.py\")",
+      "Bash(cmd /c \"C:\\Users\\pirst\\anaconda3\\envs\\TravelAgent\\python.exe c:\\Users\\pirst\\OneDrive\\Desktop\\TravelAgent\\backend\\gmaps_requests.py\")",
+      "Bash(cmd /c \"C:\\Users\\pirst\\anaconda3\\envs\\TravelAgent\\python.exe c:\\Users\\pirst\\OneDrive\\Desktop\\TravelAgent\\backend\\gmaps_requests.py 2>&1\")",
+      "Bash(cmd /c \"C:\\Users\\pirst\\anaconda3\\envs\\TravelAgent\\python.exe -c \"\"print(''hello'')\"\" 2>&1\")",
+      "Bash(dir:*)",
+      "Bash(cmd /c \"dir D:\\dy\\Desktop\")",
+      "Bash(cmd /c \"if exist D:\\dy\\Desktop (dir D:\\dy\\Desktop) else (echo Directory not found)\")",
+      "Bash(powershell -Command:*)",
+      "Bash(findstr:*)"
     ],
     "deny": [],
     "ask": []

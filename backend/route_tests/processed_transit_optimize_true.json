@@ -1,0 +1,263 @@
+{
+  "places": [
+    {
+      "placeId": "ChIJo-QmrYxxhlQRFuIJtJ1jSjY",
+      "displayName": "Stanley Park",
+      "formattedAddress": "Vancouver, BC V6G 1Z4, Canada"
+    },
+    {
+      "placeId": "ChIJ28IkUs5zhlQRua6hLV7S3jY",
+      "displayName": "Granville Island",
+      "formattedAddress": "Granville Island, Vancouver, BC, Canada"
+    },
+    {
+      "placeId": "ChIJfVy9DmtxhlQR1BerabiOlCU",
+      "displayName": "La Casa Gelato",
+      "formattedAddress": "1033 Venables St, Vancouver, BC V6A 3R9, Canada"
+    },
+    {
+      "placeId": "ChIJSd7cANJvhlQRXg8TheyzUPM",
+      "displayName": "Capilano Suspension Bridge Park",
+      "formattedAddress": "3735 Capilano Rd, North Vancouver, BC V7R 4J1, Canada"
+    }
+  ],
+  "totalDuration": 8052,
+  "totalDistanceMeters": 21634,
+  "legs": [
+    {
+      "duration": 1758,
+      "distanceMeters": 2952,
+      "polyline": "e`zkHn{rnVFMDH\\o@NMpAcCHYXi@TUlBgDDSh@aAPUFMp@s@LMpBI`AmBMGR[CApCwEHN}ClFr@rANNpG|@lDZ`AQ~Ay@dCcB^g@jB_DzDaHh@q@r@wA`PeY@@IOJQNVA@l@`AFDJZt@nAFRZ_@^r@Fd@?h@Gb@VMhBVTdADN?EVNd@A`DsAhB}AtAs@jAK|APr@d@^b@IRNOzACNKBMHAjA}A`AwAHGBK~BcD",
+      "steps": [
+        {
+          "travelMode": "WALK",
+          "duration": 505,
+          "distanceMeters": 584,
+          "polylines": [
+            "e`zkHn{rnVFMDH\\o@NMpAcCHYXi@TUlBgDDSh@aAPUFMp@s@LM",
+            "erykHjgrnVpBI",
+            "snykH`grnV`AmBMG",
+            "_mykHjcrnVR[CApCwE"
+          ]
+        },
+        {
+          "travelMode": "TRANSIT",
+          "duration": 307,
+          "distanceMeters": 1370,
+          "polyline": "}gykHt{qnVHN}ClFr@rANNpG|@lDZ`AQ~Ay@dCcB^g@jB_DzDaHh@q@r@wA`PeY@@",
+          "transitDetails": {
+            "departureStop": "WB Davie St @ Bidwell St",
+            "arrivalStop": "EB Pacific St @ Thurlow St",
+            "departureTime": "2025-11-28T01:00:00Z",
+            "arrivalTime": "2025-11-28T01:05:07Z",
+            "lineName": "Main St Station/English Bay",
+            "lineShortName": "023",
+            "vehicleType": "BUS",
+            "vehicleIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "agencies": [
+              {
+                "name": "TransLink",
+                "phoneNumber": "+1 604-953-3333",
+                "uri": "https://www.translink.ca/"
+              }
+            ],
+            "headsign": "Main St Station",
+            "stopCount": 5
+          }
+        },
+        {
+          "travelMode": "WALK",
+          "duration": 254,
+          "distanceMeters": 304,
+          "polylines": [
+            "euwkHxupnVJQ",
+            "ytwkHfupnVNVA@l@`AFDJZt@nAFR",
+            "kpwkHh|pnVZ_@",
+            "oowkHh{pnV^r@Fd@?h@Gb@",
+            "onwkHp`qnVVMhBV",
+            "mjwkHz`qnVTdA"
+          ]
+        },
+        {
+          "travelMode": "TRANSIT",
+          "duration": 120,
+          "distanceMeters": 410,
+          "polyline": "qiwkHpcqnV?EVNd@A`DsAhB}AtAs@jAK|APr@d@^b@IR",
+          "transitDetails": {
+            "departureStop": "Aquatic Centre Ferry Dock",
+            "arrivalStop": "Granville Island Ferry Dock",
+            "departureTime": "2025-11-28T01:15:00Z",
+            "arrivalTime": "2025-11-28T01:17:00Z",
+            "lineName": "Aquatic Centre-Granville Island",
+            "lineShortName": "False Creek Ferry",
+            "lineColor": "#1a3ca2",
+            "lineTextColor": "#ffffff",
+            "vehicleType": "FERRY",
+            "vehicleIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ferry.png",
+            "agencies": [
+              {
+                "name": "False Creek Ferries",
+                "phoneNumber": "+1 604-684-7781",
+                "uri": "http://www.granvilleislandferries.bc.ca/"
+              }
+            ],
+            "headsign": "Granville Island",
+            "stopCount": 2
+          }
+        },
+        {
+          "travelMode": "WALK",
+          "duration": 233,
+          "distanceMeters": 284,
+          "polylines": [
+            "mtvkHf_qnVzACNK",
+            "aqvkHv~pnVBMHAjA}A`AwAHGBK~BcD"
+          ]
+        }
+      ]
+    },
+    {
+      "duration": 2641,
+      "distanceMeters": 6469,
+      "polyline": "wgvkHjrpnVEzC@~@BXEPtAbCVPFLC^~DnGd@l@BPLg@FXQMJHTHd@n@FIz@f@J@JLp@BJDFU\\WVG?Bl@@EY@]J?f@a@PGf@Bb@r@Az@[AWIW??F?TaCG_AMwAa@s@]s@g@y@kAiOiWqBiDsEgIWSyKuRYS_E}GWm@iLyRmBiDEKgSm]_FqIaEgHjPyYXw@~BuSz@aIL{BD_M\\ot@\\ou@DeFF{LR?@GpA??vBhUL",
+      "steps": [
+        {
+          "travelMode": "WALK",
+          "duration": 679,
+          "distanceMeters": 729,
+          "polylines": [
+            "wgvkHjrpnVEzC@~@BXEPtAbCVPFLC^~DnGd@l@BPLg@FXQMJHTHd@n@FIz@f@J@JLp@BJD",
+            "{uukHfnqnVFU\\WVG?Bl@@",
+            "orukHvlqnVEY@]",
+            "srukH~jqnVJ?f@a@PGf@Bb@r@",
+            "anukHlkqnVAz@",
+            "cnukHhmqnV[AWIW?"
+          ]
+        },
+        {
+          "travelMode": "TRANSIT",
+          "duration": 1579,
+          "distanceMeters": 5264,
+          "polyline": "opukHdmqnV?TaCG_AMwAa@s@]s@g@y@kAiOiWqBiDsEgIWSyKuRYS_E}GWm@iLyRmBiDEKgSm]_FqIaEgHjPyYXw@~BuSz@aIL{BD_M\\ot@\\ou@DeFF{LR?",
+          "transitDetails": {
+            "departureStop": "NB Granville St @ W 5th Ave",
+            "arrivalStop": "EB E Hastings St @ Glen Dr",
+            "departureTime": "2025-11-28T01:32:21Z",
+            "arrivalTime": "2025-11-28T01:58:40Z",
+            "lineName": "29th Avenue Station/Arbutus",
+            "lineShortName": "016",
+            "vehicleType": "BUS",
+            "vehicleIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "agencies": [
+              {
+                "name": "TransLink",
+                "phoneNumber": "+1 604-953-3333",
+                "uri": "https://www.translink.ca/"
+              }
+            ],
+            "headsign": "29th Ave Station",
+            "stopCount": 18
+          }
+        },
+        {
+          "travelMode": "WALK",
+          "duration": 387,
+          "distanceMeters": 476,
+          "polylines": [
+            "qdxkHbffnVpA?",
+            "_bxkHbffnV?vB",
+            "_bxkHzifnVhUL"
+          ]
+        }
+      ]
+    },
+    {
+      "duration": 3653,
+      "distanceMeters": 12213,
+      "polyline": "ukwkHhjfnVD?EjED~BJALjAd@fCJrAElOa@xu@Cz@OhBaDX_BDmGb@uDd@Yji@OtBWlBMfByClX[~@uAbCmIdOwMtU}AjClDtGMRCDj@bA@CfElHk@`AGHNV{`@hs@cAbBsRp]OCyCvEc@\\g@Ji@A}@_@}BgAIBw@BaARYNEFgAp@i@f@e@l@]r@u@~A]lAwAtFgAjDuAhDeAxByAbC{AtBgBrB}AvAgAz@iBfAeBr@yBj@mAP{BLoDCuCS{B]yD_AsC_AiEyBaAk@mC}B_DuCwBkBc\\iYg]_[aP}NsA_AGQ}@w@Ma@k@q@_@s@U{@MeAAgABk@Dc@Ci@b@oBfC_NrB{JkBqBoAyAEYuGaIoAcBo@k@_Ae@wBqAeBu@{@a@O?kDcCu@S{@GkBAeE@uACKKcAOw@UaAm@{BkBcAm@u@UcCGeACg@AGBcFiAqBk@_Am@{AgBm@Ws@CU@cB`@?eIJ@?@@g@UEC\\?xHe@CuBa@SKyD{@i@QUCgAWKn@KAKH",
+      "steps": [
+        {
+          "travelMode": "WALK",
+          "duration": 108,
+          "distanceMeters": 139,
+          "polylines": [
+            "ukwkHhjfnVD?",
+            "okwkHhjfnVEjE",
+            "ukwkHtpfnVD~B"
+          ]
+        },
+        {
+          "travelMode": "TRANSIT",
+          "duration": 991,
+          "distanceMeters": 3285,
+          "polyline": "okwkHttfnVJALjAd@fCJrAElOa@xu@Cz@OhBaDX_BDmGb@uDd@Yji@OtBWlBMfByClX[~@uAbCmIdOwMtU}AjClDtGMR",
+          "transitDetails": {
+            "departureStop": "WB Venables St @ Raymur Ave",
+            "arrivalStop": "Burrard Station @ Bay 5",
+            "departureTime": "2025-11-28T02:14:52Z",
+            "arrivalTime": "2025-11-28T02:31:23Z",
+            "lineName": "Knight/Downtown",
+            "lineShortName": "022",
+            "vehicleType": "BUS",
+            "vehicleIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "agencies": [
+              {
+                "name": "TransLink",
+                "phoneNumber": "+1 604-953-3333",
+                "uri": "https://www.translink.ca/"
+              }
+            ],
+            "headsign": "Downtown",
+            "stopCount": 14
+          }
+        },
+        {
+          "travelMode": "WALK",
+          "duration": 235,
+          "distanceMeters": 248,
+          "polylines": [
+            "icykHtvmnVj@bA@CfElH",
+            "s{xkHbbnnVk@`A"
+          ]
+        },
+        {
+          "travelMode": "TRANSIT",
+          "duration": 1284,
+          "distanceMeters": 8080,
+          "polyline": "g}xkHndnnVNV{`@hs@cAbBsRp]OCyCvEc@\\g@Ji@A}@_@}BgAIBw@BaARYNEFgAp@i@f@e@l@]r@u@~A]lAwAtFgAjDuAhDeAxByAbC{AtBgBrB}AvAgAz@iBfAeBr@yBj@mAP{BLoDCuCS{B]yD_AsC_AiEyBaAk@mC}B_DuCwBkBc\\iYg]_[aP}NsA_AGQ}@w@Ma@k@q@_@s@U{@MeAAgABk@Dc@Ci@b@oBfC_NrB{JkBqBoAyAEYuGaIoAcBo@k@_Ae@wBqAeBu@{@a@O?kDcCu@S{@GkBAeE@uACKKcAOw@UaAm@{BkBcAm@u@UcCGeACg@AGBcFiAqBk@_Am@{AgBm@Ws@CU@cB`@?eIJ@",
+          "transitDetails": {
+            "departureStop": "Westbound W Georgia St @ Burrard St",
+            "arrivalStop": "EB Ridgewood Dr @ Norcross Way",
+            "departureTime": "2025-11-28T02:45:35Z",
+            "arrivalTime": "2025-11-28T03:06:59Z",
+            "lineName": "Highland/Downtown",
+            "lineShortName": "246",
+            "vehicleType": "BUS",
+            "vehicleIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "agencies": [
+              {
+                "name": "TransLink",
+                "phoneNumber": "+1 604-953-3333",
+                "uri": "https://www.translink.ca/"
+              }
+            ],
+            "headsign": "Highland",
+            "stopCount": 11
+          }
+        },
+        {
+          "travelMode": "WALK",
+          "duration": 417,
+          "distanceMeters": 461,
+          "polylines": [
+            "qrclHvnlnV",
+            "qrclHvnlnV@g@UE",
+            "esclHhmlnVC\\?xH",
+            "isclH`xlnVe@CuBa@SKyD{@i@QUCgAW",
+            "{bdlHdslnVKn@KAKH"
+          ]
+        }
+      ]
+    }
+  ]
+}
