@@ -68,7 +68,7 @@ More features like edit/delete can be added later.
 Below is the complete structure of the **frontend** folder exactly as pushed to GitHub:
 frontend/
 travel-assistant/
-├── dashboard-app/                   # 🌟 Main Vite + React frontend
+├── dashboard_code/                   ## 🌟 Main Vite + React frontend
 │   ├── public/                      # Static public assets
 │   │   └── vite.svg                 # Default Vite logo
 │   ├── src/                         # Core application source code
@@ -111,3 +111,30 @@ npm install
 
 ## Start local development server
 npm run dev
+
+### Google_map_Code
+---
+## 🧭 Google Map + AI Itinerary Modules
+
+This folder powers the **AI-driven itinerary generation** and **travel route optimization** parts of the project.  
+Each script has a dedicated role — from generating trip plans using language models to fetching routes via Google Maps and optimizing visits with OR-Tools.
+
+### 🧩 Module Overview
+
+| File | Description |
+|------|--------------|
+| **ai_module.py** | Uses a language model (LLM) like GPT to parse user travel queries and generate a structured itinerary (e.g., day-by-day plan). |
+| **google_map.py** | Connects to the Google Maps API to calculate distances, travel times, and directions between destinations. |
+| **optimizer.py** | Uses Google OR-Tools to find the most efficient route across multiple destinations (TSP-style optimization). |
+| **time_suggester.py** | Suggests the best time slots to visit each place based on its category (e.g., landmarks in morning, nightlife in evening). |
+| **test_ai.py** | Unit tests for verifying prompt consistency and AI itinerary formatting. |
+| **test.py** | Integrates all modules into a single workflow for testing complete travel recommendation functionality. |
+
+---
+
+🧠 **In future**, these scripts can be connected to the dashboard via a Flask/FastAPI backend to:
+- Generate real-time travel plans  
+- Display optimized routes on an interactive map  
+- Sync AI itineraries with the user’s wishlist
+
+---
