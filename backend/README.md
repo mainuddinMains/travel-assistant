@@ -17,7 +17,7 @@ It connects real-world distance data with AI-generated itineraries, enabling use
 ---
 
 ## 📁 Project Structure
-'''
+```
 backend/
 ├── main.py # 🚀 FastAPI entry point – serves endpoints (/ and /plan)
 ├── google_map.py # 🗺️ Handles Google Maps distance/time calculations
@@ -25,7 +25,7 @@ backend/
 ├── requirements.txt # 📦 Python dependencies
 ├── .env # 🔑 Environment variables (API keys)
 └── pycache/ # (auto-generated Python cache)
-'''
+```
 
 ## Create a virtual environment
 python3 -m venv venv
@@ -63,3 +63,4 @@ uvicorn main:app --reload
  Integrate real-time map visualization in frontend
 
  
+
