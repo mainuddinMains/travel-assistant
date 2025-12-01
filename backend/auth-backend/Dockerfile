@@ -33,8 +33,9 @@ USER appuser
 EXPOSE 8001
 
 # Health check
+# FIXED: Changed from requests library to urllib.request (standard library, no dependencies)
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
-    CMD python -c "import requests; requests.get('http://localhost:8001/healthz')"
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8001/healthz')"
 
 # Run the application
 CMD ["python", "start_server.py"]

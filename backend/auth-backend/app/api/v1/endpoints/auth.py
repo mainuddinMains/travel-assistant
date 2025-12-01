@@ -1,8 +1,9 @@
+import logging
 from fastapi import APIRouter, Depends, HTTPException, status, Response, Request
 from fastapi.security import HTTPBearer
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
-from pydantic import BaseModel
+from pydantic import BaseModel, ValidationError
 
 from app.core.config import settings
 from app.db.session import get_session
@@ -16,6 +17,8 @@ from app.utils.auth import (
     verify_token,
     get_current_user
 )
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter()
 security = HTTPBearer(auto_error=False)
@@ -42,11 +45,13 @@ async def signup(user_data: UserCreate, db: AsyncSession = Depends(get_session))
     - **name**: User's display name
     - **password**: User's password (will be hashed)
     """
+    logger.info("Signup attempt", extra={"email": user_data.email})
     # Check if user already exists
     result = await db.execute(select(User).where(User.email == user_data.email))
     existing_user = result.scalar_one_or_none()
     
     if existing_user:
+        logger.warning("Signup blocked - email already registered", extra={"email": user_data.email})
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail="Email already registered"
@@ -77,6 +82,7 @@ async def signup(user_data: UserCreate, db: AsyncSession = Depends(get_session))
         created_at=new_user.created_at
     )
     
+    logger.info("Signup successful", extra={"user_id": new_user.id})
     return SignupResponse(
         access_token=access_token,
         user=user_response
@@ -87,6 +93,7 @@ async def signup(user_data: UserCreate, db: AsyncSession = Depends(get_session))
 async def signin(
     user_data: UserLogin,
     response: Response,
+    request: Request,
     db: AsyncSession = Depends(get_session)
 ):
     """
@@ -97,50 +104,78 @@ async def signin(
     
     Returns access token and sets refresh token as HttpOnly cookie.
     """
-    # Find user by email
-    result = await db.execute(select(User).where(User.email == user_data.email))
-    user = result.scalar_one_or_none()
-    
-    if not user or not verify_password(user_data.password, user.hashed_password):
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid email or password"
+    logger.info("Login request received", extra={
+        "path": request.url.path,
+        "origin": request.headers.get("origin"),
+        "email": user_data.email,
+    })
+
+    try:
+        # Find user by email
+        result = await db.execute(select(User).where(User.email == user_data.email))
+        user = result.scalar_one_or_none()
+
+        if not user:
+            logger.warning("Login failed - user not found", extra={"email": user_data.email})
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Invalid email or password"
+            )
+
+        if not verify_password(user_data.password, user.hashed_password):
+            logger.warning("Login failed - invalid password", extra={"user_id": user.id})
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Invalid email or password"
+            )
+
+        if not user.is_active:
+            logger.warning("Login failed - inactive account", extra={"user_id": user.id})
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Account is deactivated"
+            )
+
+        # Create tokens
+        access_token = create_access_token({"sub": str(user.id)})
+        refresh_token = create_refresh_token({"sub": str(user.id)})
+
+        # Set refresh token as HttpOnly cookie
+        response.set_cookie(
+            key=settings.REFRESH_TOKEN_COOKIE_NAME,
+            value=refresh_token,
+            httponly=True,
+            secure=settings.AUTH_COOKIE_SECURE,
+            samesite=settings.AUTH_COOKIE_SAMESITE,
+            path="/",
+            max_age=settings.REFRESH_TOKEN_EXPIRE_DAYS * 24 * 60 * 60
         )
-    
-    if not user.is_active:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Account is deactivated"
+
+        response.headers["Access-Control-Allow-Credentials"] = "true"
+
+        # Return user data (without password)
+        user_response = UserResponse(
+            id=user.id,
+            email=user.email,
+            name=user.name,
+            is_active=user.is_active,
+            created_at=user.created_at
         )
-    
-    # Create tokens
-    access_token = create_access_token({"sub": str(user.id)})
-    refresh_token = create_refresh_token({"sub": str(user.id)})
-    
-    # Set refresh token as HttpOnly cookie
-    response.set_cookie(
-        key="refresh",
-        value=refresh_token,
-        httponly=True,
-        secure=True,  # Use HTTPS in production
-        samesite="strict",
-        path="/",
-        max_age=settings.REFRESH_TOKEN_EXPIRE_DAYS * 24 * 60 * 60  # Convert days to seconds
-    )
-    
-    # Return user data (without password)
-    user_response = UserResponse(
-        id=user.id,
-        email=user.email,
-        name=user.name,
-        is_active=user.is_active,
-        created_at=user.created_at
-    )
-    
-    return TokenResponse(
-        access_token=access_token,
-        user=user_response
-    )
+
+        logger.info("Login successful", extra={"user_id": user.id})
+        return TokenResponse(
+            access_token=access_token,
+            user=user_response
+        )
+
+    except HTTPException:
+        raise
+    except ValidationError as err:
+        logger.error("Login validation error", extra={"errors": err.errors()})
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=err.errors())
+    except Exception as exc:  # pragma: no cover - catch-all safety
+        logger.exception("Unexpected error during login", exc_info=exc)
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Authentication failed")
 
 
 @router.post("/refresh", response_model=TokenResponse)

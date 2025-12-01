@@ -17,23 +17,23 @@ async def setup_database():
         from app.db.base import Base
         from app.db.session import engine
         
-        print("🔧 Setting up database tables...")
+        print("Setting up database tables...")
         async with engine.begin() as conn:
             await conn.run_sync(Base.metadata.create_all)
-        print("✅ Database tables ready!")
+        print("Database tables ready!")
         
     except Exception as e:
-        print(f"❌ Database setup failed: {e}")
-        print("🔄 Continuing anyway - tables might already exist...")
+        print(f"Database setup failed: {e}")
+        print("Continuing anyway - tables might already exist...")
 
 async def main():
     """Main startup function"""
-    print("🚀 Starting Travel Assistant Authentication Backend...")
-    print("📍 Server will be available at: http://localhost:8001")
-    print("📚 API documentation at: http://localhost:8001/docs")
-    print("🔍 Health check at: http://localhost:8001/healthz")
-    print("💾 Database: PostgreSQL")
-    print("🔐 Security: JWT + bcrypt")
+    print("Starting Travel Assistant Authentication Backend...")
+    print("Server will be available at: http://localhost:8001")
+    print("API documentation at: http://localhost:8001/docs")
+    print("Health check at: http://localhost:8001/healthz")
+    print("Database: PostgreSQL")
+    print("Security: JWT + bcrypt")
     
     # Setup database
     await setup_database()

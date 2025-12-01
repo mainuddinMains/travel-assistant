@@ -13,15 +13,18 @@ from app.core.config import settings
 from app.db.session import get_session
 from app.models.user import User
 
-# Password hashing context
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+# Password hashing context - support legacy bcrypt hashes while defaulting to bcrypt for new passwords
+pwd_context = CryptContext(
+    schemes=["bcrypt", "pbkdf2_sha256"],
+    deprecated="auto"
+)
 
 # HTTP Bearer token scheme
 security = HTTPBearer()
 
 
 def get_password_hash(password: str) -> str:
-    """Hash a password using bcrypt."""
+    """Hash a password using pbkdf2_sha256."""
     return pwd_context.hash(password)
 
 

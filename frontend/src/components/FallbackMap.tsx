@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { type Place } from '../services/googleMaps'
 
 interface FallbackMapProps {
@@ -16,6 +17,7 @@ export function FallbackMap({
   className = "w-full h-96",
   style
 }: FallbackMapProps) {
+  const { t } = useTranslation()
   
   const handlePlaceClick = (place: Place) => {
     if (onPlaceClick) {
@@ -47,8 +49,8 @@ export function FallbackMap({
           <div className="flex items-center justify-center h-full">
             <div className="text-center text-white">
               <div className="text-6xl mb-4">🗺️</div>
-              <h3 className="text-xl font-bold mb-2">Interactive Map</h3>
-              <p className="text-blue-100">Add some places to see them on the map</p>
+              <h3 className="text-xl font-bold mb-2">{t('fallbackMap.title')}</h3>
+              <p className="text-blue-100">{t('fallbackMap.subtitle')}</p>
             </div>
           </div>
         ) : (
@@ -87,7 +89,7 @@ export function FallbackMap({
                         <p className="text-gray-600 text-xs mb-2">{place.description}</p>
                         <div className="flex items-center gap-2 text-xs">
                           <span className="text-yellow-500">⭐ {place.rating}</span>
-                          <span className="text-gray-500">({place.reviews} reviews)</span>
+                          <span className="text-gray-500">{t('home.reviewsLabel', { count: place.reviews })}</span>
                         </div>
                         <p className="text-gray-500 text-xs mt-1">{place.address}</p>
                         <div className="flex gap-3 text-xs text-gray-500 mt-2">
@@ -152,17 +154,17 @@ export function FallbackMap({
       <div className="absolute top-4 right-4 bg-white rounded-lg shadow-lg p-2 space-y-2">
         <button
           className="block w-full px-3 py-1 text-xs bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
-          title="Fit to places"
+          title={t('home.fitPlaces')}
         >
-          📍 Fit Places
+          📍 {t('home.fitPlaces')}
         </button>
         
         {places.length >= 2 && (
           <button
             className="block w-full px-3 py-1 text-xs bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
-            title="Toggle route"
+            title={showRoute ? t('fallbackMap.toggleRoute.hide') : t('fallbackMap.toggleRoute.show')}
           >
-            🛣️ {showRoute ? 'Hide Route' : 'Show Route'}
+            🛣️ {showRoute ? t('fallbackMap.toggleRoute.hide') : t('fallbackMap.toggleRoute.show')}
           </button>
         )}
       </div>
@@ -170,16 +172,14 @@ export function FallbackMap({
       {/* Places counter */}
       {places.length > 0 && (
         <div className="absolute bottom-4 left-4 bg-white rounded-lg shadow-lg px-3 py-2">
-          <p className="text-sm text-gray-700">
-            <span className="font-medium">{places.length}</span> places on map
-          </p>
+          <p className="text-sm text-gray-700">{t('home.placesOnMap', { count: places.length })}</p>
         </div>
       )}
 
       {/* Google Maps setup notice */}
       <div className="absolute bottom-4 right-4 bg-yellow-100 border border-yellow-300 rounded-lg p-2 max-w-xs">
         <p className="text-xs text-yellow-800">
-          <strong>Demo Map:</strong> Configure Google Maps API key for real map functionality
+          <strong>💡</strong> {t('fallbackMap.demoNotice')}
         </p>
       </div>
     </div>
