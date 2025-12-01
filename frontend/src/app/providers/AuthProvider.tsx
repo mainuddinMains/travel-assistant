@@ -1,6 +1,7 @@
 
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { logout as logoutApi } from '../../features/auth/api'
+import { loadAuthTokenFromStorage, setAuthToken } from '../../lib/http'
 
 type User = { id: string | number; name: string }
 type AuthCtx = {
@@ -24,10 +25,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const parsed = JSON.parse(saved)
         setUser(parsed.user)
         setToken(parsed.token)
+        setAuthToken(parsed.token)
       } catch (error) {
         console.error('Failed to parse saved auth:', error)
         localStorage.removeItem('auth')
+        setAuthToken(null)
       }
+    } else {
+      loadAuthTokenFromStorage()
     }
     
     // Check for autologin parameter (for development)
@@ -37,6 +42,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       localStorage.setItem('auth', JSON.stringify(fake));
       setUser(fake.user);
       setToken(fake.token);
+      setAuthToken(fake.token);
     }
   }, []);
   
@@ -46,6 +52,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     login: (u: User, t: string) => {
       console.log('AuthProvider login called with:', { user: u, token: t })
       setUser(u); setToken(t)
+      setAuthToken(t)
       localStorage.setItem('auth', JSON.stringify({ user: u, token: t }))
       console.log('Auth state updated, localStorage saved')
     },
@@ -59,6 +66,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         console.error('Logout API call failed:', error)
       } finally {
         setUser(null); setToken(null)
+        setAuthToken(null)
         localStorage.removeItem('auth')
       }
     }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface ApiKeyInputProps {
   onApiKeySet: (apiKey: string) => void
@@ -6,15 +7,14 @@ interface ApiKeyInputProps {
 }
 
 export function ApiKeyInput({ onApiKeySet, currentApiKey }: ApiKeyInputProps) {
+  const { t } = useTranslation()
   const [apiKey, setApiKey] = useState('')
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    // Check if we already have an API key
     if (currentApiKey && currentApiKey !== 'your_google_maps_api_key_here') {
       setIsVisible(false)
     } else {
-      // Check localStorage
       const storedKey = localStorage.getItem('google_maps_api_key')
       if (storedKey) {
         setApiKey(storedKey)
@@ -29,9 +29,7 @@ export function ApiKeyInput({ onApiKeySet, currentApiKey }: ApiKeyInputProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (apiKey.trim()) {
-      // Store in localStorage
       localStorage.setItem('google_maps_api_key', apiKey.trim())
-      // Notify parent component
       onApiKeySet(apiKey.trim())
       setIsVisible(false)
     }
@@ -46,33 +44,38 @@ export function ApiKeyInput({ onApiKeySet, currentApiKey }: ApiKeyInputProps) {
   }
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4">
-        <h2 className="text-xl font-bold mb-4">🔑 Google Maps API Key Required</h2>
-        <p className="text-gray-600 mb-4">
-          To use Google Maps, please enter your API key. You can get one from{' '}
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 animate-fade-in">
+      <div className="card max-w-md w-full mx-4 shadow-travel-xl border-2 border-travel-primary/20 animate-slide-up">
+        <h2 className="text-2xl font-heading font-bold mb-4 text-travel-primary flex items-center gap-2">
+          <span className="text-3xl">🔑</span> {t('modals.apiKeyTitle')}
+        </h2>
+        <p className="text-travel-neutral/80 mb-6 leading-relaxed">
+          {t('modals.apiKeyDescription')}{' '}
           <a 
             href="https://console.cloud.google.com/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
+            className="text-travel-primary font-semibold hover:underline inline-flex items-center gap-1"
           >
             Google Cloud Console
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
           </a>
         </p>
         
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label htmlFor="apiKey" className="block text-sm font-medium text-gray-700 mb-2">
-              API Key
+            <label htmlFor="apiKey" className="label">
+              {t('modals.apiKeyLabel')}
             </label>
             <input
               type="text"
               id="apiKey"
               value={apiKey}
               onChange={(e) => setApiKey(e.target.value)}
-              placeholder="Enter your Google Maps API key..."
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder={t('modals.apiKeyPlaceholder')}
+              className="input"
               required
             />
           </div>
@@ -80,23 +83,27 @@ export function ApiKeyInput({ onApiKeySet, currentApiKey }: ApiKeyInputProps) {
           <div className="flex space-x-3">
             <button
               type="submit"
-              className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="btn btn-primary flex-1"
             >
-              Use API Key
+              {t('modals.apiKeyPrimary')}
             </button>
             <button
               type="button"
               onClick={handleSkip}
-              className="flex-1 bg-gray-300 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="btn flex-1"
             >
-              Use Fallback Map
+              {t('modals.apiKeySecondary')}
             </button>
           </div>
         </form>
         
-        <div className="mt-4 text-xs text-gray-500">
-          <p>💡 <strong>Tip:</strong> Your API key will be stored locally and used for this session.</p>
-          <p>🔒 <strong>Security:</strong> The key is only stored in your browser's localStorage.</p>
+        <div className="mt-6 p-4 rounded-xl bg-gradient-to-br from-travel-primary/5 to-transparent border border-travel-neutral-light/30 space-y-2">
+          <p className="text-xs text-travel-neutral/80">
+            <span className="font-semibold">💡</span> {t('modals.apiKeyTip')}
+          </p>
+          <p className="text-xs text-travel-neutral/80">
+            <span className="font-semibold">🔒</span> {t('modals.apiKeySecurity')}
+          </p>
         </div>
       </div>
     </div>

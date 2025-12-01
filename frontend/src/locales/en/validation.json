@@ -1,9 +1,0 @@
-{
-  "name": "Please enter your name (2\u201350 characters).",
-  "email": "Please enter a valid email address.",
-  "age": "Age must be between 13 and 120.",
-  "gender": "Please select a gender option.",
-  "phone": "Enter a valid phone number (e.g., +14155552671).",
-  "password": "Password must be at least 8 characters and include a number.",
-  "agree": "You must agree to the Terms & Privacy Policy."
-}

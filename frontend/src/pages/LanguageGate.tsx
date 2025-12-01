@@ -5,10 +5,11 @@ import { useNavigate } from 'react-router-dom'
 
 const LANG_KEY = 'lang'
 
-const LANGS = [
-  { code: 'en', label: 'English' },
-  { code: 'es', label: 'Español' },
-  { code: 'hi', label: 'हिन्दी' }
+const AVAILABLE_LANGUAGES: Array<{ code: string; icon: string }> = [
+  { code: 'en', icon: '🇬🇧' },
+  { code: 'bn', icon: '🇧🇩' },
+  { code: 'hi', icon: '🇮🇳' },
+  { code: 'ko', icon: '🇰🇷' }
 ]
 
 export function LanguageGate() {
@@ -32,33 +33,48 @@ export function LanguageGate() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="card w-full max-w-md">
-        <h1 className="text-xl font-semibold mb-4">{t('language.choose')}</h1>
+    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-travel-neutral-lightest to-travel-neutral-light/20">
+      <div className="card w-full max-w-md animate-fade-in">
+        <div className="text-center mb-6">
+          <div className="text-5xl mb-4">🌐</div>
+          <h1 className="text-2xl font-heading font-bold mb-2 bg-gradient-to-r from-travel-primary to-travel-primaryLight bg-clip-text text-transparent">
+            {t('language.chooseTitle')}
+          </h1>
+          <p className="text-sm text-travel-neutral/70">{t('language.chooseSubtitle')}</p>
+        </div>
         {selected && (
-          <p className="text-sm text-gray-600 mb-4">
-            Current: {LANGS.find(l => l.code === selected)?.label}
-          </p>
+          <div className="mb-4 p-3 rounded-xl bg-travel-primary/10 border border-travel-primary/20">
+            <p className="text-sm text-travel-primary font-semibold flex items-center justify-center gap-2">
+              <span>✓</span> {t('language.current', { language: t(`language.names.${selected}`) })}
+            </p>
+          </div>
         )}
-        <div className="space-y-2">
-          {LANGS.map(l => (
-            <button 
-              key={l.code} 
-              className={`btn w-full ${selected === l.code ? 'btn-primary' : ''}`} 
-              onClick={() => choose(l.code)} 
-              aria-pressed={selected === l.code}
+        <div className="space-y-3">
+          {AVAILABLE_LANGUAGES.map(lang => (
+            <button
+              key={lang.code}
+              className={`btn w-full py-3 font-semibold transition-all duration-300 ${
+                selected === lang.code
+                  ? 'btn-primary pulse-active'
+                  : 'bg-white hover:bg-travel-neutral-lightest'
+              }`}
+              onClick={() => choose(lang.code)}
+              aria-pressed={selected === lang.code}
             >
-              {l.label}
-              {selected === l.code && <span className="ml-2">✓</span>}
+              <span className="flex items-center justify-center gap-2">
+                <span className="text-xl" role="img" aria-hidden="true">{lang.icon}</span>
+                {t(`language.names.${lang.code}`)}
+                {selected === lang.code && <span className="text-xl">✓</span>}
+              </span>
             </button>
           ))}
         </div>
-        <div className="mt-4 text-center">
-          <button 
-            className="link text-sm" 
+        <div className="mt-6 text-center">
+          <button
+            className="link text-sm"
             onClick={() => nav('/login')}
           >
-            {t('continue')} {t('language.change').toLowerCase()}
+            {t('language.continue')}
           </button>
         </div>
       </div>
