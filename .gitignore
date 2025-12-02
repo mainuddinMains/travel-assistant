@@ -1,5 +1,8 @@
+# Dependencies
 node_modules/
 __pycache__/
+
+# Environment variables
 *.env
 .env
 .env.local
@@ -28,7 +31,7 @@ pids/
 *.seed
 *.pid.lock
 
-# Coverage directory used by tools like istanbul
+# Coverage
 coverage/
 
 # Database files
@@ -36,13 +39,50 @@ coverage/
 *.sqlite
 *.sqlite3
 
-# Duplicate/copy files
-*copy*
-*copy.*
-*Copy*
-*Copy.*
+# Build artifacts
+dist/
+build/
+*.tsbuildinfo
 
-# OS generated files
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# Documentation files (development notes)
+*_SUMMARY.md
+*_PLAN.md
+*_GUIDE.md
+*_STATUS.md
+*_COMPLETE.md
+*_SETUP.md
+*_FIX*.md
+*INTEGRATION*.md
+*TROUBLESHOOT*.md
+*SOLUTION*.md
+*HOW_TO*.md
+*START_*.md
+*TESTING*.md
+*QUICK_*.md
+*IMPORTANT*.md
+RUN_DASHBOARD*.md
+
+# Test outputs
+chat_structured_output_history.json
+chat_enriched_places.json
+route_tests/
+
+# Design files
+Figma Design/
+Figma Design.zip
+
+# Old/unused folders
+backend/backend/
+backend/dashboard-api/
+backend/frontend/
+backend/.gitignore
+
+# OS files
 .DS_Store
 .DS_Store?
 ._*
@@ -50,3 +90,14 @@ coverage/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Temporary files
+*.bak
+*.swp
+*.tmp
+
+# Duplicate files
+*copy*
+*copy.*
+*Copy*
+*Copy.*

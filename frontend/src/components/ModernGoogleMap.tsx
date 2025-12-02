@@ -13,7 +13,7 @@ interface ModernGoogleMapProps {
 
 declare global {
   interface Window {
-    google: any
+    google: typeof google
   }
 }
 
@@ -52,9 +52,14 @@ export function ModernGoogleMap({
         console.log('Loading Google Maps libraries...')
         
         // Load required libraries dynamically
-        const { Map } = await window.google.maps.importLibrary('maps')
-        const { Marker } = await window.google.maps.importLibrary('marker')
-        const { DirectionsService, DirectionsRenderer } = await window.google.maps.importLibrary('routes')
+        const mapsLibrary = await window.google.maps.importLibrary('maps') as any
+        const markerLibrary = await window.google.maps.importLibrary('marker') as any
+        const routesLibrary = await window.google.maps.importLibrary('routes') as any
+        
+        const Map = mapsLibrary.Map
+        const Marker = markerLibrary.Marker
+        const DirectionsService = routesLibrary.DirectionsService
+        const DirectionsRenderer = routesLibrary.DirectionsRenderer
         
         console.log('Google Maps libraries loaded successfully')
         
