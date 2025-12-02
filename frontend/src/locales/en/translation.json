@@ -36,6 +36,8 @@
     "languageLink": "Change language",
     "errors": {
       "invalidCreds": "Invalid email or password.",
+      "emailExists": "This email is already registered. Please use a different email or log in instead.",
+      "validation": "Please check your input and try again.",
       "generic": "Something went wrong. Please try again."
     }
   },
