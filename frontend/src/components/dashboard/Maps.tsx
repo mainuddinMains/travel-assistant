@@ -78,36 +78,42 @@ export function Maps({ places = [], routePolylines = [], route, onPlaceClick, on
       return () => clearInterval(checkLoaded)
     }
 
-    // Create unique callback function to avoid conflicts
-    const callbackName = `initMap_${Date.now()}`
-    ;(window as any)[callbackName] = () => {
-      // Wait a bit to ensure geometry library is fully loaded
-      setTimeout(() => {
-        if (window.google?.maps?.geometry?.encoding) {
-          setIsLoaded(true)
-        } else {
-          console.warn('[Maps] Geometry library not ready, retrying...')
-          setTimeout(() => setIsLoaded(true), 500)
-        }
-      }, 100)
-      // Clean up callback
-      delete (window as any)[callbackName]
-    }
-
+    // Load script without callback - check for load manually
+    // This avoids callback timing issues
     const script = document.createElement('script')
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places,geometry&callback=${callbackName}`
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places,geometry`
     script.async = true
     script.defer = true
-    script.onerror = () => {
-      console.error('[Maps] Failed to load Google Maps API')
-      delete (window as any)[callbackName]
+    
+    script.onload = () => {
+      // Wait for Google Maps to fully initialize
+      const checkGoogleMaps = setInterval(() => {
+        if (window.google?.maps?.Map && window.google?.maps?.geometry?.encoding) {
+          console.log('[Maps] ✓ Google Maps API loaded successfully')
+          setIsLoaded(true)
+          clearInterval(checkGoogleMaps)
+        }
+      }, 100)
+      
+      // Timeout after 10 seconds
+      setTimeout(() => {
+        clearInterval(checkGoogleMaps)
+        if (window.google?.maps?.Map) {
+          setIsLoaded(true)
+        } else {
+          console.error('[Maps] Google Maps failed to load properly')
+        }
+      }, 10000)
     }
+    
+    script.onerror = () => {
+      console.error('[Maps] Failed to load Google Maps API script')
+    }
+    
     document.head.appendChild(script)
 
     return () => {
-      // Don't remove script if it's already loaded (might be used by other components)
-      // Just clean up callback
-      delete (window as any)[callbackName]
+      // Don't remove script - it might be used by other components
     }
   }, [googleMapsApiKey])
 

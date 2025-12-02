@@ -11,7 +11,7 @@ Start-Sleep -Seconds 2
 
 # Start Dashboard Backend in new window
 Write-Host "Starting Dashboard Backend (Port 8000)..." -ForegroundColor Cyan
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$PSScriptRoot\backend\dashboard-api'; python -m uvicorn server:app --reload --port 8000"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$PSScriptRoot\Dashboard\backend_logic_chat'; python server.py"
 
 Write-Host ""
 Write-Host "Both servers are starting in separate windows..." -ForegroundColor Yellow
