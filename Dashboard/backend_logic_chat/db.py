@@ -328,6 +328,7 @@ def save_chat_message(session: Session, trip_id: int, role: str, content: str) -
 def save_enriched_place(session: Session, trip_id: int, place_data: Dict[str, Any]) -> Place:
     """
     Save an enriched place to the database.
+    Updates existing place if it already exists for this trip.
 
     Args:
         session: Database session
@@ -335,36 +336,74 @@ def save_enriched_place(session: Session, trip_id: int, place_data: Dict[str, An
         place_data: Enriched place dict from gmaps_requests.enrich_place_with_details()
 
     Returns:
-        Created Place object
+        Created or updated Place object
     """
-    place = Place(
-        tripId=trip_id,
-        placeId=place_data.get("placeId"),
-        originalDisplayName=place_data.get("originalDisplayName", ""),
-        displayName=place_data.get("displayName", ""),
-        originalFormattedAddress=place_data.get("originalFormattedAddress"),
-        formattedAddress=place_data.get("formattedAddress"),
-        rating=place_data.get("rating"),
-        userRatingCount=place_data.get("userRatingCount"),
-        location=place_data.get("location"),
-        primaryType=place_data.get("primaryType"),
-        primaryTypeDisplayName=place_data.get("primaryTypeDisplayName"),
-        iconId=place_data.get("iconId", 7),
-        businessStatus=place_data.get("businessStatus"),
-        priceLevel=place_data.get("priceLevel"),
-        googleMapsUri=place_data.get("googleMapsUri"),
-        websiteUri=place_data.get("websiteUri"),
-        nationalPhoneNumber=place_data.get("nationalPhoneNumber"),
-        internationalPhoneNumber=place_data.get("internationalPhoneNumber"),
-        currentOpeningHours=place_data.get("currentOpeningHours"),
-        regularOpeningHours=place_data.get("regularOpeningHours"),
-        photos=place_data.get("photos"),
-        types=place_data.get("types"),
-    )
-    session.add(place)
-    session.commit()
-    session.refresh(place)
-    return place
+    from sqlmodel import select
+    
+    place_id = place_data.get("placeId")
+    if not place_id:
+        raise ValueError("placeId is required in place_data")
+    
+    # Check if place already exists for this trip
+    statement = select(Place).where(Place.tripId == trip_id).where(Place.placeId == place_id)
+    existing_place = session.exec(statement).first()
+    
+    if existing_place:
+        # Update existing place with new data
+        existing_place.originalDisplayName = place_data.get("originalDisplayName", existing_place.originalDisplayName)
+        existing_place.displayName = place_data.get("displayName", existing_place.displayName)
+        existing_place.originalFormattedAddress = place_data.get("originalFormattedAddress") or existing_place.originalFormattedAddress
+        existing_place.formattedAddress = place_data.get("formattedAddress") or existing_place.formattedAddress
+        existing_place.rating = place_data.get("rating") or existing_place.rating
+        existing_place.userRatingCount = place_data.get("userRatingCount") or existing_place.userRatingCount
+        existing_place.location = place_data.get("location") or existing_place.location
+        existing_place.primaryType = place_data.get("primaryType") or existing_place.primaryType
+        existing_place.primaryTypeDisplayName = place_data.get("primaryTypeDisplayName") or existing_place.primaryTypeDisplayName
+        existing_place.iconId = place_data.get("iconId", existing_place.iconId)
+        existing_place.businessStatus = place_data.get("businessStatus") or existing_place.businessStatus
+        existing_place.priceLevel = place_data.get("priceLevel") or existing_place.priceLevel
+        existing_place.googleMapsUri = place_data.get("googleMapsUri") or existing_place.googleMapsUri
+        existing_place.websiteUri = place_data.get("websiteUri") or existing_place.websiteUri
+        existing_place.nationalPhoneNumber = place_data.get("nationalPhoneNumber") or existing_place.nationalPhoneNumber
+        existing_place.internationalPhoneNumber = place_data.get("internationalPhoneNumber") or existing_place.internationalPhoneNumber
+        existing_place.currentOpeningHours = place_data.get("currentOpeningHours") or existing_place.currentOpeningHours
+        existing_place.regularOpeningHours = place_data.get("regularOpeningHours") or existing_place.regularOpeningHours
+        existing_place.photos = place_data.get("photos") or existing_place.photos
+        existing_place.types = place_data.get("types") or existing_place.types
+        
+        session.commit()
+        session.refresh(existing_place)
+        return existing_place
+    else:
+        # Create new place
+        place = Place(
+            tripId=trip_id,
+            placeId=place_id,
+            originalDisplayName=place_data.get("originalDisplayName", ""),
+            displayName=place_data.get("displayName", ""),
+            originalFormattedAddress=place_data.get("originalFormattedAddress"),
+            formattedAddress=place_data.get("formattedAddress"),
+            rating=place_data.get("rating"),
+            userRatingCount=place_data.get("userRatingCount"),
+            location=place_data.get("location"),
+            primaryType=place_data.get("primaryType"),
+            primaryTypeDisplayName=place_data.get("primaryTypeDisplayName"),
+            iconId=place_data.get("iconId", 7),
+            businessStatus=place_data.get("businessStatus"),
+            priceLevel=place_data.get("priceLevel"),
+            googleMapsUri=place_data.get("googleMapsUri"),
+            websiteUri=place_data.get("websiteUri"),
+            nationalPhoneNumber=place_data.get("nationalPhoneNumber"),
+            internationalPhoneNumber=place_data.get("internationalPhoneNumber"),
+            currentOpeningHours=place_data.get("currentOpeningHours"),
+            regularOpeningHours=place_data.get("regularOpeningHours"),
+            photos=place_data.get("photos"),
+            types=place_data.get("types"),
+        )
+        session.add(place)
+        session.commit()
+        session.refresh(place)
+        return place
 
 
 def update_trip_context(session: Session, trip_id: int, trip_context: Dict[str, Any]) -> Trip:
@@ -610,6 +649,61 @@ def get_all_routes(session: Session, trip_id: int) -> List[Route]:
         .order_by(Route.createdAt.desc())
     )
     return session.exec(statement).all()
+
+
+def get_chat_messages(session: Session, trip_id: int) -> List[ChatMessage]:
+    """
+    Get all chat messages for a trip.
+
+    Args:
+        session: Database session
+        trip_id: Trip ID
+
+    Returns:
+        List of ChatMessage objects ordered by creation time
+    """
+    from sqlmodel import select
+
+    statement = (
+        select(ChatMessage)
+        .where(ChatMessage.tripId == trip_id)
+        .order_by(ChatMessage.createdAt)
+    )
+    return session.exec(statement).all()
+
+
+def place_to_dict(place: Place) -> Dict[str, Any]:
+    """
+    Convert a Place database object to a dict format used by the frontend/session.
+
+    Args:
+        place: Place database object
+
+    Returns:
+        Dictionary with place data in format expected by frontend
+    """
+    return {
+        "placeId": place.placeId,
+        "displayName": place.displayName,
+        "originalDisplayName": place.originalDisplayName,
+        "formattedAddress": place.formattedAddress or place.originalFormattedAddress,
+        "originalFormattedAddress": place.originalFormattedAddress,
+        "rating": place.rating,
+        "userRatingCount": place.userRatingCount,
+        "location": place.location,
+        "businessStatus": place.businessStatus,
+        "primaryType": place.primaryType,
+        "primaryTypeDisplayName": place.primaryTypeDisplayName,
+        "iconId": place.iconId,
+        "priceLevel": place.priceLevel,
+        "currentOpeningHours": place.currentOpeningHours,
+        "googleMapsUri": place.googleMapsUri,
+        "websiteUri": place.websiteUri,
+        "nationalPhoneNumber": place.nationalPhoneNumber,
+        "internationalPhoneNumber": place.internationalPhoneNumber,
+        "photos": place.photos,
+        "types": place.types
+    }
 
 
 # ============================================================================

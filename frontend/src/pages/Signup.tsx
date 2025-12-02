@@ -87,7 +87,7 @@ export function Signup() {
           <Link className="link" to="/login">{t('auth.toLogin')}</Link>
         </div>
         <div className="mt-4 text-center">
-          <Link className="link text-sm" to="/">🌐 {t('auth.languageLink')}</Link>
+          <Link className="link text-sm" to="/">🏠 {t('auth.backToHome')}</Link>
         </div>
       </div>
     </div>

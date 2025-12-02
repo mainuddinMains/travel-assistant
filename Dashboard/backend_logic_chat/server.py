@@ -41,7 +41,12 @@ from db import (
     select_place as db_select_place,
     deselect_place as db_deselect_place,
     update_place_order as db_update_place_order,
-    save_route as db_save_route
+    save_route as db_save_route,
+    get_chat_messages,
+    get_trip_places,
+    get_selected_places,
+    get_all_routes,
+    place_to_dict
 )
 
 # Load environment variables
@@ -107,40 +112,135 @@ app.add_middleware(
 sessions_db: Dict[str, Dict[str, Any]] = {}
 
 
-def get_or_create_session(session_id: Optional[str] = None) -> tuple[str, Dict[str, Any], int]:
+def get_or_create_session(session_id: Optional[str] = None, user_id: Optional[str] = None) -> tuple[str, Dict[str, Any], int]:
     """
     Get existing session or create new one.
+    Loads all data from database if session exists, otherwise creates new session.
 
     Returns:
         tuple: (session_id, session_dict, trip_id)
     """
+    # If session exists in memory cache, return it
     if session_id and session_id in sessions_db:
         return session_id, sessions_db[session_id], sessions_db[session_id].get("trip_id")
 
-    # Create new session with chat history initialized
+    # Check if session exists in database and load all data
     new_session_id = session_id or str(uuid.uuid4())
-
-    # Create trip in database
     trip_id = None
+    
     try:
         with get_db_session() as db_session:
+            # Get or create trip in database
             trip = get_or_create_trip(db_session, new_session_id)
             trip_id = trip.id
-            print(f"[Database] Trip created/retrieved: ID={trip_id}")
+            
+            # If trip has userId field, set it (for user-specific trips)
+            if user_id and hasattr(trip, 'userId'):
+                if not trip.userId:
+                    trip.userId = user_id
+                    db_session.commit()
+                    db_session.refresh(trip)
+            
+            # Check if this is an existing trip (has messages, places, or routes)
+            messages = get_chat_messages(db_session, trip_id)
+            places = get_trip_places(db_session, trip_id)
+            routes = get_all_routes(db_session, trip_id)
+            
+            is_existing_trip = len(messages) > 0 or len(places) > 0 or len(routes) > 0
+            
+            if is_existing_trip:
+                print(f"[Database] Restoring existing trip: ID={trip_id}, Session={new_session_id}")
+                print(f"  - {len(messages)} messages, {len(places)} places, {len(routes)} routes")
+                
+                # Reconstruct chat history from database messages
+                chat_history = []
+                for msg in messages:
+                    chat_history.append({
+                        "role": msg.role,
+                        "content": msg.content
+                    })
+                
+                # If no chat history, initialize with welcome message
+                if not chat_history:
+                    chat_history = initialize_chat_history()
+                
+                # Reconstruct enriched places from database
+                enriched_places = []
+                for place in places:
+                    enriched_places.append(place_to_dict(place))
+                
+                # Reconstruct selected places (places with isSelected=True)
+                selected_places_list = get_selected_places(db_session, trip_id)
+                selected_places = [place_to_dict(p) for p in selected_places_list]
+                
+                # Reconstruct trip context
+                trip_context = None
+                if trip.cities or trip.scheduleStartDate or trip.scheduleEndDate:
+                    trip_context = {
+                        "cities": trip.cities or [],
+                        "scheduleStartDate": trip.scheduleStartDate,
+                        "scheduleEndDate": trip.scheduleEndDate
+                    }
+                
+                # Reconstruct optimized routes (group by mode)
+                optimized_routes = {}
+                for route in routes:
+                    mode_lower = route.mode.lower()  # Convert DRIVE -> driving, etc.
+                    optimized_routes[mode_lower] = {
+                        "sessionId": new_session_id,
+                        "mode": mode_lower,
+                        "placeOrder": route.placeOrder or [],
+                        "totalDistance": route.totalDistance,
+                        "totalDuration": route.totalDuration,
+                        "legs": route.legs or []
+                    }
+                
+                # Create session dict with all loaded data
+                sessions_db[new_session_id] = {
+                    "session_id": new_session_id,
+                    "trip_id": trip_id,
+                    "created_at": trip.createdAt.isoformat() if trip.createdAt else datetime.now().isoformat(),
+                    "chat_history": chat_history,
+                    "trip_context": trip_context,
+                    "all_places": [],  # Not used, but kept for compatibility
+                    "enriched_places": enriched_places,
+                    "selected_places": selected_places,
+                    "optimized_routes": optimized_routes
+                }
+                
+                print(f"[Database] ✓ Trip restored from database")
+            else:
+                # New trip - initialize empty session
+                print(f"[Database] Creating new trip: ID={trip_id}, Session={new_session_id}")
+                sessions_db[new_session_id] = {
+                    "session_id": new_session_id,
+                    "trip_id": trip_id,
+                    "created_at": datetime.now().isoformat(),
+                    "chat_history": initialize_chat_history(),  # Initialize with welcome message
+                    "trip_context": None,
+                    "all_places": [],
+                    "enriched_places": [],
+                    "selected_places": [],
+                    "optimized_routes": {}
+                }
+                
     except Exception as e:
-        print(f"[Database] Warning: Could not create trip in database: {e}")
-
-    sessions_db[new_session_id] = {
-        "session_id": new_session_id,
-        "trip_id": trip_id,  # Database trip ID
-        "created_at": datetime.now().isoformat(),
-        "chat_history": initialize_chat_history(),  # Initialize with welcome message
-        "trip_context": None,  # Trip context (cities, dates) extracted from conversation
-        "all_places": [],
-        "enriched_places": [],
-        "selected_places": [],
-        "optimized_routes": {}
-    }
+        print(f"[Database] Warning: Could not load trip from database: {e}")
+        import traceback
+        traceback.print_exc()
+        # Fallback to in-memory only session
+        sessions_db[new_session_id] = {
+            "session_id": new_session_id,
+            "trip_id": None,
+            "created_at": datetime.now().isoformat(),
+            "chat_history": initialize_chat_history(),
+            "trip_context": None,
+            "all_places": [],
+            "enriched_places": [],
+            "selected_places": [],
+            "optimized_routes": {}
+        }
+    
     return new_session_id, sessions_db[new_session_id], trip_id
 
 # ============================================================================
