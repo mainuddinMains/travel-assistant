@@ -1,0 +1,3341 @@
+{
+  "routes": [
+    {
+      "legs": [
+        {
+          "distanceMeters": 5877,
+          "duration": "1330s",
+          "staticDuration": "1330s",
+          "polyline": {
+            "encodedPolyline": "yuzkHn|pnVMPYc@`@u@FIr@cAh@gA^i@iAA_@_@a@e@]OIAKu@XcA@EDMRc@R[l@u@R_@LWCIKO|AmCIMCGj@cATk@Pa@MGkAoB_@s@AUJm@AGACISt@uA~@cEDI~@xAv@rAHLN?HK@GD_@Xg@b@w@LSP[JSTe@HW?CHGLMbAoBVs@EEACDo@BMNc@HEB{AAg@C[O_AESJKJQ?XD]@AR\\FDLEDI@SGOUODKPNNGDUASJCBShAoCDKdAiDFUViALi@hA_GJUDKJk@f@mCReAh@^RPJDTNBIb@}BFWHe@dAiFZ_BBKPe@HQl@gAbAbB~@~Af@x@Vb@FR`AdBf@t@Zj@NYl@cA\\k@`@u@l@aATc@BEv@uAz@}ABGbAcBz@}A|@eBVe@f@{@~@aBVe@JQHOLUBGLQHOHOZk@R_@HO~AkCr@oAh@}@^q@MUIOe@u@[m@y@wAs@kAe@w@m@cALoAPaBbAaJ@W@OH_ALgANiADe@r@@zDHJBPUJADuJAWdFAv@@Ai@GkC@gD?k@Ai@?a@@S@c@@aC?[BsC@yBBwB?q@@iF@wC@cA@uA@wA@eC?SBmF@uCBoF@i@DqH?SE[C[Ja@AQBQFcM@cC@eE@y@@sA@cC@mBdAAN?"
+          },
+          "startLocation": {
+            "latLng": {
+              "latitude": 49.293894699999996,
+              "longitude": -123.13560459999998
+            }
+          },
+          "endLocation": {
+            "latLng": {
+              "latitude": 49.2769136,
+              "longitude": -123.08137189999998
+            }
+          },
+          "steps": [
+            {
+              "distanceMeters": 10,
+              "staticDuration": "1s",
+              "polyline": {
+                "encodedPolyline": "yuzkHn|pnVMP"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.293894699999996,
+                  "longitude": -123.13560459999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2939569,
+                  "longitude": -123.13569480000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "DEPART",
+                "instructions": "Head northwest"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "10 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 20,
+              "staticDuration": "3s",
+              "polyline": {
+                "encodedPolyline": "gvzkH`}pnVYc@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2939569,
+                  "longitude": -123.13569480000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2940945,
+                  "longitude": -123.13550869999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "20 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 130,
+              "staticDuration": "29s",
+              "polyline": {
+                "encodedPolyline": "awzkH|{pnV`@u@FIr@cAh@gA^i@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2940945,
+                  "longitude": -123.13550869999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2932497,
+                  "longitude": -123.13428329999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 110,
+              "staticDuration": "15s",
+              "polyline": {
+                "encodedPolyline": "yqzkHftpnViAA_@_@a@e@]OIA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2932497,
+                  "longitude": -123.13428329999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2941526,
+                  "longitude": -123.13382740000002
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SHARP_LEFT",
+                "instructions": "Sharp left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 20,
+              "staticDuration": "2s",
+              "polyline": {
+                "encodedPolyline": "mwzkHlqpnVKu@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2941526,
+                  "longitude": -123.13382740000002
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2942119,
+                  "longitude": -123.1335606
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "20 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 143,
+              "staticDuration": "24s",
+              "polyline": {
+                "encodedPolyline": "ywzkHvopnVXcA@EDMRc@R[l@u@R_@LWCIKO"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2942119,
+                  "longitude": -123.1335606
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.293518399999996,
+                  "longitude": -123.13212390000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 155,
+              "staticDuration": "35s",
+              "polyline": {
+                "encodedPolyline": "oszkHvfpnV|AmCIMCGj@cATk@Pa@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.293518399999996,
+                  "longitude": -123.13212390000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2927001,
+                  "longitude": -123.1305657
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right toward Coal Hbr Seawalk"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.2 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 257,
+              "staticDuration": "38s",
+              "polyline": {
+                "encodedPolyline": "knzkH`}onVMGkAoB_@s@AUJm@AGACISt@uA~@cE"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2927001,
+                  "longitude": -123.1305657
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.292742999999994,
+                  "longitude": -123.12779689999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Coal Hbr Seawalk"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.3 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 124,
+              "staticDuration": "32s",
+              "polyline": {
+                "encodedPolyline": "snzkHvkonVDI~@xAv@rAHLN?HK@G"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.292742999999994,
+                  "longitude": -123.12779689999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2919242,
+                  "longitude": -123.12859300000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 220,
+              "staticDuration": "40s",
+              "polyline": {
+                "encodedPolyline": "oizkHtponVD_@Xg@b@w@LSP[JSTe@HW?CHGLMbAoBVs@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2919242,
+                  "longitude": -123.12859300000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2906244,
+                  "longitude": -123.1263477
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_LEFT",
+                "instructions": "Slight left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.2 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 51,
+              "staticDuration": "11s",
+              "polyline": {
+                "encodedPolyline": "kazkHtbonVEEACDo@BMNc@HE"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2906244,
+                  "longitude": -123.1263477
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.290476399999996,
+                  "longitude": -123.1257779
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "51 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 91,
+              "staticDuration": "13s",
+              "polyline": {
+                "encodedPolyline": "o`zkHb_onVB{AAg@C[O_AES"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.290476399999996,
+                  "longitude": -123.1257779
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2905957,
+                  "longitude": -123.12455759999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "91 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 41,
+              "staticDuration": "13s",
+              "polyline": {
+                "encodedPolyline": "gazkHnwnnVJKJQ?XD]@A"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2905957,
+                  "longitude": -123.12455759999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2904397,
+                  "longitude": -123.1243763
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right toward W Cordova St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "41 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 63,
+              "staticDuration": "14s",
+              "polyline": {
+                "encodedPolyline": "g`zkHjvnnVR\\FDLEDI@SGOUO"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2904397,
+                  "longitude": -123.1243763
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2903397,
+                  "longitude": -123.1242206
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right toward W Cordova St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "63 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 6,
+              "staticDuration": "3s",
+              "polyline": {
+                "encodedPolyline": "s_zkHjunnVDK"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2903397,
+                  "longitude": -123.1242206
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.290305599999996,
+                  "longitude": -123.12415890000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right toward W Cordova St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "6 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 37,
+              "staticDuration": "10s",
+              "polyline": {
+                "encodedPolyline": "m_zkH~tnnVPNNGDUAS"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.290305599999996,
+                  "longitude": -123.12415890000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.290123,
+                  "longitude": -123.1239923
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right toward W Cordova St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "37 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 7,
+              "staticDuration": "1s",
+              "polyline": {
+                "encodedPolyline": "g~ykH|snnVJC"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.290123,
+                  "longitude": -123.1239923
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.290058699999996,
+                  "longitude": -123.12396840000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right toward W Cordova St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "7 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 343,
+              "staticDuration": "70s",
+              "polyline": {
+                "encodedPolyline": "{}ykHxsnnVBShAoCDKdAiDFUViALi@hA_GJUDKJk@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.290058699999996,
+                  "longitude": -123.12396840000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2885412,
+                  "longitude": -123.11988230000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto W Cordova St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.3 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 84,
+              "staticDuration": "14s",
+              "polyline": {
+                "encodedPolyline": "ktykHfzmnVf@mCReA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2885412,
+                  "longitude": -123.11988230000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.288236399999995,
+                  "longitude": -123.1188243
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "STRAIGHT",
+                "instructions": "Continue straight to stay on W Cordova St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "84 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 59,
+              "staticDuration": "11s",
+              "polyline": {
+                "encodedPolyline": "orykHrsmnVh@^RPJDTN"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.288236399999995,
+                  "longitude": -123.1188243
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2877559,
+                  "longitude": -123.1191769
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right toward W Hastings St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "59 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 278,
+              "staticDuration": "85s",
+              "polyline": {
+                "encodedPolyline": "ooykHzumnVBIb@}BFWHe@dAiFZ_BBKPe@HQl@gA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2877559,
+                  "longitude": -123.1191769
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.286585699999996,
+                  "longitude": -123.1158351
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto W Hastings St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.3 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 264,
+              "staticDuration": "73s",
+              "polyline": {
+                "encodedPolyline": "ehykH~`mnVbAbB~@~Af@x@Vb@FR`AdBf@t@Zj@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.286585699999996,
+                  "longitude": -123.1158351
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2849,
+                  "longitude": -123.11839330000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Hornby St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.3 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 798,
+              "staticDuration": "248s",
+              "polyline": {
+                "encodedPolyline": "s}xkH|pmnVNYl@cA\\k@`@u@l@aATc@BEv@uAz@}ABGbAcBz@}A|@eBVe@f@{@~@aBVe@JQHOLUBGLQHOHOZk@R_@HO~AkCr@oAh@}@^q@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2849,
+                  "longitude": -123.11839330000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.279834799999996,
+                  "longitude": -123.11060560000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Dunsmuir St/BC-1A"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.8 km"
+                },
+                "staticDuration": {
+                  "text": "4 mins"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 220,
+              "staticDuration": "47s",
+              "polyline": {
+                "encodedPolyline": "}}wkHh`lnVMUIOe@u@[m@y@wAs@kAe@w@m@cA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.279834799999996,
+                  "longitude": -123.11060560000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2812518,
+                  "longitude": -123.1084822
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Beatty St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.2 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 309,
+              "staticDuration": "69s",
+              "polyline": {
+                "encodedPolyline": "yfxkH~rknVLoAPaBbAaJ@W@OH_ALgANiADe@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2812518,
+                  "longitude": -123.1084822
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2805033,
+                  "longitude": -123.1043787
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto W Pender St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.3 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 160,
+              "staticDuration": "22s",
+              "polyline": {
+                "encodedPolyline": "cbxkHjyjnVr@@zDHJBPUJA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2805033,
+                  "longitude": -123.1043787
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.279094,
+                  "longitude": -123.1043368
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Carrall St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.2 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 144,
+              "staticDuration": "25s",
+              "polyline": {
+                "encodedPolyline": "iywkHbyjnVDuJAW"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.279094,
+                  "longitude": -123.1043368
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2790731,
+                  "longitude": -123.10234650000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 160,
+              "staticDuration": "29s",
+              "polyline": {
+                "encodedPolyline": "eywkHtljnVdFAv@@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2790731,
+                  "longitude": -123.10234650000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2776384,
+                  "longitude": -123.10234559999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right toward Union St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.2 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 1064,
+              "staticDuration": "265s",
+              "polyline": {
+                "encodedPolyline": "gpwkHtljnVAi@GkC@gD?k@Ai@?a@@S@c@@aC?[BsC@yBBwB?q@@iF@wC@cA@uA@wA@eC?SBmF@uCBoF@i@DqH?SE["
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2776384,
+                  "longitude": -123.10234559999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.27749,
+                  "longitude": -123.087697
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Union St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "1.1 km"
+                },
+                "staticDuration": {
+                  "text": "4 mins"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 461,
+              "staticDuration": "82s",
+              "polyline": {
+                "encodedPolyline": "iowkHbqgnVC[Ja@AQBQFcM@cC@eE@y@@sA@cC@mB"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.27749,
+                  "longitude": -123.087697
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2773423,
+                  "longitude": -123.08137669999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_RIGHT",
+                "instructions": "Slight right onto Adanac Bikeway"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.5 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 48,
+              "staticDuration": "6s",
+              "polyline": {
+                "encodedPolyline": "knwkHrifnVdAAN?"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2773423,
+                  "longitude": -123.08137669999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2769136,
+                  "longitude": -123.08137189999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Glen Dr\nDestination will be on the right"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "48 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            }
+          ],
+          "localizedValues": {
+            "distance": {
+              "text": "5.9 km"
+            },
+            "duration": {
+              "text": "22 mins"
+            },
+            "staticDuration": {
+              "text": "22 mins"
+            }
+          }
+        },
+        {
+          "distanceMeters": 5645,
+          "duration": "1096s",
+          "staticDuration": "1096s",
+          "polyline": {
+            "encodedPolyline": "ukwkHpifnVO?eA@AlBAbCArAAx@AdEAbCGbMCP?B@LADIZBZDZ?RGzICnFAtCC`GAdCAvAAtAAbAAvCAhF?p@CvBAxBCrC?ZA`CAb@A`@?R@tAAfDFjCxCDN@HB\\Jt@bBLXLEtAwALEFH@rBAd@NAb@At@{@\\YTMFETKHCTGHCTCH?`@AT?ZCd@UXG~ACTDRRPL\\FVB`@n@?LJPNl@@V?V@|CHNZFFB?@@R?HAlBA~AA\\AtCAn@HJv@F@@HFEzEGFGBuAj@EbF?d@J^`A~@PXH^@b@?d@Hp@FTBd@@r@RjBHt@FhAJp@J^@JDd@\\l@@TEZUh@G`@JxA?J@@JDFRPn@BTPPFZD\\@DVb@^j@\\tAr@jAj@nBTXd@NHJ?h@BJLLNARETb@Vn@JJ@?dADJNXl@dAC^BFBRPN\\BN@H@rAGrFALI\\MZsBn@Q\\GTCn@Bd@FTXb@Z\\TVH^L`BBf@?DLj@n@xAJf@Dj@Ax@Ox@_@r@g@f@IPGTEv@ApA?bC?lBd@?E~@ElDGZQVEH?`@JR`@n@Dd@?HGt@@z@JP|@?NXb@n@VlAHf@ABIj@CJUd@sAfAEXAd@?BIb@s@x@Od@CTEfAKf@Yj@E\\Eb@Ev@CLETKRa@^MNe@Pa@LGF_@\\MTk@{@[a@CEq@{@w@iA]e@kBoCKR"
+          },
+          "startLocation": {
+            "latLng": {
+              "latitude": 49.2769136,
+              "longitude": -123.08137189999998
+            }
+          },
+          "endLocation": {
+            "latLng": {
+              "latitude": 49.271139,
+              "longitude": -123.13398459999999
+            }
+          },
+          "steps": [
+            {
+              "distanceMeters": 48,
+              "staticDuration": "19s",
+              "polyline": {
+                "encodedPolyline": "ukwkHpifnVO?eA@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2769136,
+                  "longitude": -123.08137189999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2773423,
+                  "longitude": -123.08137669999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "DEPART",
+                "instructions": "Head north on Glen Dr toward Adanac Bikeway/Union St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "48 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 1511,
+              "staticDuration": "311s",
+              "polyline": {
+                "encodedPolyline": "knwkHrifnVAlBAbCArAAx@AdEAbCGbMCP?B@LADIZBZDZ?RGzICnFAtCC`GAdCAvAAtAAbAAvCAhF?p@CvBAxBCrC?ZA`CAb@A`@?R@tAAfDFjC"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2773423,
+                  "longitude": -123.08137669999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.277646999999995,
+                  "longitude": -123.10214400000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Adanac Bikeway/Union St\nContinue to follow Adanac Bikeway"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "1.5 km"
+                },
+                "staticDuration": {
+                  "text": "5 mins"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 165,
+              "staticDuration": "61s",
+              "polyline": {
+                "encodedPolyline": "ipwkHjkjnVxCDN@HB\\Jt@bB"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.277646999999995,
+                  "longitude": -123.10214400000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.276325299999996,
+                  "longitude": -123.10276169999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Quebec St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.2 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 148,
+              "staticDuration": "59s",
+              "polyline": {
+                "encodedPolyline": "ahwkHfojnVLXLEtAwALEFH@rBAd@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.276325299999996,
+                  "longitude": -123.10276169999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2756495,
+                  "longitude": -123.103214
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_LEFT",
+                "instructions": "Slight left toward Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 66,
+              "staticDuration": "15s",
+              "polyline": {
+                "encodedPolyline": "ycwkH`rjnVNAb@At@{@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2756495,
+                  "longitude": -123.103214
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2751239,
+                  "longitude": -123.1028854
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "66 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 324,
+              "staticDuration": "52s",
+              "polyline": {
+                "encodedPolyline": "o`wkH`pjnV\\YTMFETKHCTGHCTCH?`@AT?ZCd@UXG~ACTDRRPL\\FVB`@n@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2751239,
+                  "longitude": -123.1028854
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2723788,
+                  "longitude": -123.1028038
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_RIGHT",
+                "instructions": "Slight right to stay on Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.3 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 5,
+              "staticDuration": "1s",
+              "polyline": {
+                "encodedPolyline": "kovkHnojnV?L"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2723788,
+                  "longitude": -123.1028038
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.272383299999994,
+                  "longitude": -123.10287029999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right toward Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "5 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 10,
+              "staticDuration": "1s",
+              "polyline": {
+                "encodedPolyline": "kovkH|ojnVJP"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.272383299999994,
+                  "longitude": -123.10287029999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2723236,
+                  "longitude": -123.1029647
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "10 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 124,
+              "staticDuration": "22s",
+              "polyline": {
+                "encodedPolyline": "_ovkHnpjnVNl@@V?V@|CHNZFFB?@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2723236,
+                  "longitude": -123.1029647
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2719879,
+                  "longitude": -123.1043736
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_RIGHT",
+                "instructions": "Slight right to stay on Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "2s",
+              "polyline": {
+                "encodedPolyline": "}lvkHhyjnV@R?H"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2719879,
+                  "longitude": -123.1043736
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2719827,
+                  "longitude": -123.104518
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right to stay on Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "11 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 204,
+              "staticDuration": "36s",
+              "polyline": {
+                "encodedPolyline": "{lvkHfzjnVAlBA~AA\\AtCAn@HJv@F@@HF"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2719827,
+                  "longitude": -123.104518
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2716412,
+                  "longitude": -123.1068446
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_RIGHT",
+                "instructions": "Slight right to stay on Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.2 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 955,
+              "staticDuration": "157s",
+              "polyline": {
+                "encodedPolyline": "wjvkHvhknVEzEGFGBuAj@EbF?d@J^`A~@PXH^@b@?d@Hp@FTBd@@r@RjBHt@FhAJp@J^@JDd@\\l@@TEZUh@G`@JxA?J@@JDFRPn@BTPPFZD\\@DVb@^j@\\tAr@jAj@nBTXd@NHJ"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2716412,
+                  "longitude": -123.1068446
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.269511900000005,
+                  "longitude": -123.11765159999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SHARP_RIGHT",
+                "instructions": "Sharp right to stay on Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "1.0 km"
+                },
+                "staticDuration": {
+                  "text": "3 mins"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 20,
+              "staticDuration": "4s",
+              "polyline": {
+                "encodedPolyline": "m}ukHhlmnV?h@BJ"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.269511900000005,
+                  "longitude": -123.11765159999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2694907,
+                  "longitude": -123.11791769999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right to stay on Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "20 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 30,
+              "staticDuration": "5s",
+              "polyline": {
+                "encodedPolyline": "i}ukH~mmnVLLNARE"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2694907,
+                  "longitude": -123.11791769999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.269243599999996,
+                  "longitude": -123.1179507
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left to stay on Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "30 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 89,
+              "staticDuration": "15s",
+              "polyline": {
+                "encodedPolyline": "w{ukHdnmnVTb@Vn@JJ@?dAD"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.269243599999996,
+                  "longitude": -123.1179507
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.268586799999994,
+                  "longitude": -123.1184552
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right to stay on Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "89 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 31,
+              "staticDuration": "4s",
+              "polyline": {
+                "encodedPolyline": "uwukHjqmnVJNXl@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.268586799999994,
+                  "longitude": -123.1184552
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2683969,
+                  "longitude": -123.1187691
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_RIGHT",
+                "instructions": "Slight right onto Seaside Bicycle Route/Stamps Landing\nContinue to follow Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "31 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 247,
+              "staticDuration": "43s",
+              "polyline": {
+                "encodedPolyline": "ovukHhsmnVdAC^BFBRPN\\BN@H@rAGrFALI\\MZ"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2683969,
+                  "longitude": -123.1187691
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.267795,
+                  "longitude": -123.12116319999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Millbank/Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.2 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 597,
+              "staticDuration": "100s",
+              "polyline": {
+                "encodedPolyline": "wrukHfbnnVsBn@Q\\GTCn@Bd@FTXb@Z\\TVH^L`BBf@?DLj@n@xAJf@Dj@Ax@Ox@_@r@g@f@IPGTEv@ApA?bC?lB"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.267795,
+                  "longitude": -123.12116319999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.268133299999995,
+                  "longitude": -123.1277587
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_RIGHT",
+                "instructions": "Slight right onto Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.6 km"
+                },
+                "staticDuration": {
+                  "text": "2 mins"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 21,
+              "staticDuration": "5s",
+              "polyline": {
+                "encodedPolyline": "ytukHnkonVd@?"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.268133299999995,
+                  "longitude": -123.1277587
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2679437,
+                  "longitude": -123.12775649999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left to stay on Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "21 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 182,
+              "staticDuration": "30s",
+              "polyline": {
+                "encodedPolyline": "ssukHnkonVE~@ElDGZQVEH?`@JR`@n@Dd@?H"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2679437,
+                  "longitude": -123.12775649999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.267896199999996,
+                  "longitude": -123.1300058
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Ironwork Passage/Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.2 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 87,
+              "staticDuration": "16s",
+              "polyline": {
+                "encodedPolyline": "ksukHpyonVGt@@z@JP|@?"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.267896199999996,
+                  "longitude": -123.1300058
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.26756090000001,
+                  "longitude": -123.13066949999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_RIGHT",
+                "instructions": "Slight right onto Island Park Walk/Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "87 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 40,
+              "staticDuration": "7s",
+              "polyline": {
+                "encodedPolyline": "gqukHt}onVNXb@n@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.26756090000001,
+                  "longitude": -123.13066949999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.26729950000001,
+                  "longitude": -123.1310443
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Seaside Bicycle Route/The Castings"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "40 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 487,
+              "staticDuration": "90s",
+              "polyline": {
+                "encodedPolyline": "soukH~_pnVVlAHf@ABIj@CJUd@sAfAEXAd@?BIb@s@x@Od@CTEfAKf@Yj@E\\Eb@Ev@CLETKRa@^MNe@Pa@LGF_@\\MT"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.26729950000001,
+                  "longitude": -123.1310443
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.269479,
+                  "longitude": -123.1359572
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_RIGHT",
+                "instructions": "Slight right onto Island Park Walk/Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.5 km"
+                },
+                "staticDuration": {
+                  "text": "2 mins"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 132,
+              "staticDuration": "21s",
+              "polyline": {
+                "encodedPolyline": "g}ukHv~pnVk@{@[a@CEq@{@w@iA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.269479,
+                  "longitude": -123.1359572
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2703918,
+                  "longitude": -123.1347907
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Old Bridge Walk"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 101,
+              "staticDuration": "18s",
+              "polyline": {
+                "encodedPolyline": "}bvkHlwpnV]e@kBoC"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2703918,
+                  "longitude": -123.1347907
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.27108,
+                  "longitude": -123.1338849
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "NAME_CHANGE",
+                "instructions": "Continue onto Old Bridge St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 10,
+              "staticDuration": "2s",
+              "polyline": {
+                "encodedPolyline": "ggvkHvqpnVKR"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.27108,
+                  "longitude": -123.1338849
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.271139,
+                  "longitude": -123.13398459999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Johnston St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "10 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            }
+          ],
+          "localizedValues": {
+            "distance": {
+              "text": "5.6 km"
+            },
+            "duration": {
+              "text": "18 mins"
+            },
+            "staticDuration": {
+              "text": "18 mins"
+            }
+          }
+        },
+        {
+          "distanceMeters": 12960,
+          "duration": "3137s",
+          "staticDuration": "3137s",
+          "polyline": {
+            "encodedPolyline": "sgvkHjrpnVEzC@|@B^bBtCLTDLv@nAbAdB~@zA\\b@F`@LLf@h@NXP`@FVDPFlAkADCbGAzAGrMEjMwA?wACyAGiAAeBCuAK_@IWQIICUq@e@]_@o@iAMYk@oBaGqWCIm@iCAIMe@AEaBmH_@aBMk@AGi@cCAIMe@?CAEcA}EIc@AKo@eDAEACOy@QaAG]BS@BLCRm@L[FKp@eAd@x@fAfBz@jAKX_A`Bm@fAEHv@tADGZv@HCLC^YVSEZIH[l@S^Ub@IPb@`BARU\\OEYy@IEQNa@L_@L}AbBUPy@MSCWL}@jBe@`@_@b@[X]^]ZURC?B^y@`A_C`Cs@lAQXILGFg@Ji@PSNmBxCGCc@j@OVEDc@h@Yp@]^i@Va@@S?KDk@b@uArAMJQJcE|BQ?_@?SFYFq@EaC]cD_@k@Eu@ESGE@[KiADo@BgADS@WQ[X]`@INw@vA{B|Dg@`Ao@hAm@hAe@z@EJO^Od@EFSZUNM?U_@q@qAKQYg@g@_Au@sAGK}@_Bg@aAM^a@R]@o@COAKSK]{A{BOSGEf@eCGcCCeBAu@IyACWMwAi@{GAGEQL_ACYCIQ_ACEOUAOKKIEUIECSOSYU_@S]Uk@EOQ{@Gk@GAHv@DRLh@yAs@kAi@GC[IQHG@i@DAJAJmA`@mAz@OLIHw@r@]h@Wl@IV]x@gAhEWdAS^Sv@CTOb@o@fBo@|AwAzCq@`A[n@cChDcD~CwAhAOHkAf@aAl@mDbAIBoAL_CDi@AI?yDKqDg@uA[_F{Ai@YmAq@OKMKk@YYYKCUCECcCmBsAiAoAgAa@a@Sc@]G]OQQg@a@[[oAcACEyAmASQaA{@qG{FqJqImAiACKEEEBiAaAo@k@]]{AuAoF{Ea@_@oH{GOMYWUSm@i@{@w@oCeC{AuAOM][_@_@EEiAuAA?C?i@i@][AACGkBcBQa@Mk@Wi@GYEYKk@AaAFcAPwAUOPu@pBsKPcABGjAuFf@eCJa@J_@X}AH_A@K?EGu@@cD?g@?G?yA}ABW?wGAAiCs@@k@@yBAKBEBSZ_Ae@yA{@KIQKsAk@QI{@a@O?IGm@c@o@c@m@c@UOu@S]EG?UAgACc@@[?e@@Q?iA@e@AwACKKe@EMCOESEc@Oa@W_@UOMo@i@m@g@MKk@]QMEAu@UcCGo@?UCg@AGB_B]IAqA[g@MkA[e@OGEUMa@YuAaBEEm@Ws@CU@cB`@G@k@ASEaAUm@OkBc@WEiAYg@KIEo@OYIETQ@GF"
+          },
+          "startLocation": {
+            "latLng": {
+              "latitude": 49.271139,
+              "longitude": -123.13398459999999
+            }
+          },
+          "endLocation": {
+            "latLng": {
+              "latitude": 49.3422359,
+              "longitude": -123.11390769999998
+            }
+          },
+          "steps": [
+            {
+              "distanceMeters": 475,
+              "staticDuration": "117s",
+              "polyline": {
+                "encodedPolyline": "sgvkHjrpnVEzC@|@B^bBtCLTDLv@nAbAdB~@zA\\b@F`@LLf@h@NXP`@FVDPFlA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.271139,
+                  "longitude": -123.13398459999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.268855599999995,
+                  "longitude": -123.13906080000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "DEPART",
+                "instructions": "Head west on Anderson St toward Cartwright St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.5 km"
+                },
+                "staticDuration": {
+                  "text": "2 mins"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 43,
+              "staticDuration": "6s",
+              "polyline": {
+                "encodedPolyline": "kyukHbrqnVkAD"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.268855599999995,
+                  "longitude": -123.13906080000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.269242299999995,
+                  "longitude": -123.1390882
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "43 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 465,
+              "staticDuration": "85s",
+              "polyline": {
+                "encodedPolyline": "w{ukHhrqnVCbGAzAGrMEjM"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.269242299999995,
+                  "longitude": -123.1390882
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.269343799999994,
+                  "longitude": -123.14549439999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.5 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 334,
+              "staticDuration": "84s",
+              "polyline": {
+                "encodedPolyline": "k|ukHhzrnVwA?wACyAGiAAeBCuAK_@IWQII"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.269343799999994,
+                  "longitude": -123.14549439999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.272314699999995,
+                  "longitude": -123.1451524
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Burrard St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.3 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 9,
+              "staticDuration": "1s",
+              "polyline": {
+                "encodedPolyline": "}nvkHdxrnVCU"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.272314699999995,
+                  "longitude": -123.1451524
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2723326,
+                  "longitude": -123.1450389
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "9 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 1056,
+              "staticDuration": "206s",
+              "polyline": {
+                "encodedPolyline": "aovkHnwrnVq@e@]_@o@iAMYk@oBaGqWCIm@iCAIMe@AEaBmH_@aBMk@AGi@cCAIMe@?CAEcA}EIc@AKo@eDAEACOy@QaAG]BS"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2723326,
+                  "longitude": -123.1450389
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2767675,
+                  "longitude": -123.13238
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "1.1 km"
+                },
+                "staticDuration": {
+                  "text": "3 mins"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 2,
+              "staticDuration": "2s",
+              "polyline": {
+                "encodedPolyline": "yjwkHjhpnV@B"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2767675,
+                  "longitude": -123.13238
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.276756299999995,
+                  "longitude": -123.1323954
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right toward Hornby St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "2 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 7,
+              "staticDuration": "1s",
+              "polyline": {
+                "encodedPolyline": "wjwkHnhpnVLC"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.276756299999995,
+                  "longitude": -123.1323954
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2766916,
+                  "longitude": -123.13238249999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left toward Hornby St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "7 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 77,
+              "staticDuration": "10s",
+              "polyline": {
+                "encodedPolyline": "ijwkHjhpnVRm@L[FKp@eA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2766916,
+                  "longitude": -123.13238249999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2762343,
+                  "longitude": -123.13159689999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left toward Hornby St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "77 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 128,
+              "staticDuration": "19s",
+              "polyline": {
+                "encodedPolyline": "mgwkHncpnVd@x@fAfBz@jA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2762343,
+                  "longitude": -123.13159689999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2753799,
+                  "longitude": -123.13278559999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Hornby St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 104,
+              "staticDuration": "18s",
+              "polyline": {
+                "encodedPolyline": "cbwkH|jpnVKX_A`Bm@fAEH"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2753799,
+                  "longitude": -123.13278559999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2760238,
+                  "longitude": -123.1338207
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Beach Ave"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 44,
+              "staticDuration": "6s",
+              "polyline": {
+                "encodedPolyline": "cfwkHjqpnVv@tA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2760238,
+                  "longitude": -123.1338207
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2757404,
+                  "longitude": -123.1342528
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left toward Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "44 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 5,
+              "staticDuration": "1s",
+              "polyline": {
+                "encodedPolyline": "kdwkH`tpnVDG"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2757404,
+                  "longitude": -123.1342528
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2757097,
+                  "longitude": -123.1342117
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left toward Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "5 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 25,
+              "staticDuration": "4s",
+              "polyline": {
+                "encodedPolyline": "edwkHxspnVZv@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2757097,
+                  "longitude": -123.1342117
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2755703,
+                  "longitude": -123.1344873
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right toward Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "25 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 49,
+              "staticDuration": "7s",
+              "polyline": {
+                "encodedPolyline": "icwkHpupnVHCLC^YVS"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2755703,
+                  "longitude": -123.1344873
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2751732,
+                  "longitude": -123.13422200000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left toward Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "49 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 82,
+              "staticDuration": "15s",
+              "polyline": {
+                "encodedPolyline": "y`wkHzspnVEZIH[l@S^Ub@IP"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2751732,
+                  "longitude": -123.13422200000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2756459,
+                  "longitude": -123.13506830000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SHARP_RIGHT",
+                "instructions": "Sharp right onto Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "82 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 64,
+              "staticDuration": "10s",
+              "polyline": {
+                "encodedPolyline": "ycwkHdypnVb@`BARU\\"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2756459,
+                  "longitude": -123.13506830000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2755872,
+                  "longitude": -123.1358114
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left to stay on Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "64 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 42,
+              "staticDuration": "14s",
+              "polyline": {
+                "encodedPolyline": "mcwkHx}pnVOEYy@IE"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2755872,
+                  "longitude": -123.1358114
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.275852199999996,
+                  "longitude": -123.13546140000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right to stay on Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "42 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 30,
+              "staticDuration": "5s",
+              "polyline": {
+                "encodedPolyline": "aewkHr{pnVQNa@L"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.275852199999996,
+                  "longitude": -123.13546140000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2761059,
+                  "longitude": -123.13560909999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left to stay on Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "30 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 207,
+              "staticDuration": "31s",
+              "polyline": {
+                "encodedPolyline": "ufwkHp|pnV_@L}AbBUPy@MSCWL}@jB"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2761059,
+                  "longitude": -123.13560909999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.277668399999996,
+                  "longitude": -123.13678809999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_RIGHT",
+                "instructions": "Slight right to stay on Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.2 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 121,
+              "staticDuration": "22s",
+              "polyline": {
+                "encodedPolyline": "mpwkH|cqnVe@`@_@b@[X]^]ZURC?"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.277668399999996,
+                  "longitude": -123.13678809999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2785911,
+                  "longitude": -123.1376652
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_RIGHT",
+                "instructions": "Slight right to stay on Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 12,
+              "staticDuration": "2s",
+              "polyline": {
+                "encodedPolyline": "evwkHliqnVB^"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2785911,
+                  "longitude": -123.1376652
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2785739,
+                  "longitude": -123.13782579999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left toward Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "12 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 239,
+              "staticDuration": "39s",
+              "polyline": {
+                "encodedPolyline": "avwkHljqnVy@`A_C`Cs@lAQXILGFg@Ji@P"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2785739,
+                  "longitude": -123.13782579999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2803507,
+                  "longitude": -123.13958579999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.2 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 96,
+              "staticDuration": "17s",
+              "polyline": {
+                "encodedPolyline": "eaxkHluqnVSNmBxC"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2803507,
+                  "longitude": -123.13958579999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.281000899999995,
+                  "longitude": -123.1404416
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_LEFT",
+                "instructions": "Slight left to stay on Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 4,
+              "staticDuration": "1s",
+              "polyline": {
+                "encodedPolyline": "gexkHvzqnVGC"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.281000899999995,
+                  "longitude": -123.1404416
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2810388,
+                  "longitude": -123.14042219999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right to stay on Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "4 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 863,
+              "staticDuration": "160s",
+              "polyline": {
+                "encodedPolyline": "oexkHrzqnVc@j@OVEDc@h@Yp@]^i@Va@@S?KDk@b@uArAMJQJcE|BQ?_@?SFYFq@EaC]cD_@k@Eu@ESGE@[KiADo@BgADS@WQ"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2810388,
+                  "longitude": -123.14042219999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.288269,
+                  "longitude": -123.1425065
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left to stay on Seaside Bicycle Route"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.9 km"
+                },
+                "staticDuration": {
+                  "text": "3 mins"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 404,
+              "staticDuration": "75s",
+              "polyline": {
+                "encodedPolyline": "urykHtgrnV[X]`@INw@vA{B|Dg@`Ao@hAm@hAe@z@EJO^Od@EFSZUNM?"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.288269,
+                  "longitude": -123.1425065
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2908653,
+                  "longitude": -123.1463174
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Beach Ave"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.4 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 251,
+              "staticDuration": "57s",
+              "polyline": {
+                "encodedPolyline": "}bzkHn_snVU_@q@qAKQYg@g@_Au@sAGK}@_Bg@aA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2908653,
+                  "longitude": -123.1463174
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2924392,
+                  "longitude": -123.14384589999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Park Ln"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.3 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 194,
+              "staticDuration": "26s",
+              "polyline": {
+                "encodedPolyline": "wlzkH`prnVM^a@R]@o@COAKSK]{A{BOSGE"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2924392,
+                  "longitude": -123.14384589999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2938457,
+                  "longitude": -123.1430948
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.2 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 592,
+              "staticDuration": "120s",
+              "polyline": {
+                "encodedPolyline": "quzkHhkrnVf@eCGcCCeBAu@IyACWMwAi@{GAGEQL_ACYCIQ_ACEOUAOKKIEUIECSOSYU_@S]Uk@EOQ{@Gk@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2938457,
+                  "longitude": -123.1430948
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2952125,
+                  "longitude": -123.135875
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.6 km"
+                },
+                "staticDuration": {
+                  "text": "2 mins"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 4,
+              "staticDuration": "1s",
+              "polyline": {
+                "encodedPolyline": "a~zkHf~pnVGA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2952125,
+                  "longitude": -123.135875
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2952504,
+                  "longitude": -123.13587419999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "4 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 46,
+              "staticDuration": "6s",
+              "polyline": {
+                "encodedPolyline": "i~zkHd~pnVHv@DRLh@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2952504,
+                  "longitude": -123.13587419999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.295102,
+                  "longitude": -123.1364627
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "46 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 163,
+              "staticDuration": "59s",
+              "polyline": {
+                "encodedPolyline": "k}zkHzaqnVyAs@kAi@GC[IQHG@i@DAJ"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.295102,
+                  "longitude": -123.1364627
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.296462,
+                  "longitude": -123.13606709999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SHARP_RIGHT",
+                "instructions": "Sharp right"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.2 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 2052,
+              "staticDuration": "555s",
+              "polyline": {
+                "encodedPolyline": "{e{kHl_qnVAJmA`@mAz@OLIHw@r@]h@Wl@IV]x@gAhEWdAS^Sv@CTOb@o@fBo@|AwAzCq@`A[n@cChDcD~CwAhAOHkAf@aAl@mDbAIBoAL_CDi@AI?yDKqDg@uA[_F{Ai@YmAq@OKMKk@YYYKCUCECcCmBsAiAoAgAa@a@Sc@]G]OQQ"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.296462,
+                  "longitude": -123.13606709999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3119589,
+                  "longitude": -123.14168839999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_LEFT",
+                "instructions": "Slight left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "2.1 km"
+                },
+                "staticDuration": {
+                  "text": "9 mins"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 1898,
+              "staticDuration": "359s",
+              "polyline": {
+                "encodedPolyline": "wf~kHpbrnVg@a@[[oAcACEyAmASQaA{@qG{FqJqImAiACKEEEBiAaAo@k@]]{AuAoF{Ea@_@oH{GOMYWUSm@i@{@w@oCeC{AuAOM][_@_@EEiAuAA?C?i@i@][AACGkBcBQa@Mk@Wi@GYEYKk@AaAFcAPwA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.3119589,
+                  "longitude": -123.14168839999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3254679,
+                  "longitude": -123.127231
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Keep left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "1.9 km"
+                },
+                "staticDuration": {
+                  "text": "6 mins"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 13,
+              "staticDuration": "2s",
+              "polyline": {
+                "encodedPolyline": "e{`lHdhonVUO"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.3254679,
+                  "longitude": -123.127231
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3255761,
+                  "longitude": -123.1271491
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left toward Marine Dr"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "13 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 587,
+              "staticDuration": "167s",
+              "polyline": {
+                "encodedPolyline": "{{`lHtgonVPu@pBsKPcABGjAuFf@eCJa@J_@X}AH_A@K?EGu@@cD?g@?G?yA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.3255761,
+                  "longitude": -123.1271491
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3239479,
+                  "longitude": -123.11959359999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Marine Dr"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.6 km"
+                },
+                "staticDuration": {
+                  "text": "3 mins"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 221,
+              "staticDuration": "87s",
+              "polyline": {
+                "encodedPolyline": "uq`lHlxmnV}ABW?wGA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.3239479,
+                  "longitude": -123.11959359999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3259361,
+                  "longitude": -123.11959709999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.2 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 50,
+              "staticDuration": "6s",
+              "polyline": {
+                "encodedPolyline": "c~`lHnxmnVAiC"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.3259361,
+                  "longitude": -123.11959709999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3259505,
+                  "longitude": -123.11891119999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Hope Rd"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "50 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 147,
+              "staticDuration": "31s",
+              "polyline": {
+                "encodedPolyline": "e~`lHdtmnVs@@k@@yBAKBEBSZ"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.3259505,
+                  "longitude": -123.11891119999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3272297,
+                  "longitude": -123.1190956
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Garden Ave"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 1340,
+              "staticDuration": "527s",
+              "polyline": {
+                "encodedPolyline": "efalHjumnV_Ae@yA{@KIQKsAk@QI{@a@O?IGm@c@o@c@m@c@UOu@S]EG?UAgACc@@[?e@@Q?iA@e@AwACKKe@EMCOESEc@Oa@W_@UOMo@i@m@g@MKk@]QMEAu@UcCGo@?UCg@AGB_B]IAqA[g@MkA[e@OGEUMa@YuAaBEEm@W"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.3272297,
+                  "longitude": -123.1190956
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3386384,
+                  "longitude": -123.11436959999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Capilano Rd"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "1.3 km"
+                },
+                "staticDuration": {
+                  "text": "9 mins"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 391,
+              "staticDuration": "150s",
+              "polyline": {
+                "encodedPolyline": "omclHxwlnVs@CU@cB`@G@k@ASEaAUm@OkBc@WEiAYg@KIEo@OYI"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.3386384,
+                  "longitude": -123.11436959999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.342079399999996,
+                  "longitude": -123.1137534
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_LEFT",
+                "instructions": "Slight left to stay on Capilano Rd"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.4 km"
+                },
+                "staticDuration": {
+                  "text": "3 mins"
+                }
+              },
+              "travelMode": "BICYCLE"
+            },
+            {
+              "distanceMeters": 24,
+              "staticDuration": "26s",
+              "polyline": {
+                "encodedPolyline": "_cdlH|slnVETQ@GF"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.342079399999996,
+                  "longitude": -123.1137534
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3422359,
+                  "longitude": -123.11390769999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left\nDestination will be on the right"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "24 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "BICYCLE"
+            }
+          ],
+          "localizedValues": {
+            "distance": {
+              "text": "13.0 km"
+            },
+            "duration": {
+              "text": "52 mins"
+            },
+            "staticDuration": {
+              "text": "52 mins"
+            }
+          }
+        }
+      ],
+      "distanceMeters": 24482,
+      "duration": "5562s",
+      "staticDuration": "5562s",
+      "polyline": {
+        "encodedPolyline": "yuzkHn|pnVMPYc@`@u@FIr@cAh@gA^i@iAA_@_@a@e@]OIAKu@XcA@EDMRc@R[l@u@R_@LWCIKO|AmCIMCGj@cATk@Pa@MGkAoB_@s@AUJm@AGACISt@uA~@cEDI~@xAv@rAHLN?HK@GD_@Xg@b@w@LSP[JSTe@HW?CHGLMbAoBVs@EEACDo@BMNc@HEB{AAg@C[O_AESJKJQ?XD]@AR\\FDLEDI@SGOUODKPNNGDUASJCBShAoCDKdAiDFUViALi@hA_GJUDKJk@f@mCReAh@^RPJDTNBIb@}BFWHe@dAiFZ_BBKPe@HQl@gAbAbB~@~Af@x@Vb@FR`AdBf@t@Zj@NYl@cA\\k@`@u@l@aATc@BEv@uAz@}ABGbAcBz@}A|@eBVe@f@{@~@aBVe@JQHOLUBGLQHOHOZk@R_@HO~AkCr@oAh@}@^q@MUIOe@u@[m@y@wAs@kAe@w@m@cALoAPaBbAaJ@W@OH_ALgANiADe@r@@zDHJBPUJADuJAWdFAv@@Ai@GkC@gD?k@Ai@?a@@S@c@@aC?[BsC@yBBwB?q@@iF@wC@cA@uA@wA@eC?SBmF@uCBoF@i@DqH?SE[C[Ja@AQBQFcM@cC@eE@y@@sA@cC@mBdAAN?O?eA@AlBAbCArAAx@AdEAbCGbMCP?B@LADIZBZDZ?RGzICnFAtCC`GAdCAvAAtAAbAAvCAhF?p@CvBAxBCrC?ZA`CAb@A`@?R@tAAfDFjCxCDN@HB\\Jt@bBLXLEtAwALEFH@rBAd@NAb@At@{@\\YTMFETKHCTGHCTCH?`@AT?ZCd@UXG~ACTDRRPL\\FVB`@n@?LJPNl@@V?V@|CHNZFFB?@@R?HAlBA~AA\\AtCAn@HJv@F@@HFEzEGFGBuAj@EbF?d@J^`A~@PXH^@b@?d@Hp@FTBd@@r@RjBHt@FhAJp@J^@JDd@\\l@@TEZUh@G`@JxA?J@@JDFRPn@BTPPFZD\\@DVb@^j@\\tAr@jAj@nBTXd@NHJ?h@BJLLNARETb@Vn@JJ@?dADJNXl@dAC^BFBRPN\\BN@H@rAGrFALI\\MZsBn@Q\\GTCn@Bd@FTXb@Z\\TVH^L`BBf@?DLj@n@xAJf@Dj@Ax@Ox@_@r@g@f@IPGTEv@ApA?bC?lBd@?E~@ElDGZQVEH?`@JR`@n@Dd@?HGt@@z@JP|@?NXb@n@VlAHf@ABIj@CJUd@sAfAEXAd@?BIb@s@x@Od@CTEfAKf@Yj@E\\Eb@Ev@CLETKRa@^MNe@Pa@LGF_@\\MTk@{@[a@CEq@{@w@iA]e@kBoCKREzC@|@B^bBtCLTDLv@nAbAdB~@zA\\b@F`@LLf@h@NXP`@FVDPFlAkADCbGAzAGrMEjMwA?wACyAGiAAeBCuAK_@IWQIICUq@e@]_@o@iAMYk@oBaGqWCIm@iCAIMe@AEaBmH_@aBMk@AGi@cCAIMe@?CAEcA}EIc@AKo@eDAEACOy@QaAG]BS@BLCRm@L[FKp@eAd@x@fAfBz@jAKX_A`Bm@fAEHv@tADGZv@HCLC^YVSEZIH[l@S^Ub@IPb@`BARU\\OEYy@IEQNa@L_@L}AbBUPy@MSCWL}@jBe@`@_@b@[X]^]ZURC?B^y@`A_C`Cs@lAQXILGFg@Ji@PSNmBxCGCc@j@OVEDc@h@Yp@]^i@Va@@S?KDk@b@uArAMJQJcE|BQ?_@?SFYFq@EaC]cD_@k@Eu@ESGE@[KiADo@BgADS@WQ[X]`@INw@vA{B|Dg@`Ao@hAm@hAe@z@EJO^Od@EFSZUNM?U_@q@qAKQYg@g@_Au@sAGK}@_Bg@aAM^a@R]@o@COAKSK]{A{BOSGEf@eCGcCCeBAu@IyACWMwAi@{GAGEQL_ACYCIQ_ACEOUAOKKIEUIECSOSYU_@S]Uk@EOQ{@Gk@GAHv@DRLh@yAs@kAi@GC[IQHG@i@DAJAJmA`@mAz@OLIHw@r@]h@Wl@IV]x@gAhEWdAS^Sv@CTOb@o@fBo@|AwAzCq@`A[n@cChDcD~CwAhAOHkAf@aAl@mDbAIBoAL_CDi@AI?yDKqDg@uA[_F{Ai@YmAq@OKMKk@YYYKCUCECcCmBsAiAoAgAa@a@Sc@]G]OQQg@a@[[oAcACEyAmASQaA{@qG{FqJqImAiACKEEEBiAaAo@k@]]{AuAoF{Ea@_@oH{GOMYWUSm@i@{@w@oCeC{AuAOM][_@_@EEiAuAA?C?i@i@][AACGkBcBQa@Mk@Wi@GYEYKk@AaAFcAPwAUOPu@pBsKPcABGjAuFf@eCJa@J_@X}AH_A@K?EGu@@cD?g@?G?yA}ABW?wGAAiCs@@k@@yBAKBEBSZ_Ae@yA{@KIQKsAk@QI{@a@O?IGm@c@o@c@m@c@UOu@S]EG?UAgACc@@[?e@@Q?iA@e@AwACKKe@EMCOESEc@Oa@W_@UOMo@i@m@g@MKk@]QMEAu@UcCGo@?UCg@AGB_B]IAqA[g@MkA[e@OGEUMa@YuAaBEEm@Ws@CU@cB`@G@k@ASEaAUm@OkBc@WEiAYg@KIEo@OYIETQ@GF"
+      },
+      "description": "Union St",
+      "viewport": {
+        "low": {
+          "latitude": 49.2671334,
+          "longitude": -123.1463192
+        },
+        "high": {
+          "latitude": 49.3422359,
+          "longitude": -123.08137189999998
+        }
+      },
+      "travelAdvisory": {},
+      "localizedValues": {
+        "distance": {
+          "text": "24.5 km"
+        },
+        "duration": {
+          "text": "1 hour 33 mins"
+        },
+        "staticDuration": {
+          "text": "1 hour 33 mins"
+        }
+      },
+      "routeLabels": [
+        "DEFAULT_ROUTE"
+      ],
+      "polylineDetails": {}
+    }
+  ],
+  "geocodingResults": {}
+}

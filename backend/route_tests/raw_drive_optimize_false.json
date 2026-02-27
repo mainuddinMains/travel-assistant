@@ -1,0 +1,1197 @@
+{
+  "routes": [
+    {
+      "legs": [
+        {
+          "distanceMeters": 4707,
+          "duration": "716s",
+          "staticDuration": "716s",
+          "polyline": {
+            "encodedPolyline": "ouzkH`}pnVb@y@JQR]nA_CbBwCf@aATa@`CgEHMvAgCd@y@lA{BHQXg@DKNWRW~@aBJU`@s@x@wAz@}AfAmBjBeD`DyFh@aAtGiL`GqKdAmBz@_BR[d@{@FIh@_ARa@Zi@v@wAl@gA~@aB~@cB~@_Bx@yAr@mANU~@aBv@uAdAmBd@{@\\m@x@wAf@}@LY`AkBVe@P_@NYLW^w@~@wBTg@FQ^uABG^wBNcBHqC@iAD{HFmLBkDBaIFqLBoBLsBr@kFBOFm@?cD@qADmK@mBDsG@mBDyGDsG@gD?Y@Y?MDcK?m@?Q?YC}@?OK}@EQOs@O{@AEEg@Cg@AW?e@?QBwD?_AQ?"
+          },
+          "startLocation": {
+            "latLng": {
+              "latitude": 49.293839899999995,
+              "longitude": -123.1356856
+            }
+          },
+          "endLocation": {
+            "latLng": {
+              "latitude": 49.2769136,
+              "longitude": -123.08137189999998
+            }
+          },
+          "steps": [
+            {
+              "distanceMeters": 3095,
+              "staticDuration": "544s",
+              "polyline": {
+                "encodedPolyline": "ouzkH`}pnVb@y@JQR]nA_CbBwCf@aATa@`CgEHMvAgCd@y@lA{BHQXg@DKNWRW~@aBJU`@s@x@wAz@}AfAmBjBeD`DyFh@aAtGiL`GqKdAmBz@_BR[d@{@FIh@_ARa@Zi@v@wAl@gA~@aB~@cB~@_Bx@yAr@mANU~@aBv@uAdAmBd@{@\\m@x@wAf@}@LY`AkBVe@P_@NYLW^w@~@wBTg@FQ^uABG^wBNcBHqC@iAD{HFmLBkD"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.293839899999995,
+                  "longitude": -123.1356856
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.27717,
+                  "longitude": -123.10324849999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "DEPART",
+                "instructions": "Head southeast on W Georgia St/BC-1A/BC-99 S toward Gilford St\nContinue to follow W Georgia St/BC-1A"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "3.1 km"
+                },
+                "staticDuration": {
+                  "text": "9 mins"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 472,
+              "staticDuration": "33s",
+              "polyline": {
+                "encodedPolyline": "imwkHhrjnVBaIFqLBoBLsBr@kFBOFm@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.27717,
+                  "longitude": -123.10324849999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2767027,
+                  "longitude": -123.09684049999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Keep left to continue on Georgia Viaduct"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.5 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 1032,
+              "staticDuration": "125s",
+              "polyline": {
+                "encodedPolyline": "kjwkHfjinV?cD@qADmK@mBDsG@mBDyGDsG@gD?Y@Y?MDcK?m@?Q?YC}@?OK}@EQOs@O{@AEEg@Cg@AW?e@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2767027,
+                  "longitude": -123.09684049999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2768365,
+                  "longitude": -123.0827046
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "STRAIGHT",
+                "instructions": "Continue straight onto Prior St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "1.0 km"
+                },
+                "staticDuration": {
+                  "text": "2 mins"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 97,
+              "staticDuration": "10s",
+              "polyline": {
+                "encodedPolyline": "gkwkHzqfnV?QBwD?_A"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2768365,
+                  "longitude": -123.0827046
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2768181,
+                  "longitude": -123.08137029999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "NAME_CHANGE",
+                "instructions": "Continue onto Venables St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "4s",
+              "polyline": {
+                "encodedPolyline": "ckwkHpifnVQ?"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2768181,
+                  "longitude": -123.08137029999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2769136,
+                  "longitude": -123.08137189999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Glen Dr\nDestination will be on the left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "11 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            }
+          ],
+          "localizedValues": {
+            "distance": {
+              "text": "4.7 km"
+            },
+            "duration": {
+              "text": "12 mins"
+            },
+            "staticDuration": {
+              "text": "12 mins"
+            }
+          }
+        },
+        {
+          "distanceMeters": 6510,
+          "duration": "904s",
+          "staticDuration": "904s",
+          "polyline": {
+            "encodedPolyline": "ukwkHpifnVP??~@CvD?P?d@Bj@@RFl@Nz@TdABTFv@BZ?z@?P?l@EbK?LAX?XAfDAv@CzEExGAlBG`KElKApACz@OhBGf@QfAABm@~CUxBC~B?b@EtI?|CAp@GrDCd@GbBOlFGdASfCk@`Dw@zCA@[|@w@hBm@bA_AfBIPc@v@INIRIJQTi@~@AH_@p@i@|@s@nAfAnBzBvD\\h@dAjB~AnCx@vA~@~AfB`Dj@~@vAdCt@lAf@z@Tp@JSt@sA`AaBn@oAdAkB^m@fAkBRWRQRONIXQRIXIz@KpD@p@@pABrABxABtGHL@pAA\\\\xB?pA@ZAl@ERAV?F?v@Lf@JZ?PCp@jBDJNf@J`@TvADlA?rA@lE?rA?rDE`D?d@A|D@vA?dADl@?d@AzEEhNCjEErGGfMGVGdDAlBC|DAt@Gp@?@Ih@a@lAu@~AeAlBIPc@x@wArCOb@ABQdACzASJc@T]^GJe@?c@MSMo@a@a@a@KIQM_AsA]k@cAeBw@oA?i@@Mj@gAf@gAw@iA]e@kBoCKR"
+          },
+          "startLocation": {
+            "latLng": {
+              "latitude": 49.2769136,
+              "longitude": -123.08137189999998
+            }
+          },
+          "endLocation": {
+            "latLng": {
+              "latitude": 49.271139,
+              "longitude": -123.13398459999999
+            }
+          },
+          "steps": [
+            {
+              "distanceMeters": 11,
+              "staticDuration": "2s",
+              "polyline": {
+                "encodedPolyline": "ukwkHpifnVP?"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2769136,
+                  "longitude": -123.08137189999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2768181,
+                  "longitude": -123.08137029999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "DEPART",
+                "instructions": "Head south on Glen Dr toward Venables St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "11 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 90,
+              "staticDuration": "12s",
+              "polyline": {
+                "encodedPolyline": "ckwkHpifnV?~@CvD"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2768181,
+                  "longitude": -123.08137029999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2768355,
+                  "longitude": -123.0826119
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right at the 1st cross street onto Venables St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "90 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 1041,
+              "staticDuration": "124s",
+              "polyline": {
+                "encodedPolyline": "gkwkHhqfnV?P?d@Bj@@RFl@Nz@TdABTFv@BZ?z@?P?l@EbK?LAX?XAfDAv@CzEExGAlBG`KElKApACz@OhB"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2768355,
+                  "longitude": -123.0826119
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2767954,
+                  "longitude": -123.09685259999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "NAME_CHANGE",
+                "instructions": "Continue onto Prior St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "1.0 km"
+                },
+                "staticDuration": {
+                  "text": "2 mins"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 1097,
+              "staticDuration": "111s",
+              "polyline": {
+                "encodedPolyline": "_kwkHhjinVGf@QfAABm@~CUxBC~B?b@EtI?|CAp@GrDCd@GbBOlFGdASfCk@`Dw@zCA@[|@w@hBm@bA_AfBIPc@v@INIRIJQTi@~@AH"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2767954,
+                  "longitude": -123.09685259999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.279834799999996,
+                  "longitude": -123.11060560000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "NAME_CHANGE",
+                "instructions": "Continue onto Dunsmuir Viaduct"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "1.1 km"
+                },
+                "staticDuration": {
+                  "text": "2 mins"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 99,
+              "staticDuration": "19s",
+              "polyline": {
+                "encodedPolyline": "}}wkHh`lnV_@p@i@|@s@nA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.279834799999996,
+                  "longitude": -123.11060560000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2804608,
+                  "longitude": -123.1115691
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "NAME_CHANGE",
+                "instructions": "Continue onto Dunsmuir St/BC-1A"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 658,
+              "staticDuration": "160s",
+              "polyline": {
+                "encodedPolyline": "{axkHhflnVfAnBzBvD\\h@dAjB~AnCx@vA~@~AfB`Dj@~@vAdCt@lAf@z@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2804608,
+                  "longitude": -123.1115691
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2762435,
+                  "longitude": -123.11793109999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Cambie St."
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.7 km"
+                },
+                "staticDuration": {
+                  "text": "3 mins"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 125,
+              "staticDuration": "36s",
+              "polyline": {
+                "encodedPolyline": "ogwkH`nmnVTp@JSt@sA`AaB"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2762435,
+                  "longitude": -123.11793109999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2754684,
+                  "longitude": -123.11717199999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Nelson St."
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 778,
+              "staticDuration": "58s",
+              "polyline": {
+                "encodedPolyline": "ubwkHhimnVn@oAdAkB^m@fAkBRWRQRONIXQRIXIz@KpD@p@@pABrABxABtGHL@pAA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2754684,
+                  "longitude": -123.11717199999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.269026499999995,
+                  "longitude": -123.11500450000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Keep right to continue on Cambie St./Cambie Bridge/Nelson St.\nContinue to follow Cambie St./Cambie Bridge"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.8 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 283,
+              "staticDuration": "34s",
+              "polyline": {
+                "encodedPolyline": "mzukHv{lnV\\\\xB?pA@ZAl@ERAV?F?v@Lf@JZ?PC"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.269026499999995,
+                  "longitude": -123.11500450000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2665152,
+                  "longitude": -123.1152203
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "RAMP_RIGHT",
+                "instructions": "Slight right onto the ramp to 6th Ave. West"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.3 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 178,
+              "staticDuration": "35s",
+              "polyline": {
+                "encodedPolyline": "wjukHb}lnVp@jBDJNf@J`@TvADlA?rA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2665152,
+                  "longitude": -123.1152203
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2659589,
+                  "longitude": -123.11744329999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto W 2nd Ave"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.2 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 1232,
+              "staticDuration": "120s",
+              "polyline": {
+                "encodedPolyline": "ggukH~jmnV@lE?rA?rDE`D?d@A|D@vA?dADl@?d@AzEEhNCjEErGGfMGVGdDAlBC|DAt@Gp@?@Ih@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2659589,
+                  "longitude": -123.11744329999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2662948,
+                  "longitude": -123.13437
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "NAME_CHANGE",
+                "instructions": "Continue onto W 6th Ave"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "1.2 km"
+                },
+                "staticDuration": {
+                  "text": "2 mins"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 324,
+              "staticDuration": "40s",
+              "polyline": {
+                "encodedPolyline": "iiukHxtpnVa@lAu@~AeAlBIPc@x@wArCOb@ABQdACzA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2662948,
+                  "longitude": -123.13437
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.267950299999995,
+                  "longitude": -123.13791669999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_RIGHT",
+                "instructions": "Slight right onto W 4th Ave"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.3 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 371,
+              "staticDuration": "79s",
+              "polyline": {
+                "encodedPolyline": "usukH~jqnVSJc@T]^GJe@?c@MSMo@a@a@a@KIQM_AsA]k@cAeBw@oA?i@@M"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.267950299999995,
+                  "longitude": -123.13791669999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2705267,
+                  "longitude": -123.13587909999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Anderson St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.4 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 70,
+              "staticDuration": "20s",
+              "polyline": {
+                "encodedPolyline": "ycvkHf~pnVj@gAf@gA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2705267,
+                  "longitude": -123.13587909999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.270106,
+                  "longitude": -123.13516399999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "MERGE",
+                "instructions": "Merge onto Cartwright St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "70 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 143,
+              "staticDuration": "49s",
+              "polyline": {
+                "encodedPolyline": "eavkHvypnVw@iA]e@kBoC"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.270106,
+                  "longitude": -123.13516399999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.27108,
+                  "longitude": -123.1338849
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Old Bridge St/Old Bridge Walk\nContinue to follow Old Bridge St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 10,
+              "staticDuration": "5s",
+              "polyline": {
+                "encodedPolyline": "ggvkHvqpnVKR"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.27108,
+                  "longitude": -123.1338849
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.271139,
+                  "longitude": -123.13398459999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Johnston St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "10 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            }
+          ],
+          "localizedValues": {
+            "distance": {
+              "text": "6.5 km"
+            },
+            "duration": {
+              "text": "15 mins"
+            },
+            "staticDuration": {
+              "text": "15 mins"
+            }
+          }
+        },
+        {
+          "distanceMeters": 11940,
+          "duration": "1537s",
+          "staticDuration": "1537s",
+          "polyline": {
+            "encodedPolyline": "sgvkHjrpnVEzC@|@B^bBtCLTDLv@nAbAdB~@zA\\b@F`@LLf@h@NXP`@FVNQn@c@d@?LHRYXQ`@KTA?_@BmANaAPi@Zm@NEHIfAaBr@UF?GhF?`BA^Az@Mh@i@Ak@AeAA{AE_AMwAa@s@]s@g@W[S[MSgAgB{AkCIOe@w@iAqBsBgD]m@s@mAe@w@k@{@Ye@c@y@GMkAsBkAsB{@_BS_@M[I]EUKm@[wBMcAOaAUkBOw@GWEKsAaCYg@a@u@oE_I_@o@o@eAgAkB{@{AaBsCoBkDcBwCS[S_@cAeBWa@s@uA]k@iB}CmCwEsA}B_AbB_A`Bm@fAw@vA[h@S`@i@~@GHe@z@SZ{@~AeAlBaGpKoDlGeBzCi@`AaDxFkBdDgAlBYf@a@t@y@vAa@r@KT_A`BSVOVEJYf@IPmAzBe@x@wAfCILaCfEU`@g@`AcBvCoA~BS\\KPc@x@OHoB~Cc@\\QFWDI@K?WCIA_@Q{BeAa@Mu@?iATWJi@X_@XOJ}@fAMZCDKPUf@_@v@ENOb@GX}@pDMf@KZYbAw@|Be@lAq@|Ag@bAQ\\Yd@_A|A{AtBgBrBs@p@i@d@gAz@iBfAeBr@yBj@YFs@H{BLoDCuCSiAOq@MyD_AsC_A]Oa@Sk@[c@Sy@e@aAk@oAcAe@a@WWaA}@_@]}@y@y@q@][_@]k@g@gA_AQOgAaASQWSsJoIwEcE}AuAaEqDk@g@oJsISScA_A}BsB{BsBMKIIUUIG{IeIQMKKGGQQGIIGAAcA}@USGEQKc@[UQGQQQk@e@Ma@k@q@OUO]U{@Io@CUAgABk@Dc@Ci@Py@Pu@pBsKPcABGjAuFf@eCKIKMo@o@W[KMIKQSg@k@KMAKCM[a@Y]_@e@}@eA]c@c@g@_AiA_@i@o@y@o@k@_Ae@yA{@KIQKcAa@a@S{@a@O?IGm@c@o@c@m@c@UOu@S]EG?UAgACc@@[?e@@Q?iA@e@AwACKKe@EMCOESEc@Oa@W_@UOMo@i@m@g@MKk@]QMEAu@UcCGo@?UCg@AGB_B]IAqA[g@MkA[e@OGEUMa@YuAaBEEm@Ws@CU@cB`@G@k@ASEaAUm@OkBc@WEiAYFg@"
+          },
+          "startLocation": {
+            "latLng": {
+              "latitude": 49.271139,
+              "longitude": -123.13398459999999
+            }
+          },
+          "endLocation": {
+            "latLng": {
+              "latitude": 49.341419599999995,
+              "longitude": -123.1137746
+            }
+          },
+          "steps": [
+            {
+              "distanceMeters": 439,
+              "staticDuration": "125s",
+              "polyline": {
+                "encodedPolyline": "sgvkHjrpnVEzC@|@B^bBtCLTDLv@nAbAdB~@zA\\b@F`@LLf@h@NXP`@FV"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.271139,
+                  "longitude": -123.13398459999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2689302,
+                  "longitude": -123.1385813
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "DEPART",
+                "instructions": "Head west on Anderson St toward Cartwright St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.4 km"
+                },
+                "staticDuration": {
+                  "text": "2 mins"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 62,
+              "staticDuration": "15s",
+              "polyline": {
+                "encodedPolyline": "yyukHboqnVNQn@c@d@?"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2689302,
+                  "longitude": -123.1385813
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2684206,
+                  "longitude": -123.1383141
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left to stay on Anderson St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "62 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 59,
+              "staticDuration": "15s",
+              "polyline": {
+                "encodedPolyline": "svukHlmqnVLHRYXQ`@K"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2684206,
+                  "longitude": -123.1383141
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2679471,
+                  "longitude": -123.13807569999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left to stay on Anderson St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "59 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 118,
+              "staticDuration": "21s",
+              "polyline": {
+                "encodedPolyline": "usukH~kqnVTA?_@BmANaAPi@Zm@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2679471,
+                  "longitude": -123.13807569999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2675128,
+                  "longitude": -123.13674940000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left at the 1st cross street onto W 4th Ave"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 104,
+              "staticDuration": "17s",
+              "polyline": {
+                "encodedPolyline": "}pukHtcqnVNEHIfAaBr@UF?"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2675128,
+                  "longitude": -123.13674940000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2667204,
+                  "longitude": -123.13606750000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_RIGHT",
+                "instructions": "Slight right onto Hemlock St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 171,
+              "staticDuration": "46s",
+              "polyline": {
+                "encodedPolyline": "_lukHl_qnVGhF?`BA^Az@Mh@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2667204,
+                  "longitude": -123.13606750000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2668499,
+                  "longitude": -123.13839839999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto W 5th Ave"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.2 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 2347,
+              "staticDuration": "335s",
+              "polyline": {
+                "encodedPolyline": "ylukH~mqnVi@Ak@AeAA{AE_AMwAa@s@]s@g@W[S[MSgAgB{AkCIOe@w@iAqBsBgD]m@s@mAe@w@k@{@Ye@c@y@GMkAsBkAsB{@_BS_@M[I]EUKm@[wBMcAOaAUkBOw@GWEKsAaCYg@a@u@oE_I_@o@o@eAgAkB{@{AaBsCoBkDcBwCS[S_@cAeBWa@s@uA]k@iB}CmCwEsA}B"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2668499,
+                  "longitude": -123.13839839999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.28185750000001,
+                  "longitude": -123.11713179999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto BC-99 N"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "2.3 km"
+                },
+                "staticDuration": {
+                  "text": "6 mins"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 5964,
+              "staticDuration": "645s",
+              "polyline": {
+                "encodedPolyline": "sjxkH`imnV_AbB_A`Bm@fAw@vA[h@S`@i@~@GHe@z@SZ{@~AeAlBaGpKoDlGeBzCi@`AaDxFkBdDgAlBYf@a@t@y@vAa@r@KT_A`BSVOVEJYf@IPmAzBe@x@wAfCILaCfEU`@g@`AcBvCoA~BS\\KPc@x@OHoB~Cc@\\QFWDI@K?WCIA_@Q{BeAa@Mu@?iATWJi@X_@XOJ}@fAMZCDKPUf@_@v@ENOb@GX}@pDMf@KZYbAw@|Be@lAq@|Ag@bAQ\\Yd@_A|A{AtBgBrBs@p@i@d@gAz@iBfAeBr@yBj@YFs@H{BLoDCuCSiAOq@MyD_AsC_A]Oa@Sk@[c@Sy@e@aAk@oAcAe@a@WWaA}@_@]}@y@y@q@][_@]k@g@gA_AQOgAaASQWSsJoIwEcE}AuAaEqDk@g@oJsISScA_A}BsB{BsBMKIIUUIG{IeIQMKKGGQQGIIGAAcA}@USGEQKc@[UQGQQQk@e@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.28185750000001,
+                  "longitude": -123.11713179999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.325058299999995,
+                  "longitude": -123.12973919999997
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto W Georgia St/BC-1A (signs for BC-99 N)\nContinue to follow BC-1A"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "6.0 km"
+                },
+                "staticDuration": {
+                  "text": "11 mins"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 581,
+              "staticDuration": "63s",
+              "polyline": {
+                "encodedPolyline": "sx`lHzwonVMa@k@q@OUO]U{@Io@CUAgABk@Dc@Ci@Py@Pu@pBsKPcABGjAuFf@eC"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.325058299999995,
+                  "longitude": -123.12973919999997
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.324233799999995,
+                  "longitude": -123.12257729999997
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "RAMP_RIGHT",
+                "instructions": "Exit onto Marine Dr toward Capilano Rd/Trans Canada Hwy/BC-1/Grouse Mountain Recreation Area"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.6 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 1760,
+              "staticDuration": "210s",
+              "polyline": {
+                "encodedPolyline": "ms`lHbknnVKIKMo@o@W[KMIKQSg@k@KMAKCM[a@Y]_@e@}@eA]c@c@g@_AiA_@i@o@y@o@k@_Ae@yA{@KIQKcAa@a@S{@a@O?IGm@c@o@c@m@c@UOu@S]EG?UAgACc@@[?e@@Q?iA@e@AwACKKe@EMCOESEc@Oa@W_@UOMo@i@m@g@MKk@]QMEAu@UcCGo@?UCg@AGB_B]IAqA[g@MkA[e@OGEUMa@YuAaBEEm@W"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.324233799999995,
+                  "longitude": -123.12257729999997
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3386384,
+                  "longitude": -123.11436959999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Capilano Rd (signs for Capilano Road)"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "1.8 km"
+                },
+                "staticDuration": {
+                  "text": "4 mins"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 320,
+              "staticDuration": "39s",
+              "polyline": {
+                "encodedPolyline": "omclHxwlnVs@CU@cB`@G@k@ASEaAUm@OkBc@WEiAY"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.3386384,
+                  "longitude": -123.11436959999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.341459799999996,
+                  "longitude": -123.1139733
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Keep left to stay on Capilano Rd"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.3 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            },
+            {
+              "distanceMeters": 15,
+              "staticDuration": "6s",
+              "polyline": {
+                "encodedPolyline": "c_dlHhulnVFg@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.341459799999996,
+                  "longitude": -123.1139733
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.341419599999995,
+                  "longitude": -123.1137746
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right\nDestination will be on the left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "15 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "DRIVE"
+            }
+          ],
+          "localizedValues": {
+            "distance": {
+              "text": "11.9 km"
+            },
+            "duration": {
+              "text": "26 mins"
+            },
+            "staticDuration": {
+              "text": "26 mins"
+            }
+          }
+        }
+      ],
+      "distanceMeters": 23157,
+      "duration": "3155s",
+      "staticDuration": "3155s",
+      "polyline": {
+        "encodedPolyline": "ouzkH`}pnVb@y@JQR]nA_CbBwCf@aATa@`CgEHMvAgCd@y@lA{BHQXg@DKNWRW~@aBJU`@s@x@wAz@}AfAmBjBeD`DyFh@aAtGiL`GqKdAmBz@_BR[d@{@FIh@_ARa@Zi@v@wAl@gA~@aB~@cB~@_Bx@yAr@mANU~@aBv@uAdAmBd@{@\\m@x@wAf@}@LY`AkBVe@P_@NYLW^w@~@wBTg@FQ^uABG^wBNcBHqC@iAD{HFmLBkDBaIFqLBoBLsBr@kFBOFm@?cD@qADmK@mBDsG@mBDyGDsG@gD?Y@Y?MDcK?m@?Q?YC}@?OK}@EQOs@O{@AEEg@Cg@AW?e@?QBwD?_AQ?P??~@CvD?P?d@Bj@@RFl@Nz@TdABTFv@BZ?z@?P?l@EbK?LAX?XAfDAv@CzEExGAlBG`KElKApACz@OhBGf@QfAABm@~CUxBC~B?b@EtI?|CAp@GrDCd@GbBOlFGdASfCk@`Dw@zCA@[|@w@hBm@bA_AfBIPc@v@INIRIJQTi@~@AH_@p@i@|@s@nAfAnBzBvD\\h@dAjB~AnCx@vA~@~AfB`Dj@~@vAdCt@lAf@z@Tp@JSt@sA`AaBn@oAdAkB^m@fAkBRWRQRONIXQRIXIz@KpD@p@@pABrABxABtGHL@pAA\\\\xB?pA@ZAl@ERAV?F?v@Lf@JZ?PCp@jBDJNf@J`@TvADlA?rA@lE?rA?rDE`D?d@A|D@vA?dADl@?d@AzEEhNCjEErGGfMGVGdDAlBC|DAt@Gp@?@Ih@a@lAu@~AeAlBIPc@x@wArCOb@ABQdACzASJc@T]^GJe@?c@MSMo@a@a@a@KIQM_AsA]k@cAeBw@oA?i@@Mj@gAf@gAw@iA]e@kBoCKREzC@|@B^bBtCLTDLv@nAbAdB~@zA\\b@F`@LLf@h@NXP`@FVNQn@c@d@?LHRYXQ`@KTA?_@BmANaAPi@Zm@NEHIfAaBr@UF?GhF?`BA^Az@Mh@i@Ak@AeAA{AE_AMwAa@s@]s@g@W[S[MSgAgB{AkCIOe@w@iAqBsBgD]m@s@mAe@w@k@{@Ye@c@y@GMkAsBkAsB{@_BS_@M[I]EUKm@[wBMcAOaAUkBOw@GWEKsAaCYg@a@u@oE_I_@o@o@eAgAkB{@{AaBsCoBkDcBwCS[S_@cAeBWa@s@uA]k@iB}CmCwEsA}B_AbB_A`Bm@fAw@vA[h@S`@i@~@GHe@z@SZ{@~AeAlBaGpKoDlGeBzCi@`AaDxFkBdDgAlBYf@a@t@y@vAa@r@KT_A`BSVOVEJYf@IPmAzBe@x@wAfCILaCfEU`@g@`AcBvCoA~BS\\KPc@x@OHoB~Cc@\\QFWDI@K?WCIA_@Q{BeAa@Mu@?iATWJi@X_@XOJ}@fAMZCDKPUf@_@v@ENOb@GX}@pDMf@KZYbAw@|Be@lAq@|Ag@bAQ\\Yd@_A|A{AtBgBrBs@p@i@d@gAz@iBfAeBr@yBj@YFs@H{BLoDCuCSiAOq@MyD_AsC_A]Oa@Sk@[c@Sy@e@aAk@oAcAe@a@WWaA}@_@]}@y@y@q@][_@]k@g@gA_AQOgAaASQWSsJoIwEcE}AuAaEqDk@g@oJsISScA_A}BsB{BsBMKIIUUIG{IeIQMKKGGQQGIIGAAcA}@USGEQKc@[UQGQQQk@e@Ma@k@q@OUO]U{@Io@CUAgABk@Dc@Ci@Py@Pu@pBsKPcABGjAuFf@eCKIKMo@o@W[KMIKQSg@k@KMAKCM[a@Y]_@e@}@eA]c@c@g@_AiA_@i@o@y@o@k@_Ae@yA{@KIQKcAa@a@S{@a@O?IGm@c@o@c@m@c@UOu@S]EG?UAgACc@@[?e@@Q?iA@e@AwACKKe@EMCOESEc@Oa@W_@UOMo@i@m@g@MKk@]QMEAu@UcCGo@?UCg@AGB_B]IAqA[g@MkA[e@OGEUMa@YuAaBEEm@Ws@CU@cB`@G@k@ASEaAUm@OkBc@WEiAYFg@"
+      },
+      "description": "W Georgia St/BC-1A",
+      "viewport": {
+        "low": {
+          "latitude": 49.265946799999995,
+          "longitude": -123.1453302
+        },
+        "high": {
+          "latitude": 49.341459799999996,
+          "longitude": -123.08137029999999
+        }
+      },
+      "travelAdvisory": {},
+      "localizedValues": {
+        "distance": {
+          "text": "23.2 km"
+        },
+        "duration": {
+          "text": "53 mins"
+        },
+        "staticDuration": {
+          "text": "53 mins"
+        }
+      },
+      "routeLabels": [
+        "DEFAULT_ROUTE"
+      ],
+      "polylineDetails": {}
+    }
+  ],
+  "geocodingResults": {}
+}

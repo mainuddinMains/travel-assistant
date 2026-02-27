@@ -1,0 +1,1600 @@
+[
+  {
+    "from": "Stanley Park",
+    "to": "La Casa Gelato",
+    "from_id": "ChIJo-QmrYxxhlQRFuIJtJ1jSjY",
+    "to_id": "ChIJfVy9DmtxhlQR1BerabiOlCU",
+    "result": {
+      "routes": [
+        {
+          "legs": [
+            {
+              "distanceMeters": 5398,
+              "duration": "2353s",
+              "staticDuration": "2353s",
+              "polyline": {
+                "encodedPolyline": "gvzkH`}pnVYc@h@_Ar@cAh@gA^i@HNlBkDEG@Cn@hA`@u@AESYpJ}PbAcBzb@mv@zI}OJRBBn@iAT^IIEHwHoMyGoLjPyYXw@~BuSz@aIL{BD_M\\ot@\\ou@DeFF{LR?@GpA??vBhUL"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2939569,
+                  "longitude": -123.13569480000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2769127,
+                  "longitude": -123.08149249999998
+                }
+              },
+              "steps": [
+                {
+                  "distanceMeters": 20,
+                  "staticDuration": "16s",
+                  "polyline": {
+                    "encodedPolyline": "gvzkH`}pnVYc@"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.2939569,
+                      "longitude": -123.13569480000001
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.2940945,
+                      "longitude": -123.13550869999999
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "DEPART",
+                    "instructions": "Head northeast"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "20 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 130,
+                  "staticDuration": "111s",
+                  "polyline": {
+                    "encodedPolyline": "awzkH|{pnVh@_Ar@cAh@gA^i@"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.2940945,
+                      "longitude": -123.13550869999999
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.2932497,
+                      "longitude": -123.13428329999998
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "TURN_RIGHT",
+                    "instructions": "Turn right toward W Georgia St/Lions Gate Bridge Rd/BC-1A/BC-99 N"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "0.1 km"
+                    },
+                    "staticDuration": {
+                      "text": "2 mins"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 24,
+                  "staticDuration": "19s",
+                  "polyline": {
+                    "encodedPolyline": "yqzkHftpnVHN"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.2932497,
+                      "longitude": -123.13428329999998
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.2931998,
+                      "longitude": -123.13436019999999
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "TURN_RIGHT",
+                    "instructions": "Turn right toward W Georgia St/Lions Gate Bridge Rd/BC-1A/BC-99 N"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "24 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 116,
+                  "staticDuration": "119s",
+                  "polyline": {
+                    "encodedPolyline": "oqzkHvtpnVlBkDEG@Cn@hA`@u@"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.2931998,
+                      "longitude": -123.13436019999999
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.2922591,
+                      "longitude": -123.13353829999998
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "TURN_LEFT",
+                    "instructions": "Turn left onto W Georgia St/Lions Gate Bridge Rd/BC-1A/BC-99 N\nContinue to follow W Georgia St/BC-1A/BC-99 N\nDestination will be on the right"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "0.1 km"
+                    },
+                    "staticDuration": {
+                      "text": "2 mins"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 1550,
+                  "staticDuration": "296s",
+                  "polyline": {
+                    "encodedPolyline": "ukzkHlopnVSYpJ}PbAcBzb@mv@zI}OJR"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.292274899999995,
+                      "longitude": -123.1335142
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.28264,
+                      "longitude": -123.11852899999998
+                    }
+                  },
+                  "navigationInstruction": {
+                    "instructions": "Bus towards Vancouver Express"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "1.6 km"
+                    },
+                    "staticDuration": {
+                      "text": "5 mins"
+                    }
+                  },
+                  "transitDetails": {
+                    "stopDetails": {
+                      "arrivalStop": {
+                        "name": "EB W Georgia St @ Granville St",
+                        "location": {
+                          "latLng": {
+                            "latitude": 49.28264,
+                            "longitude": -123.11852899999998
+                          }
+                        }
+                      },
+                      "arrivalTime": "2025-11-28T01:01:29Z",
+                      "departureStop": {
+                        "name": "EB W Georgia St @ Denman St",
+                        "location": {
+                          "latLng": {
+                            "latitude": 49.292274899999995,
+                            "longitude": -123.1335142
+                          }
+                        }
+                      },
+                      "departureTime": "2025-11-28T00:56:33Z"
+                    },
+                    "localizedValues": {
+                      "arrivalTime": {
+                        "time": {
+                          "text": "5:01\u202fPM"
+                        },
+                        "timeZone": "America/Vancouver"
+                      },
+                      "departureTime": {
+                        "time": {
+                          "text": "4:56\u202fPM"
+                        },
+                        "timeZone": "America/Vancouver"
+                      }
+                    },
+                    "headsign": "Vancouver Express",
+                    "transitLine": {
+                      "agencies": [
+                        {
+                          "name": "TransLink",
+                          "phoneNumber": "+1 604-953-3333",
+                          "uri": "https://www.translink.ca/"
+                        }
+                      ],
+                      "name": "Horseshoe Bay/Vancouver Express",
+                      "nameShort": "257",
+                      "vehicle": {
+                        "name": {
+                          "text": "Bus"
+                        },
+                        "type": "BUS",
+                        "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                      }
+                    },
+                    "stopCount": 3
+                  },
+                  "travelMode": "TRANSIT"
+                },
+                {
+                  "distanceMeters": 32,
+                  "staticDuration": "27s",
+                  "polyline": {
+                    "encodedPolyline": "koxkH|qmnVn@iA"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.2826182,
+                      "longitude": -123.1185501
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.2823752,
+                      "longitude": -123.11817640000001
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "DEPART",
+                    "instructions": "Head southeast on W Georgia St/BC-1A toward Granville St"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "32 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 29,
+                  "staticDuration": "33s",
+                  "polyline": {
+                    "encodedPolyline": "{mxkHromnVT^"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.2823752,
+                      "longitude": -123.11817640000001
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.282269299999996,
+                      "longitude": -123.11833609999998
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "TURN_RIGHT",
+                    "instructions": "Turn right onto Granville St"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "29 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 3021,
+                  "staticDuration": "1088s",
+                  "polyline": {
+                    "encodedPolyline": "omxkHhpmnVEHwHoMyGoLjPyYXw@~BuSz@aIL{BD_M\\ot@\\ou@DeFF{LR?"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.28232,
+                      "longitude": -123.11828999999999
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.280904,
+                      "longitude": -123.08085999999999
+                    }
+                  },
+                  "navigationInstruction": {
+                    "instructions": "Bus towards Victoria"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "3.0 km"
+                    },
+                    "staticDuration": {
+                      "text": "18 mins"
+                    }
+                  },
+                  "transitDetails": {
+                    "stopDetails": {
+                      "arrivalStop": {
+                        "name": "EB E Hastings St @ Glen Dr",
+                        "location": {
+                          "latLng": {
+                            "latitude": 49.280904,
+                            "longitude": -123.08085999999999
+                          }
+                        }
+                      },
+                      "arrivalTime": "2025-11-28T01:24:54Z",
+                      "departureStop": {
+                        "name": "NB Granville St @ W Georgia St",
+                        "location": {
+                          "latLng": {
+                            "latitude": 49.28232,
+                            "longitude": -123.11828999999999
+                          }
+                        }
+                      },
+                      "departureTime": "2025-11-28T01:06:46Z"
+                    },
+                    "localizedValues": {
+                      "arrivalTime": {
+                        "time": {
+                          "text": "5:24\u202fPM"
+                        },
+                        "timeZone": "America/Vancouver"
+                      },
+                      "departureTime": {
+                        "time": {
+                          "text": "5:06\u202fPM"
+                        },
+                        "timeZone": "America/Vancouver"
+                      }
+                    },
+                    "headsign": "Victoria",
+                    "transitLine": {
+                      "agencies": [
+                        {
+                          "name": "TransLink",
+                          "phoneNumber": "+1 604-953-3333",
+                          "uri": "https://www.translink.ca/"
+                        }
+                      ],
+                      "name": "Victoria/Downtown",
+                      "nameShort": "020",
+                      "vehicle": {
+                        "name": {
+                          "text": "Bus"
+                        },
+                        "type": "BUS",
+                        "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                      }
+                    },
+                    "stopCount": 14
+                  },
+                  "travelMode": "TRANSIT"
+                },
+                {
+                  "distanceMeters": 43,
+                  "staticDuration": "34s",
+                  "polyline": {
+                    "encodedPolyline": "qdxkHbffnVpA?"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.2808877,
+                      "longitude": -123.08081729999999
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.2804772,
+                      "longitude": -123.08082370000001
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "DEPART",
+                    "instructions": "Head south"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "43 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 34,
+                  "staticDuration": "28s",
+                  "polyline": {
+                    "encodedPolyline": "_bxkHbffnV?vB"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.2804772,
+                      "longitude": -123.08082370000001
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.280484099999995,
+                      "longitude": -123.08141569999998
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "TURN_RIGHT",
+                    "instructions": "Turn right toward Glen Dr"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "34 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 399,
+                  "staticDuration": "325s",
+                  "polyline": {
+                    "encodedPolyline": "_bxkHzifnVhUL"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.280484099999995,
+                      "longitude": -123.08141569999998
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.2769127,
+                      "longitude": -123.08149249999998
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "TURN_LEFT",
+                    "instructions": "Turn left onto Glen Dr\nDestination will be on the right"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "0.4 km"
+                    },
+                    "staticDuration": {
+                      "text": "5 mins"
+                    }
+                  },
+                  "travelMode": "WALK"
+                }
+              ],
+              "localizedValues": {
+                "distance": {
+                  "text": "5.4 km"
+                },
+                "duration": {
+                  "text": "39 mins"
+                },
+                "staticDuration": {
+                  "text": "39 mins"
+                }
+              },
+              "stepsOverview": {
+                "multiModalSegments": [
+                  {
+                    "stepStartIndex": 0,
+                    "stepEndIndex": 3,
+                    "navigationInstruction": {
+                      "instructions": "Walk to EB W Georgia St @ Denman St"
+                    },
+                    "travelMode": "WALK"
+                  },
+                  {
+                    "stepStartIndex": 4,
+                    "stepEndIndex": 4,
+                    "navigationInstruction": {
+                      "instructions": "Bus towards Vancouver Express"
+                    },
+                    "travelMode": "TRANSIT"
+                  },
+                  {
+                    "stepStartIndex": 5,
+                    "stepEndIndex": 6,
+                    "navigationInstruction": {
+                      "instructions": "Walk to NB Granville St @ W Georgia St"
+                    },
+                    "travelMode": "WALK"
+                  },
+                  {
+                    "stepStartIndex": 7,
+                    "stepEndIndex": 7,
+                    "navigationInstruction": {
+                      "instructions": "Bus towards Victoria"
+                    },
+                    "travelMode": "TRANSIT"
+                  },
+                  {
+                    "stepStartIndex": 8,
+                    "stepEndIndex": 10,
+                    "travelMode": "WALK"
+                  }
+                ]
+              }
+            }
+          ],
+          "distanceMeters": 5398,
+          "duration": "2353s",
+          "staticDuration": "2353s",
+          "polyline": {
+            "encodedPolyline": "gvzkH`}pnVYc@h@_Ar@cAh@gA^i@HNlBkDEG@Cn@hA`@u@AESYpJ}PbAcBzb@mv@zI}OJRBBn@iAT^IIEHwHoMyGoLjPyYXw@~BuSz@aIL{BD_M\\ot@\\ou@DeFF{LR?@GpA??vBhUL"
+          },
+          "viewport": {
+            "low": {
+              "latitude": 49.2769127,
+              "longitude": -123.13569480000001
+            },
+            "high": {
+              "latitude": 49.2940945,
+              "longitude": -123.08081729999999
+            }
+          },
+          "travelAdvisory": {
+            "transitFare": {}
+          },
+          "localizedValues": {
+            "distance": {
+              "text": "5.4 km"
+            },
+            "duration": {
+              "text": "39 mins"
+            },
+            "staticDuration": {
+              "text": "39 mins"
+            },
+            "transitFare": {}
+          },
+          "routeLabels": [
+            "DEFAULT_ROUTE"
+          ]
+        }
+      ],
+      "geocodingResults": {}
+    }
+  },
+  {
+    "from": "La Casa Gelato",
+    "to": "Granville Island",
+    "from_id": "ChIJfVy9DmtxhlQR1BerabiOlCU",
+    "to_id": "ChIJ28IkUs5zhlQRua6hLV7S3jY",
+    "result": {
+      "routes": [
+        {
+          "legs": [
+            {
+              "distanceMeters": 7293,
+              "duration": "2967s",
+              "staticDuration": "2967s",
+              "polyline": {
+                "encodedPolyline": "ukwkHhjfnV{WO?BiBAKGIBcA?AC[@}@AICCc@M?ALu@PG~@d@KLxBAjBQnDCp@_@tCQzBG|BMhUSn[KxXC|GnPZQxZOtBWlBMfByClX[~@uAbCmIdOuDvGjGtKfGhKrK~QDJvMfU~@zAVl@~D|GLd@hFpJbDnFDRzJvPzHrMzCjFbAnAbAz@lAt@|@Z~AFnBAhAJZn@Tt@Dp@In@[fAY`A?ZBV?rAyDEAhCC?CB?J?uDJ{HAoAQ_@[Wc@Oe@AKMYIm@_@GHe@o@OCG[Mf@CQiA}A{C_FB_@ISUKuAcCDQEs@?gADkB"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2769127,
+                  "longitude": -123.08149249999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2711621,
+                  "longitude": -123.1340482
+                }
+              },
+              "steps": [
+                {
+                  "distanceMeters": 602,
+                  "staticDuration": "519s",
+                  "polyline": {
+                    "encodedPolyline": "ukwkHhjfnV{WO?BiBAKGIBcA?AC[@}@AIC"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.2769127,
+                      "longitude": -123.08149249999998
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.282383499999995,
+                      "longitude": -123.08135530000001
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "DEPART",
+                    "instructions": "Head north on Glen Dr toward Union St"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "0.6 km"
+                    },
+                    "staticDuration": {
+                      "text": "9 mins"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 7,
+                  "staticDuration": "7s",
+                  "polyline": {
+                    "encodedPolyline": "{mxkHnifnVCc@"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.282383499999995,
+                      "longitude": -123.08135530000001
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.282404199999995,
+                      "longitude": -123.08117779999998
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "TURN_RIGHT",
+                    "instructions": "Turn right onto Franklin St"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "7 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 40,
+                  "staticDuration": "49s",
+                  "polyline": {
+                    "encodedPolyline": "_nxkHjhfnVM?ALu@P"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.282404199999995,
+                      "longitude": -123.08117779999998
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.2827484,
+                      "longitude": -123.08133850000002
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "TURN_LEFT",
+                    "instructions": "Turn left onto Powell St/Powell St Opas\nTake the stairs"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "40 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 5901,
+                  "staticDuration": "1805s",
+                  "polyline": {
+                    "encodedPolyline": "mpxkHjkfnVd@KLxBAjBQnDCp@_@tCQzBG|BMhUSn[KxXC|GnPZQxZOtBWlBMfByClX[~@uAbCmIdOuDvGjGtKfGhKrK~QDJvMfU~@zAVl@~D|GLd@hFpJbDnFDRzJvPzHrMzCjFbAnAbAz@lAt@|@Z~AFnBAhAJZn@Tt@Dp@In@[fAY`A?ZBV?rAyDEAhCC?"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.282792,
+                      "longitude": -123.081659
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.268038999999995,
+                      "longitude": -123.14156899999999
+                    }
+                  },
+                  "navigationInstruction": {
+                    "instructions": "Bus towards Dunbar"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "5.9 km"
+                    },
+                    "staticDuration": {
+                      "text": "30 mins"
+                    }
+                  },
+                  "transitDetails": {
+                    "stopDetails": {
+                      "arrivalStop": {
+                        "name": "WB W 4th Ave @ Fir St",
+                        "location": {
+                          "latLng": {
+                            "latitude": 49.268038999999995,
+                            "longitude": -123.14156899999999
+                          }
+                        }
+                      },
+                      "arrivalTime": "2025-11-28T01:29:16Z",
+                      "departureStop": {
+                        "name": "WB Powell St FS Glen Dr",
+                        "location": {
+                          "latLng": {
+                            "latitude": 49.282792,
+                            "longitude": -123.081659
+                          }
+                        }
+                      },
+                      "departureTime": "2025-11-28T00:59:11Z"
+                    },
+                    "localizedValues": {
+                      "arrivalTime": {
+                        "time": {
+                          "text": "5:29\u202fPM"
+                        },
+                        "timeZone": "America/Vancouver"
+                      },
+                      "departureTime": {
+                        "time": {
+                          "text": "4:59\u202fPM"
+                        },
+                        "timeZone": "America/Vancouver"
+                      }
+                    },
+                    "headsign": "Dunbar",
+                    "transitLine": {
+                      "agencies": [
+                        {
+                          "name": "TransLink",
+                          "phoneNumber": "+1 604-953-3333",
+                          "uri": "https://www.translink.ca/"
+                        }
+                      ],
+                      "name": "Nanaimo Station/Dunbar",
+                      "nameShort": "007",
+                      "vehicle": {
+                        "name": {
+                          "text": "Bus"
+                        },
+                        "type": "BUS",
+                        "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                      }
+                    },
+                    "stopCount": 20
+                  },
+                  "travelMode": "TRANSIT"
+                },
+                {
+                  "distanceMeters": 205,
+                  "staticDuration": "167s",
+                  "polyline": {
+                    "encodedPolyline": "ktukH|arnV?J?uDJ{HAoA"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.268059699999995,
+                      "longitude": -123.1415947
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.2680054,
+                      "longitude": -123.13876429999999
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "DEPART",
+                    "instructions": "Head east on W 4th Ave toward Fir St"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "0.2 km"
+                    },
+                    "staticDuration": {
+                      "text": "3 mins"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 538,
+                  "staticDuration": "420s",
+                  "polyline": {
+                    "encodedPolyline": "atukHfpqnVQ_@[Wc@Oe@AKMYIm@_@GHe@o@OCG[Mf@CQiA}A{C_FB_@ISUKuAcCDQEs@?gADkB"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.2680054,
+                      "longitude": -123.13876429999999
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.2711621,
+                      "longitude": -123.1340482
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "TURN_SLIGHT_LEFT",
+                    "instructions": "Slight left onto Anderson St"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "0.5 km"
+                    },
+                    "staticDuration": {
+                      "text": "7 mins"
+                    }
+                  },
+                  "travelMode": "WALK"
+                }
+              ],
+              "localizedValues": {
+                "distance": {
+                  "text": "7.3 km"
+                },
+                "duration": {
+                  "text": "49 mins"
+                },
+                "staticDuration": {
+                  "text": "49 mins"
+                }
+              },
+              "stepsOverview": {
+                "multiModalSegments": [
+                  {
+                    "stepStartIndex": 0,
+                    "stepEndIndex": 2,
+                    "navigationInstruction": {
+                      "instructions": "Walk to WB Powell St FS Glen Dr"
+                    },
+                    "travelMode": "WALK"
+                  },
+                  {
+                    "stepStartIndex": 3,
+                    "stepEndIndex": 3,
+                    "navigationInstruction": {
+                      "instructions": "Bus towards Dunbar"
+                    },
+                    "travelMode": "TRANSIT"
+                  },
+                  {
+                    "stepStartIndex": 4,
+                    "stepEndIndex": 5,
+                    "travelMode": "WALK"
+                  }
+                ]
+              }
+            }
+          ],
+          "distanceMeters": 7293,
+          "duration": "2972s",
+          "staticDuration": "2972s",
+          "polyline": {
+            "encodedPolyline": "ukwkHhjfnV{WO?BiBAKGIBcA?AC[@}@AICCc@M?ALu@PG~@d@KLxBAjBQnDCp@_@tCQzBG|BMhUSn[KxXC|GnPZQxZOtBWlBMfByClX[~@uAbCmIdOuDvGjGtKfGhKrK~QDJvMfU~@zAVl@~D|GLd@hFpJbDnFDRzJvPzHrMzCjFbAnAbAz@lAt@|@Z~AFnBAhAJZn@Tt@Dp@In@[fAY`A?ZBV?rAyDEAhCC?CB?J?uDJ{HAoAQ_@[Wc@Oe@AKMYIm@_@GHe@o@OCG[Mf@CQiA}A{C_FB_@ISUKuAcCDQEs@?gADkB"
+          },
+          "viewport": {
+            "low": {
+              "latitude": 49.2667794,
+              "longitude": -123.14164989999999
+            },
+            "high": {
+              "latitude": 49.2846675,
+              "longitude": -123.08117779999998
+            }
+          },
+          "travelAdvisory": {
+            "transitFare": {}
+          },
+          "localizedValues": {
+            "distance": {
+              "text": "7.3 km"
+            },
+            "duration": {
+              "text": "50 mins"
+            },
+            "staticDuration": {
+              "text": "50 mins"
+            },
+            "transitFare": {}
+          },
+          "routeLabels": [
+            "DEFAULT_ROUTE"
+          ]
+        }
+      ],
+      "geocodingResults": {}
+    }
+  },
+  {
+    "from": "Granville Island",
+    "to": "Capilano Suspension Bridge Park",
+    "from_id": "ChIJ28IkUs5zhlQRua6hLV7S3jY",
+    "to_id": "ChIJSd7cANJvhlQRXg8TheyzUPM",
+    "result": {
+      "routes": [
+        {
+          "legs": [
+            {
+              "distanceMeters": 11840,
+              "duration": "2967s",
+              "staticDuration": "2967s",
+              "polyline": {
+                "encodedPolyline": "wgvkHjrpnVEzC@~@BXEPtAbCVPFLC^~DnGd@l@BPLg@FXQMJHTHd@n@FIz@f@J@JLp@BJDFU\\WVG?Bl@@EY@]J?f@a@PGlA@?Nb@ZBGL@Av@Mh@wFK_AMwAa@s@]s@g@y@kAiOiWqBiDsEgIWSyKuRYS_E}GWm@iLyRmBiDEKwMgUDIHHU_@S^]k@a@r@OZJRuVvc@iUla@cAbBsRp]OCyCvEc@\\g@Ji@A}@_@}BgAIBw@BaARYNEFgAp@i@f@e@l@]r@u@~A]lAwAtFgAjDuAhDeAxByAbC{AtBgBrB}AvAgAz@iBfAeBr@yBj@mAP{BLoDCuCS{B]yD_AsC_AiEyBaAk@mC}B_DuCwBkBc\\iYg]_[aP}NsA_AGQ}@w@Ma@k@q@_@s@U{@MeAAgABk@Dc@Ci@b@oBfC_NrB{JkBqBoAyAEYuGaIoAcBo@k@_Ae@wBqAeBu@{@a@O?kDcCu@S{@GkBAeE@uACKKcAOw@UaAm@{BkBcAm@u@UcCGeACg@AGBcFiAqBk@_Am@{AgBm@Ws@CU@kBb@k@AcKaC_E}@BYADd@Hn@HTx@O@GF"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.271158500000006,
+                  "longitude": -123.1339821
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3422359,
+                  "longitude": -123.11390769999998
+                }
+              },
+              "steps": [
+                {
+                  "distanceMeters": 485,
+                  "staticDuration": "434s",
+                  "polyline": {
+                    "encodedPolyline": "wgvkHjrpnVEzC@~@BXEPtAbCVPFLC^~DnGd@l@BPLg@FXQMJHTHd@n@FIz@f@J@JLp@BJD"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.271158500000006,
+                      "longitude": -123.1339821
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.2683049,
+                      "longitude": -123.1384383
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "DEPART",
+                    "instructions": "Head west on Anderson St toward Cartwright St"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "0.5 km"
+                    },
+                    "staticDuration": {
+                      "text": "7 mins"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 62,
+                  "staticDuration": "67s",
+                  "polyline": {
+                    "encodedPolyline": "{uukHfnqnVFU\\WVG?Bl@@"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.2683049,
+                      "longitude": -123.1384383
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.2677589,
+                      "longitude": -123.1382014
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "TURN_LEFT",
+                    "instructions": "Turn left to stay on Anderson St"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "62 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 11,
+                  "staticDuration": "18s",
+                  "polyline": {
+                    "encodedPolyline": "orukHvlqnVEY@]"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.2677589,
+                      "longitude": -123.1382014
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.2677832,
+                      "longitude": -123.1379196
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "TURN_LEFT",
+                    "instructions": "Turn left onto W 4th Ave"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "11 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 92,
+                  "staticDuration": "87s",
+                  "polyline": {
+                    "encodedPolyline": "srukH~jqnVJ?f@a@PGlA@"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.2677832,
+                      "longitude": -123.1379196
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.267042700000005,
+                      "longitude": -123.13772449999999
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "TURN_RIGHT",
+                    "instructions": "Turn right"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "92 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 6,
+                  "staticDuration": "4s",
+                  "polyline": {
+                    "encodedPolyline": "_nukHviqnV?N"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.267042700000005,
+                      "longitude": -123.13772449999999
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.2670437,
+                      "longitude": -123.13780179999999
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "TURN_RIGHT",
+                    "instructions": "Turn right"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "6 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 23,
+                  "staticDuration": "21s",
+                  "polyline": {
+                    "encodedPolyline": "_nukHfjqnVb@Z"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.2670437,
+                      "longitude": -123.13780179999999
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.266863699999995,
+                      "longitude": -123.13794419999998
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "TURN_LEFT",
+                    "instructions": "Turn left\nTake the stairs"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "23 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 3,
+                  "staticDuration": "4s",
+                  "polyline": {
+                    "encodedPolyline": "{lukHbkqnV"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.266863699999995,
+                      "longitude": -123.13794419999998
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.266863699999995,
+                      "longitude": -123.13794419999998
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "TURN_LEFT",
+                    "instructions": "Turn left"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "3 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 2356,
+                  "staticDuration": "643s",
+                  "polyline": {
+                    "encodedPolyline": "wlukHzjqnVL@Av@Mh@wFK_AMwAa@s@]s@g@y@kAiOiWqBiDsEgIWSyKuRYS_E}GWm@iLyRmBiDEKwMgUDI"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.266842999999994,
+                      "longitude": -123.13790499999999
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.28232,
+                      "longitude": -123.11828999999999
+                    }
+                  },
+                  "navigationInstruction": {
+                    "instructions": "Bus towards Powell"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "2.4 km"
+                    },
+                    "staticDuration": {
+                      "text": "11 mins"
+                    }
+                  },
+                  "transitDetails": {
+                    "stopDetails": {
+                      "arrivalStop": {
+                        "name": "NB Granville St @ W Georgia St",
+                        "location": {
+                          "latLng": {
+                            "latitude": 49.28232,
+                            "longitude": -123.11828999999999
+                          }
+                        }
+                      },
+                      "arrivalTime": "2025-11-28T01:39:43Z",
+                      "departureStop": {
+                        "name": "WB W 5th Ave @ Granville St",
+                        "location": {
+                          "latLng": {
+                            "latitude": 49.266842999999994,
+                            "longitude": -123.13790499999999
+                          }
+                        }
+                      },
+                      "departureTime": "2025-11-28T01:29:00Z"
+                    },
+                    "localizedValues": {
+                      "arrivalTime": {
+                        "time": {
+                          "text": "5:39\u202fPM"
+                        },
+                        "timeZone": "America/Vancouver"
+                      },
+                      "departureTime": {
+                        "time": {
+                          "text": "5:29\u202fPM"
+                        },
+                        "timeZone": "America/Vancouver"
+                      }
+                    },
+                    "headsign": "Powell",
+                    "transitLine": {
+                      "agencies": [
+                        {
+                          "name": "TransLink",
+                          "phoneNumber": "+1 604-953-3333",
+                          "uri": "https://www.translink.ca/"
+                        }
+                      ],
+                      "name": "Powell/Downtown/UBC",
+                      "nameShort": "004",
+                      "vehicle": {
+                        "name": {
+                          "text": "Bus"
+                        },
+                        "type": "BUS",
+                        "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                      }
+                    },
+                    "stopCount": 5
+                  },
+                  "travelMode": "TRANSIT"
+                },
+                {
+                  "distanceMeters": 29,
+                  "staticDuration": "23s",
+                  "polyline": {
+                    "encodedPolyline": "emxkHrpmnVU_@"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.282269299999996,
+                      "longitude": -123.11833609999998
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.2823752,
+                      "longitude": -123.11817640000001
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "DEPART",
+                    "instructions": "Head northeast on Granville St toward W Georgia St/BC-1A"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "29 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 52,
+                  "staticDuration": "69s",
+                  "polyline": {
+                    "encodedPolyline": "{mxkHromnVS^]k@a@r@"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.2823752,
+                      "longitude": -123.11817640000001
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.2828005,
+                      "longitude": -123.1183818
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "TURN_LEFT",
+                    "instructions": "Turn left onto W Georgia St/BC-1A\nDestination will be on the right"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "52 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 8629,
+                  "staticDuration": "1305s",
+                  "polyline": {
+                    "encodedPolyline": "_qxkHvqmnVJRuVvc@iUla@cAbBsRp]OCyCvEc@\\g@Ji@A}@_@}BgAIBw@BaARYNEFgAp@i@f@e@l@]r@u@~A]lAwAtFgAjDuAhDeAxByAbC{AtBgBrB}AvAgAz@iBfAeBr@yBj@mAP{BLoDCuCS{B]yD_AsC_AiEyBaAk@mC}B_DuCwBkBc\\iYg]_[aP}NsA_AGQ}@w@Ma@k@q@_@s@U{@MeAAgABk@Dc@Ci@b@oBfC_NrB{JkBqBoAyAEYuGaIoAcBo@k@_Ae@wBqAeBu@{@a@O?kDcCu@S{@GkBAeE@uACKKcAOw@UaAm@{BkBcAm@u@UcCGeACg@AGBcFiAqBk@_Am@{AgBm@Ws@CU@kBb@k@AcKaC_E}@BY"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.282879,
+                      "longitude": -123.118524
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.342653,
+                      "longitude": -123.113437
+                    }
+                  },
+                  "navigationInstruction": {
+                    "instructions": "Bus towards Grouse Mountain"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "8.6 km"
+                    },
+                    "staticDuration": {
+                      "text": "22 mins"
+                    }
+                  },
+                  "transitDetails": {
+                    "stopDetails": {
+                      "arrivalStop": {
+                        "name": "NB Capilano Rd @ 3600 Block",
+                        "location": {
+                          "latLng": {
+                            "latitude": 49.342653,
+                            "longitude": -123.113437
+                          }
+                        }
+                      },
+                      "arrivalTime": "2025-11-28T02:06:32Z",
+                      "departureStop": {
+                        "name": "WB W Georgia St @ Granville St",
+                        "location": {
+                          "latLng": {
+                            "latitude": 49.282879,
+                            "longitude": -123.118524
+                          }
+                        }
+                      },
+                      "departureTime": "2025-11-28T01:44:47Z"
+                    },
+                    "localizedValues": {
+                      "arrivalTime": {
+                        "time": {
+                          "text": "6:06\u202fPM"
+                        },
+                        "timeZone": "America/Vancouver"
+                      },
+                      "departureTime": {
+                        "time": {
+                          "text": "5:44\u202fPM"
+                        },
+                        "timeZone": "America/Vancouver"
+                      }
+                    },
+                    "headsign": "Grouse Mountain",
+                    "transitLine": {
+                      "agencies": [
+                        {
+                          "name": "TransLink",
+                          "phoneNumber": "+1 604-953-3333",
+                          "uri": "https://www.translink.ca/"
+                        }
+                      ],
+                      "name": "Grouse Mountain/Downtown",
+                      "nameShort": "247",
+                      "vehicle": {
+                        "name": {
+                          "text": "Bus"
+                        },
+                        "type": "BUS",
+                        "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                      }
+                    },
+                    "stopCount": 13
+                  },
+                  "travelMode": "TRANSIT"
+                },
+                {
+                  "distanceMeters": 68,
+                  "staticDuration": "51s",
+                  "polyline": {
+                    "encodedPolyline": "sfdlHdrlnVd@Hn@HTx@"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.3426562,
+                      "longitude": -123.1134688
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.342119499999995,
+                      "longitude": -123.11386019999999
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "DEPART",
+                    "instructions": "Head south on Capilano Rd"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "68 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                },
+                {
+                  "distanceMeters": 24,
+                  "staticDuration": "29s",
+                  "polyline": {
+                    "encodedPolyline": "gcdlHrtlnVO@GF"
+                  },
+                  "startLocation": {
+                    "latLng": {
+                      "latitude": 49.342119499999995,
+                      "longitude": -123.11386019999999
+                    }
+                  },
+                  "endLocation": {
+                    "latLng": {
+                      "latitude": 49.3422359,
+                      "longitude": -123.11390769999998
+                    }
+                  },
+                  "navigationInstruction": {
+                    "maneuver": "TURN_RIGHT",
+                    "instructions": "Turn right"
+                  },
+                  "localizedValues": {
+                    "distance": {
+                      "text": "24 m"
+                    },
+                    "staticDuration": {
+                      "text": "1 min"
+                    }
+                  },
+                  "travelMode": "WALK"
+                }
+              ],
+              "localizedValues": {
+                "distance": {
+                  "text": "11.8 km"
+                },
+                "duration": {
+                  "text": "49 mins"
+                },
+                "staticDuration": {
+                  "text": "49 mins"
+                }
+              },
+              "stepsOverview": {
+                "multiModalSegments": [
+                  {
+                    "stepStartIndex": 0,
+                    "stepEndIndex": 6,
+                    "navigationInstruction": {
+                      "instructions": "Walk to WB W 5th Ave @ Granville St"
+                    },
+                    "travelMode": "WALK"
+                  },
+                  {
+                    "stepStartIndex": 7,
+                    "stepEndIndex": 7,
+                    "navigationInstruction": {
+                      "instructions": "Bus towards Powell"
+                    },
+                    "travelMode": "TRANSIT"
+                  },
+                  {
+                    "stepStartIndex": 8,
+                    "stepEndIndex": 9,
+                    "navigationInstruction": {
+                      "instructions": "Walk to WB W Georgia St @ Granville St"
+                    },
+                    "travelMode": "WALK"
+                  },
+                  {
+                    "stepStartIndex": 10,
+                    "stepEndIndex": 10,
+                    "navigationInstruction": {
+                      "instructions": "Bus towards Grouse Mountain"
+                    },
+                    "travelMode": "TRANSIT"
+                  },
+                  {
+                    "stepStartIndex": 11,
+                    "stepEndIndex": 12,
+                    "travelMode": "WALK"
+                  }
+                ]
+              }
+            }
+          ],
+          "distanceMeters": 11840,
+          "duration": "2964s",
+          "staticDuration": "2964s",
+          "polyline": {
+            "encodedPolyline": "wgvkHjrpnVEzC@~@BXEPtAbCVPFLC^~DnGd@l@BPLg@FXQMJHTHd@n@FIz@f@J@JLp@BJDFU\\WVG?Bl@@EY@]J?f@a@PGlA@?Nb@ZBGL@Av@Mh@wFK_AMwAa@s@]s@g@y@kAiOiWqBiDsEgIWSyKuRYS_E}GWm@iLyRmBiDEKwMgUDIHHU_@S^]k@a@r@OZJRuVvc@iUla@cAbBsRp]OCyCvEc@\\g@Ji@A}@_@}BgAIBw@BaARYNEFgAp@i@f@e@l@]r@u@~A]lAwAtFgAjDuAhDeAxByAbC{AtBgBrB}AvAgAz@iBfAeBr@yBj@mAP{BLoDCuCS{B]yD_AsC_AiEyBaAk@mC}B_DuCwBkBc\\iYg]_[aP}NsA_AGQ}@w@Ma@k@q@_@s@U{@MeAAgABk@Dc@Ci@b@oBfC_NrB{JkBqBoAyAEYuGaIoAcBo@k@_Ae@wBqAeBu@{@a@O?kDcCu@S{@GkBAeE@uACKKcAOw@UaAm@{BkBcAm@u@UcCGeACg@AGBcFiAqBk@_Am@{AgBm@Ws@CU@kBb@k@AcKaC_E}@BYADd@Hn@HTx@O@GF"
+          },
+          "viewport": {
+            "low": {
+              "latitude": 49.2667739,
+              "longitude": -123.1453302
+            },
+            "high": {
+              "latitude": 49.3426708,
+              "longitude": -123.113437
+            }
+          },
+          "travelAdvisory": {
+            "transitFare": {}
+          },
+          "localizedValues": {
+            "distance": {
+              "text": "11.8 km"
+            },
+            "duration": {
+              "text": "49 mins"
+            },
+            "staticDuration": {
+              "text": "49 mins"
+            },
+            "transitFare": {}
+          },
+          "routeLabels": [
+            "DEFAULT_ROUTE"
+          ]
+        }
+      ],
+      "geocodingResults": {}
+    }
+  }
+]
