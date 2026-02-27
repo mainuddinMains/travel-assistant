@@ -7,9 +7,13 @@ import './styles/index.css'
 import './i18n'
 import { router } from './app/router'
 import { AuthProvider } from './app/providers/AuthProvider'
+import { setupMapsErrorHandler } from './components/dashboard/MapsErrorHandler'
 // import { enableMSW } from './mocks/enable'
 
 // enableMSW() // Disabled to use real backend
+
+// Setup Google Maps error handler globally before anything else
+setupMapsErrorHandler()
 
 const client = new QueryClient()
 

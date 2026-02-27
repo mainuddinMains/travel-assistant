@@ -28,7 +28,27 @@ export function Signup() {
       login(res.user, res.access_token)
       nav('/home')
     } catch (e: any) {
-      setServerError(e?.message || t('auth.errors.generic'))
+      // Extract error message from API response
+      let errorMessage = t('auth.errors.generic')
+      
+      if (e?.data?.detail) {
+        // FastAPI returns error in { detail: "message" } format
+        errorMessage = e.data.detail
+      } else if (e?.data?.message) {
+        // Some APIs return { message: "..." }
+        errorMessage = e.data.message
+      } else if (e?.message) {
+        errorMessage = e.message
+      }
+      
+      // Handle specific error codes
+      if (e?.status === 409) {
+        errorMessage = errorMessage || t('auth.errors.emailExists', { defaultValue: 'This email is already registered. Please use a different email or log in instead.' })
+      } else if (e?.status === 422) {
+        errorMessage = errorMessage || t('auth.errors.validation', { defaultValue: 'Please check your input and try again.' })
+      }
+      
+      setServerError(errorMessage)
     }
   }
 
@@ -67,7 +87,7 @@ export function Signup() {
           <Link className="link" to="/login">{t('auth.toLogin')}</Link>
         </div>
         <div className="mt-4 text-center">
-          <Link className="link text-sm" to="/">🌐 {t('auth.languageLink')}</Link>
+          <Link className="link text-sm" to="/">🏠 {t('auth.backToHome')}</Link>
         </div>
       </div>
     </div>

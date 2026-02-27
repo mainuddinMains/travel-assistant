@@ -2,13 +2,23 @@ import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { LanguageSwitcher } from '../LanguageSwitcher'
+import { useAuth } from '../../app/providers/AuthProvider'
 import { Menu, X } from 'lucide-react'
 
 export function Header() {
   const { t } = useTranslation()
   const nav = useNavigate()
+  const { token } = useAuth()
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  
+  const handleAIModeClick = () => {
+    if (token) {
+      nav('/home')
+    } else {
+      nav('/login')
+    }
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,12 +49,12 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link
-              to="/#destinations"
+            <button
+              onClick={handleAIModeClick}
               className="text-travel-neutral hover:text-travel-primary font-medium transition-colors"
             >
-              {t('landing.header.nav.destinations')}
-            </Link>
+              {t('landing.header.nav.aiMode')}
+            </button>
             <Link
               to="/#features"
               className="text-travel-neutral hover:text-travel-primary font-medium transition-colors"
@@ -97,13 +107,15 @@ export function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-travel-neutral-light/20 bg-white">
           <nav className="px-4 py-4 space-y-4">
-            <Link
-              to="/#destinations"
-              className="block text-travel-neutral hover:text-travel-primary font-medium"
-              onClick={() => setMobileMenuOpen(false)}
+            <button
+              onClick={() => {
+                handleAIModeClick()
+                setMobileMenuOpen(false)
+              }}
+              className="block w-full text-left text-travel-neutral hover:text-travel-primary font-medium"
             >
-              {t('landing.header.nav.destinations')}
-            </Link>
+              {t('landing.header.nav.aiMode')}
+            </button>
             <Link
               to="/#features"
               className="block text-travel-neutral hover:text-travel-primary font-medium"

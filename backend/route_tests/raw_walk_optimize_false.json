@@ -1,0 +1,1836 @@
+{
+  "routes": [
+    {
+      "legs": [
+        {
+          "distanceMeters": 4827,
+          "duration": "4031s",
+          "staticDuration": "4031s",
+          "polyline": {
+            "encodedPolyline": "gvzkH`}pnVYc@`@u@FIr@cAh@gA^i@HNvAiCTa@EGb@{@LUzByDP[lAyBb@a@PYdAoBHOBBJSFMRW?e@l@{CF]R_@CIzAyHpBaKzBeLrA}G\\eBn@gDLk@f@iCn@aDXsALa@^s@CEBC^g@@BVa@z@}A\\e@AA\\q@\\k@b@w@Ze@AAR_@@BLWNYLQDITa@FKHOf@_A@@fAqB`@o@?CR]Ta@~A{C@@rBoDAALU@@xB_EvAiCHOECPg@@@Jw@b@gEPiBJiAAAfAiJFYAS\\{CJ_AI?No@D?@YFyIAA@g@BeF@}B@cA?i@A?BuB@iAByG?s@@AXC?B`AKXA`AM?EVA?@z@G|AGj@IVC`@AvAE?SF[@kEIMBuC?s@@oAByB@yB@qC@{BBiC@{F@]DqH?QAKBs@HY?AH@HuM@c@@cB@aEBmA@{@Ai@@oB@wAx@AN?"
+          },
+          "startLocation": {
+            "latLng": {
+              "latitude": 49.2939569,
+              "longitude": -123.13569480000001
+            }
+          },
+          "endLocation": {
+            "latLng": {
+              "latitude": 49.2769127,
+              "longitude": -123.08149249999998
+            }
+          },
+          "steps": [
+            {
+              "distanceMeters": 20,
+              "staticDuration": "16s",
+              "polyline": {
+                "encodedPolyline": "gvzkH`}pnVYc@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2939569,
+                  "longitude": -123.13569480000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2940945,
+                  "longitude": -123.13550869999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "DEPART",
+                "instructions": "Head northeast"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "20 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 130,
+              "staticDuration": "111s",
+              "polyline": {
+                "encodedPolyline": "awzkH|{pnV`@u@FIr@cAh@gA^i@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2940945,
+                  "longitude": -123.13550869999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2932497,
+                  "longitude": -123.13428329999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right toward W Georgia St/Lions Gate Bridge Rd/BC-1A/BC-99 N"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "2 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 24,
+              "staticDuration": "19s",
+              "polyline": {
+                "encodedPolyline": "yqzkHftpnVHN"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2932497,
+                  "longitude": -123.13428329999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2931998,
+                  "longitude": -123.13436019999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right toward W Georgia St/Lions Gate Bridge Rd/BC-1A/BC-99 N"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "24 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 434,
+              "staticDuration": "358s",
+              "polyline": {
+                "encodedPolyline": "oqzkHvtpnVvAiCTa@EGb@{@LUzByDP[lAyBb@a@PYdAoBHOBBJSFM"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2931998,
+                  "longitude": -123.13436019999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.290536499999995,
+                  "longitude": -123.13028360000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto W Georgia St/Lions Gate Bridge Rd/BC-1A/BC-99 N\nContinue to follow W Georgia St/BC-1A/BC-99 N"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.4 km"
+                },
+                "staticDuration": {
+                  "text": "6 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 2730,
+              "staticDuration": "2329s",
+              "polyline": {
+                "encodedPolyline": "{`zkHf{onVRW?e@l@{CF]R_@CIzAyHpBaKzBeLrA}G\\eBn@gDLk@f@iCn@aDXsALa@^s@CEBC^g@@BVa@z@}A\\e@AA\\q@\\k@b@w@Ze@AAR_@@BLWNYLQDITa@FKHOf@_A@@fAqB`@o@?CR]Ta@~A{C@@rBoDAALU@@xB_EvAiCHOECPg@@@Jw@b@gEPiBJiAAAfAiJFYAS\\{CJ_AI?No@D?@YFyIAA@g@BeF@}B@cA?i@A?BuB@iAByG?s@@A"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.290536499999995,
+                  "longitude": -123.13028360000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2804171,
+                  "longitude": -123.09724220000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_LEFT",
+                "instructions": "Slight left onto W Pender St/BC-1A/BC-7A\nContinue to follow W Pender St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "2.7 km"
+                },
+                "staticDuration": {
+                  "text": "39 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 306,
+              "staticDuration": "232s",
+              "polyline": {
+                "encodedPolyline": "saxkHvlinVXC?B`AKXA`AM?EVA?@z@G|AGj@IVC`@AvAE"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2804171,
+                  "longitude": -123.09724220000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.277663,
+                  "longitude": -123.0968802
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Gore Ave"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.3 km"
+                },
+                "staticDuration": {
+                  "text": "4 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 674,
+              "staticDuration": "556s",
+              "polyline": {
+                "encodedPolyline": "kpwkHnjinV?SF[@kEIMBuC?s@@oAByB@yB@qC@{BBiC@{F@]DqH?QAK"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.277663,
+                  "longitude": -123.0968802
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.277524299999996,
+                  "longitude": -123.08778660000002
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Union St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.7 km"
+                },
+                "staticDuration": {
+                  "text": "9 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 31,
+              "staticDuration": "23s",
+              "polyline": {
+                "encodedPolyline": "oowkHtqgnVBs@HY?AH@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.277524299999996,
+                  "longitude": -123.08778660000002
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2773969,
+                  "longitude": -123.0873964
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_RIGHT",
+                "instructions": "Slight right toward Union St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "31 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 430,
+              "staticDuration": "354s",
+              "polyline": {
+                "encodedPolyline": "wnwkHfognVHuM@c@@cB@aEBmA@{@Ai@@oB@wA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2773969,
+                  "longitude": -123.0873964
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.277284099999996,
+                  "longitude": -123.08149660000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "NAME_CHANGE",
+                "instructions": "Continue onto Union St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.4 km"
+                },
+                "staticDuration": {
+                  "text": "6 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 48,
+              "staticDuration": "33s",
+              "polyline": {
+                "encodedPolyline": "_nwkHjjfnVx@AN?"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.277284099999996,
+                  "longitude": -123.08149660000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2769127,
+                  "longitude": -123.08149249999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Glen Dr\nDestination will be on the right"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "48 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            }
+          ],
+          "localizedValues": {
+            "distance": {
+              "text": "4.8 km"
+            },
+            "duration": {
+              "text": "1 hour 7 mins"
+            },
+            "staticDuration": {
+              "text": "1 hour 7 mins"
+            }
+          }
+        },
+        {
+          "distanceMeters": 4797,
+          "duration": "3999s",
+          "staticDuration": "3999s",
+          "polyline": {
+            "encodedPolyline": "ukwkHhjfnVO?y@@AvAAnB@h@Az@?h@Cb@A`DAbCAxAGdKAXIAKb@?DAd@@\\GnI?b@AvEChCClGAxBCxB?n@A^?r@CtCHLAjEGZ?RI??n@B?AfAC`CB`@AnB?ZA~BG??^H??JF@Cf@?R@lAQL?rCFf@B~AE?Dj@D??F@FLhDBNSf@Kh@Kn@Gx@w@hJE^Gb@CPY~@_A`CCPE?Mp@CREnAHnABT@ALl@FTvBfFBNRx@FhAB`@K|A@r@Ft@VjAHV~@`CNXP`@\\^NJ`@XdAVFDHHj@v@\\h@LNID`@^@?r@|@z@pAj@|@DDPVABd@z@JPLd@DTBNBj@ClAGt@D@|@VWfCA|AIf@HTV`CPdAf@nCLz@@AbAdGb@lCBCHn@@CJl@Dd@f@lCDZB\\B~@?XCfA@@Cf@G?E\\BH?ZQx@ELa@bAQPC?C^?LCl@?DCZr@nAFn@CHEX@v@H~@Gf@On@O\\SLa@l@_A`BWd@EN?@Ih@e@|@u@tAj@bACFUf@p@RGXFVFJALAF@DBDBD@BIPMXPP\\l@?Pi@dAKTQYEBBLh@z@RPdCe@tDu@CFFVB?N\\FGDHVd@r@rAVOBM~@qA|@qAFJ"
+          },
+          "startLocation": {
+            "latLng": {
+              "latitude": 49.2769127,
+              "longitude": -123.08149249999998
+            }
+          },
+          "endLocation": {
+            "latLng": {
+              "latitude": 49.2711621,
+              "longitude": -123.1340482
+            }
+          },
+          "steps": [
+            {
+              "distanceMeters": 48,
+              "staticDuration": "46s",
+              "polyline": {
+                "encodedPolyline": "ukwkHhjfnVO?y@@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2769127,
+                  "longitude": -123.08149249999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.277284099999996,
+                  "longitude": -123.08149660000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "DEPART",
+                "instructions": "Head north on Glen Dr toward Union St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "48 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 1604,
+              "staticDuration": "1316s",
+              "polyline": {
+                "encodedPolyline": "_nwkHjjfnVAvAAnB@h@Az@?h@Cb@A`DAbCAxAGdKAXIAKb@?DAd@@\\GnI?b@AvEChCClGAxBCxB?n@A^?r@CtCHLAjEGZ?RI??n@B?AfAC`CB`@AnB?ZA~BG??^H??JF@Cf@?R@lAQL?rCFf@B~AE?Dj@D??F@FLhDBN"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.277284099999996,
+                  "longitude": -123.08149660000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.277582699999996,
+                  "longitude": -123.1032827
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Union St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "1.6 km"
+                },
+                "staticDuration": {
+                  "text": "22 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 1286,
+              "staticDuration": "1061s",
+              "polyline": {
+                "encodedPolyline": "{owkHnrjnVSf@Kh@Kn@Gx@w@hJE^Gb@CPY~@_A`CCPE?Mp@CREnAHnABT@ALl@FTvBfFBNRx@FhAB`@K|A@r@Ft@VjAHV~@`CNXP`@\\^NJ`@XdAVFDHHj@v@\\h@LNID`@^@?r@|@z@pAj@|@DDPVABd@z@JPLd@DTBNBj@ClAGt@D@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.277582699999996,
+                  "longitude": -123.1032827
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2745548,
+                  "longitude": -123.11779949999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_RIGHT",
+                "instructions": "Slight right onto Expo Blvd"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "1.3 km"
+                },
+                "staticDuration": {
+                  "text": "18 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 739,
+              "staticDuration": "643s",
+              "polyline": {
+                "encodedPolyline": "}|vkHfmmnV|@VWfCA|AIf@HTV`CPdAf@nCLz@@AbAdGb@lCBCHn@@CJl@Dd@f@lCDZB\\B~@?XCfA@@Cf@G?E\\BH?ZQx@ELa@bAQPC?"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2745548,
+                  "longitude": -123.11779949999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2734011,
+                  "longitude": -123.127181
+                }
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.7 km"
+                },
+                "staticDuration": {
+                  "text": "11 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 55,
+              "staticDuration": "47s",
+              "polyline": {
+                "encodedPolyline": "wuvkHzgonVC^?LCl@?DCZ"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2734011,
+                  "longitude": -123.127181
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.273460899999996,
+                  "longitude": -123.12781229999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left toward Richards St\nTake the stairs"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "55 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 46,
+              "staticDuration": "33s",
+              "polyline": {
+                "encodedPolyline": "cvvkHxkonVr@nAFn@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.273460899999996,
+                  "longitude": -123.12781229999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2731626,
+                  "longitude": -123.12844519999997
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Richards St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "46 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 324,
+              "staticDuration": "261s",
+              "polyline": {
+                "encodedPolyline": "gtvkHxoonVCHEX@v@H~@Gf@On@O\\SLa@l@_A`BWd@EN?@Ih@e@|@u@tA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2731626,
+                  "longitude": -123.12844519999997
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.274601000000004,
+                  "longitude": -123.1318447
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Beach Ave"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.3 km"
+                },
+                "staticDuration": {
+                  "text": "4 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 75,
+              "staticDuration": "50s",
+              "polyline": {
+                "encodedPolyline": "g}vkH~dpnVj@bACF"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.274601000000004,
+                  "longitude": -123.1318447
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2744024,
+                  "longitude": -123.13222379999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Howe St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "75 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 34,
+              "staticDuration": "30s",
+              "polyline": {
+                "encodedPolyline": "_|vkHjgpnVUf@p@RGXFVFJALAF@D"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2744024,
+                  "longitude": -123.13222379999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2742322,
+                  "longitude": -123.13297390000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "ROUNDABOUT_RIGHT",
+                "instructions": "At the roundabout, take the 2nd exit\nTake the stairs"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "34 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 7,
+              "staticDuration": "7s",
+              "polyline": {
+                "encodedPolyline": "}zvkH`lpnVBDBD@B"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2742322,
+                  "longitude": -123.13297390000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2741784,
+                  "longitude": -123.13304710000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left toward Vancouver\nTake the stairs"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "7 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 21,
+              "staticDuration": "17s",
+              "polyline": {
+                "encodedPolyline": "szvkHplpnVIPMX"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2741784,
+                  "longitude": -123.13304710000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2743025,
+                  "longitude": -123.13327029999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Vancouver"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "21 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 87,
+              "staticDuration": "69s",
+              "polyline": {
+                "encodedPolyline": "k{vkH|mpnVPP\\l@?Pi@dAKT"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2743025,
+                  "longitude": -123.13327029999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2743299,
+                  "longitude": -123.13414189999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left to stay on Vancouver"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "87 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 18,
+              "staticDuration": "14s",
+              "polyline": {
+                "encodedPolyline": "q{vkHjspnVQYEB"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2743299,
+                  "longitude": -123.13414189999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2744502,
+                  "longitude": -123.13403120000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right to stay on Vancouver"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "18 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 230,
+              "staticDuration": "214s",
+              "polyline": {
+                "encodedPolyline": "i|vkHtrpnVBLh@z@RPdCe@tDu@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2744502,
+                  "longitude": -123.13403120000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.272536599999995,
+                  "longitude": -123.13403450000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "FERRY",
+                "instructions": "Take the Hornby Street - Granville Island, BC ferry to Vancouver"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.2 km"
+                },
+                "staticDuration": {
+                  "text": "4 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 14,
+              "staticDuration": "12s",
+              "polyline": {
+                "encodedPolyline": "kpvkHtrpnVCFFV"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.272536599999995,
+                  "longitude": -123.13403450000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.272520899999996,
+                  "longitude": -123.1341894
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "STRAIGHT",
+                "instructions": "Continue straight"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "14 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 92,
+              "staticDuration": "82s",
+              "polyline": {
+                "encodedPolyline": "gpvkHtspnVB?N\\FGDHVd@r@rA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.272520899999996,
+                  "longitude": -123.1341894
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2719745,
+                  "longitude": -123.13496249999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left toward Johnston St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "92 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 117,
+              "staticDuration": "97s",
+              "polyline": {
+                "encodedPolyline": "ylvkHnxpnVVOBM~@qA|@qAFJ"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2719745,
+                  "longitude": -123.13496249999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2711621,
+                  "longitude": -123.1340482
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Johnston St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "2 mins"
+                }
+              },
+              "travelMode": "WALK"
+            }
+          ],
+          "localizedValues": {
+            "distance": {
+              "text": "4.8 km"
+            },
+            "duration": {
+              "text": "1 hour 7 mins"
+            },
+            "staticDuration": {
+              "text": "1 hour 7 mins"
+            }
+          }
+        },
+        {
+          "distanceMeters": 9915,
+          "duration": "8225s",
+          "staticDuration": "8225s",
+          "polyline": {
+            "encodedPolyline": "wgvkHjrpnV?LGK}@pA_ApACL[Rm@x@EFGHKRs@z@GFEDId@u@?K@O?K@c@g@s@e@}AQkAJuAr@o@j@y@p@aDrAe@@[QWmAWEqAQWL}@jBIVGLKJKLUR[Z]\\[\\]b@y@`AIJw@r@}@`As@lAQXILGFg@Ji@PSNmBxCGCc@j@OVEDc@h@Yp@]^i@Va@@S?KDk@b@uArA?SEIGOG?WX_@^sBrAaBp@QD_@@S?q@ES?aCW{AS_ASSAYWSEOMS@iADa@@G?G@uADK@i@f@UXIPOPi@`AERmBfDCDi@_A[k@KWeAeBWc@o@gAIJk@aAMUHOCCi@cAIKKSYc@k@cACCGMa@q@Ua@mAqB@AKOk@aA[i@w@oAKUA@S_@s@mAEFa@BOo@OYUc@UCMAMq@KQGK[YYIAF_@]c@o@S]Uk@ICu@]oAo@cA]EDSDi@DA??ToAb@eAt@GDOLaA|@]h@Wl@Yv@MXgAhEWdAS^Sv@CT_AjCo@|AwAzCq@`A[n@cChDcD~CwAhAOHkAf@aAl@mDbAIBoAL_CDi@AI?yDKqDg@uA[_F{Ai@YmAq@MIKMOCq@c@GKGCYCECcCmBsAiAoAgAa@a@Sc@]GABgBaBgA_AQOgAaASOWUsJoIwEcEwEeEgAaAk@g@oJsISScA_A}BsB{BsBKKa@_@IGuEgEeC}BOMMKGGOQIGKKcA}@KIUe@IGo@c@EMkBcBQa@Mk@Wi@GYCOMu@AaAFcAPwAGEJg@HYhBwJTgAhAuFL]^iB@g@QKIIUYQz@g@i@WYQSIKUe@OOOQDOUOMOIImAyAa@a@}@gAKUiAqASYy@}@i@_@sAw@UOe@We@WwAo@y@a@[Su@m@g@]iAw@KEc@K]EE?WAqBES@]?SAsBBSE{@A}@GOCo@OOGk@Wc@Sg@a@_Ay@_BaAKEWGOIwBGuAEUKG?cB]ME{@Q]ImCs@IESMIGYUwAcB_Aa@q@@mBb@q@C_@Ce@M}@S{A][IiBc@UGo@Oc@KO@GF"
+          },
+          "startLocation": {
+            "latLng": {
+              "latitude": 49.271158500000006,
+              "longitude": -123.1339821
+            }
+          },
+          "endLocation": {
+            "latLng": {
+              "latitude": 49.3422359,
+              "longitude": -123.11390769999998
+            }
+          },
+          "steps": [
+            {
+              "distanceMeters": 285,
+              "staticDuration": "230s",
+              "polyline": {
+                "encodedPolyline": "wgvkHjrpnV?LGK}@pA_ApACL[Rm@x@EFGHKRs@z@GFEDId@u@?K@O?K@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.271158500000006,
+                  "longitude": -123.1339821
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.273204299999996,
+                  "longitude": -123.13603509999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "DEPART",
+                "instructions": "Head northwest on Johnston St toward Anderson St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.3 km"
+                },
+                "staticDuration": {
+                  "text": "4 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 436,
+              "staticDuration": "211s",
+              "polyline": {
+                "encodedPolyline": "otvkHf_qnVc@g@s@e@}AQkAJuAr@o@j@y@p@aDrAe@@[QWmA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.273204299999996,
+                  "longitude": -123.13603509999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.276713199999996,
+                  "longitude": -123.1363004
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "FERRY",
+                "instructions": "Take the Vancouver Aquatic Centre, BC - Granville Island, BC ferry"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.4 km"
+                },
+                "staticDuration": {
+                  "text": "4 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 492,
+              "staticDuration": "392s",
+              "polyline": {
+                "encodedPolyline": "mjwkHz`qnVWEqAQWL}@jBIVGLKJKLUR[Z]\\[\\]b@y@`AIJw@r@}@`As@lAQXILGFg@Ji@P"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.276713199999996,
+                  "longitude": -123.1363004
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2803547,
+                  "longitude": -123.13958739999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.5 km"
+                },
+                "staticDuration": {
+                  "text": "7 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 96,
+              "staticDuration": "77s",
+              "polyline": {
+                "encodedPolyline": "eaxkHluqnVSNmBxC"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2803547,
+                  "longitude": -123.13958739999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.281000899999995,
+                  "longitude": -123.1404416
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_LEFT",
+                "instructions": "Slight left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 4,
+              "staticDuration": "4s",
+              "polyline": {
+                "encodedPolyline": "gexkHvzqnVGC"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.281000899999995,
+                  "longitude": -123.1404416
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2810388,
+                  "longitude": -123.14042219999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "4 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 258,
+              "staticDuration": "222s",
+              "polyline": {
+                "encodedPolyline": "oexkHrzqnVc@j@OVEDc@h@Yp@]^i@Va@@S?KDk@b@uArA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2810388,
+                  "longitude": -123.14042219999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.282975099999994,
+                  "longitude": -123.14217289999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.3 km"
+                },
+                "staticDuration": {
+                  "text": "4 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 32,
+              "staticDuration": "30s",
+              "polyline": {
+                "encodedPolyline": "sqxkHpernV?SEIGO"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.282975099999994,
+                  "longitude": -123.14217289999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.28304920000001,
+                  "longitude": -123.14193739999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right toward Beach Ave"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "32 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 366,
+              "staticDuration": "287s",
+              "polyline": {
+                "encodedPolyline": "arxkHbdrnVG?WX_@^sBrAaBp@QD_@@S?q@ES?aCW{AS"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.28304920000001,
+                  "longitude": -123.14193739999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2862532,
+                  "longitude": -123.14268659999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Beach Ave"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.4 km"
+                },
+                "staticDuration": {
+                  "text": "5 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 75,
+              "staticDuration": "60s",
+              "polyline": {
+                "encodedPolyline": "afykHxhrnV_ASSAYWSEOM"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2862532,
+                  "longitude": -123.14268659999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2869769,
+                  "longitude": -123.14235799999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "NAME_CHANGE",
+                "instructions": "Continue onto Denman St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "75 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 336,
+              "staticDuration": "269s",
+              "polyline": {
+                "encodedPolyline": "sjykHvfrnVS@iADa@@G?G@uADK@i@f@UXIPOPi@`AERmBfDCD"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2869769,
+                  "longitude": -123.14235799999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2894491,
+                  "longitude": -123.14427099999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_LEFT",
+                "instructions": "Slight left onto Beach Ave"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.3 km"
+                },
+                "staticDuration": {
+                  "text": "4 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 673,
+              "staticDuration": "582s",
+              "polyline": {
+                "encodedPolyline": "azykHtrrnVi@_A[k@KWeAeBWc@o@gAIJk@aAMUHOCCi@cAIKKSYc@k@cACCGMa@q@Ua@mAqB@AKOk@aA[i@w@oAKUA@S_@s@mAEFa@BOo@OYUc@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2894491,
+                  "longitude": -123.14427099999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2938711,
+                  "longitude": -123.1378132
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Chilco St"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.7 km"
+                },
+                "staticDuration": {
+                  "text": "10 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 28,
+              "staticDuration": "23s",
+              "polyline": {
+                "encodedPolyline": "uuzkHhjqnVUCMA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2938711,
+                  "longitude": -123.1378132
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2940483,
+                  "longitude": -123.137781
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "28 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 68,
+              "staticDuration": "49s",
+              "polyline": {
+                "encodedPolyline": "yvzkHbjqnVMq@KQGK[YYI"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2940483,
+                  "longitude": -123.137781
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2944871,
+                  "longitude": -123.13719559999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "68 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 4,
+              "staticDuration": "3s",
+              "polyline": {
+                "encodedPolyline": "qyzkHnfqnVAF"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2944871,
+                  "longitude": -123.13719559999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.2944976,
+                  "longitude": -123.13724459999997
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "4 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 84,
+              "staticDuration": "74s",
+              "polyline": {
+                "encodedPolyline": "syzkHvfqnV_@]c@o@S]Uk@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.2944976,
+                  "longitude": -123.13724459999997
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.295051699999995,
+                  "longitude": -123.13647589999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "84 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 140,
+              "staticDuration": "131s",
+              "polyline": {
+                "encodedPolyline": "a}zkH~aqnVICu@]oAo@cA]EDSD"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.295051699999995,
+                  "longitude": -123.13647589999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.296234999999996,
+                  "longitude": -123.13597650000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_LEFT",
+                "instructions": "Slight left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.1 km"
+                },
+                "staticDuration": {
+                  "text": "2 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 2052,
+              "staticDuration": "1794s",
+              "polyline": {
+                "encodedPolyline": "od{kHz~pnVi@DA??ToAb@eAt@GDOLaA|@]h@Wl@Yv@MXgAhEWdAS^Sv@CT_AjCo@|AwAzCq@`A[n@cChDcD~CwAhAOHkAf@aAl@mDbAIBoAL_CDi@AI?yDKqDg@uA[_F{Ai@YmAq@MIKMOCq@c@GKGCYCECcCmBsAiAoAgAa@a@Sc@]G"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.296234999999996,
+                  "longitude": -123.13597650000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.311720099999995,
+                  "longitude": -123.1418624
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Keep left"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "2.1 km"
+                },
+                "staticDuration": {
+                  "text": "30 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 8,
+              "staticDuration": "7s",
+              "polyline": {
+                "encodedPolyline": "ge~kHrcrnVAB"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.311720099999995,
+                  "longitude": -123.1418624
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3117251,
+                  "longitude": -123.14187959999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left toward Lions Gate Bridge Rd/BC-1A N/BC-99 N"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "8 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 1664,
+              "staticDuration": "1249s",
+              "polyline": {
+                "encodedPolyline": "ie~kHvcrnVgBaBgA_AQOgAaASOWUsJoIwEcEwEeEgAaAk@g@oJsISScA_A}BsB{BsBKKa@_@IGuEgEeC}BOMMKGGOQIGKKcA}@KIUe@IGo@c@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.3117251,
+                  "longitude": -123.14187959999998
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3246095,
+                  "longitude": -123.12999029999997
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Lions Gate Bridge Rd/BC-1A N/BC-99 N"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "1.7 km"
+                },
+                "staticDuration": {
+                  "text": "21 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 266,
+              "staticDuration": "204s",
+              "polyline": {
+                "encodedPolyline": "yu`lHlyonVEMkBcBQa@Mk@Wi@GYCOMu@AaAFcAPwA"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.3246095,
+                  "longitude": -123.12999029999997
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3254679,
+                  "longitude": -123.127231
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.3 km"
+                },
+                "staticDuration": {
+                  "text": "3 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 13,
+              "staticDuration": "11s",
+              "polyline": {
+                "encodedPolyline": "e{`lHdhonVGE"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.3254679,
+                  "longitude": -123.127231
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3255127,
+                  "longitude": -123.12719709999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left toward Marine Dr"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "13 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 363,
+              "staticDuration": "302s",
+              "polyline": {
+                "encodedPolyline": "m{`lH~gonVJg@HYhBwJTgAhAuFL]^iB@g@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.3255127,
+                  "longitude": -123.12719709999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3241547,
+                  "longitude": -123.12252149999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_RIGHT",
+                "instructions": "Turn right onto Marine Dr"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.4 km"
+                },
+                "staticDuration": {
+                  "text": "5 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 1022,
+              "staticDuration": "939s",
+              "polyline": {
+                "encodedPolyline": "}r`lHvjnnVQKIIUYQz@g@i@WYQSIKUe@OOOQDOUOMOIImAyAa@a@}@gAKUiAqASYy@}@i@_@sAw@UOe@We@WwAo@y@a@[Su@m@g@]iAw@KEc@K]EE?WAqBES@]?SAsBBSE{@A"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.3241547,
+                  "longitude": -123.12252149999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.332383,
+                  "longitude": -123.1173787
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left onto Capilano Rd (signs for Capilano Road)"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "1.0 km"
+                },
+                "staticDuration": {
+                  "text": "16 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 735,
+              "staticDuration": "686s",
+              "polyline": {
+                "encodedPolyline": "kfblHrjmnV}@GOCo@OOGk@Wc@Sg@a@_Ay@_BaAKEWGOIwBGuAEUKG?cB]ME{@Q]ImCs@IESMIGYUwAcB_Aa@"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.332383,
+                  "longitude": -123.1173787
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3387469,
+                  "longitude": -123.11443870000001
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_LEFT",
+                "instructions": "Slight left to stay on Capilano Rd"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.7 km"
+                },
+                "staticDuration": {
+                  "text": "11 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 391,
+              "staticDuration": "370s",
+              "polyline": {
+                "encodedPolyline": "enclHfxlnVq@@mBb@q@C_@Ce@M}@S{A][IiBc@UGo@Oc@K"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.3387469,
+                  "longitude": -123.11443870000001
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.342119499999995,
+                  "longitude": -123.11386019999999
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_SLIGHT_LEFT",
+                "instructions": "Slight left to stay on Capilano Rd"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "0.4 km"
+                },
+                "staticDuration": {
+                  "text": "6 mins"
+                }
+              },
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 24,
+              "staticDuration": "19s",
+              "polyline": {
+                "encodedPolyline": "gcdlHrtlnVO@GF"
+              },
+              "startLocation": {
+                "latLng": {
+                  "latitude": 49.342119499999995,
+                  "longitude": -123.11386019999999
+                }
+              },
+              "endLocation": {
+                "latLng": {
+                  "latitude": 49.3422359,
+                  "longitude": -123.11390769999998
+                }
+              },
+              "navigationInstruction": {
+                "maneuver": "TURN_LEFT",
+                "instructions": "Turn left\nDestination will be on the right"
+              },
+              "localizedValues": {
+                "distance": {
+                  "text": "24 m"
+                },
+                "staticDuration": {
+                  "text": "1 min"
+                }
+              },
+              "travelMode": "WALK"
+            }
+          ],
+          "localizedValues": {
+            "distance": {
+              "text": "9.9 km"
+            },
+            "duration": {
+              "text": "2 hours 17 mins"
+            },
+            "staticDuration": {
+              "text": "2 hours 17 mins"
+            }
+          }
+        }
+      ],
+      "distanceMeters": 19539,
+      "duration": "16254s",
+      "staticDuration": "16254s",
+      "polyline": {
+        "encodedPolyline": "gvzkH`}pnVYc@`@u@FIr@cAh@gA^i@HNvAiCTa@EGb@{@LUzByDP[lAyBb@a@PYdAoBHOBBJSFMRW?e@l@{CF]R_@CIzAyHpBaKzBeLrA}G\\eBn@gDLk@f@iCn@aDXsALa@^s@CEBC^g@@BVa@z@}A\\e@AA\\q@\\k@b@w@Ze@AAR_@@BLWNYLQDITa@FKHOf@_A@@fAqB`@o@?CR]Ta@~A{C@@rBoDAALU@@xB_EvAiCHOECPg@@@Jw@b@gEPiBJiAAAfAiJFYAS\\{CJ_AI?No@D?@YFyIAA@g@BeF@}B@cA?i@A?BuB@iAByG?s@@AXC?B`AKXA`AM?EVA?@z@G|AGj@IVC`@AvAE?SF[@kEIMBuC?s@@oAByB@yB@qC@{BBiC@{F@]DqH?QAKBs@HY?AH@HuM@c@@cB@aEBmA@{@Ai@@oB@wAx@AN?O?y@@AvAAnB@h@Az@?h@Cb@A`DAbCAxAGdKAXIAKb@?DAd@@\\GnI?b@AvEChCClGAxBCxB?n@A^?r@CtCHLAjEGZ?RI??n@B?AfAC`CB`@AnB?ZA~BG??^H??JF@Cf@?R@lAQL?rCFf@B~AE?Dj@D??F@FLhDBNSf@Kh@Kn@Gx@w@hJE^Gb@CPY~@_A`CCPE?Mp@CREnAHnABT@ALl@FTvBfFBNRx@FhAB`@K|A@r@Ft@VjAHV~@`CNXP`@\\^NJ`@XdAVFDHHj@v@\\h@LNID`@^@?r@|@z@pAj@|@DDPVABd@z@JPLd@DTBNBj@ClAGt@D@|@VWfCA|AIf@HTV`CPdAf@nCLz@@AbAdGb@lCBCHn@@CJl@Dd@f@lCDZB\\B~@?XCfA@@Cf@G?E\\BH?ZQx@ELa@bAQPC?C^?LCl@?DCZr@nAFn@CHEX@v@H~@Gf@On@O\\SLa@l@_A`BWd@EN?@Ih@e@|@u@tAj@bACFUf@p@RGXFVFJALAF@DBDBD@BIPMXPP\\l@?Pi@dAKTQYEBBLh@z@RPdCe@tDu@CFFVB?N\\FGDHVd@r@rAVOBM~@qA|@qAFJ?M?LGK}@pA_ApACL[Rm@x@EFGHKRs@z@GFEDId@u@?K@O?K@c@g@s@e@}AQkAJuAr@o@j@y@p@aDrAe@@[QWmAWEqAQWL}@jBIVGLKJKLUR[Z]\\[\\]b@y@`AIJw@r@}@`As@lAQXILGFg@Ji@PSNmBxCGCc@j@OVEDc@h@Yp@]^i@Va@@S?KDk@b@uArA?SEIGOG?WX_@^sBrAaBp@QD_@@S?q@ES?aCW{AS_ASSAYWSEOMS@iADa@@G?G@uADK@i@f@UXIPOPi@`AERmBfDCDi@_A[k@KWeAeBWc@o@gAIJk@aAMUHOCCi@cAIKKSYc@k@cACCGMa@q@Ua@mAqB@AKOk@aA[i@w@oAKUA@S_@s@mAEFa@BOo@OYUc@UCMAMq@KQGK[YYIAF_@]c@o@S]Uk@ICu@]oAo@cA]EDSDi@DA??ToAb@eAt@GDOLaA|@]h@Wl@Yv@MXgAhEWdAS^Sv@CT_AjCo@|AwAzCq@`A[n@cChDcD~CwAhAOHkAf@aAl@mDbAIBoAL_CDi@AI?yDKqDg@uA[_F{Ai@YmAq@MIKMOCq@c@GKGCYCECcCmBsAiAoAgAa@a@Sc@]GABgBaBgA_AQOgAaASOWUsJoIwEcEwEeEgAaAk@g@oJsISScA_A}BsB{BsBKKa@_@IGuEgEeC}BOMMKGGOQIGKKcA}@KIUe@IGo@c@EMkBcBQa@Mk@Wi@GYCOMu@AaAFcAPwAGEJg@HYhBwJTgAhAuFL]^iB@g@QKIIUYQz@g@i@WYQSIKUe@OOOQDOUOMOIImAyAa@a@}@gAKUiAqASYy@}@i@_@sAw@UOe@We@WwAo@y@a@[Su@m@g@]iAw@KEc@K]EE?WAqBES@]?SAsBBSE{@A}@GOCo@OOGk@Wc@Sg@a@_Ay@_BaAKEWGOIwBGuAEUKG?cB]ME{@Q]ImCs@IESMIGYUwAcB_Aa@q@@mBb@q@C_@Ce@M}@S{A][IiBc@UGo@Oc@KO@GF"
+      },
+      "description": "W Pender St",
+      "warnings": [
+        "This route includes a ferry."
+      ],
+      "viewport": {
+        "low": {
+          "latitude": 49.271158500000006,
+          "longitude": -123.14522149999999
+        },
+        "high": {
+          "latitude": 49.3422359,
+          "longitude": -123.08149249999998
+        }
+      },
+      "travelAdvisory": {},
+      "localizedValues": {
+        "distance": {
+          "text": "19.5 km"
+        },
+        "duration": {
+          "text": "4 hours 31 mins"
+        },
+        "staticDuration": {
+          "text": "4 hours 31 mins"
+        }
+      },
+      "routeLabels": [
+        "DEFAULT_ROUTE"
+      ],
+      "polylineDetails": {}
+    }
+  ],
+  "geocodingResults": {}
+}

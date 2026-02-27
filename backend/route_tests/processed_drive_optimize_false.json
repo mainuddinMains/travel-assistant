@@ -1,0 +1,43 @@
+{
+  "places": [
+    {
+      "placeId": "ChIJo-QmrYxxhlQRFuIJtJ1jSjY",
+      "displayName": "Stanley Park",
+      "formattedAddress": "Vancouver, BC V6G 1Z4, Canada"
+    },
+    {
+      "placeId": "ChIJfVy9DmtxhlQR1BerabiOlCU",
+      "displayName": "La Casa Gelato",
+      "formattedAddress": "1033 Venables St, Vancouver, BC V6A 3R9, Canada"
+    },
+    {
+      "placeId": "ChIJ28IkUs5zhlQRua6hLV7S3jY",
+      "displayName": "Granville Island",
+      "formattedAddress": "Granville Island, Vancouver, BC, Canada"
+    },
+    {
+      "placeId": "ChIJSd7cANJvhlQRXg8TheyzUPM",
+      "displayName": "Capilano Suspension Bridge Park",
+      "formattedAddress": "3735 Capilano Rd, North Vancouver, BC V7R 4J1, Canada"
+    }
+  ],
+  "duration": 3155,
+  "distanceMeters": 23155,
+  "legs": [
+    {
+      "duration": 716,
+      "distanceMeters": 4707,
+      "polyline": "ouzkH`}pnVvLmTnGiLrAyBz`@ks@|R{]zD{GxFgKhD{G|AqDb@}A^wBNcBHqCRa`@LaWHwBPuAf@qDJ}@Psb@Tuf@CmAQoAa@uBIoA@gIQ?"
+    },
+    {
+      "duration": 903,
+      "distanceMeters": 6510,
+      "polyline": "ukwkHpifnVP?AfIJtAh@vCJrAElOa@xu@Cz@SfCq@nD[jBMrAIxNAnEKxEWpI[lEk@`Dy@|C[|@w@hByDdHQTkAzB}AlC`OdWrC`FtDnGTp@bCiEn@oAlDeGf@i@|@k@l@Sz@KtHFpMRpAA\\\\fF?`BGv@Lf@Jl@CfA~C`@xBDlA@hPEfE?tG?dADl@Qje@GfMGVGdDG`JGr@Ih@a@lAu@~AkElIQf@QdACzAw@`@]^GJe@?c@McAo@m@k@QM_AsAyCaF?i@@MrAoCaE_GKR"
+    },
+    {
+      "duration": 1536,
+      "distanceMeters": 11938,
+      "polyline": "sgvkHjrpnVEzC@|@B^pBjD`E~G\\b@F`@t@v@`@z@FVNQn@c@d@?LHRYXQ`@KTABmBNaAPi@Zm@NEHIfAaBz@UKfLMh@wFK_AMwAa@s@]s@g@y@kAiOiWqBiDgFgJWy@QcA_BaLMc@_KoQmRi\\s@uAiJ_Pu\\`m@iUla@cAbBwSj_@OHoB~Cc@\\i@Lm@Ai@S{BeAa@Mu@?iATaAd@o@d@}@fA]r@u@~A]lAwAtFqA`EwAjDsAfC_A|A{AtBgBrB}AvAgAz@iBfAeBr@yBj@mAP{BLoDCuCS{B]yD_AsC_AiEyBaAk@mC}B_DuCwBkBc\\iYg]_[aP}NsA_AGQ}@w@Ma@k@q@_@s@U{@MeAAgABk@Dc@Ci@b@oBfC_NrB{JkBqBoAyAEYuGaIoAcBo@k@_Ae@wBqAeBu@{@a@O?kDcCu@S{@GkBAcE@wACKKcAOw@UaAm@{BkBcAm@u@UcCGeACg@AGBcFiAqBk@_Am@{AgBm@Ws@CU@kBb@k@AqIoBFg@"
+    }
+  ]
+}

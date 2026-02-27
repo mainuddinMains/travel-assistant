@@ -34,8 +34,11 @@
     "toSignup": "Create one",
     "toLogin": "Sign in",
     "languageLink": "Change language",
+    "backToHome": "Back to home",
     "errors": {
       "invalidCreds": "Invalid email or password.",
+      "emailExists": "This email is already registered. Please use a different email or log in instead.",
+      "validation": "Please check your input and try again.",
       "generic": "Something went wrong. Please try again."
     }
   },
@@ -132,7 +135,7 @@
   "landing": {
     "header": {
       "nav": {
-        "destinations": "Destinations",
+        "aiMode": "AI Mode",
         "hotels": "Hotels",
         "flights": "Flights",
         "bookings": "Bookings"
@@ -143,13 +146,17 @@
     "hero": {
       "tagline": "BEST DESTINATIONS AROUND THE WORLD",
       "title": "Travel, enjoy and live a new and full life",
-      "description": "Plan your perfect trip with our AI-powered travel assistant. Discover amazing destinations, get personalized recommendations, and optimize your travel routes.",
+      "description": "Plan your perfect trip with our AI-powered travel assistant. Chat with our AI chatbot integrated with interactive maps to discover amazing destinations, get personalized recommendations, and optimize your travel routes with the best routes and optimal travel times.",
       "ctaPrimary": "Get Started",
       "ctaSecondary": "Watch Demo"
     },
     "features": {
       "category": "CATEGORY",
       "title": "We Offer Best Services",
+      "aiMode": {
+        "title": "AI Mode",
+        "description": "Chat with our intelligent AI chatbot integrated with interactive maps. Get personalized place recommendations, optimal route planning, and travel time calculations for all your destinations."
+      },
       "weather": {
         "title": "Calculated Weather",
         "description": "Get accurate weather forecasts for your travel destinations to plan your activities perfectly."
