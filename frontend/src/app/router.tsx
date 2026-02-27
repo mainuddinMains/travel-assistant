@@ -4,6 +4,7 @@ import { Login } from '../pages/Login'
 import { Signup } from '../pages/Signup'
 import { Home } from '../pages/Home'
 import { LanguageGate } from '../pages/LanguageGate'
+import { Landing } from '../pages/Landing'
 import { useAuth } from './providers/AuthProvider'
 
 function Protected({ children }: { children: JSX.Element }) {
@@ -18,7 +19,8 @@ function Protected({ children }: { children: JSX.Element }) {
 }
 
 export const router = createBrowserRouter([
-  { path: '/', element: <LanguageGate /> },
+  { path: '/', element: <Landing /> },
+  { path: '/language', element: <LanguageGate /> },
   { path: '/login', element: <Login /> },
   { path: '/signup', element: <Signup /> },
   { path: '/home', element: <Protected><Home /></Protected> },
