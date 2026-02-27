@@ -23,6 +23,7 @@ export default function Home() {
   const [duration, setDuration] = useState("");
   const [newPlace, setNewPlace] = useState("");
 
+  const [showMap, setShowMap] = useState(false);
   const center = { lat: 38.627, lng: -90.1994 };
   const mapContainerStyle = { width: "100%", height: "400px" };
 
@@ -122,21 +123,30 @@ export default function Home() {
         </button>
       </div>
 
-      <div className="bg-gray-100 p-4 rounded-lg">
-        <h3 className="text-xl font-semibold mb-3">Live Map & Distance 🗺️</h3>
-        <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-          <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={9}>
-            {activeTrip.places.map((place, idx) => (
-              <Marker key={idx} position={{ lat: place.lat, lng: place.lng }} />
-            ))}
-          </GoogleMap>
-        </LoadScript>
+      <button
+        onClick={() => setShowMap(!showMap)}
+        className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 flex items-center gap-2"
+      >
+        {showMap ? "Hide Map" : "🗺️ Show Map"}
+      </button>
 
-        <p className="mt-4 text-gray-700">
-          <strong>Current Distance:</strong> {distance || "Calculating..."} <br />
-          <strong>Estimated Travel Time:</strong> {duration || "Calculating..."}
-        </p>
-      </div>
+      {showMap && (
+        <div className="bg-gray-100 p-4 rounded-lg mt-4">
+          <h3 className="text-xl font-semibold mb-3">Live Map & Distance 🗺️</h3>
+          <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
+            <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={9}>
+              {activeTrip.places.map((place, idx) => (
+                <Marker key={idx} position={{ lat: place.lat, lng: place.lng }} />
+              ))}
+            </GoogleMap>
+          </LoadScript>
+
+          <p className="mt-4 text-gray-700">
+            <strong>Current Distance:</strong> {distance || "Calculating..."} <br />
+            <strong>Estimated Travel Time:</strong> {duration || "Calculating..."}
+          </p>
+        </div>
+      )}
     </div>
   );
 }

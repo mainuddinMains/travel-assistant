@@ -31,6 +31,12 @@ load_dotenv(dotenv_path=Path(__file__).parent / "api.env")
 gemini_api_key = os.getenv("GEMINI_API_KEY")
 gmap_api_key = os.getenv("GMAP_API_KEY")
 
+# Treat template/placeholder values as missing configuration.
+if gemini_api_key and "YOUR_GEMINI_API_KEY_HERE" in gemini_api_key:
+    gemini_api_key = None
+if gmap_api_key and "YOUR_GOOGLE_MAPS_API_KEY_HERE" in gmap_api_key:
+    gmap_api_key = None
+
 # Validate API keys
 print("\n" + "="*60)
 print("TravelAgent Backend Server - Initializing...")
@@ -209,7 +215,26 @@ async def chat_stream(session_id: str, request: ChatRequest):
     4. Stream enriched place cards as they complete
     """
     if not gemini_client:
-        raise HTTPException(status_code=503, detail="Gemini API not initialized")
+        async def generate_fallback():
+            normalized = request.message.strip().lower()
+            if normalized in {"hi", "hello", "hey", "hey there"}:
+                fallback_text = (
+                    "Hi! I am running in limited mode right now. "
+                    "To enable full AI trip planning, add `GEMINI_API_KEY` in "
+                    "`backend/api.env` and restart the backend."
+                )
+            else:
+                fallback_text = (
+                    "AI chat is not configured yet. Please add `GEMINI_API_KEY` in "
+                    "`backend/api.env`, then restart the backend. "
+                    "I still received your message: "
+                    f"\"{request.message}\"."
+                )
+            yield f"data: {json.dumps({'type': 'text_chunk', 'content': fallback_text})}\n\n"
+            yield f"data: {json.dumps({'type': 'text_complete', 'content': fallback_text})}\n\n"
+            yield f"data: {json.dumps({'type': 'done'})}\n\n"
+
+        return StreamingResponse(generate_fallback(), media_type="text/event-stream")
 
     if session_id not in sessions_db:
         raise HTTPException(
@@ -351,7 +376,17 @@ async def chat_stream(session_id: str, request: ChatRequest):
             import traceback
             print(f"❌ Error in chat stream: {e}")
             print(traceback.format_exc())
-            yield f"data: {json.dumps({'type': 'error', 'message': str(e)})}\n\n"
+            error_text = str(e)
+            if "API_KEY_INVALID" in error_text or "API key not valid" in error_text:
+                friendly = (
+                    "Gemini API key is invalid. Update `GEMINI_API_KEY` in "
+                    "`backend/api.env` with a valid Google AI Studio key, then restart backend."
+                )
+                yield f"data: {json.dumps({'type': 'text_chunk', 'content': friendly})}\n\n"
+                yield f"data: {json.dumps({'type': 'text_complete', 'content': friendly})}\n\n"
+                yield f"data: {json.dumps({'type': 'done'})}\n\n"
+            else:
+                yield f"data: {json.dumps({'type': 'error', 'message': error_text})}\n\n"
 
     return StreamingResponse(generate(), media_type="text/event-stream")
 
