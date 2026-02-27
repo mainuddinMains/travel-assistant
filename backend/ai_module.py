@@ -1,19 +1,22 @@
-from openai import OpenAI
+import google.generativeai as genai
 import os
 from dotenv import load_dotenv
 
+# Load environment variables
 load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+# Configure Gemini API
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 def generate_itinerary(origin: str, destinations: list[str]):
-    """Use AI to generate an itinerary for the given places."""
+    """Use Gemini to generate a natural language itinerary for the given places."""
     prompt = f"""
-    Create a short 1-day travel plan starting from {origin} and visiting:
-    {', '.join(destinations)}.
-    Include travel sequence and brief recommendations for each stop.
+    You are a travel planner AI. Create a short, friendly 1-day travel plan.
+    Starting from {origin}, visit the following places: {', '.join(destinations)}.
+    Include the visit order, short recommendations for each stop, and estimated time of day.
     """
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[{"role": "user", "content": prompt}]
-    )
-    return response.choices[0].message.content.strip()
+
+    model = genai.GenerativeModel("gemini-1.5-flash")
+    response = model.generate_content(prompt)
+
+    return response.text.strip()
