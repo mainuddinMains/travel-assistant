@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-# travel-assistant
-AI-powered trip planner with chatbot and route optimization
-=======
 # Travel Assistant - Intelligent Trip Planning Application
 
 ## 🌟 Overview
@@ -846,4 +842,3 @@ Built with:
 ---
 
 **Happy Travel Planning! ✈️🌍🗺️**
->>>>>>> Stashed changes
