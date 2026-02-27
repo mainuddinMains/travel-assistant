@@ -1,0 +1,264 @@
+{
+  "nav": {
+    "appName": "Travel Planner",
+    "welcome": "Welcome, {{name}}",
+    "logout": "Sign out",
+    "language": "Language"
+  },
+  "language": {
+    "chooseTitle": "Choose your language",
+    "chooseSubtitle": "Select your preferred language",
+    "current": "Current: {{language}}",
+    "continue": "Continue",
+    "names": {
+      "en": "English",
+      "bn": "Bengali",
+      "hi": "Hindi",
+      "ko": "Korean"
+    }
+  },
+  "auth": {
+    "loginTitle": "Sign in",
+    "loginSubtitle": "Welcome back! Let's plan your next adventure",
+    "signupTitle": "Create account",
+    "signupSubtitle": "Join us and start exploring the world",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "nameLabel": "Name",
+    "loginButton": "Log in",
+    "signupButton": "Create account",
+    "loggingIn": "Logging in...",
+    "creatingAccount": "Creating account...",
+    "haveAccount": "Already have an account?",
+    "needAccount": "Need an account?",
+    "toSignup": "Create one",
+    "toLogin": "Sign in",
+    "languageLink": "Change language",
+    "backToHome": "Back to home",
+    "errors": {
+      "invalidCreds": "Invalid email or password.",
+      "emailExists": "This email is already registered. Please use a different email or log in instead.",
+      "validation": "Please check your input and try again.",
+      "generic": "Something went wrong. Please try again."
+    }
+  },
+  "validation": {
+    "email": "Please enter a valid email address.",
+    "password": "Password must be at least 8 characters.",
+    "name": "Name must be at least 2 characters."
+  },
+  "home": {
+    "interactiveMap": "Interactive map",
+    "recommendedPlaces": "Recommended places",
+    "travelAgent": "Travel agent",
+    "features": "Features",
+    "tripProgress": "Trip planning progress",
+    "tripProgressSteps": "{{count}}/6 questions",
+    "toggleWrapper": "Wrapper map",
+    "toggleLegacy": "Legacy map",
+    "toggleRouteShow": "Show route",
+    "toggleRouteHide": "Hide route",
+    "fitPlaces": "Fit places",
+    "placesOnMap": "{{count}} places on map",
+    "askPlaceholder": "Ask about places or trip ideas",
+    "thinkingPlaceholder": "AI is thinking...",
+    "chatError": "Sorry, I encountered an error. Please try again.",
+    "chatInitial": "Hi! I'm your travel agent. Let's plan your perfect trip! First, which cities are you planning to visit?\n\n*Examples: Toronto, Montreal, Vancouver*",
+    "mapStatusConfigured": "ChatGPT API",
+    "mapStatusMock": "Demo mode",
+    "chatbotDescription": "Plan trips with an intelligent travel assistant powered by AI.",
+    "placesDescription": "Discover curated places with ratings, distance, and travel time.",
+    "mapDescription": "Visualize recommendations instantly with smart routes.",
+    "integrationReady": "Integration ready",
+    "integrationDescription": "Connect easily with backend services, mapping, and AI integrations.",
+    "demoMapNotice": "Demo map: configure Google Maps API key for live map functionality.",
+    "samplePlaces": {
+      "ruru": {
+        "name": "Ruru Baked",
+        "description": "Artisanal bakery known for fresh bread and pastries. Popular breakfast spot with outdoor seating."
+      },
+      "bangBang": {
+        "name": "Bang Bang Ice Cream & Bakery",
+        "description": "Creative ice cream flavours with unique Asian-inspired desserts and fresh baked goods."
+      }
+    },
+    "reviewsLabel": "({{count}} reviews)"
+  },
+  "modals": {
+    "apiKeyTitle": "Google Maps API key required",
+    "apiKeyDescription": "To use Google Maps, please enter your API key. You can get one from the Google Cloud Console.",
+    "apiKeyLabel": "API key",
+    "apiKeyPlaceholder": "Enter your Google Maps API key...",
+    "apiKeyPrimary": "Use API key",
+    "apiKeySecondary": "Use fallback map",
+    "apiKeyTip": "Your API key will be stored locally and used for this session.",
+    "apiKeySecurity": "The key is only stored in your browser's local storage."
+  },
+  "fallbackMap": {
+    "title": "Interactive map",
+    "subtitle": "Add some places to see them on the map",
+    "fitPlaces": "Fit places",
+    "toggleRoute": {
+      "show": "Show route",
+      "hide": "Hide route"
+    },
+    "demoNotice": "Demo map: configure Google Maps API key for real map functionality."
+  },
+  "password": {
+    "show": "👁️ Show",
+    "hide": "🔒 Hide"
+  },
+  "status": {
+    "loading": "Loading...",
+    "mapLoading": "Loading Google Maps…",
+    "mapUnavailable": "Map unavailable",
+    "mapUnavailableDescription": "Google Maps failed to load. Please check your API key and try the fallback map.",
+    "mapContainerMissing": "Map container not found after retry. Please refresh the page.",
+    "apiKeyMissing": "Google Maps API key not configured. Please update your settings to proceed.",
+    "apiError": "Google Maps API error. Please check your API key and internet connection.",
+    "scriptError": "Failed to load Google Maps. Please check your connection and try again.",
+    "scriptTimeout": "Google Maps took too long to load. Please refresh and try again."
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "english": "English",
+    "bengali": "বাংলা",
+    "hindi": "Hindi",
+    "korean": "Korean",
+    "ariaLabel": "Change language"
+  },
+  "buttons": {
+    "close": "Close",
+    "continue": "Continue",
+    "apply": "Apply"
+  },
+  "landing": {
+    "header": {
+      "nav": {
+        "aiMode": "AI Mode",
+        "hotels": "Hotels",
+        "flights": "Flights",
+        "bookings": "Bookings"
+      },
+      "login": "Login",
+      "signup": "Sign Up"
+    },
+    "hero": {
+      "tagline": "BEST DESTINATIONS AROUND THE WORLD",
+      "title": "Travel, enjoy and live a new and full life",
+      "description": "Plan your perfect trip with our AI-powered travel assistant. Chat with our AI chatbot integrated with interactive maps to discover amazing destinations, get personalized recommendations, and optimize your travel routes with the best routes and optimal travel times.",
+      "ctaPrimary": "Get Started",
+      "ctaSecondary": "Watch Demo"
+    },
+    "features": {
+      "category": "CATEGORY",
+      "title": "We Offer Best Services",
+      "aiMode": {
+        "title": "AI Mode",
+        "description": "Chat with our intelligent AI chatbot integrated with interactive maps. Get personalized place recommendations, optimal route planning, and travel time calculations for all your destinations."
+      },
+      "weather": {
+        "title": "Calculated Weather",
+        "description": "Get accurate weather forecasts for your travel destinations to plan your activities perfectly."
+      },
+      "flights": {
+        "title": "Best Flights",
+        "description": "Find and compare the best flight deals to make your journey affordable and comfortable."
+      },
+      "events": {
+        "title": "Local Events",
+        "description": "Discover local events, festivals, and activities happening during your visit."
+      },
+      "customization": {
+        "title": "Customization",
+        "description": "Personalize your travel itinerary based on your preferences, budget, and interests."
+      }
+    },
+    "destinations": {
+      "topSelling": "Top Selling",
+      "title": "Top Destinations",
+      "rome": {
+        "name": "Rome, Italy",
+        "price": "$5.42k",
+        "duration": "10 Days Trip"
+      },
+      "london": {
+        "name": "London, UK",
+        "price": "$4.2k",
+        "duration": "12 Days Trip"
+      },
+      "europe": {
+        "name": "Full Europe",
+        "price": "$15k",
+        "duration": "28 Days Trip"
+      }
+    },
+    "steps": {
+      "easy": "Easy and Fast",
+      "title": "Book Your Next Trip In 3 Easy Steps",
+      "step1": {
+        "title": "Choose Destination",
+        "description": "Browse through our curated list of amazing destinations and select where you want to go."
+      },
+      "step2": {
+        "title": "Make Payment",
+        "description": "Secure payment options available. Book your trip with confidence and peace of mind."
+      },
+      "step3": {
+        "title": "Reach Airport on Selected Date",
+        "description": "Pack your bags and get ready for an amazing adventure. We'll handle the rest!"
+      }
+    },
+    "testimonials": {
+      "title": "TESTIMONIALS",
+      "subtitle": "What People Say About Us",
+      "mike": {
+        "quote": "On the Windows talking pointed posture yet its express parties use. Sure last upon he some os knew next. Of believed or diverted no.",
+        "name": "Mike Taylor",
+        "location": "Lahore, Pakistan"
+      },
+      "chris": {
+        "quote": "Amazing travel planning experience! The AI assistant helped me discover hidden gems I would have never found otherwise.",
+        "name": "Chris Thomas",
+        "role": "CEO of Red Button"
+      }
+    },
+    "partners": {
+      "title": "Partners"
+    },
+    "subscription": {
+      "title": "Subscribe to get information, latest news and other interesting offers about Travel Assistant",
+      "placeholder": "Your email",
+      "button": "Subscribe",
+      "success": "Thank you for subscribing!",
+      "error": "Please enter a valid email address"
+    },
+    "footer": {
+      "slogan": "Book your trip in minute, get full Control for much longer.",
+      "company": {
+        "title": "Company",
+        "about": "About",
+        "careers": "Careers",
+        "mobile": "Mobile"
+      },
+      "contact": {
+        "title": "Contact",
+        "help": "Help/FAQ",
+        "press": "Press",
+        "affiliates": "Affiliates"
+      },
+      "more": {
+        "title": "More",
+        "airlinefees": "Airlinefees",
+        "airline": "Airline",
+        "lowfare": "Low fare tips"
+      },
+      "social": {
+        "discover": "Discover our app",
+        "getOnPlay": "Get it on Google Play",
+        "downloadAppStore": "Download on the App Store"
+      },
+      "copyright": "All rights reserved@travelassistant.co"
+    }
+  }
+}
