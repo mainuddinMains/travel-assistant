@@ -35,7 +35,25 @@ export function Login() {
       await new Promise(resolve => setTimeout(resolve, 200))
       nav('/home', { replace: true })
     } catch (e: any) {
-      setServerError(e?.message || t('auth.errors.invalidCreds'))
+      // Extract error message from API response
+      let errorMessage = t('auth.errors.invalidCreds')
+      
+      if (e?.data?.detail) {
+        // FastAPI returns error in { detail: "message" } format
+        errorMessage = e.data.detail
+      } else if (e?.data?.message) {
+        // Some APIs return { message: "..." }
+        errorMessage = e.data.message
+      } else if (e?.message && e.message !== 'Request failed') {
+        errorMessage = e.message
+      }
+      
+      // Handle specific error codes
+      if (e?.status === 401) {
+        errorMessage = errorMessage || t('auth.errors.invalidCreds')
+      }
+      
+      setServerError(errorMessage)
     }
   }
 
@@ -73,7 +91,7 @@ export function Login() {
           <Link className="link" to="/signup">{t('auth.toSignup')}</Link>
         </div>
         <div className="mt-4 text-center">
-          <Link className="link text-sm" to="/">🌐 {t('auth.languageLink')}</Link>
+          <Link className="link text-sm" to="/">🏠 {t('auth.backToHome')}</Link>
         </div>
       </div>
     </div>

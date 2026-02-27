@@ -1,0 +1,287 @@
+{
+  "places": [
+    {
+      "placeId": "ChIJo-QmrYxxhlQRFuIJtJ1jSjY",
+      "displayName": "Stanley Park",
+      "formattedAddress": "Vancouver, BC V6G 1Z4, Canada"
+    },
+    {
+      "placeId": "ChIJfVy9DmtxhlQR1BerabiOlCU",
+      "displayName": "La Casa Gelato",
+      "formattedAddress": "1033 Venables St, Vancouver, BC V6A 3R9, Canada"
+    },
+    {
+      "placeId": "ChIJ28IkUs5zhlQRua6hLV7S3jY",
+      "displayName": "Granville Island",
+      "formattedAddress": "Granville Island, Vancouver, BC, Canada"
+    },
+    {
+      "placeId": "ChIJSd7cANJvhlQRXg8TheyzUPM",
+      "displayName": "Capilano Suspension Bridge Park",
+      "formattedAddress": "3735 Capilano Rd, North Vancouver, BC V7R 4J1, Canada"
+    }
+  ],
+  "totalDuration": 8580,
+  "totalDistanceMeters": 24722,
+  "legs": [
+    {
+      "duration": 2353,
+      "distanceMeters": 5398,
+      "polyline": "gvzkH`}pnVYc@h@_Ar@cAh@gA^i@HNlBkDEG@Cn@hA`@u@AESYpJ}PbAcBzb@mv@zI}OJRBBn@iAT^IIEHwHoMyGoLjPyYXw@~BuSz@aIL{BD_M\\ot@\\ou@DeFF{LR?@GpA??vBhUL",
+      "steps": [
+        {
+          "travelMode": "WALK",
+          "duration": 265,
+          "distanceMeters": 290,
+          "polylines": [
+            "gvzkH`}pnVYc@",
+            "awzkH|{pnVh@_Ar@cAh@gA^i@",
+            "yqzkHftpnVHN",
+            "oqzkHvtpnVlBkDEG@Cn@hA`@u@"
+          ]
+        },
+        {
+          "travelMode": "TRANSIT",
+          "duration": 296,
+          "distanceMeters": 1550,
+          "polyline": "ukzkHlopnVSYpJ}PbAcBzb@mv@zI}OJR",
+          "transitDetails": {
+            "departureStop": "EB W Georgia St @ Denman St",
+            "arrivalStop": "EB W Georgia St @ Granville St",
+            "departureTime": "2025-11-28T00:56:33Z",
+            "arrivalTime": "2025-11-28T01:01:29Z",
+            "lineName": "Horseshoe Bay/Vancouver Express",
+            "lineShortName": "257",
+            "vehicleType": "BUS",
+            "vehicleIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "agencies": [
+              {
+                "name": "TransLink",
+                "phoneNumber": "+1 604-953-3333",
+                "uri": "https://www.translink.ca/"
+              }
+            ],
+            "headsign": "Vancouver Express",
+            "stopCount": 3
+          }
+        },
+        {
+          "travelMode": "WALK",
+          "duration": 60,
+          "distanceMeters": 61,
+          "polylines": [
+            "koxkH|qmnVn@iA",
+            "{mxkHromnVT^"
+          ]
+        },
+        {
+          "travelMode": "TRANSIT",
+          "duration": 1088,
+          "distanceMeters": 3021,
+          "polyline": "omxkHhpmnVEHwHoMyGoLjPyYXw@~BuSz@aIL{BD_M\\ot@\\ou@DeFF{LR?",
+          "transitDetails": {
+            "departureStop": "NB Granville St @ W Georgia St",
+            "arrivalStop": "EB E Hastings St @ Glen Dr",
+            "departureTime": "2025-11-28T01:06:46Z",
+            "arrivalTime": "2025-11-28T01:24:54Z",
+            "lineName": "Victoria/Downtown",
+            "lineShortName": "020",
+            "vehicleType": "BUS",
+            "vehicleIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "agencies": [
+              {
+                "name": "TransLink",
+                "phoneNumber": "+1 604-953-3333",
+                "uri": "https://www.translink.ca/"
+              }
+            ],
+            "headsign": "Victoria",
+            "stopCount": 14
+          }
+        },
+        {
+          "travelMode": "WALK",
+          "duration": 387,
+          "distanceMeters": 476,
+          "polylines": [
+            "qdxkHbffnVpA?",
+            "_bxkHbffnV?vB",
+            "_bxkHzifnVhUL"
+          ]
+        }
+      ]
+    },
+    {
+      "duration": 2591,
+      "distanceMeters": 6709,
+      "polyline": "ukwkHhjfnVD?EjED~BJALjAd@fCJrAElOa@xu@Cz@OhBaDX_BDmGb@uDd@Yji@OtBWlBMfByClX[~@uAbCmIdO{CnFGKEFGJAAWd@?AVb@ABl@fAJDbAfB?GFK`NrU~H~MDJvMfU~@zAVl@~D|GLd@hFpJbDnFDRzJvPzHrMzCjFbAnAbAz@lAt@|@Z~AFnBAhAJZn@Tt@Dp@In@[fAY`A?ZBV?rAqGImAEuABwACF_KRyAH[HH@?Ty@DEM[JIE\\SSIQaAsA{C_FB_@ISUKuAcCDQEs@?gADkB",
+      "steps": [
+        {
+          "travelMode": "WALK",
+          "duration": 108,
+          "distanceMeters": 139,
+          "polylines": [
+            "ukwkHhjfnVD?",
+            "okwkHhjfnVEjE",
+            "ukwkHtpfnVD~B"
+          ]
+        },
+        {
+          "travelMode": "TRANSIT",
+          "duration": 798,
+          "distanceMeters": 2818,
+          "polyline": "okwkHttfnVJALjAd@fCJrAElOa@xu@Cz@OhBaDX_BDmGb@uDd@Yji@OtBWlBMfByClX[~@uAbCmIdO{CnFGK",
+          "transitDetails": {
+            "departureStop": "WB Venables St @ Raymur Ave",
+            "arrivalStop": "WB W Pender St @ Granville St",
+            "departureTime": "2025-11-28T01:29:55Z",
+            "arrivalTime": "2025-11-28T01:43:13Z",
+            "lineName": "Knight/Downtown",
+            "lineShortName": "022",
+            "vehicleType": "BUS",
+            "vehicleIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "agencies": [
+              {
+                "name": "TransLink",
+                "phoneNumber": "+1 604-953-3333",
+                "uri": "https://www.translink.ca/"
+              }
+            ],
+            "headsign": "Downtown",
+            "stopCount": 12
+          }
+        },
+        {
+          "travelMode": "WALK",
+          "duration": 128,
+          "distanceMeters": 123,
+          "polylines": [
+            "y{xkHnylnVGJAAWd@?A",
+            "{|xkH|zlnVVb@ABl@fAJDbAfB"
+          ]
+        },
+        {
+          "travelMode": "TRANSIT",
+          "duration": 1019,
+          "distanceMeters": 3230,
+          "polyline": "gxxkHramnVFK`NrU~H~MDJvMfU~@zAVl@~D|GLd@hFpJbDnFDRzJvPzHrMzCjFbAnAbAz@lAt@|@Z~AFnBAhAJZn@Tt@Dp@In@[fAY`A?ZBV?rAqGImAEuABwACF_KRyAH[HH",
+          "transitDetails": {
+            "departureStop": "Southbound Granville St @ W Pender St",
+            "arrivalStop": "EB W 2nd Ave @ Anderson St",
+            "departureTime": "2025-11-28T01:49:01Z",
+            "arrivalTime": "2025-11-28T02:06:00Z",
+            "lineName": "Waterfront Station/False Creek South",
+            "lineShortName": "050",
+            "vehicleType": "BUS",
+            "vehicleIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "agencies": [
+              {
+                "name": "TransLink",
+                "phoneNumber": "+1 604-953-3333",
+                "uri": "https://www.translink.ca/"
+              }
+            ],
+            "headsign": "False Creek South via Granville Island",
+            "stopCount": 10
+          }
+        },
+        {
+          "travelMode": "WALK",
+          "duration": 318,
+          "distanceMeters": 399,
+          "polylines": [
+            "c}ukHxmqnVTy@DEM[JIE\\",
+            "o|ukHpkqnVSSIQaAsA{C_FB_@ISUKuAcCDQEs@?gADkB"
+          ]
+        }
+      ]
+    },
+    {
+      "duration": 3636,
+      "distanceMeters": 12615,
+      "polyline": "wgvkHjrpnVEzC@~@BXEPtAbCVPFLC^~DnGd@l@@FKd@?AHF]fBI`AGpJvABtACxDJBuFL_LLcARs@Zm@NEHIfAaBz@UKfLMh@wFK_AMwAa@s@]s@g@y@kAiOiWqBiDsEgIWSyKuRYS_E}GWm@iLyRmBiDEKwMgUDIHHU_@S^]k@a@r@OZJRuVvc@iUla@cAbBsRp]OCyCvEc@\\g@Ji@A}@_@}BgAIBw@BaARYNEFgAp@i@f@e@l@]r@u@~A]lAwAtFgAjDuAhDeAxByAbC{AtBgBrB}AvAgAz@iBfAeBr@yBj@mAP{BLoDCuCS{B]yD_AsC_AiEyBaAk@mC}B_DuCwBkBc\\iYg]_[aP}NsA_AGQ}@w@Ma@k@q@_@s@U{@MeAAgABk@Dc@Ci@b@oBfC_NrB{JkBqBoAyAEYuGaIoAcBo@k@_Ae@wBqAeBu@{@a@O?kDcCu@S{@GkBAeE@uACKKcAOw@UaAm@{BkBcAm@u@UcCGeACg@AGBcFiAqBk@_Am@{AgBm@Ws@CU@cB`@?eIJ@?@@g@UEC\\?xHe@CuBa@SKyD{@i@QUCgAWKn@KAKH",
+      "steps": [
+        {
+          "travelMode": "WALK",
+          "duration": 322,
+          "distanceMeters": 384,
+          "polylines": [
+            "wgvkHjrpnVEzC@~@BXEPtAbCVPFLC^~DnGd@l@@F",
+            "c}ukH|jqnVKd@"
+          ]
+        },
+        {
+          "travelMode": "TRANSIT",
+          "duration": 981,
+          "distanceMeters": 3304,
+          "polyline": "o}ukH`lqnVHF]fBI`AGpJvABtACxDJBuFL_LLcARs@Zm@NEHIfAaBz@UKfLMh@wFK_AMwAa@s@]s@g@y@kAiOiWqBiDsEgIWSyKuRYS_E}GWm@iLyRmBiDEKwMgUDI",
+          "transitDetails": {
+            "departureStop": "WB W 2nd Ave @ Anderson St",
+            "arrivalStop": "NB Granville St @ W Georgia St",
+            "departureTime": "2025-11-28T02:19:00Z",
+            "arrivalTime": "2025-11-28T02:35:21Z",
+            "lineName": "Waterfront Station/False Creek South",
+            "lineShortName": "050",
+            "vehicleType": "BUS",
+            "vehicleIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "agencies": [
+              {
+                "name": "TransLink",
+                "phoneNumber": "+1 604-953-3333",
+                "uri": "https://www.translink.ca/"
+              }
+            ],
+            "headsign": "Waterfront Station",
+            "stopCount": 8
+          }
+        },
+        {
+          "travelMode": "WALK",
+          "duration": 92,
+          "distanceMeters": 81,
+          "polylines": [
+            "emxkHrpmnVU_@",
+            "{mxkHromnVS^]k@a@r@"
+          ]
+        },
+        {
+          "travelMode": "TRANSIT",
+          "duration": 1331,
+          "distanceMeters": 8385,
+          "polyline": "_qxkHvqmnVJRuVvc@iUla@cAbBsRp]OCyCvEc@\\g@Ji@A}@_@}BgAIBw@BaARYNEFgAp@i@f@e@l@]r@u@~A]lAwAtFgAjDuAhDeAxByAbC{AtBgBrB}AvAgAz@iBfAeBr@yBj@mAP{BLoDCuCS{B]yD_AsC_AiEyBaAk@mC}B_DuCwBkBc\\iYg]_[aP}NsA_AGQ}@w@Ma@k@q@_@s@U{@MeAAgABk@Dc@Ci@b@oBfC_NrB{JkBqBoAyAEYuGaIoAcBo@k@_Ae@wBqAeBu@{@a@O?kDcCu@S{@GkBAeE@uACKKcAOw@UaAm@{BkBcAm@u@UcCGeACg@AGBcFiAqBk@_Am@{AgBm@Ws@CU@cB`@?eIJ@",
+          "transitDetails": {
+            "departureStop": "WB W Georgia St @ Granville St",
+            "arrivalStop": "EB Ridgewood Dr @ Norcross Way",
+            "departureTime": "2025-11-28T02:44:48Z",
+            "arrivalTime": "2025-11-28T03:06:59Z",
+            "lineName": "Highland/Downtown",
+            "lineShortName": "246",
+            "vehicleType": "BUS",
+            "vehicleIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "agencies": [
+              {
+                "name": "TransLink",
+                "phoneNumber": "+1 604-953-3333",
+                "uri": "https://www.translink.ca/"
+              }
+            ],
+            "headsign": "Highland",
+            "stopCount": 12
+          }
+        },
+        {
+          "travelMode": "WALK",
+          "duration": 417,
+          "distanceMeters": 461,
+          "polylines": [
+            "qrclHvnlnV",
+            "qrclHvnlnV@g@UE",
+            "esclHhmlnVC\\?xH",
+            "isclH`xlnVe@CuBa@SKyD{@i@QUCgAW",
+            "{bdlHdslnVKn@KAKH"
+          ]
+        }
+      ]
+    }
+  ]
+}
