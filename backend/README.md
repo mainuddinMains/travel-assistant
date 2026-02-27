@@ -1,220 +1,66 @@
-# Trip Planning API Backend
+# 🧭 Travel Assistant Backend
 
-This backend API integrates the structured trip planning system from `chatgpt_JSON.py` with the frontend travel assistant chatbot.
+This backend powers the **Travel Assistant Dashboard**, a smart travel-planning API built with **FastAPI**, **Google Maps**, and **OpenAI**.  
+It connects real-world distance data with AI-generated itineraries, enabling users to plan trips efficiently and creatively.
 
-## Features
+---
 
-- **Structured Trip Planning**: Collects trip details through a guided question flow
-- **Intelligent Chat**: Uses the TripRoute Chat system for personalized recommendations
-- **Structured Output**: Generates structured JSON responses with trip metadata and recommendations
-- **Session Management**: Maintains conversation state across multiple requests
-- **CORS Support**: Ready for frontend integration
+## 🚀 Features
 
-## Quick Start
+✅ **FastAPI**-based REST backend  
+✅ **Google Maps API** — for distances & travel time  
+✅ **OpenAI API** — for AI itinerary suggestions  
+✅ **.env configuration** for API keys  
+✅ **CORS enabled** for frontend (React/Vite) integration  
+✅ **Modular architecture** (Google Maps + AI + FastAPI)
 
-### 1. Install Dependencies
+---
 
-```bash
-cd travel-assistant-backend/backend
+## 📁 Project Structure
+```
+backend/
+├── main.py # 🚀 FastAPI entry point – serves endpoints (/ and /plan)
+├── google_map.py # 🗺️ Handles Google Maps distance/time calculations
+├── ai_module.py # 🤖 Generates itinerary text via OpenAI
+├── requirements.txt # 📦 Python dependencies
+├── .env # 🔑 Environment variables (API keys)
+└── pycache/ # (auto-generated Python cache)
+```
+
+## Create a virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+## Install dependencies
 pip install -r requirements.txt
-```
 
-### 2. Configure OpenAI API Key
+## Add environment variables
+Create a file named .env inside the backend/ folder:
 
-Set your OpenAI API key in the `chatgpt_JSON.py` file:
+GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+OPENAI_API_KEY=your_openai_api_key_here
 
-```python
-client = OpenAI(
-  api_key="your-openai-api-key-here"
-)
-```
+## ▶️ Running the Server
 
-### 3. Start the Server
+uvicorn main:app --reload
 
-```bash
-python start_trip_planning_api.py
-```
+## Then open your browser at:
+👉 http://127.0.0.1:8000
 
-The server will start on `http://localhost:5001`
+## Interactive API docs (Swagger UI) are available at:
+👉 http://127.0.0.1:8000/docs
 
-## API Endpoints
+## 🧩 Future Enhancements
 
-### POST /api/trip-planning/chat
+ Add multiple travel modes (driving, walking, transit, cycling)
 
-Send a chat message with structured trip planning.
+ Save itineraries to database (Firebase/PostgreSQL)
 
-**Request:**
-```json
-{
-  "message": "I want to visit some dessert places in Toronto",
-  "tripDetails": {
-    "cities": ["Toronto"],
-    "dates": "March 15-18, 2024",
-    "duration": "3 days",
-    "theme": "dessert tour",
-    "transport": "walking",
-    "additionalDetails": "budget-friendly options"
-  }
-}
-```
+ Authentication (JWT / Supabase Auth)
 
-**Response:**
-```json
-{
-  "message": "Toronto is amazing! I've curated some great dessert spots for you...",
-  "recommendations": [
-    "Ruru Baked - Artisanal bakery with fresh bread and pastries",
-    "Bang Bang Ice Cream & Bakery - Creative ice cream flavors"
-  ],
-  "structuredData": {
-    "trip_meta": {
-      "cities": ["Toronto"],
-      "dates": "March 15-18, 2024",
-      "duration_days": "3 days",
-      "theme": "dessert tour",
-      "transport": "walking"
-    },
-    "recommendations": [
-      {
-        "name": "Ruru Baked",
-        "address": "123 Queen St W, Toronto, ON",
-        "city": "Toronto",
-        "reason": "top-rated artisanal bakery with many reviews"
-      }
-    ]
-  }
-}
-```
+ Cache API results for faster performance
 
-### POST /api/trip-planning/initialize
+ Integrate real-time map visualization in frontend
 
-Initialize trip planning with user details.
-
-**Request:**
-```json
-{
-  "cities": ["Toronto", "Montreal"],
-  "dates": "March 15-18, 2024",
-  "duration": "3 days",
-  "theme": "food & culture",
-  "transport": "public transit",
-  "additionalDetails": "family-friendly activities"
-}
-```
-
-### GET /api/trip-planning/status
-
-Get current trip planning status.
-
-**Response:**
-```json
-{
-  "status": "active",
-  "trip_details": {
-    "cities": ["Toronto"],
-    "dates": "March 15-18, 2024",
-    "duration": "3 days",
-    "theme": "dessert tour",
-    "transport": "walking",
-    "additionalDetails": ""
-  },
-  "conversation_count": 4
-}
-```
-
-### GET /health
-
-Health check endpoint.
-
-## Frontend Integration
-
-### 1. Enable Backend API
-
-In your `.env` file:
-
-```env
-VITE_USE_BACKEND_API=true
-```
-
-### 2. The frontend will automatically:
-
-- Use the backend API when `VITE_USE_BACKEND_API=true`
-- Fall back to direct OpenAI API if backend is unavailable
-- Use mock service if no API keys are configured
-
-## Architecture
-
-```
-Frontend (React) 
-    ↓ HTTP requests
-Backend API (Flask)
-    ↓ calls
-chatgpt_JSON.py (Structured System)
-    ↓ uses
-OpenAI API
-```
-
-## Key Components
-
-### 1. Trip Planning Flow
-- Collects trip details through guided questions
-- Validates input and provides examples
-- Progress tracking with visual indicators
-
-### 2. Structured Conversation System
-- **TripRoute Chat**: User-facing conversational AI
-- **TripRoute Summarizer**: Generates structured JSON output
-- Maintains conversation context and history
-
-### 3. Session Management
-- Stores conversation state per session
-- Maintains trip details and chat history
-- Supports multiple concurrent users
-
-## Development
-
-### Running in Development Mode
-
-```bash
-python start_trip_planning_api.py
-```
-
-### Testing the API
-
-```bash
-# Test health endpoint
-curl http://localhost:5001/health
-
-# Test chat endpoint
-curl -X POST http://localhost:5001/api/trip-planning/chat \
-  -H "Content-Type: application/json" \
-  -H "X-Session-ID: test-session" \
-  -d '{"message": "I want to visit Toronto for dessert places"}'
-```
-
-## Production Deployment
-
-1. Set `FLASK_ENV=production`
-2. Use a production WSGI server (e.g., Gunicorn)
-3. Configure proper CORS settings
-4. Use Redis or database for session storage
-5. Set up proper logging and monitoring
-
-## Troubleshooting
-
-### Common Issues
-
-1. **Import Error**: Make sure all dependencies are installed
-2. **API Key Error**: Verify OpenAI API key is set correctly
-3. **CORS Error**: Check CORS configuration for frontend domain
-4. **Session Issues**: Clear browser storage or use different session ID
-
-### Logs
-
-The server provides detailed console logs for debugging:
-- API requests and responses
-- OpenAI API calls
-- Error messages and stack traces
-
-
+ 
 
