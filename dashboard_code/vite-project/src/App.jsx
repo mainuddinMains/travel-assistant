@@ -103,26 +103,99 @@ export default function App() {
   const [selectedCountry, setSelectedCountry] = useState({ name: "United States", flag: "🇺🇸", code: "US" });
 
   const countries = [
-    { name: "United States", flag: "🇺🇸", code: "US" },
-    { name: "United Kingdom", flag: "🇬🇧", code: "GB" },
+    { name: "Afghanistan", flag: "🇦🇫", code: "AF" },
+    { name: "Albania", flag: "🇦🇱", code: "AL" },
+    { name: "Algeria", flag: "🇩🇿", code: "DZ" },
+    { name: "Argentina", flag: "🇦🇷", code: "AR" },
+    { name: "Australia", flag: "🇦🇺", code: "AU" },
+    { name: "Austria", flag: "🇦🇹", code: "AT" },
+    { name: "Bahrain", flag: "🇧🇭", code: "BH" },
+    { name: "Bangladesh", flag: "🇧🇩", code: "BD" },
+    { name: "Belgium", flag: "🇧🇪", code: "BE" },
+    { name: "Brazil", flag: "🇧🇷", code: "BR" },
+    { name: "Cambodia", flag: "🇰🇭", code: "KH" },
+    { name: "Canada", flag: "🇨🇦", code: "CA" },
+    { name: "Chile", flag: "🇨🇱", code: "CL" },
+    { name: "China", flag: "🇨🇳", code: "CN" },
+    { name: "Colombia", flag: "🇨🇴", code: "CO" },
+    { name: "Costa Rica", flag: "🇨🇷", code: "CR" },
+    { name: "Croatia", flag: "🇭🇷", code: "HR" },
+    { name: "Czech Republic", flag: "🇨🇿", code: "CZ" },
+    { name: "Denmark", flag: "🇩🇰", code: "DK" },
+    { name: "Dominican Republic", flag: "🇩🇴", code: "DO" },
+    { name: "Ecuador", flag: "🇪🇨", code: "EC" },
+    { name: "Egypt", flag: "🇪🇬", code: "EG" },
+    { name: "Estonia", flag: "🇪🇪", code: "EE" },
+    { name: "Ethiopia", flag: "🇪🇹", code: "ET" },
+    { name: "Finland", flag: "🇫🇮", code: "FI" },
     { name: "France", flag: "🇫🇷", code: "FR" },
     { name: "Germany", flag: "🇩🇪", code: "DE" },
-    { name: "Italy", flag: "🇮🇹", code: "IT" },
-    { name: "Spain", flag: "🇪🇸", code: "ES" },
-    { name: "Japan", flag: "🇯🇵", code: "JP" },
-    { name: "South Korea", flag: "🇰🇷", code: "KR" },
-    { name: "China", flag: "🇨🇳", code: "CN" },
+    { name: "Greece", flag: "🇬🇷", code: "GR" },
+    { name: "Guatemala", flag: "🇬🇹", code: "GT" },
+    { name: "Honduras", flag: "🇭🇳", code: "HN" },
+    { name: "Hungary", flag: "🇭🇺", code: "HU" },
+    { name: "Iceland", flag: "🇮🇸", code: "IS" },
     { name: "India", flag: "🇮🇳", code: "IN" },
-    { name: "Australia", flag: "🇦🇺", code: "AU" },
-    { name: "Canada", flag: "🇨🇦", code: "CA" },
-    { name: "Brazil", flag: "🇧🇷", code: "BR" },
+    { name: "Indonesia", flag: "🇮🇩", code: "ID" },
+    { name: "Iran", flag: "🇮🇷", code: "IR" },
+    { name: "Iraq", flag: "🇮🇶", code: "IQ" },
+    { name: "Ireland", flag: "🇮🇪", code: "IE" },
+    { name: "Israel", flag: "🇮🇱", code: "IL" },
+    { name: "Italy", flag: "🇮🇹", code: "IT" },
+    { name: "Jamaica", flag: "🇯🇲", code: "JM" },
+    { name: "Japan", flag: "🇯🇵", code: "JP" },
+    { name: "Jordan", flag: "🇯🇴", code: "JO" },
+    { name: "Kazakhstan", flag: "🇰🇿", code: "KZ" },
+    { name: "Kenya", flag: "🇰🇪", code: "KE" },
+    { name: "Kuwait", flag: "🇰🇼", code: "KW" },
+    { name: "Latvia", flag: "🇱🇻", code: "LV" },
+    { name: "Lebanon", flag: "🇱🇧", code: "LB" },
+    { name: "Lithuania", flag: "🇱🇹", code: "LT" },
+    { name: "Luxembourg", flag: "🇱🇺", code: "LU" },
+    { name: "Malaysia", flag: "🇲🇾", code: "MY" },
+    { name: "Maldives", flag: "🇲🇻", code: "MV" },
+    { name: "Malta", flag: "🇲🇹", code: "MT" },
     { name: "Mexico", flag: "🇲🇽", code: "MX" },
+    { name: "Monaco", flag: "🇲🇨", code: "MC" },
+    { name: "Morocco", flag: "🇲🇦", code: "MA" },
+    { name: "Nepal", flag: "🇳🇵", code: "NP" },
     { name: "Netherlands", flag: "🇳🇱", code: "NL" },
-    { name: "Switzerland", flag: "🇨🇭", code: "CH" },
-    { name: "Thailand", flag: "🇹🇭", code: "TH" },
+    { name: "New Zealand", flag: "🇳🇿", code: "NZ" },
+    { name: "Nicaragua", flag: "🇳🇮", code: "NI" },
+    { name: "Nigeria", flag: "🇳🇬", code: "NG" },
+    { name: "Norway", flag: "🇳🇴", code: "NO" },
+    { name: "Oman", flag: "🇴🇲", code: "OM" },
+    { name: "Pakistan", flag: "🇵🇰", code: "PK" },
+    { name: "Panama", flag: "🇵🇦", code: "PA" },
+    { name: "Paraguay", flag: "🇵🇾", code: "PY" },
+    { name: "Peru", flag: "🇵🇪", code: "PE" },
+    { name: "Philippines", flag: "🇵🇭", code: "PH" },
+    { name: "Poland", flag: "🇵🇱", code: "PL" },
+    { name: "Portugal", flag: "🇵🇹", code: "PT" },
+    { name: "Qatar", flag: "🇶🇦", code: "QA" },
+    { name: "Romania", flag: "🇷🇴", code: "RO" },
+    { name: "Russia", flag: "🇷🇺", code: "RU" },
+    { name: "Saudi Arabia", flag: "🇸🇦", code: "SA" },
+    { name: "Serbia", flag: "🇷🇸", code: "RS" },
     { name: "Singapore", flag: "🇸🇬", code: "SG" },
-    { name: "UAE", flag: "🇦🇪", code: "AE" },
-    { name: "Egypt", flag: "🇪🇬", code: "EG" },
+    { name: "Slovakia", flag: "🇸🇰", code: "SK" },
+    { name: "Slovenia", flag: "🇸🇮", code: "SI" },
+    { name: "South Africa", flag: "🇿🇦", code: "ZA" },
+    { name: "South Korea", flag: "🇰🇷", code: "KR" },
+    { name: "Spain", flag: "🇪🇸", code: "ES" },
+    { name: "Sri Lanka", flag: "🇱🇰", code: "LK" },
+    { name: "Sweden", flag: "🇸🇪", code: "SE" },
+    { name: "Switzerland", flag: "🇨🇭", code: "CH" },
+    { name: "Taiwan", flag: "🇹🇼", code: "TW" },
+    { name: "Thailand", flag: "🇹🇭", code: "TH" },
+    { name: "Turkey", flag: "🇹🇷", code: "TR" },
+    { name: "Ukraine", flag: "🇺🇦", code: "UA" },
+    { name: "United Arab Emirates", flag: "🇦🇪", code: "AE" },
+    { name: "United Kingdom", flag: "🇬🇧", code: "GB" },
+    { name: "United States", flag: "🇺🇸", code: "US" },
+    { name: "Uruguay", flag: "🇺🇾", code: "UY" },
+    { name: "Venezuela", flag: "🇻🇪", code: "VE" },
+    { name: "Vietnam", flag: "🇻🇳", code: "VN" },
   ];
 
   useEffect(() => {
@@ -175,15 +248,15 @@ export default function App() {
           </button>
           
           {showCountries && (
-            <div style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: "8px", backgroundColor: "white", borderRadius: "12px", boxShadow: "0 10px 25px rgba(0,0,0,0.2)", padding: "8px", width: "280px", maxHeight: "300px", overflowY: "auto" }}>
-              <p style={{ fontSize: "12px", color: "#6b7280", padding: "8px", borderBottom: "1px solid #e5e7eb", marginBottom: "4px" }}>Select Country</p>
+            <div style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: "8px", backgroundColor: "white", borderRadius: "12px", boxShadow: "0 10px 25px rgba(0,0,0,0.2)", padding: "8px", width: "280px", maxHeight: "400px", overflowY: "auto" }}>
+              <p style={{ fontSize: "12px", color: "#6b7280", padding: "8px", borderBottom: "1px solid #e5e7eb", marginBottom: "4px" }}>Select Country ({countries.length} countries)</p>
               {countries.map((country) => (
                 <button
                   key={country.code}
                   onClick={() => { setSelectedCountry(country); setShowCountries(false); }}
-                  style={{ display: "flex", alignItems: "center", gap: "12px", width: "100%", padding: "10px 12px", border: "none", background: selectedCountry.code === country.code ? "#eff6ff" : "transparent", cursor: "pointer", borderRadius: "8px", textAlign: "left" }}
+                  style={{ display: "flex", alignItems: "center", gap: "12px", width: "100%", padding: "8px 12px", border: "none", background: selectedCountry.code === country.code ? "#eff6ff" : "transparent", cursor: "pointer", borderRadius: "6px", textAlign: "left" }}
                 >
-                  <span style={{ fontSize: "20px" }}>{country.flag}</span>
+                  <span style={{ fontSize: "18px" }}>{country.flag}</span>
                   <span style={{ fontSize: "14px", color: "#374151" }}>{country.name}</span>
                   {selectedCountry.code === country.code && <span style={{ marginLeft: "auto", color: "#2563eb" }}>✓</span>}
                 </button>
