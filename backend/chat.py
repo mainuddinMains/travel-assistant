@@ -294,39 +294,35 @@ def chatting_agent(
 ) -> tuple[List[types.Content], Dict]:
     """
     chatting_agent: User-facing conversational agent (Non-Streaming with Structured Output)
-
-    Args:
-        client: Gemini client
-        chat_history: Conversation history (types.Content objects)
-        user_text: User's message
-
-    Returns:
-        tuple: (updated_chat_history, structured_output)
-            - updated_chat_history: Conversation history
-            - structured_output: Parsed ChattingAgentOutput as dict
     """
     # Add user message to history
     chat_history.append(types.Content(role="user", parts=[types.Part(text=user_text)]))
 
-    # Configure chat with structured output (with current date)
-    config = types.GenerateContentConfig(
-        system_instruction=get_chatting_agent_system_prompt(),
-        response_mime_type="application/json",
-        response_schema=ChattingAgentOutput,
-    )
+    # Simple approach without structured output - just get text response
+    try:
+        response = client.models.generate_content(
+            model="gemini-1.5-flash-8b",
+            contents=chat_history,
+        )
+        response_text = response.text
+    except Exception as e:
+        error_msg = str(e)
+        if "image" in error_msg.lower():
+            response_text = "I apologize, but there seems to be an issue with the AI service. Please try again."
+        else:
+            response_text = f"I apologize, but I encountered an error: {error_msg}"
 
-    # Generate response (non-streaming)
-    response = client.models.generate_content(
-        model="gemini-1.5-flash-8b", contents=chat_history, config=config
-    )
-
-    response_text = response.text
-
-    # Parse structured output
-    structured_output = json.loads(response_text)
-    trip_context = structured_output["trip_context"]
-    chatting = structured_output["chatting"]
-    places = structured_output["places"]
+    # Try to parse as JSON for structured output, fallback to plain text
+    try:
+        structured_output = json.loads(response_text)
+        trip_context = structured_output.get("trip_context", {})
+        chatting = structured_output.get("chatting", response_text)
+        places = structured_output.get("places", [])
+    except (json.JSONDecodeError, AttributeError):
+        # Not JSON, use as plain text response
+        trip_context = {}
+        chatting = response_text
+        places = []
 
     # Add response to history
     chat_history.append(types.Content(role="model", parts=[types.Part(text=chatting)]))
