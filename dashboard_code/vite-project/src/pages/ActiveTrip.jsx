@@ -19,6 +19,7 @@ export default function ActiveTrip() {
   const [origin, setOrigin] = useState("St. Louis");
   const [destination, setDestination] = useState("");
   const [travelTime, setTravelTime] = useState("");
+  const [showMap, setShowMap] = useState(false);
 
   const mapContainerStyle = {
     width: "100%",
@@ -101,25 +102,33 @@ export default function ActiveTrip() {
         </button>
       </div>
 
-      {/* Map section */}
-      <div className="bg-gray-100 p-4 rounded-lg">
-        <h3 className="text-xl font-semibold mb-3">Live Map & Distance 🗺️</h3>
+      <button
+        onClick={() => setShowMap(!showMap)}
+        className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 flex items-center gap-2"
+      >
+        {showMap ? "Hide Map" : "🗺️ Show Map"}
+      </button>
 
-        <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-          <GoogleMap
-            mapContainerStyle={mapContainerStyle}
-            center={{ lat: 38.627, lng: -90.1994 }} // St. Louis coordinates
-            zoom={8}
-          >
-            {directions && <DirectionsRenderer directions={directions} />}
-          </GoogleMap>
-        </LoadScript>
+      {showMap && (
+        <div className="bg-gray-100 p-4 rounded-lg mt-4">
+          <h3 className="text-xl font-semibold mb-3">Live Map & Distance 🗺️</h3>
 
-        <p className="mt-3 text-gray-700">
-          <strong>Current Distance:</strong>{" "}
-          {travelTime ? travelTime : "Calculating..."}
-        </p>
-      </div>
+          <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
+            <GoogleMap
+              mapContainerStyle={mapContainerStyle}
+              center={{ lat: 38.627, lng: -90.1994 }}
+              zoom={8}
+            >
+              {directions && <DirectionsRenderer directions={directions} />}
+            </GoogleMap>
+          </LoadScript>
+
+          <p className="mt-3 text-gray-700">
+            <strong>Current Distance:</strong>{" "}
+            {travelTime ? travelTime : "Calculating..."}
+          </p>
+        </div>
+      )}
     </div>
   );
 }
