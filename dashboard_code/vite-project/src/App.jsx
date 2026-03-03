@@ -99,6 +99,31 @@ export default function App() {
   const [profileExpanded, setProfileExpanded] = useState(false);
   const [activeTab, setActiveTab] = useState("active");
   const [geolocationStatus, setGeolocationStatus] = useState("offline");
+  const [showCountries, setShowCountries] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState({ name: "United States", flag: "🇺🇸", code: "US" });
+
+  const countries = [
+    { name: "United States", flag: "🇺🇸", code: "US" },
+    { name: "United Kingdom", flag: "🇬🇧", code: "GB" },
+    { name: "France", flag: "🇫🇷", code: "FR" },
+    { name: "Germany", flag: "🇩🇪", code: "DE" },
+    { name: "Italy", flag: "🇮🇹", code: "IT" },
+    { name: "Spain", flag: "🇪🇸", code: "ES" },
+    { name: "Japan", flag: "🇯🇵", code: "JP" },
+    { name: "South Korea", flag: "🇰🇷", code: "KR" },
+    { name: "China", flag: "🇨🇳", code: "CN" },
+    { name: "India", flag: "🇮🇳", code: "IN" },
+    { name: "Australia", flag: "🇦🇺", code: "AU" },
+    { name: "Canada", flag: "🇨🇦", code: "CA" },
+    { name: "Brazil", flag: "🇧🇷", code: "BR" },
+    { name: "Mexico", flag: "🇲🇽", code: "MX" },
+    { name: "Netherlands", flag: "🇳🇱", code: "NL" },
+    { name: "Switzerland", flag: "🇨🇭", code: "CH" },
+    { name: "Thailand", flag: "🇹🇭", code: "TH" },
+    { name: "Singapore", flag: "🇸🇬", code: "SG" },
+    { name: "UAE", flag: "🇦🇪", code: "AE" },
+    { name: "Egypt", flag: "🇪🇬", code: "EG" },
+  ];
 
   useEffect(() => {
     requestGeolocation();
@@ -138,7 +163,36 @@ export default function App() {
     <div style={styles.container}>
       {/* Map / Background Image */}
       <div style={styles.mapPlaceholder}>
-        <div style={{ backgroundColor: "rgba(0,0,0,0.4)", padding: "40px", borderRadius: "20px", textAlign: "center" }}>
+        {/* Country Selector - Top Center */}
+        <div style={{ position: "absolute", top: "16px", left: "50%", transform: "translateX(-50%)", zIndex: 10 }}>
+          <button
+            onClick={() => setShowCountries(!showCountries)}
+            style={{ display: "flex", alignItems: "center", gap: "8px", backgroundColor: "white", padding: "8px 16px", borderRadius: "24px", border: "none", cursor: "pointer", boxShadow: "0 4px 6px rgba(0,0,0,0.1)" }}
+          >
+            <span style={{ fontSize: "24px" }}>🌍</span>
+            <span style={{ fontSize: "14px", fontWeight: 500, color: "#374151" }}>{selectedCountry.flag} {selectedCountry.name}</span>
+            <span style={{ color: "#9ca3af" }}>▼</span>
+          </button>
+          
+          {showCountries && (
+            <div style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: "8px", backgroundColor: "white", borderRadius: "12px", boxShadow: "0 10px 25px rgba(0,0,0,0.2)", padding: "8px", width: "280px", maxHeight: "300px", overflowY: "auto" }}>
+              <p style={{ fontSize: "12px", color: "#6b7280", padding: "8px", borderBottom: "1px solid #e5e7eb", marginBottom: "4px" }}>Select Country</p>
+              {countries.map((country) => (
+                <button
+                  key={country.code}
+                  onClick={() => { setSelectedCountry(country); setShowCountries(false); }}
+                  style={{ display: "flex", alignItems: "center", gap: "12px", width: "100%", padding: "10px 12px", border: "none", background: selectedCountry.code === country.code ? "#eff6ff" : "transparent", cursor: "pointer", borderRadius: "8px", textAlign: "left" }}
+                >
+                  <span style={{ fontSize: "20px" }}>{country.flag}</span>
+                  <span style={{ fontSize: "14px", color: "#374151" }}>{country.name}</span>
+                  {selectedCountry.code === country.code && <span style={{ marginLeft: "auto", color: "#2563eb" }}>✓</span>}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div style={{ backgroundColor: "rgba(0,0,0,0.4)", padding: "40px", borderRadius: "20px", textAlign: "center", marginTop: "60px" }}>
           <span style={{ fontSize: "64px", marginBottom: "16px", display: "block" }}>🌍</span>
           <p style={{ color: "white", fontSize: "24px", fontWeight: "bold", marginBottom: "8px" }}>Travel Assistant</p>
           <p style={{ color: "#e5e7eb", marginBottom: "16px" }}>Your AI-powered travel companion</p>
