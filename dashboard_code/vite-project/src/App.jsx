@@ -102,6 +102,12 @@ export default function App() {
   const [showCountries, setShowCountries] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState({ name: "United States", flag: "🇺🇸", code: "US", details: null });
   const [showCountryDetails, setShowCountryDetails] = useState(false);
+  const [showChat, setShowChat] = useState(false);
+  const [chatMessages, setChatMessages] = useState([
+    { role: "assistant", content: "Hi! I'm your travel assistant. How can I help you today? 🌍" }
+  ]);
+  const [chatInput, setChatInput] = useState("");
+  const [isChatLoading, setIsChatLoading] = useState(false);
 
   const countryData = {
     "US": {
@@ -374,6 +380,44 @@ export default function App() {
     setSelectedCountry({ ...country, details });
     setShowCountries(false);
     setShowCountryDetails(true);
+  };
+
+  const handleSendChat = async () => {
+    if (!chatInput.trim() || isChatLoading) return;
+    
+    const userMessage = chatInput.trim();
+    setChatInput("");
+    setChatMessages(prev => [...prev, { role: "user", content: userMessage }]);
+    setIsChatLoading(true);
+    
+    // Simulated AI response (since backend API key might not work)
+    setTimeout(() => {
+      let response = "";
+      const lowerMsg = userMessage.toLowerCase();
+      
+      if (lowerMsg.includes("hello") || lowerMsg.includes("hi") || lowerMsg.includes("hey")) {
+        response = "Hello! 👋 I'm your travel assistant. I can help you with:\n\n🗺️ Trip planning\n🏨 Hotel recommendations\n✈️ Flight suggestions\n🍽️ Restaurant advice\n📸 Things to do\n\nWhere would you like to travel?";
+      } else if (lowerMsg.includes("hotel") || lowerMsg.includes("stay") || lowerMsg.includes("accommodation")) {
+        response = "For great hotel deals, I recommend checking:\n\n🏨 Booking.com\n🏨 Expedia\n🏨 Airbnb\n\nWould you like me to suggest hotels in a specific city?";
+      } else if (lowerMsg.includes("flight") || lowerMsg.includes("fly") || lowerMsg.includes("ticket")) {
+        response = "For finding the best flights, try:\n\n✈️ Google Flights\n✈️ Skyscanner\n✈️ Kayak\n✈️ Momondo\n\nJust let me know your departure city and destination!";
+      } else if (lowerMsg.includes("restaurant") || lowerMsg.includes("food") || lowerMsg.includes("eat") || lowerMsg.includes("dish")) {
+        response = "Food is the best part of travel! 🍽️\n\nWould you like recommendations for a specific country or city? I can tell you about:\n\n• Must-try local dishes\n• Best restaurants\n• Street food spots";
+      } else if (lowerMsg.includes("visa") || lowerMsg.includes("passport") || lowerMsg.includes("entry")) {
+        response = "For visa requirements, check:\n\n📄 Visa requirements by country\n📄 IATA Travel Centre\n\nWould you like info about a specific country's visa requirements?";
+      } else if (lowerMsg.includes("weather") || lowerMsg.includes("climate")) {
+        response = "For weather forecasts, I recommend:\n\n🌤️ Weather.com\n🌤️ AccuWeather\n🌤️ Local weather apps\n\nWhat's your destination?";
+      } else if (lowerMsg.includes("thank")) {
+        response = "You're welcome! 😊 Happy to help with your travel plans. Let me know if you need anything else!";
+      } else if (selectedCountry?.name) {
+        response = `Great choice! ${selectedCountry.flag} ${selectedCountry.name} is amazing!\n\nHere are some highlights:\n\n🏙️ ${selectedCountry.details?.popularCities?.slice(0,3).join(", ") || "Amazing cities"}\n🍽️ ${selectedCountry.details?.popularDishes?.slice(0,2).join(", ") || "Delicious food"}\n🌿 ${selectedCountry.details?.naturalBeauty || "Beautiful nature"}\n\nWould you like more details?`;
+      } else {
+        response = "That's interesting! 🌍\n\nI can help you plan your trip! Just tell me:\n\n• Where you want to go\n• Your travel dates\n• What kind of experience you're looking for\n\nOr select a country from the dropdown to see details!";
+      }
+      
+      setChatMessages(prev => [...prev, { role: "assistant", content: response }]);
+      setIsChatLoading(false);
+    }, 1000);
   };
 
   const countries = [
@@ -655,10 +699,85 @@ export default function App() {
         ))}
       </div>
 
-      {/* Chat Button - Top Right */}
-      <button style={styles.chatButton}>
-        <span style={{ fontSize: "24px" }}>🤖</span>
-      </button>
+      {/* Chat Button & Panel - Top Right */}
+      <div style={{ position: "absolute", top: "16px", right: "16px", zIndex: 20 }}>
+        {!showChat ? (
+          <button 
+            onClick={() => setShowChat(true)}
+            style={styles.chatButton}
+          >
+            <span style={{ fontSize: "24px" }}>💬</span>
+          </button>
+        ) : (
+          <div style={{ width: "340px", height: "420px", backgroundColor: "white", borderRadius: "16px", boxShadow: "0 10px 40px rgba(0,0,0,0.2)", display: "flex", flexDirection: "column", overflow: "hidden" }}>
+            {/* Chat Header */}
+            <div style={{ backgroundColor: "#2563eb", padding: "12px 16px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <span style={{ fontSize: "24px" }}>🤖</span>
+                <div>
+                  <p style={{ color: "white", fontWeight: 600, fontSize: "14px", margin: 0 }}>AI Travel Assistant</p>
+                  <p style={{ color: "#93c5fd", fontSize: "12px", margin: 0 }}>Online</p>
+                </div>
+              </div>
+              <button 
+                onClick={() => setShowChat(false)}
+                style={{ background: "none", border: "none", color: "white", fontSize: "20px", cursor: "pointer" }}
+              >✕</button>
+            </div>
+            
+            {/* Chat Messages */}
+            <div style={{ flex: 1, padding: "12px", overflowY: "auto", backgroundColor: "#f9fafb" }}>
+              {chatMessages.map((msg, idx) => (
+                <div key={idx} style={{ 
+                  display: "flex", 
+                  justifyContent: msg.role === "user" ? "flex-end" : "flex-start", 
+                  marginBottom: "10px" 
+                }}>
+                  <div style={{ 
+                    maxWidth: "80%", 
+                    padding: "10px 14px", 
+                    borderRadius: "16px",
+                    backgroundColor: msg.role === "user" ? "#2563eb" : "white",
+                    color: msg.role === "user" ? "white" : "#1f2937",
+                    fontSize: "13px",
+                    lineHeight: 1.4,
+                    boxShadow: msg.role === "assistant" ? "0 1px 3px rgba(0,0,0,0.1)" : "none"
+                  }}>
+                    {msg.content}
+                  </div>
+                </div>
+              ))}
+              {isChatLoading && (
+                <div style={{ display: "flex", justifyContent: "flex-start", marginBottom: "10px" }}>
+                  <div style={{ padding: "10px 14px", borderRadius: "16px", backgroundColor: "white", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>
+                    <span style={{ color: "#9ca3af", fontSize: "13px" }}>Typing...</span>
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            {/* Chat Input */}
+            <div style={{ padding: "12px", borderTop: "1px solid #e5e7eb", display: "flex", gap: "8px" }}>
+              <input
+                type="text"
+                value={chatInput}
+                onChange={(e) => setChatInput(e.target.value)}
+                onKeyPress={(e) => e.key === "Enter" && handleSendChat()}
+                placeholder="Ask about your trip..."
+                disabled={isChatLoading}
+                style={{ flex: 1, padding: "10px 14px", borderRadius: "24px", border: "1px solid #d1d5db", fontSize: "13px", outline: "none" }}
+              />
+              <button
+                onClick={handleSendChat}
+                disabled={isChatLoading || !chatInput.trim()}
+                style={{ width: "40px", height: "40px", borderRadius: "50%", backgroundColor: isChatLoading || !chatInput.trim() ? "#93c5fd" : "#2563eb", border: "none", cursor: isChatLoading ? "default" : "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}
+              >
+                <span style={{ color: "white", fontSize: "16px" }}>➤</span>
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
 
       {/* Profile Panel - Bottom Left */}
       <div style={{ ...styles.profilePanel, ...(profileExpanded ? {} : styles.profileCollapsed) }}>
