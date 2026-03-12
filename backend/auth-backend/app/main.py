@@ -8,7 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import text
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from app.core.config import settings
+from app.core.config import DEFAULT_ALLOWED_ORIGINS, settings
 from app.db.session import get_session
 from app.api.v1 import api_router
 
@@ -18,7 +18,7 @@ app = FastAPI(title="Travel Assistant Auth API", version="1.0.0")
 
 # Ensure CORS origins are properly set
 if not settings.ALLOWED_ORIGINS:
-    settings.ALLOWED_ORIGINS = ["http://localhost:5173", "http://localhost:3000"]
+    settings.ALLOWED_ORIGINS = DEFAULT_ALLOWED_ORIGINS.copy()
 
 # CORS Middleware MUST be added FIRST (before any other middleware)
 # FastAPI executes middleware in reverse order, so this will be executed last
@@ -157,4 +157,3 @@ async def healthz_db(session: AsyncSession = Depends(get_session)):
 
 # Include API routers
 app.include_router(api_router, prefix=settings.API_PREFIX)
-
