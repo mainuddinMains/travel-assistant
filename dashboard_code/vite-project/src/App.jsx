@@ -401,99 +401,99 @@ const countryData = {
 };
 
 const countries = [
-  { name: "Afghanistan", flag: "🇦🇫", code: "AF" },
-  { name: "Albania", flag: "🇦🇱", code: "AL" },
-  { name: "Algeria", flag: "🇩🇿", code: "DZ" },
-  { name: "Argentina", flag: "🇦🇷", code: "AR" },
-  { name: "Australia", flag: "🇦🇺", code: "AU" },
-  { name: "Austria", flag: "🇦🇹", code: "AT" },
-  { name: "Bahrain", flag: "🇧🇭", code: "BH" },
-  { name: "Bangladesh", flag: "🇧🇩", code: "BD" },
-  { name: "Belgium", flag: "🇧🇪", code: "BE" },
-  { name: "Brazil", flag: "🇧🇷", code: "BR" },
-  { name: "Cambodia", flag: "🇰🇭", code: "KH" },
-  { name: "Canada", flag: "🇨🇦", code: "CA" },
-  { name: "Chile", flag: "🇨🇱", code: "CL" },
-  { name: "China", flag: "🇨🇳", code: "CN" },
-  { name: "Colombia", flag: "🇨🇴", code: "CO" },
-  { name: "Costa Rica", flag: "🇨🇷", code: "CR" },
-  { name: "Croatia", flag: "🇭🇷", code: "HR" },
-  { name: "Czech Republic", flag: "🇨🇿", code: "CZ" },
-  { name: "Denmark", flag: "🇩🇰", code: "DK" },
-  { name: "Dominican Republic", flag: "🇩🇴", code: "DO" },
-  { name: "Ecuador", flag: "🇪🇨", code: "EC" },
-  { name: "Egypt", flag: "🇪🇬", code: "EG" },
-  { name: "Estonia", flag: "🇪🇪", code: "EE" },
-  { name: "Ethiopia", flag: "🇪🇹", code: "ET" },
-  { name: "Finland", flag: "🇫🇮", code: "FI" },
-  { name: "France", flag: "🇫🇷", code: "FR" },
-  { name: "Germany", flag: "🇩🇪", code: "DE" },
-  { name: "Greece", flag: "🇬🇷", code: "GR" },
-  { name: "Guatemala", flag: "🇬🇹", code: "GT" },
-  { name: "Honduras", flag: "🇭🇳", code: "HN" },
-  { name: "Hungary", flag: "🇭🇺", code: "HU" },
-  { name: "Iceland", flag: "🇮🇸", code: "IS" },
-  { name: "India", flag: "🇮🇳", code: "IN" },
-  { name: "Indonesia", flag: "🇮🇩", code: "ID" },
-  { name: "Iran", flag: "🇮🇷", code: "IR" },
-  { name: "Iraq", flag: "🇮🇶", code: "IQ" },
-  { name: "Ireland", flag: "🇮🇪", code: "IE" },
-  { name: "Israel", flag: "🇮🇱", code: "IL" },
-  { name: "Italy", flag: "🇮🇹", code: "IT" },
-  { name: "Jamaica", flag: "🇯🇲", code: "JM" },
-  { name: "Japan", flag: "🇯🇵", code: "JP" },
-  { name: "Jordan", flag: "🇯🇴", code: "JO" },
-  { name: "Kazakhstan", flag: "🇰🇿", code: "KZ" },
-  { name: "Kenya", flag: "🇰🇪", code: "KE" },
-  { name: "Kuwait", flag: "🇰🇼", code: "KW" },
-  { name: "Latvia", flag: "🇱🇻", code: "LV" },
-  { name: "Lebanon", flag: "🇱🇧", code: "LB" },
-  { name: "Lithuania", flag: "🇱🇹", code: "LT" },
-  { name: "Luxembourg", flag: "🇱🇺", code: "LU" },
-  { name: "Malaysia", flag: "🇲🇾", code: "MY" },
-  { name: "Maldives", flag: "🇲🇻", code: "MV" },
-  { name: "Malta", flag: "🇲🇹", code: "MT" },
-  { name: "Mexico", flag: "🇲🇽", code: "MX" },
-  { name: "Monaco", flag: "🇲🇨", code: "MC" },
-  { name: "Morocco", flag: "🇲🇦", code: "MA" },
-  { name: "Nepal", flag: "🇳🇵", code: "NP" },
-  { name: "Netherlands", flag: "🇳🇱", code: "NL" },
-  { name: "New Zealand", flag: "🇳🇿", code: "NZ" },
-  { name: "Nicaragua", flag: "🇳🇮", code: "NI" },
-  { name: "Nigeria", flag: "🇳🇬", code: "NG" },
-  { name: "Norway", flag: "🇳🇴", code: "NO" },
-  { name: "Oman", flag: "🇴🇲", code: "OM" },
-  { name: "Pakistan", flag: "🇵🇰", code: "PK" },
-  { name: "Panama", flag: "🇵🇦", code: "PA" },
-  { name: "Paraguay", flag: "🇵🇾", code: "PY" },
-  { name: "Peru", flag: "🇵🇪", code: "PE" },
-  { name: "Philippines", flag: "🇵🇭", code: "PH" },
-  { name: "Poland", flag: "🇵🇱", code: "PL" },
-  { name: "Portugal", flag: "🇵🇹", code: "PT" },
-  { name: "Qatar", flag: "🇶🇦", code: "QA" },
-  { name: "Romania", flag: "🇷🇴", code: "RO" },
-  { name: "Russia", flag: "🇷🇺", code: "RU" },
-  { name: "Saudi Arabia", flag: "🇸🇦", code: "SA" },
-  { name: "Serbia", flag: "🇷🇸", code: "RS" },
-  { name: "Singapore", flag: "🇸🇬", code: "SG" },
-  { name: "Slovakia", flag: "🇸🇰", code: "SK" },
-  { name: "Slovenia", flag: "🇸🇮", code: "SI" },
-  { name: "South Africa", flag: "🇿🇦", code: "ZA" },
-  { name: "South Korea", flag: "🇰🇷", code: "KR" },
-  { name: "Spain", flag: "🇪🇸", code: "ES" },
-  { name: "Sri Lanka", flag: "🇱🇰", code: "LK" },
-  { name: "Sweden", flag: "🇸🇪", code: "SE" },
-  { name: "Switzerland", flag: "🇨🇭", code: "CH" },
-  { name: "Taiwan", flag: "🇹🇼", code: "TW" },
-  { name: "Thailand", flag: "🇹🇭", code: "TH" },
-  { name: "Turkey", flag: "🇹🇷", code: "TR" },
-  { name: "Ukraine", flag: "🇺🇦", code: "UA" },
-  { name: "United Arab Emirates", flag: "🇦🇪", code: "AE" },
-  { name: "United Kingdom", flag: "🇬🇧", code: "GB" },
-  { name: "United States", flag: "🇺🇸", code: "US" },
-  { name: "Uruguay", flag: "🇺🇾", code: "UY" },
-  { name: "Venezuela", flag: "🇻🇪", code: "VE" },
-  { name: "Vietnam", flag: "🇻🇳", code: "VN" },
+  { name: "Afghanistan", flag: "🇦🇫", code: "AF", lat: 33.9391, lng: 67.71 },
+  { name: "Albania", flag: "🇦🇱", code: "AL", lat: 41.1533, lng: 20.1683 },
+  { name: "Algeria", flag: "🇩🇿", code: "DZ", lat: 28.0339, lng: 1.6596 },
+  { name: "Argentina", flag: "🇦🇷", code: "AR", lat: -38.4161, lng: -63.6167 },
+  { name: "Australia", flag: "🇦🇺", code: "AU", lat: -25.2744, lng: 133.7751 },
+  { name: "Austria", flag: "🇦🇹", code: "AT", lat: 47.5162, lng: 14.5501 },
+  { name: "Bahrain", flag: "🇧🇭", code: "BH", lat: 26.0667, lng: 50.5577 },
+  { name: "Bangladesh", flag: "🇧🇩", code: "BD", lat: 23.685, lng: 90.3563 },
+  { name: "Belgium", flag: "🇧🇪", code: "BE", lat: 50.5039, lng: 4.4699 },
+  { name: "Brazil", flag: "🇧🇷", code: "BR", lat: -14.235, lng: -51.9253 },
+  { name: "Cambodia", flag: "🇰🇭", code: "KH", lat: 12.5657, lng: 104.991 },
+  { name: "Canada", flag: "🇨🇦", code: "CA", lat: 56.1304, lng: -106.3468 },
+  { name: "Chile", flag: "🇨🇱", code: "CL", lat: -35.6751, lng: -71.543 },
+  { name: "China", flag: "🇨🇳", code: "CN", lat: 35.8617, lng: 104.1954 },
+  { name: "Colombia", flag: "🇨🇴", code: "CO", lat: 4.5709, lng: -74.2973 },
+  { name: "Costa Rica", flag: "🇨🇷", code: "CR", lat: 9.7489, lng: -83.7534 },
+  { name: "Croatia", flag: "🇭🇷", code: "HR", lat: 45.1, lng: 15.2 },
+  { name: "Czech Republic", flag: "🇨🇿", code: "CZ", lat: 49.8175, lng: 15.473 },
+  { name: "Denmark", flag: "🇩🇰", code: "DK", lat: 56.2639, lng: 9.5018 },
+  { name: "Dominican Republic", flag: "🇩🇴", code: "DO", lat: 18.7357, lng: -70.1627 },
+  { name: "Ecuador", flag: "🇪🇨", code: "EC", lat: -1.8312, lng: -78.1834 },
+  { name: "Egypt", flag: "🇪🇬", code: "EG", lat: 26.8206, lng: 30.8025 },
+  { name: "Estonia", flag: "🇪🇪", code: "EE", lat: 58.5953, lng: 25.0136 },
+  { name: "Ethiopia", flag: "🇪🇹", code: "ET", lat: 9.145, lng: 40.4897 },
+  { name: "Finland", flag: "🇫🇮", code: "FI", lat: 61.9241, lng: 25.7482 },
+  { name: "France", flag: "🇫🇷", code: "FR", lat: 46.2276, lng: 2.2137 },
+  { name: "Germany", flag: "🇩🇪", code: "DE", lat: 51.1657, lng: 10.4515 },
+  { name: "Greece", flag: "🇬🇷", code: "GR", lat: 39.0742, lng: 21.8243 },
+  { name: "Guatemala", flag: "🇬🇹", code: "GT", lat: 15.7835, lng: -90.2308 },
+  { name: "Honduras", flag: "🇭🇳", code: "HN", lat: 15.2, lng: -86.2419 },
+  { name: "Hungary", flag: "🇭🇺", code: "HU", lat: 47.1625, lng: 19.5033 },
+  { name: "Iceland", flag: "🇮🇸", code: "IS", lat: 64.9631, lng: -19.0208 },
+  { name: "India", flag: "🇮🇳", code: "IN", lat: 20.5937, lng: 78.9629 },
+  { name: "Indonesia", flag: "🇮🇩", code: "ID", lat: -0.7893, lng: 113.9213 },
+  { name: "Iran", flag: "🇮🇷", code: "IR", lat: 32.4279, lng: 53.688 },
+  { name: "Iraq", flag: "🇮🇶", code: "IQ", lat: 33.2232, lng: 43.6793 },
+  { name: "Ireland", flag: "🇮🇪", code: "IE", lat: 53.1424, lng: -7.6921 },
+  { name: "Israel", flag: "🇮🇱", code: "IL", lat: 31.0461, lng: 34.8516 },
+  { name: "Italy", flag: "🇮🇹", code: "IT", lat: 41.8719, lng: 12.5674 },
+  { name: "Jamaica", flag: "🇯🇲", code: "JM", lat: 18.1096, lng: -77.2975 },
+  { name: "Japan", flag: "🇯🇵", code: "JP", lat: 36.2048, lng: 138.2529 },
+  { name: "Jordan", flag: "🇯🇴", code: "JO", lat: 30.5852, lng: 36.2384 },
+  { name: "Kazakhstan", flag: "🇰🇿", code: "KZ", lat: 48.0196, lng: 66.9237 },
+  { name: "Kenya", flag: "🇰🇪", code: "KE", lat: -0.0236, lng: 37.9062 },
+  { name: "Kuwait", flag: "🇰🇼", code: "KW", lat: 29.3117, lng: 47.4818 },
+  { name: "Latvia", flag: "🇱🇻", code: "LV", lat: 56.8796, lng: 24.6032 },
+  { name: "Lebanon", flag: "🇱🇧", code: "LB", lat: 33.8547, lng: 35.8623 },
+  { name: "Lithuania", flag: "🇱🇹", code: "LT", lat: 55.1694, lng: 23.8813 },
+  { name: "Luxembourg", flag: "🇱🇺", code: "LU", lat: 49.8153, lng: 6.1296 },
+  { name: "Malaysia", flag: "🇲🇾", code: "MY", lat: 4.2105, lng: 101.9758 },
+  { name: "Maldives", flag: "🇲🇻", code: "MV", lat: 3.2028, lng: 73.2207 },
+  { name: "Malta", flag: "🇲🇹", code: "MT", lat: 35.9375, lng: 14.3754 },
+  { name: "Mexico", flag: "🇲🇽", code: "MX", lat: 23.6345, lng: -102.5528 },
+  { name: "Monaco", flag: "🇲🇨", code: "MC", lat: 43.7384, lng: 7.4246 },
+  { name: "Morocco", flag: "🇲🇦", code: "MA", lat: 31.7917, lng: -7.0926 },
+  { name: "Nepal", flag: "🇳🇵", code: "NP", lat: 28.3949, lng: 84.124 },
+  { name: "Netherlands", flag: "🇳🇱", code: "NL", lat: 52.1326, lng: 5.2913 },
+  { name: "New Zealand", flag: "🇳🇿", code: "NZ", lat: -40.9006, lng: 174.886 },
+  { name: "Nicaragua", flag: "🇳🇮", code: "NI", lat: 12.8654, lng: -85.2072 },
+  { name: "Nigeria", flag: "🇳🇬", code: "NG", lat: 9.082, lng: 8.6753 },
+  { name: "Norway", flag: "🇳🇴", code: "NO", lat: 60.472, lng: 8.4689 },
+  { name: "Oman", flag: "🇴🇲", code: "OM", lat: 21.4735, lng: 55.9754 },
+  { name: "Pakistan", flag: "🇵🇰", code: "PK", lat: 30.3753, lng: 69.3451 },
+  { name: "Panama", flag: "🇵🇦", code: "PA", lat: 8.538, lng: -80.7821 },
+  { name: "Paraguay", flag: "🇵🇾", code: "PY", lat: -23.4425, lng: -58.4438 },
+  { name: "Peru", flag: "🇵🇪", code: "PE", lat: -9.19, lng: -75.0152 },
+  { name: "Philippines", flag: "🇵🇭", code: "PH", lat: 12.8797, lng: 121.774 },
+  { name: "Poland", flag: "🇵🇱", code: "PL", lat: 51.9194, lng: 19.1451 },
+  { name: "Portugal", flag: "🇵🇹", code: "PT", lat: 39.3999, lng: -8.2245 },
+  { name: "Qatar", flag: "🇶🇦", code: "QA", lat: 25.3548, lng: 51.1839 },
+  { name: "Romania", flag: "🇷🇴", code: "RO", lat: 45.9432, lng: 24.9668 },
+  { name: "Russia", flag: "🇷🇺", code: "RU", lat: 61.524, lng: 105.3188 },
+  { name: "Saudi Arabia", flag: "🇸🇦", code: "SA", lat: 23.8859, lng: 45.0792 },
+  { name: "Serbia", flag: "🇷🇸", code: "RS", lat: 44.0165, lng: 21.0059 },
+  { name: "Singapore", flag: "🇸🇬", code: "SG", lat: 1.3521, lng: 103.8198 },
+  { name: "Slovakia", flag: "🇸🇰", code: "SK", lat: 48.669, lng: 19.699 },
+  { name: "Slovenia", flag: "🇸🇮", code: "SI", lat: 46.1512, lng: 14.9955 },
+  { name: "South Africa", flag: "🇿🇦", code: "ZA", lat: -30.5595, lng: 22.9375 },
+  { name: "South Korea", flag: "🇰🇷", code: "KR", lat: 35.9078, lng: 127.7669 },
+  { name: "Spain", flag: "🇪🇸", code: "ES", lat: 40.4637, lng: -3.7492 },
+  { name: "Sri Lanka", flag: "🇱🇰", code: "LK", lat: 7.8731, lng: 80.7718 },
+  { name: "Sweden", flag: "🇸🇪", code: "SE", lat: 60.1282, lng: 18.6435 },
+  { name: "Switzerland", flag: "🇨🇭", code: "CH", lat: 46.8182, lng: 8.2275 },
+  { name: "Taiwan", flag: "🇹🇼", code: "TW", lat: 23.6978, lng: 120.9605 },
+  { name: "Thailand", flag: "🇹🇭", code: "TH", lat: 15.87, lng: 100.9925 },
+  { name: "Turkey", flag: "🇹🇷", code: "TR", lat: 38.9637, lng: 35.2433 },
+  { name: "Ukraine", flag: "🇺🇦", code: "UA", lat: 48.3794, lng: 31.1656 },
+  { name: "United Arab Emirates", flag: "🇦🇪", code: "AE", lat: 23.4241, lng: 53.8478 },
+  { name: "United Kingdom", flag: "🇬🇧", code: "GB", lat: 55.3781, lng: -3.436 },
+  { name: "United States", flag: "🇺🇸", code: "US", lat: 37.0902, lng: -95.7129 },
+  { name: "Uruguay", flag: "🇺🇾", code: "UY", lat: -32.5228, lng: -55.7658 },
+  { name: "Venezuela", flag: "🇻🇪", code: "VE", lat: 6.4238, lng: -66.5897 },
+  { name: "Vietnam", flag: "🇻🇳", code: "VN", lat: 14.0583, lng: 108.2772 },
 ];
 
 export default function App() {
@@ -512,7 +512,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState("active");
   const [geolocationStatus, setGeolocationStatus] = useState("offline");
   const [showCountries, setShowCountries] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState({ name: "United States", flag: "🇺🇸", code: "US", details: null });
+  const [selectedCountry, setSelectedCountry] = useState({ name: "United States", flag: "🇺🇸", code: "US", lat: 37.0902, lng: -95.7129, details: null });
   const [showCountryDetails, setShowCountryDetails] = useState(false);
   const [showChat, setShowChat] = useState(false);
   const [showMap, setShowMap] = useState(false);
@@ -564,6 +564,7 @@ export default function App() {
   const handleCountrySelect = (country) => {
     const details = getCountryDetails(country.code);
     setSelectedCountry({ ...country, details });
+    setDestination({ lat: country.lat, lng: country.lng, label: country.name });
     setShowCountries(false);
     setShowCountryDetails(true);
   };
@@ -747,8 +748,8 @@ export default function App() {
           <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
             <GoogleMap
               mapContainerStyle={{ width: "100%", height: "100%" }}
-              center={origin?.lat ? { lat: origin.lat, lng: origin.lng } : { lat: 38.627, lng: -90.1994 }}
-              zoom={origin?.lat ? 12 : 4}
+              center={selectedCountry?.lat ? { lat: selectedCountry.lat, lng: selectedCountry.lng } : (origin?.lat ? { lat: origin.lat, lng: origin.lng } : { lat: 38.627, lng: -90.1994 })}
+              zoom={selectedCountry?.lat ? 5 : (origin?.lat ? 12 : 4)}
               options={{
                 disableDefaultUI: true,
                 zoomControl: true,
@@ -756,7 +757,7 @@ export default function App() {
               }}
             >
               {origin?.lat && <Marker position={{ lat: origin.lat, lng: origin.lng }} label="A" />}
-              {destination?.lat && <Marker position={{ lat: destination.lat, lng: destination.lng }} label="B" />}
+              {(destination?.lat || selectedCountry?.lat) && <Marker position={{ lat: (destination?.lat || selectedCountry.lat), lng: (destination?.lng || selectedCountry.lng) }} label={destination?.lat ? "B" : "📍"} />}
             </GoogleMap>
           </LoadScript>
         </div>
@@ -911,7 +912,7 @@ export default function App() {
               {activeTab === "active" && (
                 <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                   {!origin && <button onClick={requestGeolocation} style={{ backgroundColor: "#2563eb", color: "white", padding: "8px 16px", borderRadius: "6px", border: "none", cursor: "pointer", fontSize: "14px" }}>📍 Use Current Location</button>}
-                  <div><p style={{ fontSize: "12px", color: "#6b7280", marginBottom: "4px" }}>Destination</p><input type="text" placeholder="Where to?" style={{ width: "100%", padding: "8px 12px", borderRadius: "6px", border: "1px solid #d1d5db", fontSize: "14px", boxSizing: "border-box" }} onChange={(e) => setDestination({ lat: 38.627, lng: -90.1994, label: e.target.value })} /></div>
+                  <div><p style={{ fontSize: "12px", color: "#6b7280", marginBottom: "4px" }}>Destination</p><input type="text" value={selectedCountry?.name || ""} placeholder="Where to?" style={{ width: "100%", padding: "8px 12px", borderRadius: "6px", border: "1px solid #d1d5db", fontSize: "14px", boxSizing: "border-box" }} onChange={(e) => setDestination({ lat: selectedCountry?.lat || 38.627, lng: selectedCountry?.lng || -90.1994, label: e.target.value || selectedCountry?.name })} /></div>
                   {routes && (
                     <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                       <p style={{ fontSize: "12px", color: "#6b7280" }}>Routes</p>
