@@ -1,6 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { GoogleMap, LoadScript, Marker, Polyline } from "@react-google-maps/api";
 
+const printStyles = `
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    .printable-area, .printable-area * {
+      visibility: visible;
+    }
+    .printable-area {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      padding: 20px;
+      background: white;
+    }
+    .no-print {
+      display: none !important;
+    }
+  }
+`;
+
 const API_BASE_URL = "http://localhost:8001/api/v1";
 
 const styles = {
@@ -494,6 +516,7 @@ export default function App() {
   const [showCountryDetails, setShowCountryDetails] = useState(false);
   const [showChat, setShowChat] = useState(false);
   const [showMap, setShowMap] = useState(false);
+  const [tripPlan, setTripPlan] = useState(null);
   const [chatMessages, setChatMessages] = useState([
     { role: "assistant", content: "Hi! I'm your travel assistant. How can I help you today? 🌍" }
   ]);
@@ -707,7 +730,9 @@ export default function App() {
   }
 
   return (
-    <div style={styles.container}>
+    <>
+      <style>{printStyles}</style>
+      <div style={styles.container}>
       {/* Map Toggle Button */}
       <button 
         onClick={() => setShowMap(!showMap)}
@@ -898,7 +923,24 @@ export default function App() {
                       ))}
                     </div>
                   )}
-                  <button style={{ width: "100%", backgroundColor: "#22c55e", color: "white", padding: "8px", borderRadius: "6px", border: "none", cursor: "pointer", fontSize: "14px", fontWeight: 500, marginTop: "8px" }}>Start Trip</button>
+                  <button 
+                    onClick={() => {
+                      setTripPlan({
+                        destination: destination?.label || "Unknown",
+                        mode: selectedMode,
+                        date: new Date().toLocaleDateString(),
+                        origin: origin?.label || "Current Location",
+                      });
+                    }}
+                    style={{ width: "100%", backgroundColor: "#22c55e", color: "white", padding: "8px", borderRadius: "6px", border: "none", cursor: "pointer", fontSize: "14px", fontWeight: 500, marginTop: "8px" }}
+                  >Start Trip</button>
+                  
+                  {tripPlan && (
+                    <button 
+                      onClick={() => window.print()}
+                      style={{ width: "100%", backgroundColor: "#6366f1", color: "white", padding: "8px", borderRadius: "6px", border: "none", cursor: "pointer", fontSize: "14px", fontWeight: 500, marginTop: "8px" }}
+                    >🖨️ Print Trip Plan</button>
+                  )}
                 </div>
               )}
               {activeTab === "saved" && <div style={{ textAlign: "center", padding: "32px", color: "#6b7280" }}><p>No saved places</p></div>}
@@ -950,6 +992,63 @@ export default function App() {
           </div>
         </div>
       )}
+      
+      {/* Printable Trip Plan */}
+      {tripPlan && (
+        <div className="printable-area" style={{ display: "none" }}>
+          <div style={{ padding: "40px", fontFamily: "Arial, sans-serif" }}>
+            <h1 style={{ fontSize: "28px", color: "#1f2937", marginBottom: "20px", borderBottom: "2px solid #2563eb", paddingBottom: "10px" }}>✈️ Travel Plan</h1>
+            
+            <div style={{ marginBottom: "20px" }}>
+              <p style={{ fontSize: "14px", color: "#6b7280", margin: 0 }}>Trip Date</p>
+              <p style={{ fontSize: "18px", color: "#1f2937", fontWeight: "bold", margin: 0 }}>{tripPlan.date}</p>
+            </div>
+            
+            <div style={{ marginBottom: "20px" }}>
+              <p style={{ fontSize: "14px", color: "#6b7280", margin: 0 }}>From</p>
+              <p style={{ fontSize: "18px", color: "#1f2937", fontWeight: "bold", margin: 0 }}>📍 {tripPlan.origin}</p>
+            </div>
+            
+            <div style={{ marginBottom: "20px" }}>
+              <p style={{ fontSize: "14px", color: "#6b7280", margin: 0 }}>To</p>
+              <p style={{ fontSize: "18px", color: "#1f2937", fontWeight: "bold", margin: 0 }}>🏁 {tripPlan.destination}</p>
+            </div>
+            
+            <div style={{ marginBottom: "20px" }}>
+              <p style={{ fontSize: "14px", color: "#6b7280", margin: 0 }}>Transport Mode</p>
+              <p style={{ fontSize: "18px", color: "#1f2937", fontWeight: "bold", margin: 0 }}>
+                {tripPlan.mode === "drive" && "🚗 Driving"}
+                {tripPlan.mode === "transit" && "🚇 Transit"}
+                {tripPlan.mode === "walk" && "🚶 Walking"}
+                {tripPlan.mode === "bike" && "🚴 Cycling"}
+              </p>
+            </div>
+            
+            {selectedCountry.details && (
+              <div style={{ marginTop: "30px" }}>
+                <h2 style={{ fontSize: "20px", color: "#1f2937", marginBottom: "15px" }}>📋 Destination Info</h2>
+                <div style={{ marginBottom: "15px" }}>
+                  <p style={{ fontSize: "14px", color: "#6b7280", margin: "0 0 5px 0" }}>Popular Cities</p>
+                  <p style={{ fontSize: "14px", color: "#1f2937", margin: 0 }}>{selectedCountry.details.popularCities?.join(", ")}</p>
+                </div>
+                <div style={{ marginBottom: "15px" }}>
+                  <p style={{ fontSize: "14px", color: "#6b7280", margin: "0 0 5px 0" }}>Must-Try Dishes</p>
+                  <p style={{ fontSize: "14px", color: "#1f2937", margin: 0 }}>{selectedCountry.details.popularDishes?.join(", ")}</p>
+                </div>
+                <div>
+                  <p style={{ fontSize: "14px", color: "#6b7280", margin: "0 0 5px 0" }}>Natural Beauty</p>
+                  <p style={{ fontSize: "14px", color: "#1f2937", margin: 0 }}>{selectedCountry.details.naturalBeauty}</p>
+                </div>
+              </div>
+            )}
+            
+            <div style={{ marginTop: "40px", paddingTop: "20px", borderTop: "1px solid #e5e7eb", textAlign: "center" }}>
+              <p style={{ fontSize: "12px", color: "#9ca3af", margin: 0 }}>Generated by Travel Assistant</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
+    </>
   );
 }
