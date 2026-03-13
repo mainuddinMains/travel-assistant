@@ -516,6 +516,7 @@ export default function App() {
   const [showCountryDetails, setShowCountryDetails] = useState(false);
   const [showChat, setShowChat] = useState(false);
   const [showMap, setShowMap] = useState(false);
+  const [mapType, setMapType] = useState("roadmap");
   const [tripPlan, setTripPlan] = useState(null);
   const [chatMessages, setChatMessages] = useState([
     { role: "assistant", content: "Hi! I'm your travel assistant. How can I help you today? 🌍" }
@@ -745,15 +746,26 @@ export default function App() {
       {/* Map or Background */}
       {showMap ? (
         <div style={styles.mapContainer}>
+          {/* Map Type Selector */}
+          <div style={{ position: "absolute", top: "80px", left: "16px", zIndex: 10, backgroundColor: "white", borderRadius: "8px", padding: "4px", boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}>
+            <button onClick={() => setMapType("roadmap")} style={{ padding: "8px 12px", borderRadius: "6px", border: "none", background: mapType === "roadmap" ? "#2563eb" : "transparent", color: mapType === "roadmap" ? "white" : "#374151", cursor: "pointer", fontSize: "12px", fontWeight: 500 }}>🛣️ Road</button>
+            <button onClick={() => setMapType("satellite")} style={{ padding: "8px 12px", borderRadius: "6px", border: "none", background: mapType === "satellite" ? "#2563eb" : "transparent", color: mapType === "satellite" ? "white" : "#374151", cursor: "pointer", fontSize: "12px", fontWeight: 500 }}>🛰️ Satellite</button>
+            <button onClick={() => setMapType("terrain")} style={{ padding: "8px 12px", borderRadius: "6px", border: "none", background: mapType === "terrain" ? "#2563eb" : "transparent", color: mapType === "terrain" ? "white" : "#374151", cursor: "pointer", fontSize: "12px", fontWeight: 500 }}>🏔️ Terrain</button>
+            <button onClick={() => setMapType("hybrid")} style={{ padding: "8px 12px", borderRadius: "6px", border: "none", background: mapType === "hybrid" ? "#2563eb" : "transparent", color: mapType === "hybrid" ? "white" : "#374151", cursor: "pointer", fontSize: "12px", fontWeight: 500 }}>🗺️ Hybrid</button>
+          </div>
+          
           <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
             <GoogleMap
               mapContainerStyle={{ width: "100%", height: "100%" }}
               center={selectedCountry?.lat ? { lat: selectedCountry.lat, lng: selectedCountry.lng } : (origin?.lat ? { lat: origin.lat, lng: origin.lng } : { lat: 38.627, lng: -90.1994 })}
               zoom={selectedCountry?.lat ? 5 : (origin?.lat ? 12 : 4)}
+              mapTypeId={mapType}
               options={{
-                disableDefaultUI: true,
+                disableDefaultUI: false,
                 zoomControl: true,
-                streetViewControl: false,
+                streetViewControl: true,
+                mapTypeControl: true,
+                fullscreenControl: true,
               }}
             >
               {origin?.lat && <Marker position={{ lat: origin.lat, lng: origin.lng }} label="A" />}
