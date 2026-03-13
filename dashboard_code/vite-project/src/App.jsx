@@ -517,6 +517,7 @@ export default function App() {
   const [showChat, setShowChat] = useState(false);
   const [showMap, setShowMap] = useState(false);
   const [mapType, setMapType] = useState("roadmap");
+  const [selectedPlace, setSelectedPlace] = useState(null);
   const [tripPlan, setTripPlan] = useState(null);
   const [chatMessages, setChatMessages] = useState([
     { role: "assistant", content: "Hi! I'm your travel assistant. How can I help you today? 🌍" }
