@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { GoogleMap, LoadScript, Marker, Polyline } from "@react-google-maps/api";
 
 const API_BASE_URL = "http://localhost:8001/api/v1";
 
@@ -59,6 +60,29 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+  },
+  mapContainer: {
+    position: "absolute",
+    inset: 0,
+  },
+  mapToggleButton: {
+    position: "absolute",
+    bottom: "100px",
+    left: "50%",
+    transform: "translateX(-50%)",
+    zIndex: 15,
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+    backgroundColor: "white",
+    padding: "12px 20px",
+    borderRadius: "24px",
+    border: "none",
+    cursor: "pointer",
+    boxShadow: "0 4px 15px rgba(0,0,0,0.3)",
+    fontSize: "14px",
+    fontWeight: 600,
+    color: "#1f2937",
   },
   modeSelector: {
     position: "absolute",
@@ -469,6 +493,7 @@ export default function App() {
   const [selectedCountry, setSelectedCountry] = useState({ name: "United States", flag: "🇺🇸", code: "US", details: null });
   const [showCountryDetails, setShowCountryDetails] = useState(false);
   const [showChat, setShowChat] = useState(false);
+  const [showMap, setShowMap] = useState(false);
   const [chatMessages, setChatMessages] = useState([
     { role: "assistant", content: "Hi! I'm your travel assistant. How can I help you today? 🌍" }
   ]);
@@ -683,8 +708,35 @@ export default function App() {
 
   return (
     <div style={styles.container}>
-      {/* Map / Background */}
-      <div style={styles.mapPlaceholder}>
+      {/* Map Toggle Button */}
+      <button 
+        onClick={() => setShowMap(!showMap)}
+        style={styles.mapToggleButton}
+      >
+        {showMap ? "🏠" : "🗺️"} {showMap ? "Hide Map" : "Show Map"}
+      </button>
+
+      {/* Map or Background */}
+      {showMap ? (
+        <div style={styles.mapContainer}>
+          <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
+            <GoogleMap
+              mapContainerStyle={{ width: "100%", height: "100%" }}
+              center={origin?.lat ? { lat: origin.lat, lng: origin.lng } : { lat: 38.627, lng: -90.1994 }}
+              zoom={origin?.lat ? 12 : 4}
+              options={{
+                disableDefaultUI: true,
+                zoomControl: true,
+                streetViewControl: false,
+              }}
+            >
+              {origin?.lat && <Marker position={{ lat: origin.lat, lng: origin.lng }} label="A" />}
+              {destination?.lat && <Marker position={{ lat: destination.lat, lng: destination.lng }} label="B" />}
+            </GoogleMap>
+          </LoadScript>
+        </div>
+      ) : (
+        <div style={styles.mapPlaceholder}>
         {/* Country Selector - Top Center */}
         <div style={{ position: "absolute", top: "16px", left: "50%", transform: "translateX(-50%)", zIndex: 10 }}>
           <button
@@ -720,6 +772,7 @@ export default function App() {
           <p style={{ fontSize: "14px", color: "#9ca3af" }}>{origin ? "📍 " + origin.label : "Click profile to set location"}</p>
         </div>
       </div>
+      )}
 
       {/* Mode Selector - Top Left */}
       <div style={styles.modeSelector}>
