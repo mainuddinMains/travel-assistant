@@ -159,7 +159,14 @@ const tabs = [
 
 const countryData = {
   "US": {
-    popularCities: ["New York", "Los Angeles", "Chicago", "San Francisco", "Miami", "Las Vegas"],
+    popularCities: [
+      { name: "New York", lat: 40.7128, lng: -74.0060 },
+      { name: "Los Angeles", lat: 34.0522, lng: -118.2437 },
+      { name: "Chicago", lat: 41.8781, lng: -87.6298 },
+      { name: "San Francisco", lat: 37.7749, lng: -122.4194 },
+      { name: "Miami", lat: 25.7617, lng: -80.1918 },
+      { name: "Las Vegas", lat: 36.1699, lng: -115.1398 }
+    ],
     beautifulPlaces: [
       { name: "Grand Canyon", image: "https://images.unsplash.com/photo-1474044159687-1ee9f3a51722?w=400&q=80", lat: 36.0544, lng: -112.1401, desc: "World-famous canyon with stunning red rock formations" },
       { name: "Yellowstone", image: "https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=400&q=80", lat: 44.4280, lng: -110.5885, desc: "World's first national park with geysers and wildlife" },
@@ -171,7 +178,13 @@ const countryData = {
     naturalBeauty: "Grand Canyon, Yellowstone, Yosemite, Rocky Mountains"
   },
   "FR": {
-    popularCities: ["Paris", "Lyon", "Nice", "Marseille", "Bordeaux"],
+    popularCities: [
+      { name: "Paris", lat: 48.8566, lng: 2.3522 },
+      { name: "Lyon", lat: 45.7640, lng: 4.8357 },
+      { name: "Nice", lat: 43.7102, lng: 7.2620 },
+      { name: "Marseille", lat: 43.2965, lng: 5.3698 },
+      { name: "Bordeaux", lat: 44.8378, lng: -0.5792 }
+    ],
     beautifulPlaces: [
       { name: "Eiffel Tower", image: "https://images.unsplash.com/photo-1511739001486-6bfe10ce65f4?w=400&q=80", lat: 48.8584, lng: 2.2945, desc: "Iconic iron lattice tower in Paris" },
       { name: "Louvre Museum", image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&q=80", lat: 48.8606, lng: 2.3376, desc: "World's largest art museum, home to Mona Lisa" },
@@ -183,7 +196,13 @@ const countryData = {
     naturalBeauty: "French Alps, Lavender fields of Provence, French Riviera"
   },
   "JP": {
-    popularCities: ["Tokyo", "Kyoto", "Osaka", "Hiroshima", "Yokohama"],
+    popularCities: [
+      { name: "Tokyo", lat: 35.6762, lng: 139.6503 },
+      { name: "Kyoto", lat: 35.0116, lng: 135.7681 },
+      { name: "Osaka", lat: 34.6937, lng: 135.5023 },
+      { name: "Hiroshima", lat: 34.3853, lng: 132.4553 },
+      { name: "Yokohama", lat: 35.4437, lng: 139.6380 }
+    ],
     beautifulPlaces: [
       { name: "Mount Fuji", image: "https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=400&q=80", lat: 35.3606, lng: 138.7274, desc: "Japan's iconic sacred mountain" },
       { name: "Fushimi Inari", image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&q=80", lat: 34.9671, lng: 135.7727, desc: "Famous shrine with thousands of torii gates" },
@@ -195,7 +214,13 @@ const countryData = {
     naturalBeauty: "Mount Fuji, Japanese Alps, Cherry blossom season"
   },
   "GB": {
-    popularCities: ["London", "Edinburgh", "Manchester", "Birmingham", "Liverpool"],
+    popularCities: [
+      { name: "London", lat: 51.5074, lng: -0.1278 },
+      { name: "Edinburgh", lat: 55.9533, lng: -3.1883 },
+      { name: "Manchester", lat: 53.4808, lng: -2.2426 },
+      { name: "Birmingham", lat: 52.4862, lng: -1.8904 },
+      { name: "Liverpool", lat: 53.4084, lng: -2.9916 }
+    ],
     beautifulPlaces: [
       { name: "Big Ben", image: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=400&q=80", lat: 51.5007, lng: -0.1246, desc: "Iconic clock tower in London" },
       { name: "Tower Bridge", image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&q=80", lat: 51.5055, lng: -0.0754, desc: "Famous Victorian combined bridge" },
@@ -207,7 +232,13 @@ const countryData = {
     naturalBeauty: "Lake District, Scottish Highlands, Cornwall coastline"
   },
   "IT": {
-    popularCities: ["Rome", "Venice", "Florence", "Milan", "Naples"],
+    popularCities: [
+      { name: "Rome", lat: 41.9028, lng: 12.4964 },
+      { name: "Venice", lat: 45.4408, lng: 12.3155 },
+      { name: "Florence", lat: 43.7696, lng: 11.2558 },
+      { name: "Milan", lat: 45.4642, lng: 9.1900 },
+      { name: "Naples", lat: 40.8518, lng: 14.2681 }
+    ],
     beautifulPlaces: [
       { name: "Colosseum", image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&q=80", lat: 41.8902, lng: 12.4922, desc: "Ancient Roman amphitheater" },
       { name: "Venice Canals", image: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?w=400&q=80", lat: 45.4408, lng: 12.3155, desc: "Romantic canals of Venice" },
@@ -219,7 +250,13 @@ const countryData = {
     naturalBeauty: "Amalfi Coast, Lake Como, Tuscan hills, Dolomites"
   },
   "ES": {
-    popularCities: ["Madrid", "Barcelona", "Seville", "Valencia", "Malaga"],
+    popularCities: [
+      { name: "Madrid", lat: 40.4168, lng: -3.7038 },
+      { name: "Barcelona", lat: 41.3851, lng: 2.1734 },
+      { name: "Seville", lat: 37.3891, lng: -5.9845 },
+      { name: "Valencia", lat: 39.4699, lng: -0.3763 },
+      { name: "Malaga", lat: 36.7213, lng: -4.4214 }
+    ],
     beautifulPlaces: [
       { name: "Sagrada Familia", image: "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=400&q=80", lat: 41.4036, lng: 2.1744, desc: "Gaudi's unfinished masterpiece" },
       { name: "Alhambra", image: "https://images.unsplash.com/photo-1591122947157-26bad3a117d2?w=400&q=80", lat: 37.1760, lng: -3.5881, desc: "Stunning Moorish palace in Granada" },
@@ -231,7 +268,13 @@ const countryData = {
     naturalBeauty: "Pyrenees, Canary Islands, Costa del Sol"
   },
   "DE": {
-    popularCities: ["Berlin", "Munich", "Hamburg", "Frankfurt", "Cologne"],
+    popularCities: [
+      { name: "Berlin", lat: 52.5200, lng: 13.4050 },
+      { name: "Munich", lat: 48.1351, lng: 11.5820 },
+      { name: "Hamburg", lat: 53.5511, lng: 9.9937 },
+      { name: "Frankfurt", lat: 50.1109, lng: 8.6821 },
+      { name: "Cologne", lat: 50.9375, lng: 6.9603 }
+    ],
     beautifulPlaces: [
       { name: "Brandenburg Gate", image: "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=400&q=80", lat: 52.5163, lng: 13.3777, desc: "Iconic Berlin landmark" },
       { name: "Neuschwanstein", image: "https://images.unsplash.com/photo-1596803241199-8c7e4d6b5a6c?w=400&q=80", lat: 47.5576, lng: 10.7498, desc: "Fairytale castle in Bavaria" },
@@ -243,7 +286,13 @@ const countryData = {
     naturalBeauty: "Black Forest, Bavarian Alps, Rhine Valley"
   },
   "AU": {
-    popularCities: ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide"],
+    popularCities: [
+      { name: "Sydney", lat: -33.8688, lng: 151.2093 },
+      { name: "Melbourne", lat: -37.8136, lng: 144.9631 },
+      { name: "Brisbane", lat: -27.4698, lng: 153.0251 },
+      { name: "Perth", lat: -31.9505, lng: 115.8605 },
+      { name: "Adelaide", lat: -34.9285, lng: 138.6007 }
+    ],
     beautifulPlaces: [
       { name: "Sydney Opera House", image: "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?w=400&q=80", lat: -33.8568, lng: 151.2153, desc: "Iconic sail-shaped building" },
       { name: "Great Barrier Reef", image: "https://images.unsplash.com/photo-1587139223877-04cb899fa3e9?w=400&q=80", lat: -18.2871, lng: 147.6992, desc: "World's largest coral reef system" },
@@ -255,7 +304,13 @@ const countryData = {
     naturalBeauty: "Great Barrier Reef, Uluru, Blue Mountains"
   },
   "IN": {
-    popularCities: ["Delhi", "Mumbai", "Jaipur", "Agra", "Kolkata"],
+    popularCities: [
+      { name: "Delhi", lat: 28.7041, lng: 77.1025 },
+      { name: "Mumbai", lat: 19.0760, lng: 72.8777 },
+      { name: "Jaipur", lat: 26.9124, lng: 75.7873 },
+      { name: "Agra", lat: 27.1767, lng: 78.0081 },
+      { name: "Kolkata", lat: 22.5726, lng: 88.3639 }
+    ],
     beautifulPlaces: [
       { name: "Taj Mahal", image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=400&q=80", lat: 27.1751, lng: 78.0421, desc: "Stunning white marble mausoleum" },
       { name: "Varanasi", image: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=400&q=80", lat: 25.3176, lng: 82.9739, desc: "Ancient holy city on Ganges" },
@@ -267,7 +322,13 @@ const countryData = {
     naturalBeauty: "Himalayas, Kerala backwaters, Goa beaches"
   },
   "CN": {
-    popularCities: ["Beijing", "Shanghai", "Xi'an", "Guangzhou", "Hangzhou"],
+    popularCities: [
+      { name: "Beijing", lat: 39.9042, lng: 116.4074 },
+      { name: "Shanghai", lat: 31.2304, lng: 121.4737 },
+      { name: "Xi'an", lat: 34.3416, lng: 108.9398 },
+      { name: "Guangzhou", lat: 23.1291, lng: 113.2644 },
+      { name: "Hangzhou", lat: 30.2741, lng: 120.1551 }
+    ],
     beautifulPlaces: [
       { name: "Great Wall", image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=400&q=80", lat: 40.4319, lng: 116.5704, desc: "Ancient defensive wall" },
       { name: "Forbidden City", image: "https://images.unsplash.com/photo-1570889922376-2d7c27a777a4?w=400&q=80", lat: 39.9163, lng: 116.3972, desc: "Imperial palace complex" },
@@ -279,7 +340,13 @@ const countryData = {
     naturalBeauty: "Great Wall, Zhangjiajie Avatar mountains, Guilin karsts"
   },
   "TH": {
-    popularCities: ["Bangkok", "Phuket", "Chiang Mai", "Pattaya", "Krabi"],
+    popularCities: [
+      { name: "Bangkok", lat: 13.7563, lng: 100.5018 },
+      { name: "Phuket", lat: 7.8804, lng: 98.3923 },
+      { name: "Chiang Mai", lat: 18.7883, lng: 98.9853 },
+      { name: "Pattaya", lat: 12.9273, lng: 100.8824 },
+      { name: "Krabi", lat: 8.0863, lng: 98.9063 }
+    ],
     beautifulPlaces: [
       { name: "Grand Palace", image: "https://images.unsplash.com/photo-1528181304800-259b08848526?w=400&q=80", lat: 13.7500, lng: 100.4915, desc: "Stunning royal palace" },
       { name: "Phi Phi Islands", image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=400&q=80", lat: 7.7407, lng: 98.7784, desc: "Paradise islands" },
@@ -291,7 +358,13 @@ const countryData = {
     naturalBeauty: "Phi Phi Islands, Thai beaches, Mountain temples"
   },
   "CA": {
-    popularCities: ["Toronto", "Vancouver", "Montreal", "Calgary", "Ottawa"],
+    popularCities: [
+      { name: "Toronto", lat: 43.6532, lng: -79.3832 },
+      { name: "Vancouver", lat: 49.2827, lng: -123.1207 },
+      { name: "Montreal", lat: 45.5017, lng: -73.5673 },
+      { name: "Calgary", lat: 51.0447, lng: -114.0719 },
+      { name: "Ottawa", lat: 45.4215, lng: -75.6972 }
+    ],
     beautifulPlaces: [
       { name: "Niagara Falls", image: "https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=400&q=80", lat: 43.0896, lng: -79.0849, desc: "Massive waterfalls" },
       { name: "Banff National Park", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80", lat: 51.1784, lng: -115.5708, desc: "Stunning Rocky Mountains" },
@@ -303,7 +376,13 @@ const countryData = {
     naturalBeauty: "Banff, Niagara Falls, Rocky Mountains"
   },
   "MX": {
-    popularCities: ["Mexico City", "Cancun", "Guadalajara", "Playa del Carmen", "Oaxaca"],
+    popularCities: [
+      { name: "Mexico City", lat: 19.4326, lng: -99.1332 },
+      { name: "Cancun", lat: 21.1619, lng: -86.8515 },
+      { name: "Guadalajara", lat: 20.6597, lng: -103.3496 },
+      { name: "Playa del Carmen", lat: 20.6296, lng: -87.0739 },
+      { name: "Oaxaca", lat: 17.0732, lng: -96.7266 }
+    ],
     beautifulPlaces: [
       { name: "Chichen Itza", image: "https://images.unsplash.com/photo-1518638150340-f706e86654de?w=400&q=80", lat: 20.6843, lng: -88.5678, desc: "Ancient Mayan pyramid" },
       { name: "Teotihuacan", image: "https://images.unsplash.com/photo-1572518240755-c98096b24d2a?w=400&q=80", lat: 19.6926, lng: -98.8031, desc: "Ancient Aztec ruins" },
@@ -315,7 +394,13 @@ const countryData = {
     naturalBeauty: "Cancun beaches, Copper Canyon, Sierra Gorda"
   },
   "BR": {
-    popularCities: ["Rio de Janeiro", "São Paulo", "Brasília", "Salvador", "Foz do Iguaçu"],
+    popularCities: [
+      { name: "Rio de Janeiro", lat: -22.9068, lng: -43.1729 },
+      { name: "São Paulo", lat: -23.5505, lng: -46.6333 },
+      { name: "Brasília", lat: -15.8267, lng: -47.9218 },
+      { name: "Salvador", lat: -12.9714, lng: -38.5014 },
+      { name: "Foz do Iguaçu", lat: -25.5469, lng: -54.5882 }
+    ],
     beautifulPlaces: [
       { name: "Christ the Redeemer", image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=400&q=80", lat: -22.9519, lng: -43.2105, desc: "Iconic statue over Rio" },
       { name: "Iguazu Falls", image: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=400&q=80", lat: -25.6953, lng: -54.4367, desc: "Massive waterfall system" },
@@ -327,7 +412,13 @@ const countryData = {
     naturalBeauty: "Amazon Rainforest, Iguazu Falls, Rio beaches"
   },
   "NL": {
-    popularCities: ["Amsterdam", "Rotterdam", "The Hague", "Utrecht", "Delft"],
+    popularCities: [
+      { name: "Amsterdam", lat: 52.3676, lng: 4.9041 },
+      { name: "Rotterdam", lat: 51.9244, lng: 4.4777 },
+      { name: "The Hague", lat: 52.0705, lng: 4.3007 },
+      { name: "Utrecht", lat: 52.0907, lng: 5.1214 },
+      { name: "Delft", lat: 52.0116, lng: 4.3571 }
+    ],
     beautifulPlaces: [
       { name: "Keukenhof", image: "https://images.unsplash.com/photo-1584143976662-8e75a7e17e9c?w=400&q=80", lat: 52.2695, lng: 4.5462, desc: "World's largest flower garden" },
       { name: "Anne Frank House", image: "https://images.unsplash.com/photo-1584143976662-8e75a7e17e9c?w=400&q=80", lat: 52.3742, lng: 4.8910, desc: "Historic WWII museum" },
@@ -339,7 +430,9 @@ const countryData = {
     naturalBeauty: "Keukenhof gardens, Tulip fields, Canals"
   },
   "SG": {
-    popularCities: ["Singapore"],
+    popularCities: [
+      { name: "Singapore", lat: 1.3521, lng: 103.8198 }
+    ],
     beautifulPlaces: [
       { name: "Marina Bay Sands", image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400&q=80", lat: 1.2838, lng: 103.8591, desc: "Iconic hotel with rooftop pool" },
       { name: "Gardens by the Bay", image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400&q=80", lat: 1.2816, lng: 103.8636, desc: "Supertree Grove" },
@@ -351,7 +444,13 @@ const countryData = {
     naturalBeauty: "Gardens by the Bay, Sentosa beaches"
   },
   "AE": {
-    popularCities: ["Dubai", "Abu Dhabi", "Sharjah", "Al Ain", "Ras Al Khaimah"],
+    popularCities: [
+      { name: "Dubai", lat: 25.2048, lng: 55.2708 },
+      { name: "Abu Dhabi", lat: 24.4539, lng: 54.3773 },
+      { name: "Sharjah", lat: 25.3463, lng: 55.4209 },
+      { name: "Al Ain", lat: 24.2075, lng: 55.7447 },
+      { name: "Ras Al Khaimah", lat: 25.7895, lng: 55.9432 }
+    ],
     beautifulPlaces: [
       { name: "Burj Khalifa", image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&q=80", lat: 25.1972, lng: 55.2744, desc: "World's tallest building" },
       { name: "Sheikh Zayed Mosque", image: "https://images.unsplash.com/photo-1548546738-8509cb246ed3?w=400&q=80", lat: 24.4128, lng: 54.4741, desc: "Stunning white mosque" },
@@ -363,7 +462,13 @@ const countryData = {
     naturalBeauty: "Desert dunes, Palm Jumeirah, Modern skyline"
   },
   "EG": {
-    popularCities: ["Cairo", "Alexandria", "Luxor", "Aswan", "Sharm El Sheikh"],
+    popularCities: [
+      { name: "Cairo", lat: 30.0444, lng: 31.2357 },
+      { name: "Alexandria", lat: 31.2001, lng: 29.9187 },
+      { name: "Luxor", lat: 25.6872, lng: 32.6396 },
+      { name: "Aswan", lat: 24.0889, lng: 32.8998 },
+      { name: "Sharm El Sheikh", lat: 27.8508, lng: 34.8933 }
+    ],
     beautifulPlaces: [
       { name: "Pyramids of Giza", image: "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=400&q=80", lat: 29.9792, lng: 31.1342, desc: "Ancient wonders of the world" },
       { name: "Luxor Temple", image: "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=80", lat: 25.6872, lng: 32.6396, desc: "Ancient Egyptian temple" },
@@ -375,7 +480,13 @@ const countryData = {
     naturalBeauty: "Red Sea coral reefs, Nile Valley, Desert"
   },
   "KR": {
-    popularCities: ["Seoul", "Busan", "Incheon", "Jeju Island", "Daegu"],
+    popularCities: [
+      { name: "Seoul", lat: 37.5665, lng: 126.9780 },
+      { name: "Busan", lat: 35.1796, lng: 129.0756 },
+      { name: "Incheon", lat: 37.4563, lng: 126.7052 },
+      { name: "Jeju Island", lat: 33.4996, lng: 126.5312 },
+      { name: "Daegu", lat: 35.8714, lng: 128.6014 }
+    ],
     beautifulPlaces: [
       { name: "Bukchon Hanok", image: "https://images.unsplash.com/photo-1601823984263-b87b59798b70?w=400&q=80", lat: 37.5796, lng: 126.9830, desc: "Traditional Korean houses" },
       { name: "Gyeongbokgung", image: "https://images.unsplash.com/photo-1601823984263-b87b59798b70?w=400&q=80", lat: 37.5769, lng: 126.9789, desc: "Grand palace" },
@@ -387,7 +498,13 @@ const countryData = {
     naturalBeauty: "Jeju Island, Jirisan mountains, DMZ"
   },
   "CH": {
-    popularCities: ["Zurich", "Geneva", "Bern", "Lucerne", "Interlaken"],
+    popularCities: [
+      { name: "Zurich", lat: 47.3769, lng: 8.5417 },
+      { name: "Geneva", lat: 46.2044, lng: 6.1432 },
+      { name: "Bern", lat: 46.9480, lng: 7.4474 },
+      { name: "Lucerne", lat: 47.0502, lng: 8.3093 },
+      { name: "Interlaken", lat: 46.6863, lng: 7.8632 }
+    ],
     beautifulPlaces: [
       { name: "Matterhorn", image: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=400&q=80", lat: 45.9766, lng: 7.6585, desc: "Iconic pyramid peak" },
       { name: "Jungfrau", image: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=400&q=80", lat: 46.5488, lng: 7.9666, desc: "Famous alpine peak" },
@@ -550,13 +667,18 @@ export default function App() {
 
   const getCountryDetails = (countryCode) => {
     return countryData[countryCode] || {
-      popularCities: ["Capital City", "Major City", "Coastal City", "Mountain City"],
+      popularCities: [
+        { name: "Capital City", lat: countryCode ? 0 : 0, lng: 0 },
+        { name: "Major City", lat: 0, lng: 0 },
+        { name: "Coastal City", lat: 0, lng: 0 },
+        { name: "Mountain City", lat: 0, lng: 0 }
+      ],
       beautifulPlaces: [
-        { name: "Historic Old Town", image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&q=80" },
-        { name: "National Park", image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=80" },
-        { name: "Ancient Ruins", image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=400&q=80" },
-        { name: "Mountain Range", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" },
-        { name: "Beautiful Beach", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" }
+        { name: "Historic Old Town", image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&q=80", lat: 0, lng: 0, desc: "Historic old town" },
+        { name: "National Park", image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=80", lat: 0, lng: 0, desc: "Beautiful national park" },
+        { name: "Ancient Ruins", image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=400&q=80", lat: 0, lng: 0, desc: "Ancient ruins" },
+        { name: "Mountain Range", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80", lat: 0, lng: 0, desc: "Mountain range" },
+        { name: "Beautiful Beach", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80", lat: 0, lng: 0, desc: "Beautiful beach" }
       ],
       popularDishes: ["Local Specialty", "Traditional Dish", "Street Food", "Must-Try Dessert"],
       naturalBeauty: "Stunning natural landscapes throughout the country"
@@ -577,7 +699,6 @@ export default function App() {
       setSelectedPlace(place);
       setDestination({ lat: place.lat, lng: place.lng, label: place.name });
       setShowMap(true);
-      setShowCountryDetails(false);
     }
   };
 
@@ -780,17 +901,55 @@ export default function App() {
               }}
             >
               {origin?.lat && <Marker position={{ lat: origin.lat, lng: origin.lng }} label="A" />}
-              {(destination?.lat || selectedCountry?.lat) && <Marker position={{ lat: (destination?.lat || selectedPlace?.lat || selectedCountry.lat), lng: (destination?.lng || selectedPlace?.lng || selectedCountry.lng) }} label={destination?.lat || selectedPlace?.lat ? "B" : "📍"} />}
+              
+              {selectedCountry?.details && !selectedPlace?.lat && (
+                <>
+                  {selectedCountry.details.popularCities?.map((city, idx) => (
+                    city.lat !== 0 && (
+                      <Marker
+                        key={`city-${idx}`}
+                        position={{ lat: city.lat, lng: city.lng }}
+                        title={city.name}
+                        onClick={() => setSelectedPlace({ name: city.name, lat: city.lat, lng: city.lng, desc: `Popular city in ${selectedCountry.name}` })}
+                        icon={{
+                          url: "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#2563eb"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>'),
+                          scaledSize: new window.google.maps.Size(30, 30)
+                        }}
+                      />
+                    )
+                  ))}
+                  {selectedCountry.details.beautifulPlaces?.map((place, idx) => (
+                    place.lat && (
+                      <Marker
+                        key={`place-${idx}`}
+                        position={{ lat: place.lat, lng: place.lng }}
+                        title={place.name}
+                        onClick={() => setSelectedPlace(place)}
+                        icon={{
+                          url: "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#16a34a"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>'),
+                          scaledSize: new window.google.maps.Size(30, 30)
+                        }}
+                      />
+                    )
+                  ))}
+                </>
+              )}
+              
+              {(destination?.lat || selectedCountry?.lat) && !selectedCountry?.details && <Marker position={{ lat: (destination?.lat || selectedPlace?.lat || selectedCountry.lat), lng: (destination?.lng || selectedPlace?.lng || selectedCountry.lng) }} label={destination?.lat || selectedPlace?.lat ? "B" : "📍"} />}
+              
               {selectedPlace?.lat && (
-                <InfoWindow
-                  position={{ lat: selectedPlace.lat, lng: selectedPlace.lng }}
-                  onCloseClick={() => setSelectedPlace(null)}
-                >
-                  <div style={{ padding: "8px", maxWidth: "200px" }}>
-                    <h3 style={{ fontSize: "14px", fontWeight: "bold", margin: "0 0 8px 0", color: "#1f2937" }}>{selectedPlace.name}</h3>
-                    <p style={{ fontSize: "12px", margin: 0, color: "#4b5563", lineHeight: 1.4 }}>{selectedPlace.desc}</p>
-                  </div>
-                </InfoWindow>
+                <>
+                  <Marker position={{ lat: selectedPlace.lat, lng: selectedPlace.lng }} label="📍" />
+                  <InfoWindow
+                    position={{ lat: selectedPlace.lat, lng: selectedPlace.lng }}
+                    onCloseClick={() => setSelectedPlace(null)}
+                  >
+                    <div style={{ padding: "8px", maxWidth: "200px" }}>
+                      <h3 style={{ fontSize: "14px", fontWeight: "bold", margin: "0 0 8px 0", color: "#1f2937" }}>{selectedPlace.name}</h3>
+                      <p style={{ fontSize: "12px", margin: 0, color: "#4b5563", lineHeight: 1.4 }}>{selectedPlace.desc}</p>
+                    </div>
+                  </InfoWindow>
+                </>
               )}
             </GoogleMap>
           </LoadScript>
@@ -998,9 +1157,17 @@ export default function App() {
               <button onClick={() => setShowCountryDetails(false)} style={{ background: "none", border: "none", fontSize: "24px", cursor: "pointer", color: "#9ca3af" }}>✕</button>
             </div>
             <div style={{ marginBottom: "20px" }}>
-              <h3 style={{ fontSize: "16px", fontWeight: "600", color: "#1f2937", marginBottom: "12px" }}>🏙️ Popular Cities</h3>
+              <h3 style={{ fontSize: "16px", fontWeight: "600", color: "#1f2937", marginBottom: "12px" }}>🏙️ Popular Cities <span style={{fontSize:"12px", fontWeight:400, color:"#6b7280"}}>(Click to view on map)</span></h3>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-                {selectedCountry.details.popularCities.map((city, idx) => (<span key={idx} style={{ backgroundColor: "#f3f4f6", padding: "6px 12px", borderRadius: "16px", fontSize: "13px", color: "#374151" }}>{city}</span>))}
+                {selectedCountry.details.popularCities.map((city, idx) => (
+                  <span 
+                    key={idx} 
+                    onClick={() => handlePlaceSelect({ name: city.name, lat: city.lat, lng: city.lng, desc: `Popular city in ${selectedCountry.name}` })}
+                    style={{ backgroundColor: "#f3f4f6", padding: "6px 12px", borderRadius: "16px", fontSize: "13px", color: "#374151", cursor: "pointer" }}
+                  >
+                    {city.name}
+                  </span>
+                ))}
               </div>
             </div>
             <div style={{ marginBottom: "20px" }}>
