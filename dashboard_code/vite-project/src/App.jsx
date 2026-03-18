@@ -641,6 +641,10 @@ export default function App() {
   ]);
   const [chatInput, setChatInput] = useState("");
   const [isChatLoading, setIsChatLoading] = useState(false);
+  const [chatSize, setChatSize] = useState({ width: 340, height: 420 });
+  const [isResizing, setIsResizing] = useState(false);
+  const [showFullscreenChat, setShowFullscreenChat] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("auth_token");
@@ -751,6 +755,28 @@ export default function App() {
     setEmail("");
     setPassword("");
   };
+
+  const handleChatResize = useCallback((e) => {
+    if (!isResizing) return;
+    const newWidth = Math.max(280, Math.min(600, e.clientX));
+    const newHeight = Math.max(300, Math.min(600, window.innerHeight - e.clientY));
+    setChatSize({ width: newWidth, height: newHeight });
+  }, [isResizing]);
+
+  const stopResize = useCallback(() => {
+    setIsResizing(false);
+  }, []);
+
+  useEffect(() => {
+    if (isResizing) {
+      window.addEventListener('mousemove', handleChatResize);
+      window.addEventListener('mouseup', stopResize);
+      return () => {
+        window.removeEventListener('mousemove', handleChatResize);
+        window.removeEventListener('mouseup', stopResize);
+      };
+    }
+  }, [isResizing, handleChatResize, stopResize]);
 
   const handleSendChat = async () => {
     if (!chatInput.trim() || isChatLoading) return;
@@ -866,7 +892,17 @@ export default function App() {
   return (
     <>
       <style>{printStyles}</style>
-      <div style={styles.container}>
+      <div style={{
+        ...styles.container,
+        ...(isFullscreen ? {
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          zIndex: 9999
+        } : {})
+      }}>
       {/* Map Toggle Button */}
       <button 
         onClick={() => setShowMap(!showMap)}
@@ -874,6 +910,33 @@ export default function App() {
       >
         {showMap ? "🏠" : "🗺️"} {showMap ? "Hide Map" : "Show Map"}
       </button>
+
+      {isFullscreen && (
+        <button 
+          onClick={() => setIsFullscreen(false)}
+          style={{
+            position: "fixed",
+            top: "16px",
+            right: "16px",
+            zIndex: 10000,
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            backgroundColor: "#ef4444",
+            padding: "12px 20px",
+            borderRadius: "24px",
+            border: "none",
+            cursor: "pointer",
+            boxShadow: "0 4px 15px rgba(0,0,0,0.3)",
+            fontSize: "14px",
+            fontWeight: 600,
+            color: "white",
+          }}
+          title="Exit Fullscreen"
+        >
+          ⊠ Exit
+        </button>
+      )}
 
       {/* Map or Background */}
       {showMap ? (
@@ -1020,7 +1083,19 @@ export default function App() {
             <span style={{ fontSize: "24px" }}>💬</span>
           </button>
         ) : (
-          <div style={{ width: "340px", height: "420px", backgroundColor: "white", borderRadius: "16px", boxShadow: "0 10px 40px rgba(0,0,0,0.2)", display: "flex", flexDirection: "column", overflow: "hidden" }}>
+          <div 
+            style={{ 
+              width: `${chatSize.width}px`, 
+              height: showFullscreenChat ? "calc(100vh - 100px)" : `${chatSize.height}px`, 
+              backgroundColor: "white", 
+              borderRadius: "16px", 
+              boxShadow: "0 10px 40px rgba(0,0,0,0.2)", 
+              display: "flex", 
+              flexDirection: "column", 
+              overflow: "hidden",
+              transition: isResizing ? "none" : "all 0.3s ease"
+            }}
+          >
             <div style={{ backgroundColor: "#2563eb", padding: "12px 16px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ fontSize: "24px" }}>🤖</span>
@@ -1029,12 +1104,21 @@ export default function App() {
                   <p style={{ color: "#93c5fd", fontSize: "12px", margin: 0 }}>Online</p>
                 </div>
               </div>
-              <button onClick={() => setShowChat(false)} style={{ background: "none", border: "none", color: "white", fontSize: "20px", cursor: "pointer" }}>✕</button>
+              <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+                <button 
+                  onClick={() => setShowFullscreenChat(!showFullscreenChat)} 
+                  style={{ background: "none", border: "none", color: "white", fontSize: "16px", cursor: "pointer", padding: "4px" }}
+                  title={showFullscreenChat ? "Exit Fullscreen" : "Fullscreen"}
+                >
+                  {showFullscreenChat ? "⊠" : "⛶"}
+                </button>
+                <button onClick={() => { setShowChat(false); setShowFullscreenChat(false); }} style={{ background: "none", border: "none", color: "white", fontSize: "20px", cursor: "pointer" }}>✕</button>
+              </div>
             </div>
             <div style={{ flex: 1, padding: "12px", overflowY: "auto", backgroundColor: "#f9fafb" }}>
               {chatMessages.map((msg, idx) => (
                 <div key={idx} style={{ display: "flex", justifyContent: msg.role === "user" ? "flex-end" : "flex-start", marginBottom: "10px" }}>
-                  <div style={{ maxWidth: "80%", padding: "10px 14px", borderRadius: "16px", backgroundColor: msg.role === "user" ? "#2563eb" : "white", color: msg.role === "user" ? "white" : "#1f2937", fontSize: "13px", lineHeight: 1.4, boxShadow: msg.role === "assistant" ? "0 1px 3px rgba(0,0,0,0.1)" : "none" }}>
+                  <div style={{ maxWidth: "85%", padding: "10px 14px", borderRadius: "16px", backgroundColor: msg.role === "user" ? "#2563eb" : "white", color: msg.role === "user" ? "white" : "#1f2937", fontSize: "13px", lineHeight: 1.4, boxShadow: msg.role === "assistant" ? "0 1px 3px rgba(0,0,0,0.1)" : "none" }}>
                     {msg.content}
                   </div>
                 </div>
@@ -1057,6 +1141,26 @@ export default function App() {
                 <span style={{ color: "white", fontSize: "16px" }}>➤</span>
               </button>
             </div>
+            {!showFullscreenChat && (
+              <div
+                onMouseDown={(e) => { e.preventDefault(); setIsResizing(true); }}
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  right: 0,
+                  width: "20px",
+                  height: "20px",
+                  cursor: "nwse-resize",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "#e5e7eb",
+                  borderBottomRightRadius: "16px",
+                }}
+              >
+                <span style={{ fontSize: "10px", color: "#9ca3af" }}>⤡</span>
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -1139,7 +1243,12 @@ export default function App() {
               )}
               {activeTab === "saved" && <div style={{ textAlign: "center", padding: "32px", color: "#6b7280" }}><p>No saved places</p></div>}
               {activeTab === "history" && <div style={{ textAlign: "center", padding: "32px", color: "#6b7280" }}><p>No trip history</p></div>}
-              {activeTab === "settings" && <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}><button style={{ textAlign: "left", padding: "8px", borderRadius: "4px", border: "none", background: "none", cursor: "pointer", fontSize: "14px" }}>Notifications</button><button style={{ textAlign: "left", padding: "8px", borderRadius: "4px", border: "none", background: "none", cursor: "pointer", fontSize: "14px" }}>Distance Units</button><button style={{ textAlign: "left", padding: "8px", borderRadius: "4px", border: "none", background: "none", cursor: "pointer", fontSize: "14px" }}>About</button></div>}
+              {activeTab === "settings" && <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                <button onClick={() => setIsFullscreen(true)} style={{ textAlign: "left", padding: "8px", borderRadius: "4px", border: "none", background: "none", cursor: "pointer", fontSize: "14px", display: "flex", alignItems: "center", gap: "8px" }}>⛶ Fullscreen Mode</button>
+                <button style={{ textAlign: "left", padding: "8px", borderRadius: "4px", border: "none", background: "none", cursor: "pointer", fontSize: "14px" }}>Notifications</button>
+                <button style={{ textAlign: "left", padding: "8px", borderRadius: "4px", border: "none", background: "none", cursor: "pointer", fontSize: "14px" }}>Distance Units</button>
+                <button style={{ textAlign: "left", padding: "8px", borderRadius: "4px", border: "none", background: "none", cursor: "pointer", fontSize: "14px" }}>About</button>
+              </div>}
             </div>
           </div>
         )}
