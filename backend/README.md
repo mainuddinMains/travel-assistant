@@ -21,12 +21,10 @@ pip install -r requirements.txt
 
 ### 2. Configure OpenAI API Key
 
-Set your OpenAI API key in the `chatgpt_JSON.py` file:
+Set your OpenAI API key in `backend/api.env` or your shell environment:
 
-```python
-client = OpenAI(
-  api_key="your-openai-api-key-here"
-)
+```env
+OPENAI_API_KEY=your-openai-api-key-here
 ```
 
 ### 3. Start the Server
@@ -215,6 +213,5 @@ The server provides detailed console logs for debugging:
 - API requests and responses
 - OpenAI API calls
 - Error messages and stack traces
-
 
 

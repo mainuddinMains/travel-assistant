@@ -1,8 +1,27 @@
+import os
+from pathlib import Path
+
+from dotenv import load_dotenv
 from openai import OpenAI
 
-client = OpenAI(
-  api_key="***REMOVED***"
-)
+_client = None
+
+
+def get_client() -> OpenAI:
+  global _client
+
+  if _client is None:
+    load_dotenv(dotenv_path=Path(__file__).parent / "api.env")
+    api_key = os.getenv("OPENAI_API_KEY")
+
+    if not api_key:
+      raise RuntimeError(
+        "OPENAI_API_KEY not found. Add it to backend/api.env or your shell environment."
+      )
+
+    _client = OpenAI(api_key=api_key)
+
+  return _client
 
 CHAT_SYSTEM = """
 You are TripRoute Chat, a friendly routing assistant.
@@ -33,6 +52,7 @@ IMPORTANT
 messages_chat = [{"role": "system", "content": CHAT_SYSTEM}]
 
 def chat_reply_streaming(user_text: str) -> str:
+  client = get_client()
   messages_chat.append({"role": "user", "content": user_text})
   
   with client.responses.create(
