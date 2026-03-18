@@ -108,3 +108,6 @@ Thumbs.db
 
 # Local AI tooling
 .claude/
+
+# Local frontend config overrides
+Dashboard/frontend_chat/config.local.js

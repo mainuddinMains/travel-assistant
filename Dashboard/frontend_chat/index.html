@@ -1579,6 +1579,7 @@
 
     <!-- Load configuration -->
     <script src="config.js"></script>
+    <script src="config.local.js"></script>
 
     <!-- Load Trip Meta module -->
     <script src="tripmeta.js"></script>
@@ -1610,7 +1611,7 @@
     <script>
         // Initialize on page load
         window.addEventListener('load', () => {
-            loadGoogleMapsAPI();  // Load Google Maps with API key from config.js
+            loadGoogleMapsAPI();  // Load Google Maps with key from config.js or config.local.js
             initChat();
             setupChatEventListeners();
         });
