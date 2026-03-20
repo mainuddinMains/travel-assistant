@@ -896,9 +896,8 @@ export default function App() {
 
   const handleStateSelect = (state) => {
     setSelectedState(state);
+    setStateWeather(null);
     fetchStateWeather(state);
-    setShowMap(true);
-    setDestination({ lat: state.lat, lng: state.lng, label: state.name });
   };
 
   const getLocalRideApp = (countryCode) => {
@@ -1678,25 +1677,23 @@ export default function App() {
             })()}
 
             {/* US States Section */}
-            {selectedCountry.code === "US" && selectedCountry.details.states && (() => {
-              const filtered = selectedCountry.details.states.filter(s =>
-                s.name.toLowerCase().includes(stateSearch.toLowerCase())
-              );
-              return (
-                <div style={{ marginTop: "16px" }}>
-                  <h3 style={{ fontSize: "16px", fontWeight: "600", color: "#1f2937", marginBottom: "4px" }}>🗺️ Explore All 50 States</h3>
-                  <p style={{ fontSize: "12px", color: "#6b7280", margin: "0 0 10px" }}>Click any state to see live current weather</p>
+            {selectedCountry.code === "US" && selectedCountry.details.states && (
+              <div style={{ marginTop: "16px" }}>
+                <h3 style={{ fontSize: "16px", fontWeight: "600", color: "#1f2937", marginBottom: "4px" }}>🗺️ Explore All 50 States</h3>
+                <p style={{ fontSize: "12px", color: "#6b7280", margin: "0 0 10px" }}>Click any state to see live current weather</p>
 
-                  <input
-                    type="text"
-                    placeholder="🔍 Search states..."
-                    value={stateSearch}
-                    onChange={e => setStateSearch(e.target.value)}
-                    style={{ width: "100%", padding: "8px 12px", borderRadius: "8px", border: "1px solid #d1d5db", fontSize: "13px", marginBottom: "10px", boxSizing: "border-box", outline: "none" }}
-                  />
+                <input
+                  type="text"
+                  placeholder="🔍 Search states..."
+                  value={stateSearch}
+                  onChange={e => setStateSearch(e.target.value)}
+                  style={{ width: "100%", padding: "8px 12px", borderRadius: "8px", border: "1px solid #d1d5db", fontSize: "13px", marginBottom: "10px", boxSizing: "border-box", outline: "none" }}
+                />
 
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", maxHeight: "180px", overflowY: "auto", marginBottom: "12px" }}>
-                    {filtered.map((state) => (
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", maxHeight: "180px", overflowY: "auto", marginBottom: "12px" }}>
+                  {selectedCountry.details.states
+                    .filter(s => s.name.toLowerCase().includes(stateSearch.toLowerCase()))
+                    .map((state) => (
                       <button
                         key={state.code}
                         onClick={() => handleStateSelect(state)}
@@ -1712,95 +1709,100 @@ export default function App() {
                         {state.name}
                       </button>
                     ))}
-                  </div>
-
-                  {/* State weather card */}
-                  {selectedState && (
-                    <div style={{ backgroundColor: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "16px", overflow: "hidden" }}>
-                      {/* State header */}
-                      <div style={{ background: "linear-gradient(135deg, #1e40af, #3b82f6)", padding: "14px 16px", display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
-                        <div>
-                          <p style={{ color: "white", fontWeight: 700, fontSize: "16px", margin: 0 }}>{selectedState.name}</p>
-                          <p style={{ color: "#bfdbfe", fontSize: "12px", margin: "2px 0 0" }}>Capital: {selectedState.capital}</p>
-                        </div>
-                        <button onClick={() => setSelectedState(null)} style={{ background: "rgba(255,255,255,0.2)", border: "none", color: "white", borderRadius: "50%", width: "26px", height: "26px", cursor: "pointer", fontSize: "13px" }}>✕</button>
-                      </div>
-
-                      <div style={{ padding: "14px 16px" }}>
-                        {stateWeatherLoading && (
-                          <div style={{ textAlign: "center", padding: "20px", color: "#6b7280", fontSize: "14px" }}>
-                            ⏳ Fetching live weather...
-                          </div>
-                        )}
-
-                        {!stateWeatherLoading && stateWeather?.error && (
-                          <p style={{ color: "#dc2626", fontSize: "13px", textAlign: "center" }}>⚠️ Could not fetch weather. Check your connection.</p>
-                        )}
-
-                        {!stateWeatherLoading && stateWeather?.current_weather && (() => {
-                          const cw = stateWeather.current_weather;
-                          const wi = getWeatherInfo(cw.weathercode);
-                          const maxT = stateWeather.daily?.temperature_2m_max?.[0];
-                          const minT = stateWeather.daily?.temperature_2m_min?.[0];
-                          const precip = stateWeather.daily?.precipitation_sum?.[0];
-                          const maxWind = stateWeather.daily?.windspeed_10m_max?.[0];
-                          const toF = (c) => c !== undefined ? `${Math.round(c * 9/5 + 32)}°F` : "—";
-                          return (
-                            <>
-                              {/* Current weather hero */}
-                              <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "14px", padding: "12px", backgroundColor: "white", borderRadius: "12px", boxShadow: "0 1px 4px rgba(0,0,0,0.08)" }}>
-                                <span style={{ fontSize: "48px", lineHeight: 1 }}>{wi.icon}</span>
-                                <div>
-                                  <p style={{ fontSize: "28px", fontWeight: 800, color: "#111827", margin: 0 }}>{toF(cw.temperature)}</p>
-                                  <p style={{ fontSize: "13px", color: "#6b7280", margin: "2px 0 0" }}>{wi.desc} · {cw.is_day ? "Daytime" : "Nighttime"}</p>
-                                </div>
-                                <div style={{ marginLeft: "auto", textAlign: "right" }}>
-                                  <p style={{ fontSize: "12px", color: "#374151", margin: 0 }}>💨 {cw.windspeed} km/h</p>
-                                  {precip !== null && <p style={{ fontSize: "12px", color: "#374151", margin: "4px 0 0" }}>🌧️ {precip} mm</p>}
-                                </div>
-                              </div>
-
-                              {/* Today's high/low */}
-                              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "14px" }}>
-                                <div style={{ backgroundColor: "#fef3c7", borderRadius: "10px", padding: "10px", textAlign: "center" }}>
-                                  <p style={{ fontSize: "11px", color: "#92400e", margin: "0 0 2px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Today High</p>
-                                  <p style={{ fontSize: "18px", fontWeight: 700, color: "#b45309", margin: 0 }}>{toF(maxT)}</p>
-                                </div>
-                                <div style={{ backgroundColor: "#eff6ff", borderRadius: "10px", padding: "10px", textAlign: "center" }}>
-                                  <p style={{ fontSize: "11px", color: "#1e40af", margin: "0 0 2px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Today Low</p>
-                                  <p style={{ fontSize: "18px", fontWeight: 700, color: "#2563eb", margin: 0 }}>{toF(minT)}</p>
-                                </div>
-                              </div>
-
-                              {/* Best months */}
-                              <div style={{ backgroundColor: "#f0fdf4", borderRadius: "10px", padding: "10px 12px", marginBottom: "10px" }}>
-                                <p style={{ fontSize: "12px", color: "#166534", fontWeight: 600, margin: "0 0 6px" }}>🗓️ Best Months to Visit</p>
-                                <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
-                                  {selectedState.bestMonths.map(m => (
-                                    <span key={m} style={{ backgroundColor: "#16a34a", color: "white", padding: "3px 10px", borderRadius: "12px", fontSize: "12px", fontWeight: 600 }}>{m}</span>
-                                  ))}
-                                </div>
-                              </div>
-
-                              {/* Description */}
-                              <p style={{ fontSize: "13px", color: "#374151", margin: "0 0 12px", lineHeight: 1.5 }}>{selectedState.desc}</p>
-
-                              {/* View on map button */}
-                              <button
-                                onClick={() => handlePlaceSelect({ name: selectedState.name, lat: selectedState.lat, lng: selectedState.lng, desc: selectedState.desc })}
-                                style={{ width: "100%", backgroundColor: "#2563eb", color: "white", border: "none", borderRadius: "10px", padding: "10px", fontSize: "13px", fontWeight: 600, cursor: "pointer" }}
-                              >
-                                🗺️ View {selectedState.name} on Map
-                              </button>
-                            </>
-                          );
-                        })()}
-                      </div>
-                    </div>
-                  )}
                 </div>
-              );
-            })()}
+
+                {/* State weather card */}
+                {selectedState && (
+                  <div style={{ backgroundColor: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "16px", overflow: "hidden" }}>
+                    {/* Header */}
+                    <div style={{ background: "linear-gradient(135deg, #1e40af, #3b82f6)", padding: "14px 16px", display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                      <div>
+                        <p style={{ color: "white", fontWeight: 700, fontSize: "16px", margin: 0 }}>{selectedState.name}</p>
+                        <p style={{ color: "#bfdbfe", fontSize: "12px", margin: "2px 0 0" }}>Capital: {selectedState.capital}</p>
+                      </div>
+                      <button onClick={() => { setSelectedState(null); setStateWeather(null); }} style={{ background: "rgba(255,255,255,0.2)", border: "none", color: "white", borderRadius: "50%", width: "26px", height: "26px", cursor: "pointer", fontSize: "13px" }}>✕</button>
+                    </div>
+
+                    <div style={{ padding: "14px 16px" }}>
+                      {/* Loading */}
+                      {stateWeatherLoading && (
+                        <div style={{ textAlign: "center", padding: "20px", color: "#6b7280", fontSize: "14px" }}>
+                          ⏳ Fetching live weather...
+                        </div>
+                      )}
+
+                      {/* Error */}
+                      {!stateWeatherLoading && stateWeather && stateWeather.error && (
+                        <p style={{ color: "#dc2626", fontSize: "13px", textAlign: "center", padding: "12px 0" }}>⚠️ Could not fetch weather. Check your connection.</p>
+                      )}
+
+                      {/* Weather data */}
+                      {!stateWeatherLoading && stateWeather && stateWeather.current_weather && (
+                        <div>
+                          {/* Current weather hero */}
+                          <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "14px", padding: "12px", backgroundColor: "white", borderRadius: "12px", boxShadow: "0 1px 4px rgba(0,0,0,0.08)" }}>
+                            <span style={{ fontSize: "48px", lineHeight: 1 }}>{getWeatherInfo(stateWeather.current_weather.weathercode).icon}</span>
+                            <div>
+                              <p style={{ fontSize: "28px", fontWeight: 800, color: "#111827", margin: 0 }}>
+                                {Math.round(stateWeather.current_weather.temperature * 9 / 5 + 32)}°F
+                              </p>
+                              <p style={{ fontSize: "13px", color: "#6b7280", margin: "2px 0 0" }}>
+                                {getWeatherInfo(stateWeather.current_weather.weathercode).desc} · {stateWeather.current_weather.is_day ? "Daytime" : "Nighttime"}
+                              </p>
+                            </div>
+                            <div style={{ marginLeft: "auto", textAlign: "right" }}>
+                              <p style={{ fontSize: "12px", color: "#374151", margin: 0 }}>💨 {stateWeather.current_weather.windspeed} km/h</p>
+                              {stateWeather.daily && stateWeather.daily.precipitation_sum && (
+                                <p style={{ fontSize: "12px", color: "#374151", margin: "4px 0 0" }}>🌧️ {stateWeather.daily.precipitation_sum[0]} mm</p>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* High / Low */}
+                          {stateWeather.daily && (
+                            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "14px" }}>
+                              <div style={{ backgroundColor: "#fef3c7", borderRadius: "10px", padding: "10px", textAlign: "center" }}>
+                                <p style={{ fontSize: "11px", color: "#92400e", margin: "0 0 2px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Today High</p>
+                                <p style={{ fontSize: "18px", fontWeight: 700, color: "#b45309", margin: 0 }}>
+                                  {stateWeather.daily.temperature_2m_max ? Math.round(stateWeather.daily.temperature_2m_max[0] * 9 / 5 + 32) + "°F" : "—"}
+                                </p>
+                              </div>
+                              <div style={{ backgroundColor: "#eff6ff", borderRadius: "10px", padding: "10px", textAlign: "center" }}>
+                                <p style={{ fontSize: "11px", color: "#1e40af", margin: "0 0 2px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Today Low</p>
+                                <p style={{ fontSize: "18px", fontWeight: 700, color: "#2563eb", margin: 0 }}>
+                                  {stateWeather.daily.temperature_2m_min ? Math.round(stateWeather.daily.temperature_2m_min[0] * 9 / 5 + 32) + "°F" : "—"}
+                                </p>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Best months */}
+                          <div style={{ backgroundColor: "#f0fdf4", borderRadius: "10px", padding: "10px 12px", marginBottom: "10px" }}>
+                            <p style={{ fontSize: "12px", color: "#166534", fontWeight: 600, margin: "0 0 6px" }}>🗓️ Best Months to Visit</p>
+                            <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
+                              {selectedState.bestMonths.map(m => (
+                                <span key={m} style={{ backgroundColor: "#16a34a", color: "white", padding: "3px 10px", borderRadius: "12px", fontSize: "12px", fontWeight: 600 }}>{m}</span>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Description */}
+                          <p style={{ fontSize: "13px", color: "#374151", margin: "0 0 12px", lineHeight: 1.5 }}>{selectedState.desc}</p>
+
+                          {/* View on map */}
+                          <button
+                            onClick={() => handlePlaceSelect({ name: selectedState.name, lat: selectedState.lat, lng: selectedState.lng, desc: selectedState.desc })}
+                            style={{ width: "100%", backgroundColor: "#2563eb", color: "white", border: "none", borderRadius: "10px", padding: "10px", fontSize: "13px", fontWeight: 600, cursor: "pointer" }}
+                          >
+                            🗺️ View {selectedState.name} on Map
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       )}
