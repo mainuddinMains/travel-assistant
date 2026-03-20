@@ -175,7 +175,76 @@ const countryData = {
       { name: "Golden Gate", image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=400&q=80", lat: 37.8199, lng: -122.4783, desc: "Iconic red suspension bridge in San Francisco" }
     ],
     popularDishes: ["Hamburgers", "Hot Dogs", "BBQ Ribs", "Apple Pie", "Cheeseburger"],
-    naturalBeauty: "Grand Canyon, Yellowstone, Yosemite, Rocky Mountains"
+    naturalBeauty: "Grand Canyon, Yellowstone, Yosemite, Rocky Mountains",
+    bestTimeToVisit: {
+      tip: "Spring (Mar–May) and Fall (Sep–Nov) offer the best weather with mild temperatures, fewer crowds, and lower hotel prices across most of the US.",
+      byMonth: [
+        { month: "Jan", rating: "avoid",  temp: "-2°–8°C",  icon: "❄️", desc: "Cold & snowy in north. Mild in Florida & California. Great for skiing in Colorado." },
+        { month: "Feb", rating: "avoid",  temp: "0°–10°C",  icon: "🌨️", desc: "Still cold nationwide. Valentine's travel peaks prices in big cities." },
+        { month: "Mar", rating: "best",   temp: "7°–18°C",  icon: "🌸", desc: "Spring begins! Cherry blossoms in DC. Mild weather before summer crowds." },
+        { month: "Apr", rating: "best",   temp: "11°–22°C", icon: "🌼", desc: "Perfect weather. National parks start opening. Great for road trips." },
+        { month: "May", rating: "best",   temp: "16°–27°C", icon: "☀️", desc: "Warm & sunny. Beaches start up. Best month before peak season prices." },
+        { month: "Jun", rating: "good",   temp: "22°–32°C", icon: "🌤️", desc: "Summer kicks off. Beaches & theme parks buzz. Book well in advance." },
+        { month: "Jul", rating: "fair",   temp: "25°–35°C", icon: "🔥", desc: "Peak summer — hot, humid, and crowded. High prices. Great for Alaska." },
+        { month: "Aug", rating: "fair",   temp: "24°–34°C", icon: "🌊", desc: "Hot everywhere. Hurricane risk on Gulf Coast. Still beach season." },
+        { month: "Sep", rating: "best",   temp: "18°–29°C", icon: "🍂", desc: "Crowds drop, prices fall. Warm days, cool nights. Excellent nationwide." },
+        { month: "Oct", rating: "best",   temp: "12°–22°C", icon: "🍁", desc: "Fall foliage in New England. Perfect hiking. Lower costs. Highly recommended." },
+        { month: "Nov", rating: "good",   temp: "5°–15°C",  icon: "🌥️", desc: "Thanksgiving travel rush. Weather cools. Good deals early in the month." },
+        { month: "Dec", rating: "fair",   temp: "0°–10°C",  icon: "🎄", desc: "Festive season! NYC & Chicago magical. Cold in north, warm in Miami & LA." },
+      ]
+    },
+    states: [
+      { name: "Alabama",        code: "AL", lat: 32.3617,  lng: -86.2792,  capital: "Montgomery",   bestMonths: ["Mar","Apr","Oct","Nov"], desc: "Warm subtropical. Spring and fall are ideal; summers are hot and humid." },
+      { name: "Alaska",         code: "AK", lat: 64.2008,  lng: -153.4937, capital: "Juneau",        bestMonths: ["Jun","Jul","Aug"],       desc: "Summer for wildlife & hiking; winter for Northern Lights." },
+      { name: "Arizona",        code: "AZ", lat: 34.0489,  lng: -111.0937, capital: "Phoenix",       bestMonths: ["Mar","Apr","Oct","Nov"], desc: "Desert heat peaks in summer. Spring and fall are perfect." },
+      { name: "Arkansas",       code: "AR", lat: 34.7999,  lng: -92.1994,  capital: "Little Rock",   bestMonths: ["Apr","May","Oct"],       desc: "Mild springs and colorful falls are the highlight." },
+      { name: "California",     code: "CA", lat: 36.7783,  lng: -119.4179, capital: "Sacramento",    bestMonths: ["Apr","May","Sep","Oct"], desc: "Year-round appeal. Coastal areas stay mild; inland heats up in summer." },
+      { name: "Colorado",       code: "CO", lat: 39.5501,  lng: -105.7821, capital: "Denver",        bestMonths: ["Jun","Jul","Aug","Sep"], desc: "Mountain summers are stunning. World-class ski season in winter." },
+      { name: "Connecticut",    code: "CT", lat: 41.6032,  lng: -73.0877,  capital: "Hartford",      bestMonths: ["Sep","Oct"],            desc: "Famous fall foliage. Mild summers and crisp autumn days." },
+      { name: "Delaware",       code: "DE", lat: 38.9108,  lng: -75.5277,  capital: "Dover",         bestMonths: ["May","Jun","Sep"],       desc: "Small state with great beaches. Summer is warm and pleasant." },
+      { name: "Florida",        code: "FL", lat: 27.6648,  lng: -81.5158,  capital: "Tallahassee",   bestMonths: ["Nov","Dec","Jan","Feb","Mar"], desc: "Dry winter season is best. Summer is hot and stormy." },
+      { name: "Georgia",        code: "GA", lat: 32.1656,  lng: -82.9001,  capital: "Atlanta",       bestMonths: ["Mar","Apr","Oct","Nov"], desc: "Warm and sunny. Spring blooms and fall colors are lovely." },
+      { name: "Hawaii",         code: "HI", lat: 19.8968,  lng: -155.5828, capital: "Honolulu",      bestMonths: ["Apr","May","Sep","Oct"], desc: "Year-round paradise. Shoulder seasons avoid crowds and rain." },
+      { name: "Idaho",          code: "ID", lat: 44.0682,  lng: -114.7420, capital: "Boise",         bestMonths: ["Jun","Jul","Aug","Sep"], desc: "Beautiful mountains in summer. Heavy snow in winter." },
+      { name: "Illinois",       code: "IL", lat: 40.6331,  lng: -89.3985,  capital: "Springfield",   bestMonths: ["May","Jun","Sep","Oct"], desc: "Harsh winters. Late spring and early fall are most comfortable." },
+      { name: "Indiana",        code: "IN", lat: 40.2672,  lng: -86.1349,  capital: "Indianapolis",  bestMonths: ["May","Sep","Oct"],       desc: "Pleasant spring and fall. Summers are warm; winters cold." },
+      { name: "Iowa",           code: "IA", lat: 41.8780,  lng: -93.0977,  capital: "Des Moines",    bestMonths: ["May","Jun","Sep","Oct"], desc: "Extreme winters and summers. Mild spring and fall are best." },
+      { name: "Kansas",         code: "KS", lat: 39.0119,  lng: -98.4842,  capital: "Topeka",        bestMonths: ["Apr","May","Sep","Oct"], desc: "Great Plains weather. Spring wildflowers and fall skies are beautiful." },
+      { name: "Kentucky",       code: "KY", lat: 37.8393,  lng: -84.2700,  capital: "Frankfort",     bestMonths: ["Apr","May","Oct"],       desc: "Rolling bluegrass hills. Spring and fall are mild and scenic." },
+      { name: "Louisiana",      code: "LA", lat: 31.2441,  lng: -92.1451,  capital: "Baton Rouge",   bestMonths: ["Oct","Nov","Mar","Apr"], desc: "Hot and humid summers. Mardi Gras in late winter is iconic." },
+      { name: "Maine",          code: "ME", lat: 45.2538,  lng: -69.4455,  capital: "Augusta",       bestMonths: ["Jun","Jul","Aug","Sep"], desc: "Lobster season and fall foliage. Winters are harsh and snowy." },
+      { name: "Maryland",       code: "MD", lat: 39.0458,  lng: -76.6413,  capital: "Annapolis",     bestMonths: ["Apr","May","Sep","Oct"], desc: "Chesapeake Bay area. Spring blooms and fall harvest are superb." },
+      { name: "Massachusetts",  code: "MA", lat: 42.4072,  lng: -71.3824,  capital: "Boston",        bestMonths: ["Jun","Sep","Oct"],       desc: "Boston is vibrant year-round. Fall foliage is world-class." },
+      { name: "Michigan",       code: "MI", lat: 44.3148,  lng: -85.6024,  capital: "Lansing",       bestMonths: ["Jun","Jul","Aug"],       desc: "Great Lakes summers are wonderful. Cold and snowy winters." },
+      { name: "Minnesota",      code: "MN", lat: 46.7296,  lng: -94.6859,  capital: "St. Paul",      bestMonths: ["Jun","Jul","Aug"],       desc: "Short but glorious summers. Brutal winters; amazing for skiing." },
+      { name: "Mississippi",    code: "MS", lat: 32.3547,  lng: -89.3985,  capital: "Jackson",       bestMonths: ["Mar","Apr","Oct","Nov"], desc: "Deep south heat. Spring and fall are pleasant and colorful." },
+      { name: "Missouri",       code: "MO", lat: 37.9643,  lng: -91.8318,  capital: "Jefferson City", bestMonths: ["Apr","May","Oct"],      desc: "Gateway to the west. Spring and fall offer mild touring weather." },
+      { name: "Montana",        code: "MT", lat: 46.8797,  lng: -110.3626, capital: "Helena",        bestMonths: ["Jun","Jul","Aug","Sep"], desc: "Big Sky country. Summer is magnificent; winters are severe." },
+      { name: "Nebraska",       code: "NE", lat: 41.4925,  lng: -99.9018,  capital: "Lincoln",       bestMonths: ["May","Jun","Sep","Oct"], desc: "Prairie state with dramatic skies. Mild spring and fall are best." },
+      { name: "Nevada",         code: "NV", lat: 38.8026,  lng: -116.4194, capital: "Carson City",   bestMonths: ["Mar","Apr","Oct","Nov"], desc: "Desert climate. Avoid scorching July–August. Vegas is year-round." },
+      { name: "New Hampshire",  code: "NH", lat: 43.1939,  lng: -71.5724,  capital: "Concord",       bestMonths: ["Jun","Jul","Sep","Oct"], desc: "Stunning fall foliage and great summer hiking in the White Mountains." },
+      { name: "New Jersey",     code: "NJ", lat: 40.0583,  lng: -74.4057,  capital: "Trenton",       bestMonths: ["May","Jun","Sep","Oct"], desc: "Shore season peaks in summer. Spring and fall are pleasant." },
+      { name: "New Mexico",     code: "NM", lat: 34.5199,  lng: -105.8701, capital: "Santa Fe",      bestMonths: ["Apr","May","Sep","Oct"], desc: "High desert. Warm days and cool nights. Avoid monsoon July–Aug." },
+      { name: "New York",       code: "NY", lat: 42.1657,  lng: -74.9481,  capital: "Albany",        bestMonths: ["Apr","May","Sep","Oct"], desc: "NYC is year-round. Upstate shines in fall with stunning foliage." },
+      { name: "North Carolina", code: "NC", lat: 35.7596,  lng: -79.0193,  capital: "Raleigh",       bestMonths: ["Apr","May","Oct","Nov"], desc: "Mountains to coast. Spring flowers and fall leaves are spectacular." },
+      { name: "North Dakota",   code: "ND", lat: 47.5515,  lng: -101.0020, capital: "Bismarck",      bestMonths: ["Jun","Jul","Aug"],       desc: "Very cold winters. Short warm summer is the best time to visit." },
+      { name: "Ohio",           code: "OH", lat: 40.4173,  lng: -82.9071,  capital: "Columbus",      bestMonths: ["May","Jun","Sep","Oct"], desc: "Lake Erie region. Spring and fall are comfortable and scenic." },
+      { name: "Oklahoma",       code: "OK", lat: 35.0078,  lng: -97.0929,  capital: "Oklahoma City", bestMonths: ["Apr","May","Oct","Nov"], desc: "Tornado Alley. Spring wildflowers are stunning despite storm risk." },
+      { name: "Oregon",         code: "OR", lat: 43.8041,  lng: -120.5542, capital: "Salem",         bestMonths: ["Jun","Jul","Aug","Sep"], desc: "Rainy coast winters. Summers are dry and perfect for exploring." },
+      { name: "Pennsylvania",   code: "PA", lat: 41.2033,  lng: -77.1945,  capital: "Harrisburg",    bestMonths: ["May","Jun","Sep","Oct"], desc: "Philadelphia and Pittsburgh buzz in spring and fall. Great foliage." },
+      { name: "Rhode Island",   code: "RI", lat: 41.6809,  lng: -71.5118,  capital: "Providence",    bestMonths: ["Jun","Jul","Aug","Sep"], desc: "Smallest state. Newport's summer scene is lively and beautiful." },
+      { name: "South Carolina", code: "SC", lat: 33.8361,  lng: -81.1637,  capital: "Columbia",      bestMonths: ["Mar","Apr","May","Oct"], desc: "Beach and lowcountry. Mild winters and gorgeous spring." },
+      { name: "South Dakota",   code: "SD", lat: 43.9695,  lng: -99.9018,  capital: "Pierre",        bestMonths: ["Jun","Jul","Aug","Sep"], desc: "Badlands and Black Hills are stunning in summer." },
+      { name: "Tennessee",      code: "TN", lat: 35.5175,  lng: -86.5804,  capital: "Nashville",     bestMonths: ["Apr","May","Oct"],       desc: "Music City and Smoky Mountains. Spring and fall are the best." },
+      { name: "Texas",          code: "TX", lat: 31.9686,  lng: -99.9018,  capital: "Austin",        bestMonths: ["Mar","Apr","Oct","Nov"], desc: "Huge and diverse. Avoid peak summer heat. Spring bluebonnets are iconic." },
+      { name: "Utah",           code: "UT", lat: 39.3210,  lng: -111.0937, capital: "Salt Lake City", bestMonths: ["Mar","Apr","Sep","Oct"], desc: "Incredible national parks. Spring and fall have perfect hiking temps." },
+      { name: "Vermont",        code: "VT", lat: 44.0459,  lng: -72.7107,  capital: "Montpelier",    bestMonths: ["Jun","Jul","Sep","Oct"], desc: "Best fall foliage in the US. Summer hiking and winter skiing." },
+      { name: "Virginia",       code: "VA", lat: 37.4316,  lng: -78.6569,  capital: "Richmond",      bestMonths: ["Apr","May","Oct"],       desc: "History and nature. Shenandoah fall and Virginia Beach summer are top." },
+      { name: "Washington",     code: "WA", lat: 47.7511,  lng: -120.7401, capital: "Olympia",       bestMonths: ["Jun","Jul","Aug","Sep"], desc: "Rainy winters. Dry summers are magical — Olympics and Cascades shine." },
+      { name: "West Virginia",  code: "WV", lat: 38.5976,  lng: -80.4549,  capital: "Charleston",    bestMonths: ["May","Jun","Sep","Oct"], desc: "Wild and wonderful. Whitewater and fall foliage are world-class." },
+      { name: "Wisconsin",      code: "WI", lat: 43.7844,  lng: -88.7879,  capital: "Madison",       bestMonths: ["Jun","Jul","Aug","Sep"], desc: "Great Lakes summer fun. Cold winters with ice fishing and skiing." },
+      { name: "Wyoming",        code: "WY", lat: 43.0760,  lng: -107.2903, capital: "Cheyenne",      bestMonths: ["Jun","Jul","Aug","Sep"], desc: "Yellowstone and Grand Teton are best in summer. Harsh winters." },
+    ]
   },
   "FR": {
     popularCities: [
@@ -515,6 +584,96 @@ const countryData = {
     popularDishes: ["Fondue", "Raclette", "Rösti", "Swiss chocolate", "Zürcher Geschnetzeltes"],
     naturalBeauty: "Matterhorn, Jungfrau, Lake Geneva"
   },
+  "AR": {
+    popularCities: [
+      { name: "Buenos Aires", lat: -34.6037, lng: -58.3816 },
+      { name: "Córdoba", lat: -31.4135, lng: -64.1811 },
+      { name: "Mendoza", lat: -32.8908, lng: -68.8272 },
+      { name: "Bariloche", lat: -41.1335, lng: -71.3103 },
+      { name: "Rosario", lat: -32.9442, lng: -60.6505 }
+    ],
+    beautifulPlaces: [
+      { name: "Iguazu Falls", image: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=400&q=80", lat: -25.6953, lng: -54.4367, desc: "Spectacular waterfalls on the Argentine-Brazilian border" },
+      { name: "Patagonia", image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&q=80", lat: -49.3300, lng: -72.8900, desc: "Wild southern tip with glaciers and peaks" },
+      { name: "Perito Moreno Glacier", image: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=400&q=80", lat: -50.4963, lng: -73.1388, desc: "One of the world's most dynamic glaciers" },
+      { name: "Buenos Aires Obelisk", image: "https://images.unsplash.com/photo-1534430480872-3498386e7856?w=400&q=80", lat: -34.6037, lng: -58.3816, desc: "Iconic city landmark and cultural heart" },
+      { name: "Aconcagua", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80", lat: -32.6532, lng: -70.0109, desc: "Highest peak in the Americas at 6,961 m" }
+    ],
+    popularDishes: ["Asado", "Empanadas", "Dulce de Leche", "Medialunas", "Milanesa"],
+    naturalBeauty: "Patagonia, Iguazu Falls, Andes, Perito Moreno Glacier"
+  },
+  "GR": {
+    popularCities: [
+      { name: "Athens", lat: 37.9838, lng: 23.7275 },
+      { name: "Thessaloniki", lat: 40.6401, lng: 22.9444 },
+      { name: "Santorini", lat: 36.3932, lng: 25.4615 },
+      { name: "Mykonos", lat: 37.4467, lng: 25.3289 },
+      { name: "Rhodes", lat: 36.4341, lng: 28.2176 }
+    ],
+    beautifulPlaces: [
+      { name: "Acropolis of Athens", image: "https://images.unsplash.com/photo-1555993539-1732b0258235?w=400&q=80", lat: 37.9715, lng: 23.7267, desc: "Ancient citadel with the Parthenon" },
+      { name: "Santorini Caldera", image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=400&q=80", lat: 36.3932, lng: 25.4615, desc: "Iconic white-washed cliffs over the caldera" },
+      { name: "Mykonos Windmills", image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?w=400&q=80", lat: 37.4467, lng: 25.3289, desc: "Famous Cycladic windmills and beaches" },
+      { name: "Meteora", image: "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=80", lat: 39.7217, lng: 21.6306, desc: "Monasteries perched on towering rock pillars" },
+      { name: "Delphi", image: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=400&q=80", lat: 38.4824, lng: 22.5010, desc: "Ancient oracle sanctuary on Mount Parnassus" }
+    ],
+    popularDishes: ["Moussaka", "Souvlaki", "Spanakopita", "Baklava", "Tzatziki"],
+    naturalBeauty: "Santorini caldera, Meteora, Aegean islands, Ionian coast"
+  },
+  "NO": {
+    popularCities: [
+      { name: "Oslo", lat: 59.9139, lng: 10.7522 },
+      { name: "Bergen", lat: 60.3913, lng: 5.3221 },
+      { name: "Trondheim", lat: 63.4305, lng: 10.3951 },
+      { name: "Tromsø", lat: 69.6489, lng: 18.9551 },
+      { name: "Stavanger", lat: 58.9700, lng: 5.7331 }
+    ],
+    beautifulPlaces: [
+      { name: "Geirangerfjord", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=80", lat: 62.1040, lng: 7.2061, desc: "UNESCO fjord with dramatic waterfalls" },
+      { name: "Northern Lights", image: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=400&q=80", lat: 69.6489, lng: 18.9551, desc: "Aurora Borealis over Tromsø" },
+      { name: "Preikestolen", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80", lat: 58.9864, lng: 6.1896, desc: "Dramatic cliff 604 m above Lysefjord" },
+      { name: "Bryggen Wharf", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80", lat: 60.3976, lng: 5.3239, desc: "UNESCO colorful wooden buildings in Bergen" },
+      { name: "Lofoten Islands", image: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=400&q=80", lat: 68.1532, lng: 13.9996, desc: "Dramatic archipelago with fishing villages" }
+    ],
+    popularDishes: ["Rakfisk", "Lutefisk", "Kjøttkaker", "Brunost", "Raspeball"],
+    naturalBeauty: "Fjords, Northern Lights, Lofoten Islands, midnight sun"
+  },
+  "TR": {
+    popularCities: [
+      { name: "Istanbul", lat: 41.0082, lng: 28.9784 },
+      { name: "Ankara", lat: 39.9334, lng: 32.8597 },
+      { name: "Izmir", lat: 38.4192, lng: 27.1287 },
+      { name: "Antalya", lat: 36.8969, lng: 30.7133 },
+      { name: "Cappadocia", lat: 38.6431, lng: 34.8289 }
+    ],
+    beautifulPlaces: [
+      { name: "Hagia Sophia", image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=400&q=80", lat: 41.0086, lng: 28.9802, desc: "Byzantine basilica turned mosque in Istanbul" },
+      { name: "Cappadocia Balloons", image: "https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=400&q=80", lat: 38.6431, lng: 34.8289, desc: "Hot air balloons over fairy chimneys" },
+      { name: "Pamukkale", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80", lat: 37.9208, lng: 29.1204, desc: "Cotton Castle — white terraced thermal pools" },
+      { name: "Blue Mosque", image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=400&q=80", lat: 41.0054, lng: 28.9768, desc: "Iconic Ottoman mosque with six minarets" },
+      { name: "Ephesus", image: "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=80", lat: 37.9397, lng: 27.3415, desc: "Ancient Greek city and UNESCO World Heritage Site" }
+    ],
+    popularDishes: ["Kebab", "Baklava", "Meze", "Pide", "Lahmacun"],
+    naturalBeauty: "Cappadocia, Pamukkale, Turquoise Coast, Bosphorus"
+  },
+  "VN": {
+    popularCities: [
+      { name: "Hanoi", lat: 21.0285, lng: 105.8542 },
+      { name: "Ho Chi Minh City", lat: 10.7769, lng: 106.7009 },
+      { name: "Da Nang", lat: 16.0544, lng: 108.2022 },
+      { name: "Hoi An", lat: 15.8801, lng: 108.3380 },
+      { name: "Hue", lat: 16.4637, lng: 107.5909 }
+    ],
+    beautifulPlaces: [
+      { name: "Ha Long Bay", image: "https://images.unsplash.com/photo-1528127269322-539801943592?w=400&q=80", lat: 20.9101, lng: 107.1839, desc: "UNESCO bay with thousands of limestone islands" },
+      { name: "Hoi An Old Town", image: "https://images.unsplash.com/photo-1528181304800-259b08848526?w=400&q=80", lat: 15.8801, lng: 108.3380, desc: "Lantern-lit ancient trading port" },
+      { name: "Phong Nha Caves", image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=80", lat: 17.5593, lng: 106.2822, desc: "World's largest cave systems" },
+      { name: "Sapa Rice Terraces", image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=80", lat: 22.3364, lng: 103.8438, desc: "Stunning stacked rice terraces in the mountains" },
+      { name: "Mekong Delta", image: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&q=80", lat: 10.2899, lng: 105.7469, desc: "Lush river delta with floating markets" }
+    ],
+    popularDishes: ["Pho", "Banh Mi", "Bun Bo Hue", "Com Tam", "Banh Xeo"],
+    naturalBeauty: "Ha Long Bay, Phong Nha caves, Sapa terraces, beaches"
+  },
 };
 
 const countries = [
@@ -645,6 +804,14 @@ export default function App() {
   const [isResizing, setIsResizing] = useState(false);
   const [showFullscreenChat, setShowFullscreenChat] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [transportInfo, setTransportInfo] = useState(null);
+  const [transportLoading, setTransportLoading] = useState(false);
+  const [hoveredMonth, setHoveredMonth] = useState(null);
+  const [selectedState, setSelectedState] = useState(null);
+  const [stateWeather, setStateWeather] = useState(null);
+  const [stateWeatherLoading, setStateWeatherLoading] = useState(false);
+  const [stateSearch, setStateSearch] = useState("");
+  const [countrySearch, setCountrySearch] = useState("");
 
   useEffect(() => {
     const token = localStorage.getItem("auth_token");
@@ -698,11 +865,103 @@ export default function App() {
     setShowCountryDetails(true);
   };
 
+  const getWeatherInfo = (code) => {
+    if (code === undefined || code === null) return { icon: "🌤️", desc: "Unknown" };
+    if (code === 0)              return { icon: "☀️",  desc: "Clear sky" };
+    if (code <= 3)               return { icon: "⛅",  desc: "Partly cloudy" };
+    if (code <= 48)              return { icon: "🌫️", desc: "Foggy" };
+    if (code <= 55)              return { icon: "🌦️", desc: "Drizzle" };
+    if (code <= 65)              return { icon: "🌧️", desc: "Rainy" };
+    if (code <= 75)              return { icon: "❄️",  desc: "Snowy" };
+    if (code <= 82)              return { icon: "🌧️", desc: "Rain showers" };
+    if (code <= 86)              return { icon: "🌨️", desc: "Snow showers" };
+    if (code >= 95)              return { icon: "⛈️",  desc: "Thunderstorm" };
+    return { icon: "🌤️", desc: "Variable" };
+  };
+
+  const fetchStateWeather = async (state) => {
+    setStateWeather(null);
+    setStateWeatherLoading(true);
+    try {
+      const res = await fetch(
+        `https://api.open-meteo.com/v1/forecast?latitude=${state.lat}&longitude=${state.lng}&current_weather=true&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,windspeed_10m_max&timezone=auto&forecast_days=1`
+      );
+      const data = await res.json();
+      setStateWeather(data);
+    } catch {
+      setStateWeather({ error: true });
+    }
+    setStateWeatherLoading(false);
+  };
+
+  const handleStateSelect = (state) => {
+    setSelectedState(state);
+    fetchStateWeather(state);
+    setShowMap(true);
+    setDestination({ lat: state.lat, lng: state.lng, label: state.name });
+  };
+
+  const getLocalRideApp = (countryCode) => {
+    const grabCountries = ["TH", "VN", "MY", "ID", "PH", "SG", "KH", "MM", "BD"];
+    const careemCountries = ["AE", "SA", "EG", "JO", "KW", "QA", "BH", "OM", "LB"];
+    const olaCountries = ["IN"];
+    const didiCountries = ["CN"];
+    if (grabCountries.includes(countryCode)) return { name: "Grab", color: "#00b14f", url: "https://www.grab.com/" };
+    if (careemCountries.includes(countryCode)) return { name: "Careem", color: "#5bb962", url: "https://www.careem.com/" };
+    if (olaCountries.includes(countryCode)) return { name: "Ola", color: "#f5a623", url: "https://www.olacabs.com/" };
+    if (didiCountries.includes(countryCode)) return { name: "DiDi", color: "#ff6b00", url: "https://www.didiglobal.com/" };
+    return { name: "Uber", color: "#000000", url: `https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=${0}&dropoff[longitude]=${0}&dropoff[nickname]=Destination` };
+  };
+
+  const fetchTransportInfo = (place) => {
+    if (!window.google || !origin?.lat) {
+      setTransportInfo({ noLocation: true });
+      return;
+    }
+    setTransportLoading(true);
+    setTransportInfo(null);
+    const service = new window.google.maps.DistanceMatrixService();
+    const origin_ll = new window.google.maps.LatLng(origin.lat, origin.lng);
+    const dest_ll = new window.google.maps.LatLng(place.lat, place.lng);
+    const travelModes = [
+      window.google.maps.TravelMode.WALKING,
+      window.google.maps.TravelMode.DRIVING,
+      window.google.maps.TravelMode.TRANSIT,
+      window.google.maps.TravelMode.BICYCLING,
+    ];
+    const results = {};
+    let pending = travelModes.length;
+    travelModes.forEach((mode) => {
+      service.getDistanceMatrix(
+        { origins: [origin_ll], destinations: [dest_ll], travelMode: mode },
+        (res, status) => {
+          if (status === "OK") {
+            const el = res.rows[0]?.elements[0];
+            const modeKey = mode.toLowerCase();
+            if (el?.status === "OK") {
+              results[modeKey] = { distance: el.distance.text, duration: el.duration.text };
+            } else {
+              results[modeKey] = null;
+            }
+          }
+          pending--;
+          if (pending === 0) {
+            setTransportInfo(results);
+            setTransportLoading(false);
+          }
+        }
+      );
+    });
+  };
+
   const handlePlaceSelect = (place) => {
     if (place.lat && place.lng) {
       setSelectedPlace(place);
       setDestination({ lat: place.lat, lng: place.lng, label: place.name });
       setShowMap(true);
+      setTransportInfo(null);
+      // Fetch transport info after map/Google loads
+      setTimeout(() => fetchTransportInfo(place), 800);
     }
   };
 
@@ -1022,7 +1281,7 @@ export default function App() {
         {/* Country Selector - Top Center */}
         <div style={{ position: "absolute", top: "16px", left: "50%", transform: "translateX(-50%)", zIndex: 10 }}>
           <button
-            onClick={() => { setShowCountries(!showCountries); setShowCountryDetails(false); }}
+            onClick={() => { setShowCountries(!showCountries); setShowCountryDetails(false); setCountrySearch(""); }}
             style={{ display: "flex", alignItems: "center", gap: "8px", backgroundColor: "white", padding: "8px 16px", borderRadius: "24px", border: "none", cursor: "pointer", boxShadow: "0 4px 6px rgba(0,0,0,0.1)" }}
           >
             <span style={{ fontSize: "24px" }}>🌍</span>
@@ -1030,21 +1289,57 @@ export default function App() {
             <span style={{ color: "#9ca3af" }}>▼</span>
           </button>
           
-          {showCountries && (
-            <div style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: "8px", backgroundColor: "white", borderRadius: "12px", boxShadow: "0 10px 25px rgba(0,0,0,0.2)", padding: "8px", width: "280px", maxHeight: "400px", overflowY: "auto" }}>
-              <p style={{ fontSize: "12px", color: "#6b7280", padding: "8px", borderBottom: "1px solid #e5e7eb", marginBottom: "4px" }}>Select Country ({countries.length})</p>
-              {countries.map((country) => (
-                <button
-                  key={country.code}
-                  onClick={() => handleCountrySelect(country)}
-                  style={{ display: "flex", alignItems: "center", gap: "12px", width: "100%", padding: "8px 12px", border: "none", background: selectedCountry.code === country.code ? "#eff6ff" : "transparent", cursor: "pointer", borderRadius: "6px", textAlign: "left" }}
-                >
-                  <span style={{ fontSize: "18px" }}>{country.flag}</span>
-                  <span style={{ fontSize: "14px", color: "#374151" }}>{country.name}</span>
-                </button>
-              ))}
-            </div>
-          )}
+          {showCountries && (() => {
+            const filteredCountries = countries.filter(c =>
+              c.name.toLowerCase().includes(countrySearch.toLowerCase())
+            );
+            return (
+              <div style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: "8px", backgroundColor: "white", borderRadius: "12px", boxShadow: "0 10px 25px rgba(0,0,0,0.2)", padding: "8px", width: "300px", maxHeight: "420px", display: "flex", flexDirection: "column" }}>
+                {/* Search input */}
+                <div style={{ padding: "6px 4px 8px", borderBottom: "1px solid #e5e7eb" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "8px", backgroundColor: "#f3f4f6", borderRadius: "8px", padding: "8px 12px" }}>
+                    <span style={{ fontSize: "14px", color: "#9ca3af" }}>🔍</span>
+                    <input
+                      autoFocus
+                      type="text"
+                      placeholder="Search country..."
+                      value={countrySearch}
+                      onChange={e => setCountrySearch(e.target.value)}
+                      style={{ border: "none", background: "transparent", outline: "none", fontSize: "14px", color: "#111827", width: "100%" }}
+                    />
+                    {countrySearch && (
+                      <button onClick={() => setCountrySearch("")} style={{ border: "none", background: "none", cursor: "pointer", color: "#9ca3af", fontSize: "14px", padding: 0, lineHeight: 1 }}>✕</button>
+                    )}
+                  </div>
+                  <p style={{ fontSize: "11px", color: "#9ca3af", margin: "6px 4px 0", textAlign: "right" }}>
+                    {filteredCountries.length} of {countries.length} countries
+                  </p>
+                </div>
+
+                {/* Country list */}
+                <div style={{ overflowY: "auto", flex: 1 }}>
+                  {filteredCountries.length === 0 ? (
+                    <div style={{ padding: "24px", textAlign: "center", color: "#9ca3af", fontSize: "14px" }}>
+                      <span style={{ fontSize: "28px", display: "block", marginBottom: "8px" }}>🌐</span>
+                      No countries found
+                    </div>
+                  ) : (
+                    filteredCountries.map((country) => (
+                      <button
+                        key={country.code}
+                        onClick={() => { handleCountrySelect(country); setCountrySearch(""); }}
+                        style={{ display: "flex", alignItems: "center", gap: "12px", width: "100%", padding: "8px 12px", border: "none", background: selectedCountry.code === country.code ? "#eff6ff" : "transparent", cursor: "pointer", borderRadius: "6px", textAlign: "left" }}
+                      >
+                        <span style={{ fontSize: "20px" }}>{country.flag}</span>
+                        <span style={{ fontSize: "14px", color: "#374151", flex: 1 }}>{country.name}</span>
+                        {selectedCountry.code === country.code && <span style={{ fontSize: "12px", color: "#2563eb" }}>✓</span>}
+                      </button>
+                    ))
+                  )}
+                </div>
+              </div>
+            );
+          })()}
         </div>
 
         <div style={{ backgroundColor: "rgba(0,0,0,0.4)", padding: "40px", borderRadius: "20px", textAlign: "center", marginTop: "60px" }}>
@@ -1307,10 +1602,209 @@ export default function App() {
               <h3 style={{ fontSize: "16px", fontWeight: "600", color: "#1f2937", marginBottom: "12px" }}>🌿 Natural Beauty</h3>
               <div style={{ backgroundColor: "#f0fdf4", padding: "12px", borderRadius: "12px" }}><p style={{ fontSize: "14px", color: "#166534", margin: 0, lineHeight: 1.6 }}>{selectedCountry.details.naturalBeauty}</p></div>
             </div>
+
+            {/* Best Time to Visit */}
+            {selectedCountry.details.bestTimeToVisit && (() => {
+              const { byMonth, tip } = selectedCountry.details.bestTimeToVisit;
+              const ratingConfig = {
+                best:  { bg: "#dcfce7", bar: "#16a34a", label: "Best",  dot: "#16a34a" },
+                good:  { bg: "#fef9c3", bar: "#ca8a04", label: "Good",  dot: "#ca8a04" },
+                fair:  { bg: "#ffedd5", bar: "#ea580c", label: "Fair",  dot: "#ea580c" },
+                avoid: { bg: "#fee2e2", bar: "#dc2626", label: "Avoid", dot: "#dc2626" },
+              };
+              return (
+                <div style={{ marginBottom: "10px" }}>
+                  <h3 style={{ fontSize: "16px", fontWeight: "600", color: "#1f2937", marginBottom: "4px" }}>🌤️ Best Time to Visit</h3>
+                  <p style={{ fontSize: "12px", color: "#6b7280", margin: "0 0 14px" }}>{tip}</p>
+
+                  {/* Legend */}
+                  <div style={{ display: "flex", gap: "12px", marginBottom: "12px", flexWrap: "wrap" }}>
+                    {Object.entries(ratingConfig).map(([key, cfg]) => (
+                      <div key={key} style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                        <span style={{ width: "10px", height: "10px", borderRadius: "50%", backgroundColor: cfg.dot, display: "inline-block" }}></span>
+                        <span style={{ fontSize: "11px", color: "#6b7280" }}>{cfg.label}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Month grid */}
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: "6px", marginBottom: "14px" }}>
+                    {byMonth.map((m, idx) => {
+                      const cfg = ratingConfig[m.rating];
+                      const isHovered = hoveredMonth === idx;
+                      return (
+                        <div
+                          key={idx}
+                          onMouseEnter={() => setHoveredMonth(idx)}
+                          onMouseLeave={() => setHoveredMonth(null)}
+                          style={{
+                            backgroundColor: isHovered ? cfg.bar : cfg.bg,
+                            borderRadius: "10px",
+                            padding: "8px 4px",
+                            textAlign: "center",
+                            cursor: "default",
+                            transition: "all 0.15s",
+                            border: `1px solid ${cfg.bar}33`,
+                          }}
+                        >
+                          <div style={{ fontSize: "16px", marginBottom: "2px" }}>{m.icon}</div>
+                          <div style={{ fontSize: "11px", fontWeight: 700, color: isHovered ? "white" : "#374151" }}>{m.month}</div>
+                          <div style={{ fontSize: "9px", color: isHovered ? "#e5e7eb" : cfg.dot, fontWeight: 600, textTransform: "uppercase" }}>{cfg.label}</div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Hover detail card */}
+                  {hoveredMonth !== null && (() => {
+                    const m = byMonth[hoveredMonth];
+                    const cfg = ratingConfig[m.rating];
+                    return (
+                      <div style={{ backgroundColor: "#f9fafb", border: `1px solid ${cfg.bar}44`, borderRadius: "12px", padding: "12px 14px" }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                          <span style={{ fontSize: "20px" }}>{m.icon}</span>
+                          <div>
+                            <span style={{ fontWeight: 700, fontSize: "14px", color: "#111827" }}>{m.month}</span>
+                            <span style={{ marginLeft: "8px", fontSize: "12px", color: "#6b7280" }}>Avg {m.temp}</span>
+                            <span style={{ marginLeft: "8px", fontSize: "11px", backgroundColor: cfg.bg, color: cfg.dot, padding: "2px 8px", borderRadius: "99px", fontWeight: 600 }}>{cfg.label}</span>
+                          </div>
+                        </div>
+                        <p style={{ fontSize: "13px", color: "#374151", margin: 0, lineHeight: 1.5 }}>{m.desc}</p>
+                      </div>
+                    );
+                  })()}
+                </div>
+              );
+            })()}
+
+            {/* US States Section */}
+            {selectedCountry.code === "US" && selectedCountry.details.states && (() => {
+              const filtered = selectedCountry.details.states.filter(s =>
+                s.name.toLowerCase().includes(stateSearch.toLowerCase())
+              );
+              return (
+                <div style={{ marginTop: "16px" }}>
+                  <h3 style={{ fontSize: "16px", fontWeight: "600", color: "#1f2937", marginBottom: "4px" }}>🗺️ Explore All 50 States</h3>
+                  <p style={{ fontSize: "12px", color: "#6b7280", margin: "0 0 10px" }}>Click any state to see live current weather</p>
+
+                  <input
+                    type="text"
+                    placeholder="🔍 Search states..."
+                    value={stateSearch}
+                    onChange={e => setStateSearch(e.target.value)}
+                    style={{ width: "100%", padding: "8px 12px", borderRadius: "8px", border: "1px solid #d1d5db", fontSize: "13px", marginBottom: "10px", boxSizing: "border-box", outline: "none" }}
+                  />
+
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", maxHeight: "180px", overflowY: "auto", marginBottom: "12px" }}>
+                    {filtered.map((state) => (
+                      <button
+                        key={state.code}
+                        onClick={() => handleStateSelect(state)}
+                        style={{
+                          padding: "5px 10px", borderRadius: "20px", border: "1px solid",
+                          borderColor: selectedState?.code === state.code ? "#2563eb" : "#d1d5db",
+                          backgroundColor: selectedState?.code === state.code ? "#eff6ff" : "#f9fafb",
+                          color: selectedState?.code === state.code ? "#1d4ed8" : "#374151",
+                          fontSize: "12px", fontWeight: selectedState?.code === state.code ? 700 : 400,
+                          cursor: "pointer", transition: "all 0.15s",
+                        }}
+                      >
+                        {state.name}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* State weather card */}
+                  {selectedState && (
+                    <div style={{ backgroundColor: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "16px", overflow: "hidden" }}>
+                      {/* State header */}
+                      <div style={{ background: "linear-gradient(135deg, #1e40af, #3b82f6)", padding: "14px 16px", display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                        <div>
+                          <p style={{ color: "white", fontWeight: 700, fontSize: "16px", margin: 0 }}>{selectedState.name}</p>
+                          <p style={{ color: "#bfdbfe", fontSize: "12px", margin: "2px 0 0" }}>Capital: {selectedState.capital}</p>
+                        </div>
+                        <button onClick={() => setSelectedState(null)} style={{ background: "rgba(255,255,255,0.2)", border: "none", color: "white", borderRadius: "50%", width: "26px", height: "26px", cursor: "pointer", fontSize: "13px" }}>✕</button>
+                      </div>
+
+                      <div style={{ padding: "14px 16px" }}>
+                        {stateWeatherLoading && (
+                          <div style={{ textAlign: "center", padding: "20px", color: "#6b7280", fontSize: "14px" }}>
+                            ⏳ Fetching live weather...
+                          </div>
+                        )}
+
+                        {!stateWeatherLoading && stateWeather?.error && (
+                          <p style={{ color: "#dc2626", fontSize: "13px", textAlign: "center" }}>⚠️ Could not fetch weather. Check your connection.</p>
+                        )}
+
+                        {!stateWeatherLoading && stateWeather?.current_weather && (() => {
+                          const cw = stateWeather.current_weather;
+                          const wi = getWeatherInfo(cw.weathercode);
+                          const maxT = stateWeather.daily?.temperature_2m_max?.[0];
+                          const minT = stateWeather.daily?.temperature_2m_min?.[0];
+                          const precip = stateWeather.daily?.precipitation_sum?.[0];
+                          const maxWind = stateWeather.daily?.windspeed_10m_max?.[0];
+                          const toF = (c) => c !== undefined ? `${Math.round(c * 9/5 + 32)}°F` : "—";
+                          return (
+                            <>
+                              {/* Current weather hero */}
+                              <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "14px", padding: "12px", backgroundColor: "white", borderRadius: "12px", boxShadow: "0 1px 4px rgba(0,0,0,0.08)" }}>
+                                <span style={{ fontSize: "48px", lineHeight: 1 }}>{wi.icon}</span>
+                                <div>
+                                  <p style={{ fontSize: "28px", fontWeight: 800, color: "#111827", margin: 0 }}>{toF(cw.temperature)}</p>
+                                  <p style={{ fontSize: "13px", color: "#6b7280", margin: "2px 0 0" }}>{wi.desc} · {cw.is_day ? "Daytime" : "Nighttime"}</p>
+                                </div>
+                                <div style={{ marginLeft: "auto", textAlign: "right" }}>
+                                  <p style={{ fontSize: "12px", color: "#374151", margin: 0 }}>💨 {cw.windspeed} km/h</p>
+                                  {precip !== null && <p style={{ fontSize: "12px", color: "#374151", margin: "4px 0 0" }}>🌧️ {precip} mm</p>}
+                                </div>
+                              </div>
+
+                              {/* Today's high/low */}
+                              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "14px" }}>
+                                <div style={{ backgroundColor: "#fef3c7", borderRadius: "10px", padding: "10px", textAlign: "center" }}>
+                                  <p style={{ fontSize: "11px", color: "#92400e", margin: "0 0 2px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Today High</p>
+                                  <p style={{ fontSize: "18px", fontWeight: 700, color: "#b45309", margin: 0 }}>{toF(maxT)}</p>
+                                </div>
+                                <div style={{ backgroundColor: "#eff6ff", borderRadius: "10px", padding: "10px", textAlign: "center" }}>
+                                  <p style={{ fontSize: "11px", color: "#1e40af", margin: "0 0 2px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Today Low</p>
+                                  <p style={{ fontSize: "18px", fontWeight: 700, color: "#2563eb", margin: 0 }}>{toF(minT)}</p>
+                                </div>
+                              </div>
+
+                              {/* Best months */}
+                              <div style={{ backgroundColor: "#f0fdf4", borderRadius: "10px", padding: "10px 12px", marginBottom: "10px" }}>
+                                <p style={{ fontSize: "12px", color: "#166534", fontWeight: 600, margin: "0 0 6px" }}>🗓️ Best Months to Visit</p>
+                                <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
+                                  {selectedState.bestMonths.map(m => (
+                                    <span key={m} style={{ backgroundColor: "#16a34a", color: "white", padding: "3px 10px", borderRadius: "12px", fontSize: "12px", fontWeight: 600 }}>{m}</span>
+                                  ))}
+                                </div>
+                              </div>
+
+                              {/* Description */}
+                              <p style={{ fontSize: "13px", color: "#374151", margin: "0 0 12px", lineHeight: 1.5 }}>{selectedState.desc}</p>
+
+                              {/* View on map button */}
+                              <button
+                                onClick={() => handlePlaceSelect({ name: selectedState.name, lat: selectedState.lat, lng: selectedState.lng, desc: selectedState.desc })}
+                                style={{ width: "100%", backgroundColor: "#2563eb", color: "white", border: "none", borderRadius: "10px", padding: "10px", fontSize: "13px", fontWeight: 600, cursor: "pointer" }}
+                              >
+                                🗺️ View {selectedState.name} on Map
+                              </button>
+                            </>
+                          );
+                        })()}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
           </div>
         </div>
       )}
-      
+
       {/* Printable Trip Plan */}
       {tripPlan && (
         <div className="printable-area" style={{ display: "none" }}>
@@ -1363,6 +1857,117 @@ export default function App() {
             <div style={{ marginTop: "40px", paddingTop: "20px", borderTop: "1px solid #e5e7eb", textAlign: "center" }}>
               <p style={{ fontSize: "12px", color: "#9ca3af", margin: 0 }}>Generated by Travel Assistant</p>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Transport Info Panel */}
+      {showMap && selectedPlace?.lat && (
+        <div style={{
+          position: "absolute",
+          bottom: "24px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 20,
+          width: "min(480px, 92vw)",
+          backgroundColor: "white",
+          borderRadius: "20px",
+          boxShadow: "0 8px 32px rgba(0,0,0,0.25)",
+          overflow: "hidden",
+        }}>
+          {/* Header */}
+          <div style={{ background: "linear-gradient(135deg, #1d4ed8, #2563eb)", padding: "14px 18px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div>
+              <p style={{ color: "white", fontWeight: 700, fontSize: "15px", margin: 0 }}>📍 {selectedPlace.name}</p>
+              <p style={{ color: "#bfdbfe", fontSize: "12px", margin: "2px 0 0" }}>
+                {origin?.lat ? `From: ${origin.label}` : "Enable location for live distances"}
+              </p>
+            </div>
+            <button onClick={() => { setSelectedPlace(null); setTransportInfo(null); }} style={{ background: "rgba(255,255,255,0.2)", border: "none", color: "white", borderRadius: "50%", width: "28px", height: "28px", cursor: "pointer", fontSize: "14px", display: "flex", alignItems: "center", justifyContent: "center" }}>✕</button>
+          </div>
+
+          <div style={{ padding: "14px 18px" }}>
+            {transportLoading && (
+              <div style={{ textAlign: "center", padding: "16px 0", color: "#6b7280", fontSize: "13px" }}>
+                ⏳ Calculating routes...
+              </div>
+            )}
+
+            {!transportLoading && transportInfo?.noLocation && (
+              <div style={{ textAlign: "center", padding: "12px 0" }}>
+                <p style={{ color: "#6b7280", fontSize: "13px", margin: 0 }}>📍 Allow location access to see live distances & times</p>
+                <button onClick={requestGeolocation} style={{ marginTop: "10px", backgroundColor: "#2563eb", color: "white", border: "none", borderRadius: "8px", padding: "8px 18px", cursor: "pointer", fontSize: "13px", fontWeight: 600 }}>Enable Location</button>
+              </div>
+            )}
+
+            {!transportLoading && transportInfo && !transportInfo.noLocation && (() => {
+              const rideApp = getLocalRideApp(selectedCountry?.code);
+              const uberUrl = `https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=${selectedPlace.lat}&dropoff[longitude]=${selectedPlace.lng}&dropoff[nickname]=${encodeURIComponent(selectedPlace.name)}`;
+              const rows = [
+                { mode: "walking",   icon: "🚶", label: "Walk",    color: "#16a34a" },
+                { mode: "driving",   icon: "🚗", label: "Drive",   color: "#2563eb" },
+                { mode: "transit",   icon: "🚌", label: "Transit", color: "#7c3aed" },
+                { mode: "bicycling", icon: "🚴", label: "Bike",    color: "#d97706" },
+              ];
+              return (
+                <>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "14px" }}>
+                    {rows.map(({ mode, icon, label, color }) => {
+                      const info = transportInfo[mode];
+                      return (
+                        <div key={mode} style={{ backgroundColor: "#f9fafb", borderRadius: "12px", padding: "10px 12px", border: `1px solid #e5e7eb` }}>
+                          <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
+                            <span style={{ fontSize: "16px" }}>{icon}</span>
+                            <span style={{ fontSize: "12px", fontWeight: 700, color }}>{label}</span>
+                          </div>
+                          {info ? (
+                            <>
+                              <p style={{ fontSize: "15px", fontWeight: 700, color: "#111827", margin: 0 }}>{info.duration}</p>
+                              <p style={{ fontSize: "11px", color: "#6b7280", margin: "2px 0 0" }}>{info.distance}</p>
+                            </>
+                          ) : (
+                            <p style={{ fontSize: "12px", color: "#9ca3af", margin: 0 }}>Not available</p>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Ride booking */}
+                  <div style={{ borderTop: "1px solid #f3f4f6", paddingTop: "12px" }}>
+                    <p style={{ fontSize: "11px", color: "#9ca3af", margin: "0 0 8px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Book a ride</p>
+                    <div style={{ display: "flex", gap: "8px" }}>
+                      <a
+                        href={uberUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", backgroundColor: "#000", color: "white", borderRadius: "10px", padding: "10px", textDecoration: "none", fontSize: "13px", fontWeight: 600 }}
+                      >
+                        🚖 Uber
+                      </a>
+                      {rideApp.name !== "Uber" && (
+                        <a
+                          href={rideApp.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", backgroundColor: rideApp.color, color: "white", borderRadius: "10px", padding: "10px", textDecoration: "none", fontSize: "13px", fontWeight: 600 }}
+                        >
+                          🚖 {rideApp.name}
+                        </a>
+                      )}
+                      <a
+                        href={`https://www.google.com/maps/dir/?api=1&destination=${selectedPlace.lat},${selectedPlace.lng}&travelmode=transit`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", backgroundColor: "#4285f4", color: "white", borderRadius: "10px", padding: "10px", textDecoration: "none", fontSize: "13px", fontWeight: 600 }}
+                      >
+                        🗺️ Maps
+                      </a>
+                    </div>
+                  </div>
+                </>
+              );
+            })()}
           </div>
         </div>
       )}
