@@ -1,8 +1,21 @@
-flask==2.3.3
-flask-cors==4.0.0
-openai==1.3.0
-pydantic==2.4.2
-python-dotenv==1.0.0
+# Core API Framework
+fastapi==0.115.2
+uvicorn==0.30.3
 
+# Environment Variable Loader
+python-dotenv==1.0.1
 
+# Google Maps API Client
+googlemaps==4.10.0
 
+# Optimization Library (for route planning)
+ortools==9.10.4067
+
+# (Optional) AI / LLM Integrations
+openai==1.52.2
+
+# Testing Utilities
+pytest==8.3.3
+
+# Async Support (optional but useful for API)
+httpx==0.27.2
