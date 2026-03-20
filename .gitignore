@@ -1,19 +1,113 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.pyc
-.env
-.venv
-env/
-venv/
-
-# Node
+# Dependencies
 node_modules/
-dist/
-*.local
+__pycache__/
+.venv/
+venv/
+**/.venv/
+**/venv/
 
-# IDE
-.vscode/
-.idea/
+# Environment variables
+*.env
+.env
+.env.local
+.env.production
+.env.development
+.env.*.local
+
+# API Keys and Secrets
+*.key
+secrets/
+.secrets/
+
+# Docker
+.docker/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Build artifacts
+dist/
+build/
+*.tsbuildinfo
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# Documentation files (development notes)
+*_SUMMARY.md
+*_PLAN.md
+*_GUIDE.md
+*_STATUS.md
+*_COMPLETE.md
+*_SETUP.md
+*_FIX*.md
+*INTEGRATION*.md
+*TROUBLESHOOT*.md
+*SOLUTION*.md
+*HOW_TO*.md
+*START_*.md
+*TESTING*.md
+*QUICK_*.md
+*IMPORTANT*.md
+RUN_DASHBOARD*.md
+
+# Test outputs
+chat_structured_output_history.json
+chat_enriched_places.json
+route_tests/
+
+# Design files
+Figma Design/
+Figma Design.zip
+
+# Old/unused folders
+backend/backend/
+backend/dashboard-api/
+backend/frontend/
+backend/.gitignore
+
+# OS files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.bak
+*.swp
+*.tmp
+
+# Duplicate files
+*copy*
+*copy.*
+*Copy*
+*Copy.*
+
+# Local AI tooling
+.claude/
+
+# Local frontend config overrides
+Dashboard/frontend_chat/config.local.js

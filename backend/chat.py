@@ -52,10 +52,9 @@ To get started, tell me about your trip:
 # ASYNC ENRICHMENT HELPER
 # ============================================================================
 
+
 async def enrich_place_async(
-    executor: ThreadPoolExecutor,
-    api_key: str,
-    place: Dict[str, Any]
+    executor: ThreadPoolExecutor, api_key: str, place: Dict[str, Any]
 ) -> Dict[str, Any]:
     """
     Async wrapper for enrich_place_with_details.
@@ -73,16 +72,15 @@ async def enrich_place_async(
     """
     loop = asyncio.get_event_loop()
     enriched_place = await loop.run_in_executor(
-        executor,
-        enrich_place_with_details,
-        api_key,
-        place
+        executor, enrich_place_with_details, api_key, place
     )
     return enriched_place
+
 
 # ============================================================================
 # TYPEWRITER EFFECT HELPER
 # ============================================================================
+
 
 def print_typewriter(text: str, delay: float = 0.05):
     """
@@ -94,11 +92,11 @@ def print_typewriter(text: str, delay: float = 0.05):
         text: Text to print
         delay: Delay between words in seconds (default: 0.05 = ~20 words/sec)
     """
-    words = text.split(' ')
+    words = text.split(" ")
     for i, word in enumerate(words):
         # Print word with space (except for last word)
         if i < len(words) - 1:
-            print(word, end=' ', flush=True)
+            print(word, end=" ", flush=True)
         else:
             print(word, flush=True)
 
@@ -106,32 +104,47 @@ def print_typewriter(text: str, delay: float = 0.05):
         time.sleep(delay)
     print()  # Final newline
 
+
 # ============================================================================
 # PYDANTIC MODELS (for structured output)
 # ============================================================================
 
+
 class TripContext(BaseModel):
     """Trip context extracted from chatting_agent interaction"""
-    cities: Optional[List[str]] = None  # List of city names (e.g., ["Vancouver", "Seattle"])
-    schedule_start_date: Optional[str] = None  # Start date in ISO format YYYY-MM-DD (e.g., "2024-12-20")
-    schedule_end_date: Optional[str] = None  # End date in ISO format YYYY-MM-DD (e.g., "2024-12-22")
+
+    cities: Optional[List[str]] = (
+        None  # List of city names (e.g., ["Vancouver", "Seattle"])
+    )
+    schedule_start_date: Optional[str] = (
+        None  # Start date in ISO format YYYY-MM-DD (e.g., "2024-12-20")
+    )
+    schedule_end_date: Optional[str] = (
+        None  # End date in ISO format YYYY-MM-DD (e.g., "2024-12-22")
+    )
+
 
 class Place(BaseModel):
     """Place structure for each recommended place from chatting_agent"""
+
     displayName: str
     formattedAddress: str
 
+
 class ChattingAgentOutput(BaseModel):
     """Structured output from chatting_agent"""
+
     trip_context: TripContext
     chatting: str = Field(
         description="Conversational response formatted in Markdown. Use ## for main sections (e.g., '## Ice Cream Recommendations'), ### for subsections (e.g., '### Day 1'), **bold** for place names and emphasis, and - for bullet lists. Keep it clean and easily readable."
     )
     places: List[Place]  # List of places mentioned
 
+
 # ============================================================================
 # CHATTING AGENT (Non-Streaming with Structured Output)
 # ============================================================================
+
 
 def get_chatting_agent_system_prompt() -> str:
     """
@@ -139,6 +152,7 @@ def get_chatting_agent_system_prompt() -> str:
     This allows the AI to properly interpret relative dates like "Friday" or "next week".
     """
     from datetime import datetime
+
     today = datetime.now()
     today_str = today.strftime("%Y-%m-%d")
     day_of_week = today.strftime("%A")
@@ -274,75 +288,65 @@ Your goal is to have engaging conversations and provide thoughtful recommendatio
 The technical details (grounding, validation, real-time data) are handled by the system.
 """
 
+
 def chatting_agent(
-    client: genai.Client,
-    chat_history: List[types.Content],
-    user_text: str
+    client: genai.Client, chat_history: List[types.Content], user_text: str
 ) -> tuple[List[types.Content], Dict]:
     """
     chatting_agent: User-facing conversational agent (Non-Streaming with Structured Output)
-
-    Args:
-        client: Gemini client
-        chat_history: Conversation history (types.Content objects)
-        user_text: User's message
-
-    Returns:
-        tuple: (updated_chat_history, structured_output)
-            - updated_chat_history: Conversation history
-            - structured_output: Parsed ChattingAgentOutput as dict
     """
     # Add user message to history
-    chat_history.append(types.Content(
-        role="user",
-        parts=[types.Part(text=user_text)]
-    ))
+    chat_history.append(types.Content(role="user", parts=[types.Part(text=user_text)]))
 
-    # Configure chat with structured output (with current date)
-    config = types.GenerateContentConfig(
-        system_instruction=get_chatting_agent_system_prompt(),
-        response_mime_type="application/json",
-        response_schema=ChattingAgentOutput,
-    )
+    # Simple approach without structured output - just get text response
+    try:
+        response = client.models.generate_content(
+            model="gemini-1.5-flash-8b",
+            contents=chat_history,
+        )
+        response_text = response.text
+    except Exception as e:
+        error_msg = str(e)
+        if "image" in error_msg.lower():
+            response_text = "I apologize, but there seems to be an issue with the AI service. Please try again."
+        else:
+            response_text = f"I apologize, but I encountered an error: {error_msg}"
 
-    # Generate response (non-streaming)
-    response = client.models.generate_content(
-        model='gemini-2.5-flash',
-        contents=chat_history,
-        config=config
-    )
-
-    response_text = response.text
-
-    # Parse structured output
-    structured_output = json.loads(response_text)
-    trip_context = structured_output["trip_context"]
-    chatting = structured_output["chatting"]
-    places = structured_output["places"]
+    # Try to parse as JSON for structured output, fallback to plain text
+    try:
+        structured_output = json.loads(response_text)
+        trip_context = structured_output.get("trip_context", {})
+        chatting = structured_output.get("chatting", response_text)
+        places = structured_output.get("places", [])
+    except (json.JSONDecodeError, AttributeError):
+        # Not JSON, use as plain text response
+        trip_context = {}
+        chatting = response_text
+        places = []
 
     # Add response to history
-    chat_history.append(types.Content(
-        role="model",
-        parts=[types.Part(text=chatting)]
-    ))
+    chat_history.append(types.Content(role="model", parts=[types.Part(text=chatting)]))
 
     return chat_history, trip_context, chatting, places
+
 
 # ============================================================================
 # HELPER FUNCTION: INITIALIZE CHAT HISTORY (FOR SERVER.PY)
 # ============================================================================
 
+
 def initialize_chat_history() -> list:
     """Initialize chat history with welcome message."""
-    chat_history = [types.Content(
-        role="model",
-        parts=[types.Part(text=WELCOME_MESSAGE)]
-    )]
+    chat_history = [
+        types.Content(role="model", parts=[types.Part(text=WELCOME_MESSAGE)])
+    ]
     return chat_history
+
 
 # ============================================================================
 # CLI INTERFACE (FOR TESTING)
 # ============================================================================
+
 
 async def run_cli_chat_async(client: genai.Client, gmap_api_key: str = None):
     """
@@ -367,17 +371,16 @@ async def run_cli_chat_async(client: genai.Client, gmap_api_key: str = None):
     current_trip_context = None
 
     # Display welcome
-    print("\n" + "="*80)
+    print("\n" + "=" * 80)
     print(f"{AGENT_NAME} - DUAL-AGENT ARCHITECTURE (Async Batch Testing)")
-    print("="*80)
+    print("=" * 80)
     print(f"\n{WELCOME_MESSAGE}")
     print("\nType 'quit' or 'exit' to finish.\n")
 
     # Add welcome to history
-    chat_history.append(types.Content(
-        role="model",
-        parts=[types.Part(text=WELCOME_MESSAGE)]
-    ))
+    chat_history.append(
+        types.Content(role="model", parts=[types.Part(text=WELCOME_MESSAGE)])
+    )
 
     # Main conversation loop
     while True:
@@ -388,7 +391,7 @@ async def run_cli_chat_async(client: genai.Client, gmap_api_key: str = None):
             break
 
         # Exit conditions
-        if not user_text or user_text.lower() in ['quit', 'exit', 'done', 'finish']:
+        if not user_text or user_text.lower() in ["quit", "exit", "done", "finish"]:
             print("\n📝 Conversation complete!")
             break
 
@@ -398,15 +401,19 @@ async def run_cli_chat_async(client: genai.Client, gmap_api_key: str = None):
         print("\n💬 chatting_agent:")
         print("-" * 80)
 
-        chat_history, trip_context, chatting, places = chatting_agent(client, chat_history, user_text)
+        chat_history, trip_context, chatting, places = chatting_agent(
+            client, chat_history, user_text
+        )
 
         # Save structured output to history
-        structured_output_history.append({
-            "user_message": user_text,
-            "trip_context": trip_context,
-            "chatting": chatting,
-            "places": places
-        })
+        structured_output_history.append(
+            {
+                "user_message": user_text,
+                "trip_context": trip_context,
+                "chatting": chatting,
+                "places": places,
+            }
+        )
 
         # ====================================================================
         # ASYNC ENRICHMENT: Start enrichment tasks and print text concurrently
@@ -434,7 +441,11 @@ async def run_cli_chat_async(client: genai.Client, gmap_api_key: str = None):
             end_date = trip_context.get("schedule_end_date")
 
             cities_str = ", ".join(cities) if cities else "Not specified"
-            schedule_str = f"{start_date} to {end_date}" if start_date and end_date else "Not specified"
+            schedule_str = (
+                f"{start_date} to {end_date}"
+                if start_date and end_date
+                else "Not specified"
+            )
 
             print(f"\n📍 Trip Context: {cities_str} | {schedule_str}")
 
@@ -444,20 +455,26 @@ async def run_cli_chat_async(client: genai.Client, gmap_api_key: str = None):
             print("-" * 80)
 
             # Gather all enrichment results
-            enriched_places = await asyncio.gather(*enrichment_tasks, return_exceptions=True)
+            enriched_places = await asyncio.gather(
+                *enrichment_tasks, return_exceptions=True
+            )
 
             # Display enriched places
             for i, enriched_place in enumerate(enriched_places):
                 if isinstance(enriched_place, Exception):
-                    print(f"\n  ❌ Error enriching place {i+1}: {str(enriched_place)}")
+                    print(
+                        f"\n  ❌ Error enriching place {i + 1}: {str(enriched_place)}"
+                    )
                     all_places.append({"_error": str(enriched_place)})
                 elif "_error" not in enriched_place:
                     all_places.append(enriched_place)
                     # Use _displayName (clean string) for display
-                    display_name = enriched_place.get('_displayName', 'Unknown')
+                    display_name = enriched_place.get("_displayName", "Unknown")
                     print(f"\n  ✅ Enriched: {display_name}")
                     print(f"     Place ID: {enriched_place.get('_id')}")
-                    print(f"     Rating: {enriched_place.get('rating')} ({enriched_place.get('userRatingCount')} reviews)")
+                    print(
+                        f"     Rating: {enriched_place.get('rating')} ({enriched_place.get('userRatingCount')} reviews)"
+                    )
                 else:
                     print(f"\n  ❌ Error: {enriched_place.get('_error')}")
                     all_places.append(enriched_place)
@@ -470,41 +487,43 @@ async def run_cli_chat_async(client: genai.Client, gmap_api_key: str = None):
 
     # Final summary
     if all_places:
-        print(f"\n{'='*80}")
+        print(f"\n{'=' * 80}")
         print(f"SUMMARY - Total Places Enriched: {len(all_places)}")
-        print(f"{'='*80}")
+        print(f"{'=' * 80}")
 
         for i, place in enumerate(all_places, 1):
             # Use _displayName and _formattedAddress (clean strings) for display
-            display_name = place.get('_displayName', 'Unknown')
+            display_name = place.get("_displayName", "Unknown")
             print(f"\n{i}. {display_name}")
 
             # Address
-            formatted_address = place.get('_formattedAddress')
+            formatted_address = place.get("_formattedAddress")
             if formatted_address:
                 print(f"   Address: {formatted_address}")
 
             # Place ID
-            if place.get('_id'):
+            if place.get("_id"):
                 print(f"   Place ID: {place['_id']}")
 
             # Rating
-            if place.get('rating'):
-                print(f"   Rating: {place['rating']} ({place.get('userRatingCount', 0)} reviews)")
+            if place.get("rating"):
+                print(
+                    f"   Rating: {place['rating']} ({place.get('userRatingCount', 0)} reviews)"
+                )
 
             # Type
-            if place.get('primaryType'):
+            if place.get("primaryType"):
                 print(f"   Type: {place['primaryType']}")
 
             # Maps URL
-            if place.get('googleMapsUri'):
+            if place.get("googleMapsUri"):
                 print(f"   Maps: {place['googleMapsUri']}")
 
             # Error
-            if place.get('_error'):
+            if place.get("_error"):
                 print(f"   ❌ Error: {place['_error']}")
 
-        print(f"\n{'='*80}")
+        print(f"\n{'=' * 80}")
 
         # Save enriched places to JSON file
         output_file = Path(__file__).parent / "chat_enriched_places.json"
@@ -521,6 +540,7 @@ async def run_cli_chat_async(client: genai.Client, gmap_api_key: str = None):
             json.dump(structured_output_history, f, ensure_ascii=False, indent=2)
         print(f"✅ Structured output history saved to: {history_file}")
         print(f"   Total turns: {len(structured_output_history)}")
+
 
 # ============================================================================
 # ENTRY POINT

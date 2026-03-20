@@ -1,6 +1,19 @@
 from functools import lru_cache
+from urllib.parse import urlsplit, urlunsplit
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import Field
+
+
+DEFAULT_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:5174",
+    "http://127.0.0.1:5174",
+    "http://localhost:5175",
+    "http://127.0.0.1:5175",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
 
 
 class Settings(BaseSettings):
@@ -14,7 +27,7 @@ class Settings(BaseSettings):
 
     # CORS
     ALLOWED_ORIGINS: str | list[str] = Field(
-        default_factory=lambda: ["http://localhost:5173", "http://localhost:3000"],
+        default_factory=lambda: DEFAULT_ALLOWED_ORIGINS.copy(),
         description="Comma-separated list or JSON list of allowed origins",
     )
     CORS_ALLOWED_ORIGINS: str | list[str] | None = Field(
@@ -61,11 +74,44 @@ def _as_list(v: str | list[str]) -> list[str]:
     return [s.strip() for s in v.split(",") if s.strip()]
 
 
+def _expand_loopback_aliases(origins: list[str]) -> list[str]:
+    expanded: list[str] = []
+    seen: set[str] = set()
+
+    for origin in origins:
+        for candidate in _loopback_aliases(origin):
+            if candidate not in seen:
+                expanded.append(candidate)
+                seen.add(candidate)
+
+    return expanded
+
+
+def _loopback_aliases(origin: str) -> list[str]:
+    parsed = urlsplit(origin)
+    host = parsed.hostname
+
+    if not host or host not in {"localhost", "127.0.0.1"}:
+        return [origin]
+
+    aliases = [origin]
+    alias_host = "127.0.0.1" if host == "localhost" else "localhost"
+    alias_netloc = alias_host
+
+    if parsed.port is not None:
+        alias_netloc = f"{alias_netloc}:{parsed.port}"
+
+    alias_origin = urlunsplit((parsed.scheme, alias_netloc, parsed.path, parsed.query, parsed.fragment))
+    aliases.append(alias_origin)
+
+    return aliases
+
+
 @lru_cache
 def get_settings() -> Settings:
     settings = Settings()
     # Normalize list-like settings
-    settings.ALLOWED_ORIGINS = _as_list(settings.CORS_ALLOWED_ORIGINS or settings.ALLOWED_ORIGINS)
+    settings.ALLOWED_ORIGINS = _expand_loopback_aliases(_as_list(settings.CORS_ALLOWED_ORIGINS or settings.ALLOWED_ORIGINS))
     settings.CORS_ALLOW_METHODS = _as_list(settings.CORS_ALLOW_METHODS)
     settings.CORS_ALLOW_HEADERS = _as_list(settings.CORS_ALLOW_HEADERS)
     settings.CORS_EXPOSE_HEADERS = _as_list(settings.CORS_EXPOSE_HEADERS)
@@ -74,4 +120,3 @@ def get_settings() -> Settings:
 
 # Singleton-style export for convenience
 settings = get_settings()
-
