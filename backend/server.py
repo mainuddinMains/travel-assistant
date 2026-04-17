@@ -12,6 +12,7 @@ from datetime import datetime
 import json
 import uuid
 import asyncio
+import httpx
 from concurrent.futures import ThreadPoolExecutor
 from dotenv import load_dotenv
 from pathlib import Path
@@ -30,6 +31,8 @@ from gmaps_requests import (
 load_dotenv(dotenv_path=Path(__file__).parent / "api.env")
 gemini_api_key = os.getenv("GEMINI_API_KEY")
 gmap_api_key = os.getenv("GMAP_API_KEY")
+openai_api_key = os.getenv("OPENAI_API_KEY")
+groq_api_key = os.getenv("GROQ_API_KEY")
 
 # Treat template/placeholder values as missing configuration.
 if gemini_api_key and "YOUR_GEMINI_API_KEY_HERE" in gemini_api_key:
@@ -636,6 +639,171 @@ async def list_sessions():
             for sid, data in sessions_db.items()
         ]
     }
+
+class SimpleChatMessage(BaseModel):
+    role: str
+    content: str
+
+class SimpleChatRequest(BaseModel):
+    messages: List[SimpleChatMessage]
+
+@app.post("/chat/gemini")
+async def gemini_chat_proxy(request: SimpleChatRequest):
+    """
+    Proxy endpoint: streams a Gemini response back as SSE.
+    Runs server-side to avoid browser quota/CORS restrictions.
+    """
+    if not gemini_client:
+        async def no_key():
+            yield f"data: {json.dumps({'type': 'error', 'message': 'GEMINI_API_KEY not set in backend/api.env'})}\n\n"
+        return StreamingResponse(no_key(), media_type="text/event-stream")
+
+    async def generate():
+        try:
+            from google.genai import types as gtypes
+
+            # Separate system message from conversation
+            system_prompt = None
+            history = []
+            for m in request.messages:
+                if m.role == "system":
+                    system_prompt = m.content
+                else:
+                    gemini_role = "model" if m.role == "assistant" else "user"
+                    history.append({"role": gemini_role, "parts": [{"text": m.content}]})
+
+            config = gtypes.GenerateContentConfig(
+                system_instruction=system_prompt,
+                max_output_tokens=512,
+                temperature=0.7,
+            )
+
+            stream = await gemini_client.aio.models.generate_content_stream(
+                model="gemini-2.0-flash",
+                contents=history,
+                config=config,
+            )
+            async for chunk in stream:
+                text = chunk.text
+                if text:
+                    yield f"data: {json.dumps({'type': 'text', 'content': text})}\n\n"
+
+            yield f"data: {json.dumps({'type': 'done'})}\n\n"
+
+        except Exception as e:
+            yield f"data: {json.dumps({'type': 'error', 'message': str(e)})}\n\n"
+
+    return StreamingResponse(generate(), media_type="text/event-stream")
+
+
+@app.post("/chat/groq")
+async def groq_chat_proxy(request: SimpleChatRequest):
+    """
+    Proxy endpoint: streams a Groq (Llama) response back as SSE.
+    Returns text chunks + place markers (geocoded via Google Maps).
+    """
+    if not groq_api_key:
+        async def no_key():
+            yield f"data: {json.dumps({'type': 'error', 'message': 'GROQ_API_KEY not set in backend/api.env'})}\n\n"
+        return StreamingResponse(no_key(), media_type="text/event-stream")
+
+    async def generate():
+        # Separate system message from conversation history
+        system_content = ""
+        conv_messages = []
+        for m in request.messages:
+            if m.role == "system":
+                system_content = m.content
+            else:
+                conv_messages.append({"role": m.role, "content": m.content})
+
+        # Inject JSON instruction into system prompt
+        json_instruction = (
+            "\n\nIMPORTANT: Always respond in this exact JSON format only — no extra text outside the JSON:\n"
+            '{"response": "your travel advice here", "places": ['
+            '{"name": "Place Name", "description": "1-2 sentence description", "city": "City", "country": "Country"}'
+            "]}\n"
+            "Include up to 5 real, specific places from your response. If none, use empty array []."
+        )
+        enhanced_system = system_content + json_instruction
+
+        payload = {
+            "model": "llama-3.1-8b-instant",
+            "messages": [{"role": "system", "content": enhanced_system}] + conv_messages,
+            "stream": False,
+            "max_tokens": 1024,
+            "temperature": 0.7,
+        }
+        headers = {
+            "Authorization": f"Bearer {groq_api_key}",
+            "Content-Type": "application/json",
+        }
+
+        try:
+            async with httpx.AsyncClient(timeout=60.0) as client:
+                # Step 1: Get structured JSON response from Groq
+                resp = await client.post(
+                    "https://api.groq.com/openai/v1/chat/completions",
+                    json=payload,
+                    headers=headers,
+                )
+                if resp.status_code != 200:
+                    err = resp.json().get("error", {}).get("message", "Groq error")
+                    yield f"data: {json.dumps({'type': 'error', 'message': err})}\n\n"
+                    return
+
+                raw_content = resp.json()["choices"][0]["message"]["content"].strip()
+
+                # Parse JSON (handle markdown code blocks)
+                if raw_content.startswith("```"):
+                    raw_content = raw_content.split("```")[1]
+                    if raw_content.startswith("json"):
+                        raw_content = raw_content[4:]
+                    raw_content = raw_content.strip()
+
+                try:
+                    parsed = json.loads(raw_content)
+                    response_text = parsed.get("response", raw_content)
+                    places = parsed.get("places", [])
+                except json.JSONDecodeError:
+                    response_text = raw_content
+                    places = []
+
+                # Step 2: Stream text word by word
+                words = response_text.split(" ")
+                for word in words:
+                    yield f"data: {json.dumps({'type': 'text', 'content': word + ' '})}\n\n"
+                    await asyncio.sleep(0.025)
+
+                # Step 3: Geocode places and stream markers
+                if places and gmap_api_key:
+                    for place in places[:5]:
+                        try:
+                            name = place.get("name", "")
+                            city = place.get("city", "")
+                            country = place.get("country", "")
+                            query = ", ".join(filter(None, [name, city, country]))
+
+                            geo = await client.get(
+                                "https://maps.googleapis.com/maps/api/geocode/json",
+                                params={"address": query, "key": gmap_api_key},
+                                timeout=10.0,
+                            )
+                            geo_data = geo.json()
+                            if geo_data.get("status") == "OK":
+                                loc = geo_data["results"][0]["geometry"]["location"]
+                                addr = geo_data["results"][0].get("formatted_address", query)
+                                yield f"data: {json.dumps({'type': 'marker', 'name': name, 'lat': loc['lat'], 'lng': loc['lng'], 'description': place.get('description', ''), 'address': addr})}\n\n"
+                        except Exception as geo_err:
+                            print(f"Geocoding error for '{place.get('name')}': {geo_err}")
+
+                yield f"data: {json.dumps({'type': 'done'})}\n\n"
+
+        except Exception as e:
+            yield f"data: {json.dumps({'type': 'error', 'message': str(e)})}\n\n"
+
+    return StreamingResponse(generate(), media_type="text/event-stream")
+
 
 @app.delete("/sessions/{session_id}")
 async def delete_session(session_id: str):
