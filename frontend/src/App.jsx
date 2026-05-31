@@ -16,6 +16,18 @@ const printStyles = `
     0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
     40% { transform: translateY(-6px); opacity: 1; }
   }
+  @keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.88); }
+    to   { opacity: 1; transform: scale(1);    }
+  }
+  .start-trip-btn {
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+  }
+  .start-trip-btn:hover {
+    transform: scale(1.06) !important;
+    box-shadow: 0 8px 32px rgba(34,197,94,0.55) !important;
+    background-color: #16a34a !important;
+  }
 `;
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8001/api/v1";
@@ -146,10 +158,9 @@ const modes = [
 ];
 
 const tabs = [
-  { id: "active", icon: "🚗", label: "Active" },
-  { id: "saved", icon: "⭐", label: "Saved" },
-  { id: "history", icon: "📜", label: "History" },
-  { id: "settings", icon: "⚙️", label: "Settings" },
+  { id: "saved",    icon: "📍", label: "Saved"   },
+  { id: "history",  icon: "📜", label: "History" },
+  { id: "settings", icon: "⚙️", label: "Prefs"  },
 ];
 
 const countryData = {
@@ -799,6 +810,22 @@ const countries = [
   { name: "Vietnam", flag: "🇻🇳", code: "VN", lat: 14.0583, lng: 108.2772 },
 ];
 
+const allCityLocations = Object.entries(countryData).flatMap(([code, data]) => {
+  const country = countries.find(c => c.code === code);
+  if (!country) return [];
+  return (data.popularCities || [])
+    .filter(city => city.lat && city.lng)
+    .map(city => ({
+      type: "city",
+      name: city.name,
+      countryCode: code,
+      countryName: country.name,
+      countryFlag: country.flag,
+      lat: city.lat,
+      lng: city.lng,
+    }));
+});
+
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
@@ -812,7 +839,11 @@ export default function App() {
   const [destination, setDestination] = useState(null);
   const [selectedMode, setSelectedMode] = useState("drive");
   const [profileExpanded, setProfileExpanded] = useState(false);
-  const [activeTab, setActiveTab] = useState("active");
+  const [activeTab, setActiveTab] = useState("saved");
+  const [savedPlaces, setSavedPlaces] = useState([]);
+  const [travelHistory, setTravelHistory] = useState([]);
+  const [defaultTransitMode, setDefaultTransitMode] = useState("drive");
+  const [tripSaved, setTripSaved] = useState(false);
   const [geolocationStatus, setGeolocationStatus] = useState("offline");
   const [showCountries, setShowCountries] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState({ name: "United States", flag: "🇺🇸", code: "US", lat: 37.0902, lng: -95.7129, details: null });
@@ -843,6 +874,7 @@ export default function App() {
   const [chatPlaces, setChatPlaces] = useState([]);
   const [activeChatPlace, setActiveChatPlace] = useState(null);
   const [mapsLoaded, setMapsLoaded] = useState(false);
+  const [destTimezone, setDestTimezone] = useState(null);
 
   useEffect(() => {
     const token = localStorage.getItem("auth_token");
@@ -894,6 +926,8 @@ export default function App() {
     setSelectedPlace(null);
     setShowCountries(false);
     setShowCountryDetails(true);
+    setCountrySearch(country.name);
+    fetchStateWeather({ lat: country.lat, lng: country.lng });
   };
 
   const getWeatherInfo = (code) => {
@@ -919,6 +953,7 @@ export default function App() {
       );
       const data = await res.json();
       setStateWeather(data);
+      if (data.timezone) setDestTimezone(data.timezone);
     } catch {
       setStateWeather({ error: true });
     }
@@ -990,9 +1025,61 @@ export default function App() {
       setDestination({ lat: place.lat, lng: place.lng, label: place.name });
       setShowMap(true);
       setTransportInfo(null);
+      fetchStateWeather({ lat: place.lat, lng: place.lng });
       // Fetch transport info after map/Google loads
       setTimeout(() => fetchTransportInfo(place), 800);
     }
+  };
+
+  const handleSearchEnter = () => {
+    const q = countrySearch.trim();
+    if (!q) return;
+    setShowCountries(false);
+
+    // 1. Exact or prefix city match
+    const cityMatch =
+      allCityLocations.find(c => c.name.toLowerCase() === q.toLowerCase()) ||
+      allCityLocations.find(c =>
+        `${c.name}, ${c.countryName}`.toLowerCase() === q.toLowerCase()
+      ) ||
+      allCityLocations.find(c => c.name.toLowerCase().startsWith(q.toLowerCase()));
+
+    if (cityMatch) {
+      const parent = countries.find(c => c.code === cityMatch.countryCode);
+      if (parent) handleCountrySelect(parent);
+      handlePlaceSelect({ name: cityMatch.name, lat: cityMatch.lat, lng: cityMatch.lng, desc: `City in ${cityMatch.countryName}` });
+      setCountrySearch(`${cityMatch.name}, ${cityMatch.countryName}`);
+      return;
+    }
+
+    // 2. Exact or prefix country match
+    const countryMatch =
+      countries.find(c => c.name.toLowerCase() === q.toLowerCase()) ||
+      countries.find(c => c.name.toLowerCase().startsWith(q.toLowerCase()));
+
+    if (countryMatch) {
+      handleCountrySelect(countryMatch);
+      return;
+    }
+
+    // 3. Free-text fallback — deterministic mock weather + timezone
+    let hash = 0;
+    for (let i = 0; i < q.length; i++) hash = (hash * 31 + q.charCodeAt(i)) >>> 0;
+    const mockTzList = [
+      "America/New_York", "America/Chicago", "America/Los_Angeles", "America/Sao_Paulo",
+      "Europe/London", "Europe/Paris", "Europe/Berlin", "Europe/Moscow",
+      "Asia/Dubai", "Asia/Kolkata", "Asia/Bangkok", "Asia/Tokyo", "Asia/Shanghai",
+      "Australia/Sydney", "Pacific/Auckland", "Africa/Cairo", "Africa/Nairobi",
+    ];
+    const mockWeatherCodes = [0, 1, 2, 3, 45, 61, 71, 80, 95];
+    const tz = mockTzList[hash % mockTzList.length];
+    const code = mockWeatherCodes[(hash >> 4) % mockWeatherCodes.length];
+    const tempC = 8 + ((hash >> 8) % 27);
+
+    setDestination({ lat: 0, lng: 0, label: q });
+    setCountrySearch(q);
+    setStateWeather({ current_weather: { temperature: tempC, weathercode: code } });
+    setDestTimezone(tz);
   };
 
   const handleLogin = async () => {
@@ -1043,6 +1130,21 @@ export default function App() {
     setIsLoggedIn(false);
     setEmail("");
     setPassword("");
+  };
+
+  const handleSaveTrip = () => {
+    if (!destination) return;
+    const plan = {
+      destination: destination.label,
+      mode: selectedMode,
+      date: new Date().toLocaleDateString(),
+      origin: origin?.label || "Current Location",
+      id: Date.now(),
+    };
+    setTripPlan(plan);
+    setTravelHistory(prev => [plan, ...prev].slice(0, 20));
+    setTripSaved(true);
+    setTimeout(() => setTripSaved(false), 2000);
   };
 
   const handleChatResize = useCallback((e) => {
@@ -1317,6 +1419,7 @@ export default function App() {
                 type="text" placeholder="Search a destination…" value={countrySearch}
                 onFocus={() => setShowCountries(true)}
                 onChange={e => { setCountrySearch(e.target.value); setShowCountries(true); }}
+                onKeyDown={e => { if (e.key === "Enter") handleSearchEnter(); }}
                 style={{ flex: 1, border: "none", outline: "none", fontSize: "14px", color: "#111827", background: "transparent" }}
               />
               {countrySearch ? (
@@ -1328,26 +1431,105 @@ export default function App() {
                 </div>
               )}
             </div>
+            {/* Start Trip — floats below search bar when a destination is selected */}
+            {!showCountries && destination && (
+              <div style={{
+                position: "absolute", top: "calc(100% + 12px)", left: 0, right: 0,
+                display: "flex", justifyContent: "center",
+                animation: "fadeInScale 0.25s ease forwards",
+                zIndex: 49, pointerEvents: "auto",
+              }}>
+                <button
+                  className="start-trip-btn"
+                  onClick={handleSaveTrip}
+                  style={{
+                    backgroundColor: tripSaved ? "#16a34a" : "#22c55e",
+                    color: "white",
+                    padding: "9px 24px", borderRadius: "50px",
+                    border: "none", cursor: "pointer",
+                    fontSize: "14px", fontWeight: 700,
+                    boxShadow: tripSaved
+                      ? "0 4px 20px rgba(22,163,74,0.6)"
+                      : "0 4px 20px rgba(34,197,94,0.45)",
+                    display: "flex", alignItems: "center", gap: "8px",
+                    whiteSpace: "nowrap",
+                    transition: "background-color 0.25s ease, box-shadow 0.25s ease",
+                  }}
+                >
+                  {tripSaved ? (
+                    <>
+                      <span style={{ fontSize: "15px", fontWeight: 900 }}>✓</span>
+                      <span>Saved to History!</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>✈️</span>
+                      <span>Start Trip to {destination.label}</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            )}
+
             {showCountries && (() => {
+              const q = countrySearch.toLowerCase();
               const filteredCountries = countries.filter(c =>
-                c.name.toLowerCase().includes(countrySearch.toLowerCase())
+                c.name.toLowerCase().includes(q)
               );
+              const filteredCities = q.length >= 2
+                ? allCityLocations.filter(c =>
+                    c.name.toLowerCase().includes(q) ||
+                    c.countryName.toLowerCase().includes(q)
+                  ).slice(0, 6)
+                : [];
+              const noResults = filteredCountries.length === 0 && filteredCities.length === 0;
               return (
-                <div style={{ position: "absolute", top: "calc(100% + 8px)", left: 0, right: 0, backgroundColor: "white", borderRadius: "14px", boxShadow: "0 12px 36px rgba(0,0,0,0.25)", maxHeight: "300px", overflowY: "auto", zIndex: 50 }}>
-                  <div style={{ padding: "6px 14px 4px", borderBottom: "1px solid #f3f4f6" }}>
-                    <p style={{ fontSize: "11px", color: "#9ca3af", margin: 0 }}>{filteredCountries.length} of {countries.length} destinations</p>
-                  </div>
-                  {filteredCountries.length === 0
+                <div style={{ position: "absolute", top: "calc(100% + 8px)", left: 0, right: 0, backgroundColor: "white", borderRadius: "14px", boxShadow: "0 12px 36px rgba(0,0,0,0.25)", maxHeight: "320px", overflowY: "auto", zIndex: 50 }}>
+                  {noResults
                     ? <div style={{ padding: "20px", textAlign: "center", color: "#9ca3af", fontSize: "14px" }}>🌐 No destinations found</div>
-                    : filteredCountries.map(country => (
-                        <button key={country.code}
-                          onClick={() => { handleCountrySelect(country); setShowCountries(false); setCountrySearch(""); }}
-                          style={{ display: "flex", alignItems: "center", gap: "12px", width: "100%", padding: "9px 14px", border: "none", background: selectedCountry.code === country.code ? "#eff6ff" : "transparent", cursor: "pointer", textAlign: "left" }}>
-                          <span style={{ fontSize: "20px" }}>{country.flag}</span>
-                          <span style={{ fontSize: "14px", color: "#374151", flex: 1 }}>{country.name}</span>
-                          {selectedCountry.code === country.code && <span style={{ color: "#2563eb", fontSize: "12px" }}>✓</span>}
-                        </button>
-                      ))
+                    : <>
+                        {filteredCities.length > 0 && (
+                          <>
+                            <div style={{ padding: "6px 14px 4px", borderBottom: "1px solid #f3f4f6" }}>
+                              <p style={{ fontSize: "11px", color: "#9ca3af", margin: 0 }}>Cities</p>
+                            </div>
+                            {filteredCities.map(city => (
+                              <button key={`${city.countryCode}-${city.name}`}
+                                onClick={() => {
+                                  const parent = countries.find(c => c.code === city.countryCode);
+                                  if (parent) handleCountrySelect(parent);
+                                  handlePlaceSelect({ name: city.name, lat: city.lat, lng: city.lng, desc: `City in ${city.countryName}` });
+                                  setCountrySearch(`${city.name}, ${city.countryName}`);
+                                  setShowCountries(false);
+                                }}
+                                style={{ display: "flex", alignItems: "center", gap: "12px", width: "100%", padding: "9px 14px", border: "none", background: "transparent", cursor: "pointer", textAlign: "left" }}>
+                                <span style={{ fontSize: "20px" }}>{city.countryFlag}</span>
+                                <div style={{ flex: 1 }}>
+                                  <span style={{ fontSize: "14px", color: "#374151" }}>{city.name}</span>
+                                  <span style={{ fontSize: "11px", color: "#9ca3af", marginLeft: "6px" }}>{city.countryName}</span>
+                                </div>
+                                <span style={{ fontSize: "11px", color: "#9ca3af" }}>🏙️</span>
+                              </button>
+                            ))}
+                          </>
+                        )}
+                        {filteredCountries.length > 0 && (
+                          <>
+                            <div style={{ padding: "6px 14px 4px", borderBottom: "1px solid #f3f4f6", borderTop: filteredCities.length > 0 ? "1px solid #f3f4f6" : "none" }}>
+                              <p style={{ fontSize: "11px", color: "#9ca3af", margin: 0 }}>Countries ({filteredCountries.length})</p>
+                            </div>
+                            {filteredCountries.map(country => (
+                              <button key={country.code}
+                                onClick={() => { handleCountrySelect(country); }}
+                                style={{ display: "flex", alignItems: "center", gap: "12px", width: "100%", padding: "9px 14px", border: "none", background: selectedCountry.code === country.code ? "#eff6ff" : "transparent", cursor: "pointer", textAlign: "left" }}>
+                                <span style={{ fontSize: "20px" }}>{country.flag}</span>
+                                <span style={{ fontSize: "14px", color: "#374151", flex: 1 }}>{country.name}</span>
+                                {selectedCountry.code === country.code && <span style={{ color: "#2563eb", fontSize: "12px" }}>✓</span>}
+                              </button>
+                            ))}
+                          </>
+                        )}
+                      </>
                   }
                 </div>
               );
@@ -1364,7 +1546,97 @@ export default function App() {
           }}>
             <span style={{ fontSize: "20px" }}>💬</span>
           </button>
+
+          {/* User menu */}
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", flexShrink: 0, paddingLeft: "10px", borderLeft: "1px solid rgba(255,255,255,0.2)" }}>
+            <div style={{ width: "32px", height: "32px", borderRadius: "50%", backgroundColor: "#3b82f6", display: "flex", alignItems: "center", justifyContent: "center", color: "white", fontWeight: "bold", fontSize: "13px", flexShrink: 0 }}>U</div>
+            <span style={{ color: "rgba(255,255,255,0.9)", fontSize: "13px", fontWeight: 500 }}>Traveler</span>
+            <button onClick={handleLogout} style={{ backgroundColor: "#ef4444", color: "white", padding: "5px 10px", borderRadius: "6px", fontSize: "12px", border: "none", cursor: "pointer", fontWeight: 600 }}>Logout</button>
+          </div>
         </div>
+
+        {/* ── ETA SUMMARY CARD ─────────────────────────────── */}
+        {destination && (
+          <div style={{
+            position: "absolute", top: "58px", left: "50%", transform: "translateX(-50%)",
+            zIndex: 25,
+            width: "min(440px, calc(100vw - 32px))",
+            backgroundColor: "rgba(255,255,255,0.97)",
+            backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)",
+            borderRadius: "0 0 16px 16px",
+            boxShadow: "0 8px 28px rgba(0,0,0,0.22)",
+            border: "1px solid rgba(0,0,0,0.06)", borderTop: "none",
+            overflow: "hidden",
+          }}>
+
+            {/* Destination row */}
+            <div style={{
+              padding: "6px 14px 5px",
+              borderBottom: "1px solid #f3f4f6",
+              display: "flex", alignItems: "center", justifyContent: "space-between",
+            }}>
+              <span style={{ fontSize: "12px", color: "#374151", fontWeight: 600 }}>
+                {selectedCountry.flag}&nbsp;{destination.label}
+              </span>
+              {transportLoading && (
+                <span style={{ fontSize: "11px", color: "#9ca3af", fontStyle: "italic" }}>Calculating…</span>
+              )}
+              {!transportLoading && !origin && (
+                <span style={{ fontSize: "11px", color: "#9ca3af" }}>📍 Enable location for real ETAs</span>
+              )}
+            </div>
+
+            {/* Four-mode columns */}
+            <div style={{ display: "flex" }}>
+              {[
+                { id: "drive",   icon: "🚗", label: "Drive",   infoKey: "driving"   },
+                { id: "transit", icon: "🚇", label: "Transit", infoKey: "transit"   },
+                { id: "walk",    icon: "🚶", label: "Walk",    infoKey: "walking"   },
+                { id: "bike",    icon: "🚴", label: "Bike",    infoKey: "bicycling" },
+              ].map((m, i) => {
+                const info = transportInfo?.[m.infoKey];
+                const duration = transportLoading
+                  ? "…"
+                  : info?.duration ?? routes?.[m.id]?.duration ?? "—";
+                const isActive = selectedMode === m.id;
+                return (
+                  <button key={m.id} onClick={() => setSelectedMode(m.id)} style={{
+                    flex: 1, padding: "9px 4px 10px",
+                    display: "flex", flexDirection: "column", alignItems: "center", gap: "3px",
+                    border: "none",
+                    borderLeft: i > 0 ? "1px solid #f3f4f6" : "none",
+                    cursor: "pointer",
+                    backgroundColor: isActive ? "#eff6ff" : "white",
+                    transition: "background 0.15s",
+                    position: "relative",
+                  }}>
+                    {isActive && (
+                      <div style={{
+                        position: "absolute", top: 0, left: 0, right: 0,
+                        height: "3px", backgroundColor: "#2563eb",
+                      }} />
+                    )}
+                    <span style={{ fontSize: "18px", lineHeight: 1 }}>{m.icon}</span>
+                    <span style={{
+                      fontSize: "13px", fontWeight: 700, lineHeight: 1.2,
+                      color: isActive ? "#1d4ed8" : "#111827",
+                    }}>
+                      {duration}
+                    </span>
+                    <span style={{
+                      fontSize: "10px", fontWeight: 600,
+                      textTransform: "uppercase", letterSpacing: "0.05em",
+                      color: isActive ? "#3b82f6" : "#9ca3af",
+                    }}>
+                      {m.label}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+          </div>
+        )}
 
         {/* ── CENTRAL PANEL (context card + map) ───────────── */}
         <div style={{
@@ -1374,99 +1646,6 @@ export default function App() {
         }}>
           <div style={{ width: "min(900px, 100%)", height: "100%", display: "flex", flexDirection: "column", gap: "10px" }}>
 
-            {/* ── CONTEXT CARD (translucent glassmorphism) ──── */}
-            <div style={{
-              flexShrink: 0,
-              backgroundColor: "rgba(5,15,40,0.52)",
-              backdropFilter: "blur(24px)",
-              WebkitBackdropFilter: "blur(24px)",
-              borderRadius: "18px",
-              border: "1px solid rgba(255,255,255,0.2)",
-              padding: "14px 20px",
-              boxShadow: "0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08)",
-              color: "white",
-            }}>
-              <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: "14px" }}>
-
-                {/* Destination name */}
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", minWidth: "150px" }}>
-                  <span style={{ fontSize: "34px", lineHeight: 1 }}>{selectedCountry.flag}</span>
-                  <div>
-                    <h2 style={{ margin: 0, fontSize: "18px", fontWeight: 800, color: "white", letterSpacing: "-0.3px" }}>
-                      {selectedState ? selectedState.name : selectedCountry.name}
-                    </h2>
-                    <p style={{ margin: 0, fontSize: "11px", color: "rgba(255,255,255,0.55)" }}>
-                      {selectedState ? selectedCountry.name : "Explore destination"}
-                    </p>
-                  </div>
-                </div>
-
-                <div style={{ width: "1px", height: "38px", backgroundColor: "rgba(255,255,255,0.18)", flexShrink: 0 }} />
-
-                {/* Live weather */}
-                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  {stateWeatherLoading ? (
-                    <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.7)" }}>⏳ Fetching weather…</span>
-                  ) : stateWeather?.current_weather ? (
-                    <>
-                      <span style={{ fontSize: "30px", lineHeight: 1 }}>{getWeatherInfo(stateWeather.current_weather.weathercode).icon}</span>
-                      <div>
-                        <p style={{ margin: 0, fontSize: "20px", fontWeight: 700, color: "white", lineHeight: 1 }}>
-                          {Math.round(stateWeather.current_weather.temperature * 9 / 5 + 32)}°F
-                        </p>
-                        <p style={{ margin: "2px 0 0", fontSize: "11px", color: "rgba(255,255,255,0.6)" }}>
-                          {getWeatherInfo(stateWeather.current_weather.weathercode).desc}
-                        </p>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <span style={{ fontSize: "24px" }}>🌤️</span>
-                      <div>
-                        <p style={{ margin: 0, fontSize: "13px", color: "white" }}>Weather</p>
-                        <p style={{ margin: 0, fontSize: "11px", color: "rgba(255,255,255,0.45)" }}>Select a state/region</p>
-                      </div>
-                    </>
-                  )}
-                </div>
-
-                <div style={{ width: "1px", height: "38px", backgroundColor: "rgba(255,255,255,0.18)", flexShrink: 0 }} />
-
-                {/* Local time */}
-                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <span style={{ fontSize: "20px" }}>🕐</span>
-                  <div>
-                    <p style={{ margin: 0, fontSize: "15px", fontWeight: 700, color: "white", lineHeight: 1 }}>
-                      {new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
-                    </p>
-                    <p style={{ margin: 0, fontSize: "11px", color: "rgba(255,255,255,0.5)" }}>Local Time</p>
-                  </div>
-                </div>
-
-                {selectedCountry.details?.beautifulPlaces && (
-                  <div style={{ width: "1px", height: "38px", backgroundColor: "rgba(255,255,255,0.18)", flexShrink: 0 }} />
-                )}
-
-                {/* Trending stops */}
-                {selectedCountry.details?.beautifulPlaces && (
-                  <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
-                    <span style={{ fontSize: "12px", fontWeight: 700, color: "rgba(255,200,50,0.9)" }}>🔥 Trending</span>
-                    {selectedCountry.details.beautifulPlaces.slice(0, 3).map((place, i) => (
-                      <button key={i} onClick={() => handlePlaceSelect(place)}
-                        style={{
-                          backgroundColor: "rgba(255,255,255,0.13)", border: "1px solid rgba(255,255,255,0.22)",
-                          borderRadius: "20px", padding: "4px 12px", color: "white", fontSize: "12px",
-                          fontWeight: 500, cursor: "pointer", transition: "background 0.2s",
-                        }}
-                        onMouseEnter={e => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.26)"}
-                        onMouseLeave={e => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.13)"}
-                      >{place.name}</button>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-
             {/* ── MAP PANEL ───────────────────────────────────── */}
             <div style={{
               flex: 1, minHeight: "300px",
@@ -1474,6 +1653,55 @@ export default function App() {
               boxShadow: "0 20px 60px rgba(0,0,0,0.55)",
               border: "1.5px solid rgba(255,255,255,0.16)",
             }}>
+              {/* ── WEATHER + TIME FLOATING OVERLAY ─────────── */}
+              <div className="absolute top-4 right-4 z-10 bg-slate-900/80 backdrop-blur-md text-white p-3 rounded-xl shadow-lg border border-slate-700/50 flex gap-4 items-center">
+                {/* Weather */}
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  {stateWeatherLoading ? (
+                    <span style={{ fontSize: "12px", opacity: 0.7 }}>⏳ Fetching weather…</span>
+                  ) : stateWeather?.current_weather ? (
+                    <>
+                      <span style={{ fontSize: "26px", lineHeight: 1 }}>{getWeatherInfo(stateWeather.current_weather.weathercode).icon}</span>
+                      <div>
+                        <p style={{ margin: 0, fontSize: "18px", fontWeight: 700, lineHeight: 1 }}>
+                          {Math.round(stateWeather.current_weather.temperature * 9 / 5 + 32)}°F
+                        </p>
+                        <p style={{ margin: "2px 0 0", fontSize: "11px", opacity: 0.6 }}>
+                          {getWeatherInfo(stateWeather.current_weather.weathercode).desc}
+                        </p>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <span style={{ fontSize: "22px" }}>🌤️</span>
+                      <div>
+                        <p style={{ margin: 0, fontSize: "13px" }}>Weather</p>
+                        <p style={{ margin: 0, fontSize: "11px", opacity: 0.45 }}>
+                          {destination ? destination.label : "Search a destination"}
+                        </p>
+                      </div>
+                    </>
+                  )}
+                </div>
+
+                <div style={{ width: "1px", height: "34px", backgroundColor: "rgba(255,255,255,0.25)", flexShrink: 0 }} />
+
+                {/* Local Time */}
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <span style={{ fontSize: "18px" }}>🕐</span>
+                  <div>
+                    <p style={{ margin: 0, fontSize: "15px", fontWeight: 700, lineHeight: 1 }}>
+                      {new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", ...(destTimezone ? { timeZone: destTimezone } : {}) })}
+                    </p>
+                    <p style={{ margin: 0, fontSize: "11px", opacity: 0.5 }}>
+                      {destTimezone
+                        ? (destTimezone.split("/")[1] || destTimezone).replace(/_/g, " ") + " Time"
+                        : "Local Time"}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               {/* Map-type mini toggle */}
               <div style={{
                 position: "absolute", top: "10px", left: "10px", zIndex: 10,
@@ -1668,11 +1896,11 @@ export default function App() {
             <button
               onClick={() => setProfileExpanded(!profileExpanded)}
               style={{
-                backgroundColor: "rgba(255,255,255,0.13)", border: "1px solid rgba(255,255,255,0.22)",
+                backgroundColor: profileExpanded ? "rgba(255,255,255,0.22)" : "rgba(255,255,255,0.13)", border: "1px solid rgba(255,255,255,0.22)",
                 color: "white", padding: "5px 14px", borderRadius: "8px",
                 fontSize: "12px", fontWeight: 600, cursor: "pointer",
               }}
-            >👤 Profile</button>
+            >{profileExpanded ? "✕ Close" : "☰ Menu"}</button>
           </div>
         </div>
 
@@ -1773,81 +2001,204 @@ export default function App() {
           </div>
         )}
 
-        {/* ── PROFILE PANEL (overlay, bottom-left) ────────── */}
-        {profileExpanded && (
-          <div style={{ position: "absolute", bottom: "60px", left: "16px", zIndex: 35, width: "320px", backgroundColor: "white", borderRadius: "12px", boxShadow: "0 10px 30px rgba(0,0,0,0.3)", overflow: "hidden" }}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px", borderBottom: "1px solid #e5e7eb" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                <div style={{ width: "40px", height: "40px", borderRadius: "50%", backgroundColor: "#3b82f6", display: "flex", alignItems: "center", justifyContent: "center", color: "white", fontWeight: "bold" }}>U</div>
-                <div>
-                  <p style={{ fontWeight: 500, color: "#1f2937", margin: 0 }}>Traveler</p>
-                  <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                    <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: getStatusColor() }}></span>
-                    <span style={{ fontSize: "12px", color: "#6b7280" }}>GPS {geolocationStatus === "connected" ? "Connected" : "Offline"}</span>
-                  </div>
-                </div>
-              </div>
-              <div style={{ display: "flex", gap: "8px" }}>
-                <button onClick={handleLogout} style={{ backgroundColor: "#ef4444", color: "white", padding: "6px 12px", borderRadius: "6px", fontSize: "12px", border: "none", cursor: "pointer" }}>Logout</button>
-                <button onClick={() => setProfileExpanded(false)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: "16px", color: "#9ca3af" }}>✕</button>
-              </div>
-            </div>
-            <div style={{ display: "flex", borderBottom: "1px solid #e5e7eb" }}>
-              {tabs.map(tab => (
-                <button key={tab.id} onClick={() => setActiveTab(tab.id)}
-                  style={{ flex: 1, padding: "8px", fontSize: "12px", display: "flex", flexDirection: "column", alignItems: "center", gap: "4px", background: "none", border: "none", cursor: "pointer", color: activeTab === tab.id ? "#2563eb" : "#6b7280", borderBottom: activeTab === tab.id ? "2px solid #2563eb" : "none" }}>
-                  <span>{tab.icon}</span><span>{tab.label}</span>
-                </button>
-              ))}
-            </div>
-            <div style={{ padding: "12px", maxHeight: "320px", overflowY: "auto" }}>
-              {activeTab === "active" && (
-                <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-                  {!origin && <button onClick={requestGeolocation} style={{ backgroundColor: "#2563eb", color: "white", padding: "8px 16px", borderRadius: "6px", border: "none", cursor: "pointer", fontSize: "14px" }}>📍 Use Current Location</button>}
-                  <div>
-                    <p style={{ fontSize: "12px", color: "#6b7280", marginBottom: "4px" }}>Destination</p>
-                    <input type="text" value={selectedCountry?.name || ""} placeholder="Where to?" readOnly
-                      style={{ width: "100%", padding: "8px 12px", borderRadius: "6px", border: "1px solid #d1d5db", fontSize: "14px", boxSizing: "border-box" }} />
-                  </div>
-                  {routes && (
-                    <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                      <p style={{ fontSize: "12px", color: "#6b7280" }}>Routes</p>
-                      {Object.entries(routes).map(([mode, route]) => (
-                        <button key={mode} onClick={() => setSelectedMode(mode)}
-                          style={{ padding: "12px", borderRadius: "8px", border: selectedMode === mode ? "2px solid #2563eb" : "1px solid #e5e7eb", backgroundColor: selectedMode === mode ? "#eff6ff" : "white", textAlign: "left", cursor: "pointer" }}>
-                          <div style={{ display: "flex", justifyContent: "space-between" }}>
-                            <span style={{ fontWeight: 500, textTransform: "capitalize" }}>{mode}</span>
-                            <span style={{ color: "#6b7280", fontSize: "14px" }}>{route.duration}</span>
-                          </div>
-                          <div style={{ fontSize: "12px", color: "#9ca3af", marginTop: "4px" }}>{route.distance} {route.transitInfo}</div>
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                  <button
-                    onClick={() => setTripPlan({ destination: destination?.label || "Unknown", mode: selectedMode, date: new Date().toLocaleDateString(), origin: origin?.label || "Current Location" })}
-                    style={{ width: "100%", backgroundColor: "#22c55e", color: "white", padding: "8px", borderRadius: "6px", border: "none", cursor: "pointer", fontSize: "14px", fontWeight: 500, marginTop: "8px" }}>
-                    Start Trip
-                  </button>
-                  {tripPlan && (
-                    <button onClick={() => window.print()}
-                      style={{ width: "100%", backgroundColor: "#6366f1", color: "white", padding: "8px", borderRadius: "6px", border: "none", cursor: "pointer", fontSize: "14px", fontWeight: 500, marginTop: "8px" }}>🖨️ Print Trip Plan</button>
-                  )}
-                </div>
-              )}
-              {activeTab === "saved" && <div style={{ textAlign: "center", padding: "32px", color: "#6b7280" }}><p>No saved places</p></div>}
-              {activeTab === "history" && <div style={{ textAlign: "center", padding: "32px", color: "#6b7280" }}><p>No trip history</p></div>}
-              {activeTab === "settings" && (
-                <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-                  <button onClick={() => setIsFullscreen(!isFullscreen)} style={{ textAlign: "left", padding: "8px", borderRadius: "4px", border: "none", background: "none", cursor: "pointer", fontSize: "14px", display: "flex", alignItems: "center", gap: "8px" }}>⛶ {isFullscreen ? "Exit Fullscreen" : "Fullscreen Mode"}</button>
-                  <button style={{ textAlign: "left", padding: "8px", borderRadius: "4px", border: "none", background: "none", cursor: "pointer", fontSize: "14px" }}>Notifications</button>
-                  <button style={{ textAlign: "left", padding: "8px", borderRadius: "4px", border: "none", background: "none", cursor: "pointer", fontSize: "14px" }}>Distance Units</button>
-                  <button style={{ textAlign: "left", padding: "8px", borderRadius: "4px", border: "none", background: "none", cursor: "pointer", fontSize: "14px" }}>About</button>
-                </div>
-              )}
-            </div>
+        {/* ── LEFT SIDEBAR ────────────────────────────────── */}
+        <div style={{
+          position: "absolute", top: "58px", bottom: "52px", left: 0, zIndex: 25,
+          width: "272px", backgroundColor: "white",
+          boxShadow: "4px 0 24px rgba(0,0,0,0.18)",
+          display: "flex", flexDirection: "column", overflow: "hidden",
+          transform: profileExpanded ? "translateX(0)" : "translateX(-100%)",
+          transition: "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+          willChange: "transform",
+        }}>
+          {/* Sidebar header */}
+          <div style={{ padding: "10px 14px", borderBottom: "1px solid #e5e7eb", backgroundColor: "#f9fafb", display: "flex", alignItems: "center", justifyContent: "space-between", flexShrink: 0 }}>
+            <span style={{ fontSize: "13px", fontWeight: 700, color: "#1f2937" }}>Navigation</span>
+            <button onClick={() => setProfileExpanded(false)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: "18px", color: "#9ca3af", lineHeight: 1 }}>✕</button>
           </div>
-        )}
+
+          {/* Tab bar */}
+          <div style={{ display: "flex", borderBottom: "1px solid #e5e7eb", flexShrink: 0 }}>
+            {tabs.map(tab => (
+              <button key={tab.id} onClick={() => setActiveTab(tab.id)}
+                style={{
+                  flex: 1, padding: "10px 4px", fontSize: "11px",
+                  display: "flex", flexDirection: "column", alignItems: "center", gap: "3px",
+                  background: "none", border: "none", cursor: "pointer",
+                  color: activeTab === tab.id ? "#2563eb" : "#6b7280",
+                  borderBottom: activeTab === tab.id ? "2px solid #2563eb" : "2px solid transparent",
+                  fontWeight: activeTab === tab.id ? 600 : 400,
+                  transition: "color 0.15s",
+                }}>
+                <span style={{ fontSize: "16px", position: "relative", display: "inline-block" }}>
+                  {tab.icon}
+                  {tab.id === "history" && travelHistory.length > 0 && (
+                    <span style={{
+                      position: "absolute", top: "-4px", right: "-9px",
+                      backgroundColor: "#2563eb", color: "white",
+                      borderRadius: "50%", fontSize: "9px",
+                      width: "15px", height: "15px",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      fontWeight: 700, lineHeight: 1,
+                    }}>
+                      {travelHistory.length > 9 ? "9+" : travelHistory.length}
+                    </span>
+                  )}
+                </span>
+                <span>{tab.label}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Tab content */}
+          <div style={{ flex: 1, overflowY: "auto" }}>
+
+            {/* ── SAVED PLACES ── */}
+            {activeTab === "saved" && (
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                {selectedPlace && !savedPlaces.some(p => p.name === selectedPlace.name) && (
+                  <div style={{ padding: "10px 12px", borderBottom: "1px solid #f3f4f6", backgroundColor: "#f0fdf4" }}>
+                    <p style={{ margin: "0 0 6px", fontSize: "11px", color: "#16a34a", fontWeight: 600 }}>📍 Current selection</p>
+                    <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                      <span style={{ fontSize: "13px", color: "#1f2937", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{selectedPlace.name}</span>
+                      <button
+                        onClick={() => setSavedPlaces(prev => [...prev, { ...selectedPlace, savedAt: new Date().toLocaleDateString() }])}
+                        style={{ backgroundColor: "#22c55e", color: "white", padding: "4px 10px", borderRadius: "6px", fontSize: "11px", border: "none", cursor: "pointer", fontWeight: 600, flexShrink: 0 }}>
+                        Save
+                      </button>
+                    </div>
+                  </div>
+                )}
+                {savedPlaces.length === 0 ? (
+                  <div style={{ padding: "40px 20px", textAlign: "center" }}>
+                    <p style={{ fontSize: "28px", margin: "0 0 8px" }}>📍</p>
+                    <p style={{ fontSize: "13px", color: "#6b7280", margin: 0 }}>No saved places yet</p>
+                    <p style={{ fontSize: "11px", color: "#9ca3af", margin: "4px 0 0" }}>Select a spot on the map, then tap Save</p>
+                  </div>
+                ) : (
+                  <div style={{ padding: "8px" }}>
+                    {savedPlaces.map((place, i) => (
+                      <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px", borderRadius: "10px", marginBottom: "4px", backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}>
+                        <span style={{ fontSize: "18px", flexShrink: 0 }}>📍</span>
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                          <p style={{ margin: 0, fontSize: "13px", fontWeight: 600, color: "#1f2937", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{place.name}</p>
+                          <p style={{ margin: "2px 0 0", fontSize: "11px", color: "#9ca3af" }}>Saved {place.savedAt}</p>
+                        </div>
+                        <div style={{ display: "flex", gap: "4px", flexShrink: 0 }}>
+                          <button onClick={() => handlePlaceSelect(place)} style={{ border: "1px solid #d1d5db", borderRadius: "6px", padding: "3px 8px", fontSize: "11px", cursor: "pointer", color: "#2563eb", background: "white" }}>Go</button>
+                          <button onClick={() => setSavedPlaces(prev => prev.filter((_, j) => j !== i))} style={{ background: "none", border: "none", padding: "3px 5px", cursor: "pointer", color: "#9ca3af", fontSize: "14px" }}>✕</button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* ── TRAVEL HISTORY ── */}
+            {activeTab === "history" && (
+              <div style={{ display: "flex", flexDirection: "column" }}>
+
+                {/* Save current destination */}
+                {destination && (
+                  <div style={{ padding: "10px 12px", borderBottom: "1px solid #e5e7eb", backgroundColor: "#f0fdf4", flexShrink: 0 }}>
+                    <p style={{ margin: "0 0 6px", fontSize: "11px", color: "#16a34a", fontWeight: 600 }}>Current destination</p>
+                    <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                      <span style={{ fontSize: "13px", color: "#1f2937", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                        {selectedCountry.flag} {destination.label}
+                      </span>
+                      <button
+                        onClick={handleSaveTrip}
+                        style={{
+                          backgroundColor: tripSaved ? "#16a34a" : "#22c55e",
+                          color: "white", padding: "5px 12px", borderRadius: "8px",
+                          fontSize: "11px", border: "none", cursor: "pointer", fontWeight: 700,
+                          flexShrink: 0, transition: "background-color 0.25s ease",
+                          whiteSpace: "nowrap",
+                        }}>
+                        {tripSaved ? "✓ Saved!" : "Save to History"}
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {travelHistory.length === 0 ? (
+                  <div style={{ padding: "40px 20px", textAlign: "center" }}>
+                    <p style={{ fontSize: "28px", margin: "0 0 8px" }}>📜</p>
+                    <p style={{ fontSize: "13px", color: "#6b7280", margin: 0 }}>No trips yet</p>
+                    <p style={{ fontSize: "11px", color: "#9ca3af", margin: "4px 0 0" }}>Start a trip to see it logged here</p>
+                  </div>
+                ) : (
+                  <div style={{ padding: "8px" }}>
+                    {travelHistory.map(trip => (
+                      <div key={trip.id} style={{ padding: "10px 12px", borderRadius: "10px", marginBottom: "6px", backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}>
+                        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "4px" }}>
+                          <span style={{ fontSize: "13px", fontWeight: 600, color: "#1f2937" }}>
+                            {modes.find(m => m.id === trip.mode)?.icon || "✈️"} {trip.destination}
+                          </span>
+                          <span style={{ fontSize: "10px", color: "#9ca3af" }}>{trip.date}</span>
+                        </div>
+                        <p style={{ margin: 0, fontSize: "11px", color: "#6b7280" }}>From: {trip.origin}</p>
+                      </div>
+                    ))}
+                    <button onClick={() => setTravelHistory([])}
+                      style={{ width: "100%", marginTop: "4px", padding: "7px", border: "1px solid #fee2e2", borderRadius: "8px", backgroundColor: "white", color: "#ef4444", fontSize: "12px", cursor: "pointer" }}>
+                      Clear History
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* ── PREFERENCES ── */}
+            {activeTab === "settings" && (
+              <div style={{ padding: "14px", display: "flex", flexDirection: "column", gap: "18px" }}>
+
+                <div>
+                  <p style={{ margin: "0 0 8px", fontSize: "11px", fontWeight: 700, color: "#374151", textTransform: "uppercase", letterSpacing: "0.06em" }}>Default Transit Mode</p>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
+                    {modes.map(mode => (
+                      <button key={mode.id}
+                        onClick={() => { setDefaultTransitMode(mode.id); setSelectedMode(mode.id); }}
+                        style={{
+                          padding: "10px 8px", borderRadius: "10px", border: "none", cursor: "pointer",
+                          display: "flex", flexDirection: "column", alignItems: "center", gap: "4px",
+                          backgroundColor: defaultTransitMode === mode.id ? "#eff6ff" : "#f9fafb",
+                          outline: defaultTransitMode === mode.id ? "2px solid #2563eb" : "2px solid transparent",
+                          fontSize: "12px", fontWeight: defaultTransitMode === mode.id ? 700 : 400,
+                          color: defaultTransitMode === mode.id ? "#1d4ed8" : "#4b5563",
+                          transition: "all 0.15s",
+                        }}>
+                        <span style={{ fontSize: "20px" }}>{mode.icon}</span>
+                        <span>{mode.label}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <p style={{ margin: "0 0 8px", fontSize: "11px", fontWeight: 700, color: "#374151", textTransform: "uppercase", letterSpacing: "0.06em" }}>Location</p>
+                  <button onClick={requestGeolocation}
+                    style={{ width: "100%", padding: "10px 12px", borderRadius: "10px", border: "1px solid #d1d5db", backgroundColor: origin ? "#f0fdf4" : "white", cursor: "pointer", fontSize: "13px", display: "flex", alignItems: "center", gap: "8px", color: origin ? "#16a34a" : "#374151", textAlign: "left" }}>
+                    <span>📍</span>
+                    <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{origin ? `Connected · ${origin.label}` : "Use Current Location"}</span>
+                  </button>
+                </div>
+
+                <div>
+                  <p style={{ margin: "0 0 8px", fontSize: "11px", fontWeight: 700, color: "#374151", textTransform: "uppercase", letterSpacing: "0.06em" }}>Display</p>
+                  <button onClick={() => setIsFullscreen(!isFullscreen)}
+                    style={{ width: "100%", padding: "10px 12px", borderRadius: "10px", border: "1px solid #d1d5db", backgroundColor: "white", cursor: "pointer", fontSize: "13px", textAlign: "left", display: "flex", alignItems: "center", gap: "8px", color: "#374151" }}>
+                    <span>{isFullscreen ? "⊠" : "⛶"}</span>
+                    <span>{isFullscreen ? "Exit Fullscreen" : "Fullscreen Mode"}</span>
+                  </button>
+                </div>
+
+              </div>
+            )}
+
+          </div>
+        </div>
 
         {/* ── COUNTRY DETAILS PANEL (overlay) ─────────────── */}
         {showCountryDetails && selectedCountry.details && (
