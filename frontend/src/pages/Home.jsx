@@ -24,8 +24,19 @@ export default function Home() {
   const [newPlace, setNewPlace] = useState("");
 
   const [showMap, setShowMap] = useState(false);
-  const center = { lat: 38.627, lng: -90.1994 };
+  const [currentLocation, setCurrentLocation] = useState({ lat: 38.627, lng: -90.1994 });
   const mapContainerStyle = { width: "100%", height: "400px" };
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          setCurrentLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+        },
+        () => {}
+      );
+    }
+  }, []);
 
   useEffect(() => {
     if (!window.google || !activeTrip.places.length) return;
@@ -134,7 +145,19 @@ export default function Home() {
         <div className="bg-gray-100 p-4 rounded-lg mt-4">
           <h3 className="text-xl font-semibold mb-3">Live Map & Distance 🗺️</h3>
           <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-            <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={9}>
+            <GoogleMap mapContainerStyle={mapContainerStyle} center={currentLocation} zoom={12}>
+              <Marker
+                position={currentLocation}
+                title="Your current location"
+                icon={{
+                  path: window.google?.maps.SymbolPath.CIRCLE,
+                  scale: 8,
+                  fillColor: "#3B82F6",
+                  fillOpacity: 1,
+                  strokeColor: "white",
+                  strokeWeight: 3,
+                }}
+              />
               {activeTrip.places.map((place, idx) => (
                 <Marker key={idx} position={{ lat: place.lat, lng: place.lng }} />
               ))}
