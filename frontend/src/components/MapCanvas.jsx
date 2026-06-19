@@ -12,21 +12,37 @@ const defaultCenter = { lat: 38.627, lng: -90.1994 };
 
 const libraries = ["places", "geometry"];
 
-export default function MapCanvas({ 
-  origin, 
-  destination, 
-  selectedMode, 
+export default function MapCanvas({
+  origin,
+  destination,
+  selectedMode,
   routes,
   onOriginChange,
-  onDestinationChange 
+  onDestinationChange
 }) {
   const [map, setMap] = useState(null);
   const [markers, setMarkers] = useState({ origin: null, destination: null });
   const [infoWindow, setInfoWindow] = useState(null);
   const [searchBox, setSearchBox] = useState(null);
   const [directions, setDirections] = useState(null);
+  const [currentLocation, setCurrentLocation] = useState(null);
 
-  const center = origin?.lat ? origin : defaultCenter;
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setCurrentLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+        },
+        () => {},
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+      );
+    }
+  }, []);
+
+  const center = origin?.lat ? origin : (currentLocation || defaultCenter);
 
   const onLoad = useCallback((map) => {
     setMap(map);
@@ -108,6 +124,21 @@ export default function MapCanvas({
           onLoad={onLoad}
           onUnmount={onUnmount}
         >
+          {currentLocation && !origin?.lat && (
+            <Marker
+              position={currentLocation}
+              title="Your current location"
+              icon={{
+                path: google.maps.SymbolPath.CIRCLE,
+                scale: 8,
+                fillColor: "#3B82F6",
+                fillOpacity: 1,
+                strokeColor: "white",
+                strokeWeight: 3,
+              }}
+            />
+          )}
+
           {origin?.lat && (
             <Marker
               position={{ lat: origin.lat, lng: origin.lng }}
