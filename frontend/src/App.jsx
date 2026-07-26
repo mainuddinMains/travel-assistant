@@ -874,6 +874,7 @@ export default function App() {
   const [chatPlaces, setChatPlaces] = useState([]);
   const [activeChatPlace, setActiveChatPlace] = useState(null);
   const [mapsLoaded, setMapsLoaded] = useState(false);
+  const [mapInstance, setMapInstance] = useState(null);
   const [destTimezone, setDestTimezone] = useState(null);
 
   useEffect(() => {
@@ -1168,6 +1169,15 @@ export default function App() {
       };
     }
   }, [isResizing, handleChatResize, stopResize]);
+
+  useEffect(() => {
+    if (showMap && mapInstance && window.google) {
+      const timer = setTimeout(() => {
+        window.google.maps.event.trigger(mapInstance, "resize");
+      }, 400);
+      return () => clearTimeout(timer);
+    }
+  }, [showMap, mapInstance]);
 
   const handleSendChat = async () => {
     if (!chatInput.trim() || isChatLoading) return;
@@ -1650,9 +1660,33 @@ export default function App() {
             <div style={{
               flex: 1, minHeight: "300px",
               borderRadius: "18px", overflow: "hidden", position: "relative",
-              boxShadow: "0 20px 60px rgba(0,0,0,0.55)",
+              boxShadow: showMap ? "0 20px 60px rgba(0,0,0,0.55)" : "none",
               border: "1.5px solid rgba(255,255,255,0.16)",
+              opacity: showMap ? 1 : 0,
+              transform: showMap ? "scale(1) translateY(0)" : "scale(0.97) translateY(16px)",
+              transition: "opacity 0.35s cubic-bezier(0.4,0,0.2,1), transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s ease",
+              pointerEvents: showMap ? "auto" : "none",
             }}>
+              {/* Close map button */}
+              <button
+                onClick={() => setShowMap(false)}
+                style={{
+                  position: "absolute", bottom: "14px", left: "50%",
+                  transform: "translateX(-50%)", zIndex: 15,
+                  display: "flex", alignItems: "center", gap: "6px",
+                  backgroundColor: "rgba(0,0,0,0.55)", backdropFilter: "blur(8px)",
+                  WebkitBackdropFilter: "blur(8px)",
+                  color: "white", padding: "7px 20px", borderRadius: "20px",
+                  border: "1px solid rgba(255,255,255,0.22)",
+                  fontSize: "12px", fontWeight: 600, cursor: "pointer",
+                  transition: "background-color 0.2s",
+                }}
+                onMouseEnter={e => e.currentTarget.style.backgroundColor = "rgba(0,0,0,0.75)"}
+                onMouseLeave={e => e.currentTarget.style.backgroundColor = "rgba(0,0,0,0.55)"}
+              >
+                ✕ Close Map
+              </button>
+
               {/* ── WEATHER + TIME FLOATING OVERLAY ─────────── */}
               <div className="absolute top-4 right-4 z-10 bg-slate-900/80 backdrop-blur-md text-white p-3 rounded-xl shadow-lg border border-slate-700/50 flex gap-4 items-center">
                 {/* Weather */}
@@ -1750,7 +1784,7 @@ export default function App() {
                     mapTypeControl: false,
                     fullscreenControl: true,
                   }}
-                  onLoad={() => setMapsLoaded(true)}
+                  onLoad={(m) => { setMapsLoaded(true); setMapInstance(m); }}
                 >
                   {/* User origin */}
                   {mapsLoaded && origin?.lat && <Marker position={{ lat: origin.lat, lng: origin.lng }} label="A" />}
@@ -1857,6 +1891,48 @@ export default function App() {
               </LoadScript>
             </div>
           </div>
+
+          {/* ── MAP HIDDEN PLACEHOLDER ───────────────────────── */}
+          {!showMap && (
+            <div style={{
+              position: "absolute", top: "50%", left: "50%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 20, textAlign: "center",
+              animation: "fadeInScale 0.3s ease forwards",
+            }}>
+              <div style={{
+                backgroundColor: "rgba(255,255,255,0.1)",
+                backdropFilter: "blur(22px)", WebkitBackdropFilter: "blur(22px)",
+                borderRadius: "22px", padding: "38px 48px",
+                border: "1px solid rgba(255,255,255,0.18)",
+                boxShadow: "0 16px 50px rgba(0,0,0,0.38)",
+                display: "flex", flexDirection: "column", alignItems: "center", gap: "14px",
+              }}>
+                <span style={{ fontSize: "54px", lineHeight: 1 }}>🗺️</span>
+                <h2 style={{ color: "white", fontSize: "22px", fontWeight: 700, margin: 0, letterSpacing: "-0.3px" }}>
+                  Explore the World
+                </h2>
+                <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "14px", margin: 0, maxWidth: "240px", lineHeight: 1.55 }}>
+                  Search a destination above or tap Show Map to start navigating
+                </p>
+                <button
+                  onClick={() => setShowMap(true)}
+                  style={{
+                    marginTop: "4px", backgroundColor: "#2563eb", color: "white",
+                    padding: "11px 28px", borderRadius: "50px", border: "none",
+                    fontSize: "14px", fontWeight: 700, cursor: "pointer",
+                    boxShadow: "0 4px 18px rgba(37,99,235,0.55)",
+                    display: "flex", alignItems: "center", gap: "8px",
+                    transition: "transform 0.15s, box-shadow 0.15s",
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = "scale(1.05)"; e.currentTarget.style.boxShadow = "0 6px 24px rgba(37,99,235,0.7)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = "scale(1)"; e.currentTarget.style.boxShadow = "0 4px 18px rgba(37,99,235,0.55)"; }}
+                >
+                  🗺️ Show Map
+                </button>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* ── FOOTER BAR ──────────────────────────────────── */}
@@ -1884,6 +1960,21 @@ export default function App() {
               <span style={{ color: "rgba(255,255,255,0.45)", fontSize: "12px" }}>· {origin.label}</span>
             )}
           </div>
+
+          {/* Map toggle */}
+          <button
+            onClick={() => setShowMap(!showMap)}
+            style={{
+              display: "flex", alignItems: "center", gap: "6px",
+              backgroundColor: showMap ? "rgba(37,99,235,0.8)" : "rgba(255,255,255,0.13)",
+              border: `1px solid ${showMap ? "rgba(37,99,235,0.5)" : "rgba(255,255,255,0.22)"}`,
+              color: "white", padding: "6px 16px", borderRadius: "20px",
+              fontSize: "13px", fontWeight: 600, cursor: "pointer",
+              transition: "all 0.25s",
+            }}
+          >
+            {showMap ? "✕ Hide Map" : "🗺️ Show Map"}
+          </button>
 
           {/* Active trip + profile */}
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
