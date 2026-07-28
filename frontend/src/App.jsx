@@ -893,7 +893,11 @@ export default function App() {
           setOrigin({ lat: position.coords.latitude, lng: position.coords.longitude, label: "Current Location" });
           setGeolocationStatus("connected");
         },
-        () => setGeolocationStatus("offline")
+        (error) => {
+          console.error("Geolocation failed:", error.code, error.message);
+          setGeolocationStatus(error.code === error.PERMISSION_DENIED ? "denied" : "offline");
+        },
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
       );
     } else {
       setGeolocationStatus("offline");
@@ -1174,10 +1178,14 @@ export default function App() {
     if (showMap && mapInstance && window.google) {
       const timer = setTimeout(() => {
         window.google.maps.event.trigger(mapInstance, "resize");
+        if (origin?.lat && !activeChatPlace && chatPlaces.length === 0 && !selectedPlace && !selectedCountry) {
+          mapInstance.panTo({ lat: origin.lat, lng: origin.lng });
+          mapInstance.setZoom(14);
+        }
       }, 400);
       return () => clearTimeout(timer);
     }
-  }, [showMap, mapInstance]);
+  }, [showMap, mapInstance, origin, activeChatPlace, chatPlaces, selectedPlace, selectedCountry]);
 
   const handleSendChat = async () => {
     if (!chatInput.trim() || isChatLoading) return;
@@ -1284,6 +1292,7 @@ export default function App() {
     switch (geolocationStatus) {
       case "connected": return "#22c55e";
       case "searching": return "#eab308";
+      case "denied": return "#ef4444";
       default: return "#9ca3af";
     }
   };
@@ -1786,8 +1795,21 @@ export default function App() {
                   }}
                   onLoad={(m) => { setMapsLoaded(true); setMapInstance(m); }}
                 >
-                  {/* User origin */}
-                  {mapsLoaded && origin?.lat && <Marker position={{ lat: origin.lat, lng: origin.lng }} label="A" />}
+                  {/* User's current location */}
+                  {mapsLoaded && origin?.lat && (
+                    <Marker
+                      position={{ lat: origin.lat, lng: origin.lng }}
+                      title="Your Current Location"
+                      zIndex={999}
+                      icon={{
+                        url: "data:image/svg+xml," + encodeURIComponent(
+                          '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="10" fill="#4285F4" fill-opacity="0.22"/><circle cx="13" cy="13" r="6" fill="#4285F4" stroke="white" stroke-width="2.5"/></svg>'
+                        ),
+                        scaledSize: new window.google.maps.Size(26, 26),
+                        anchor: new window.google.maps.Point(13, 13),
+                      }}
+                    />
+                  )}
 
                   {/* Country city + place markers */}
                   {mapsLoaded && selectedCountry?.details && !selectedPlace?.lat && (
@@ -1954,7 +1976,8 @@ export default function App() {
             }} />
             <span style={{ color: "rgba(255,255,255,0.9)", fontSize: "13px", fontWeight: 500 }}>
               {geolocationStatus === "connected" ? "GPS Connected" :
-               geolocationStatus === "searching" ? "Locating…" : "GPS Offline"}
+               geolocationStatus === "searching" ? "Locating…" :
+               geolocationStatus === "denied" ? "Location Blocked" : "GPS Offline"}
             </span>
             {origin && (
               <span style={{ color: "rgba(255,255,255,0.45)", fontSize: "12px" }}>· {origin.label}</span>
@@ -1963,7 +1986,11 @@ export default function App() {
 
           {/* Map toggle */}
           <button
-            onClick={() => setShowMap(!showMap)}
+            onClick={() => {
+              const next = !showMap;
+              setShowMap(next);
+              if (next && !origin) requestGeolocation();
+            }}
             style={{
               display: "flex", alignItems: "center", gap: "6px",
               backgroundColor: showMap ? "rgba(37,99,235,0.8)" : "rgba(255,255,255,0.13)",
