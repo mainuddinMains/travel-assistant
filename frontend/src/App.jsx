@@ -28,6 +28,16 @@ const printStyles = `
     box-shadow: 0 8px 32px rgba(34,197,94,0.55) !important;
     background-color: #16a34a !important;
   }
+  .skeleton {
+    background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s ease-in-out infinite;
+    border-radius: 4px;
+  }
+  @keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
 `;
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8001/api/v1";
@@ -865,6 +875,7 @@ export default function App() {
   const [streamingMessage, setStreamingMessage] = useState("");
   const [transportInfo, setTransportInfo] = useState(null);
   const [transportLoading, setTransportLoading] = useState(false);
+  const [pendingTransportPlace, setPendingTransportPlace] = useState(null);
   const [hoveredMonth, setHoveredMonth] = useState(null);
   const [selectedState, setSelectedState] = useState(null);
   const [stateWeather, setStateWeather] = useState(null);
@@ -933,6 +944,13 @@ export default function App() {
     setShowCountryDetails(true);
     setCountrySearch(country.name);
     fetchStateWeather({ lat: country.lat, lng: country.lng });
+    setTransportInfo(null);
+    const place = { lat: country.lat, lng: country.lng, name: country.name };
+    if (window.google && mapsLoaded) {
+      fetchTransportInfo(place);
+    } else {
+      setPendingTransportPlace(place);
+    }
   };
 
   const getWeatherInfo = (code) => {
@@ -1005,14 +1023,18 @@ export default function App() {
       service.getDistanceMatrix(
         { origins: [origin_ll], destinations: [dest_ll], travelMode: mode },
         (res, status) => {
+          const modeKey = mode.toLowerCase();
           if (status === "OK") {
             const el = res.rows[0]?.elements[0];
-            const modeKey = mode.toLowerCase();
             if (el?.status === "OK") {
               results[modeKey] = { distance: el.distance.text, duration: el.duration.text };
+            } else if (el?.status === "ZERO_RESULTS") {
+              results[modeKey] = { unavailable: true, reason: "No route" };
             } else {
-              results[modeKey] = null;
+              results[modeKey] = { unavailable: true, reason: "Unavailable" };
             }
+          } else {
+            results[modeKey] = { unavailable: true, reason: "Unavailable" };
           }
           pending--;
           if (pending === 0) {
@@ -1031,8 +1053,11 @@ export default function App() {
       setShowMap(true);
       setTransportInfo(null);
       fetchStateWeather({ lat: place.lat, lng: place.lng });
-      // Fetch transport info after map/Google loads
-      setTimeout(() => fetchTransportInfo(place), 800);
+      if (window.google && mapsLoaded) {
+        fetchTransportInfo(place);
+      } else {
+        setPendingTransportPlace(place);
+      }
     }
   };
 
@@ -1186,6 +1211,13 @@ export default function App() {
       return () => clearTimeout(timer);
     }
   }, [showMap, mapInstance, origin, activeChatPlace, chatPlaces, selectedPlace, selectedCountry]);
+
+  useEffect(() => {
+    if (mapsLoaded && pendingTransportPlace && window.google) {
+      fetchTransportInfo(pendingTransportPlace);
+      setPendingTransportPlace(null);
+    }
+  }, [mapsLoaded, pendingTransportPlace]);
 
   const handleSendChat = async () => {
     if (!chatInput.trim() || isChatLoading) return;
@@ -1614,20 +1646,19 @@ export default function App() {
                 { id: "bike",    icon: "🚴", label: "Bike",    infoKey: "bicycling" },
               ].map((m, i) => {
                 const info = transportInfo?.[m.infoKey];
-                const duration = transportLoading
-                  ? "…"
-                  : info?.duration ?? routes?.[m.id]?.duration ?? "—";
                 const isActive = selectedMode === m.id;
+                const isUnavailable = !transportLoading && info?.unavailable;
                 return (
                   <button key={m.id} onClick={() => setSelectedMode(m.id)} style={{
-                    flex: 1, padding: "9px 4px 10px",
-                    display: "flex", flexDirection: "column", alignItems: "center", gap: "3px",
+                    flex: 1, padding: "9px 4px 11px",
+                    display: "flex", flexDirection: "column", alignItems: "center", gap: "2px",
                     border: "none",
                     borderLeft: i > 0 ? "1px solid #f3f4f6" : "none",
                     cursor: "pointer",
                     backgroundColor: isActive ? "#eff6ff" : "white",
                     transition: "background 0.15s",
                     position: "relative",
+                    opacity: isUnavailable ? 0.48 : 1,
                   }}>
                     {isActive && (
                       <div style={{
@@ -1636,16 +1667,37 @@ export default function App() {
                       }} />
                     )}
                     <span style={{ fontSize: "18px", lineHeight: 1 }}>{m.icon}</span>
-                    <span style={{
-                      fontSize: "13px", fontWeight: 700, lineHeight: 1.2,
-                      color: isActive ? "#1d4ed8" : "#111827",
-                    }}>
-                      {duration}
-                    </span>
+
+                    {/* Duration — skeleton while loading */}
+                    {transportLoading ? (
+                      <div className="skeleton" style={{ height: "14px", width: "38px", marginTop: "3px" }} />
+                    ) : isUnavailable ? (
+                      <span style={{ fontSize: "10px", color: "#9ca3af", fontStyle: "italic", marginTop: "2px" }}>
+                        {info.reason}
+                      </span>
+                    ) : (
+                      <span style={{
+                        fontSize: "13px", fontWeight: 700, lineHeight: 1.2, marginTop: "2px",
+                        color: isActive ? "#1d4ed8" : "#111827",
+                      }}>
+                        {info?.duration ?? "—"}
+                      </span>
+                    )}
+
+                    {/* Distance — skeleton while loading */}
+                    {transportLoading ? (
+                      <div className="skeleton" style={{ height: "10px", width: "26px", marginTop: "3px" }} />
+                    ) : !isUnavailable && (
+                      <span style={{ fontSize: "10px", lineHeight: 1, color: isActive ? "#93c5fd" : "#9ca3af" }}>
+                        {info?.distance ?? ""}
+                      </span>
+                    )}
+
                     <span style={{
                       fontSize: "10px", fontWeight: 600,
                       textTransform: "uppercase", letterSpacing: "0.05em",
                       color: isActive ? "#3b82f6" : "#9ca3af",
+                      marginTop: "2px",
                     }}>
                       {m.label}
                     </span>
@@ -2526,7 +2578,20 @@ export default function App() {
                 style={{ background: "rgba(255,255,255,0.2)", border: "none", color: "white", borderRadius: "50%", width: "28px", height: "28px", cursor: "pointer", fontSize: "14px", display: "flex", alignItems: "center", justifyContent: "center" }}>✕</button>
             </div>
             <div style={{ padding: "14px 18px" }}>
-              {transportLoading && <div style={{ textAlign: "center", padding: "16px 0", color: "#6b7280", fontSize: "13px" }}>⏳ Calculating routes...</div>}
+              {transportLoading && (
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "14px" }}>
+                  {[0, 1, 2, 3].map(i => (
+                    <div key={i} style={{ backgroundColor: "#f9fafb", borderRadius: "12px", padding: "12px", border: "1px solid #e5e7eb" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "8px" }}>
+                        <div className="skeleton" style={{ width: "22px", height: "22px", borderRadius: "50%" }} />
+                        <div className="skeleton" style={{ width: "42px", height: "12px" }} />
+                      </div>
+                      <div className="skeleton" style={{ width: "72px", height: "18px", marginBottom: "5px" }} />
+                      <div className="skeleton" style={{ width: "50px", height: "10px" }} />
+                    </div>
+                  ))}
+                </div>
+              )}
               {!transportLoading && transportInfo?.noLocation && (
                 <div style={{ textAlign: "center", padding: "12px 0" }}>
                   <p style={{ color: "#6b7280", fontSize: "13px", margin: 0 }}>📍 Allow location access to see live distances & times</p>
@@ -2537,31 +2602,53 @@ export default function App() {
                 const rideApp = getLocalRideApp(selectedCountry?.code);
                 const uberUrl = `https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=${selectedPlace.lat}&dropoff[longitude]=${selectedPlace.lng}&dropoff[nickname]=${encodeURIComponent(selectedPlace.name)}`;
                 const rows = [
-                  { mode: "walking",   icon: "🚶", label: "Walk",    color: "#16a34a" },
-                  { mode: "driving",   icon: "🚗", label: "Drive",   color: "#2563eb" },
-                  { mode: "transit",   icon: "🚌", label: "Transit", color: "#7c3aed" },
-                  { mode: "bicycling", icon: "🚴", label: "Bike",    color: "#d97706" },
+                  { mode: "driving",   icon: "🚗", label: "Drive",   color: "#2563eb", modeId: "drive"   },
+                  { mode: "transit",   icon: "🚌", label: "Transit", color: "#7c3aed", modeId: "transit" },
+                  { mode: "walking",   icon: "🚶", label: "Walk",    color: "#16a34a", modeId: "walk"    },
+                  { mode: "bicycling", icon: "🚴", label: "Bike",    color: "#d97706", modeId: "bike"    },
                 ];
                 return (
                   <>
                     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "14px" }}>
-                      {rows.map(({ mode, icon, label, color }) => {
+                      {rows.map(({ mode, icon, label, color, modeId }) => {
                         const info = transportInfo[mode];
+                        const isActive = selectedMode === modeId;
                         return (
-                          <div key={mode} style={{ backgroundColor: "#f9fafb", borderRadius: "12px", padding: "10px 12px", border: "1px solid #e5e7eb" }}>
-                            <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
+                          <button
+                            key={mode}
+                            onClick={() => setSelectedMode(modeId)}
+                            style={{
+                              backgroundColor: isActive ? "#eff6ff" : "#f9fafb",
+                              borderRadius: "12px", padding: "10px 12px",
+                              border: isActive ? `2px solid ${color}` : "1px solid #e5e7eb",
+                              cursor: "pointer", textAlign: "left",
+                              transition: "all 0.15s",
+                              opacity: info?.unavailable ? 0.5 : 1,
+                            }}
+                          >
+                            <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "5px" }}>
                               <span style={{ fontSize: "16px" }}>{icon}</span>
-                              <span style={{ fontSize: "12px", fontWeight: 700, color }}>{label}</span>
+                              <span style={{ fontSize: "12px", fontWeight: 700, color: isActive ? color : "#4b5563" }}>{label}</span>
+                              {isActive && (
+                                <span style={{
+                                  marginLeft: "auto", fontSize: "9px", backgroundColor: color,
+                                  color: "white", padding: "1px 6px", borderRadius: "8px", fontWeight: 700,
+                                }}>
+                                  Active
+                                </span>
+                              )}
                             </div>
-                            {info ? (
+                            {info && !info.unavailable ? (
                               <>
                                 <p style={{ fontSize: "15px", fontWeight: 700, color: "#111827", margin: 0 }}>{info.duration}</p>
                                 <p style={{ fontSize: "11px", color: "#6b7280", margin: "2px 0 0" }}>{info.distance}</p>
                               </>
                             ) : (
-                              <p style={{ fontSize: "12px", color: "#9ca3af", margin: 0 }}>Not available</p>
+                              <p style={{ fontSize: "12px", color: "#9ca3af", margin: 0, fontStyle: "italic" }}>
+                                {info?.reason ?? "Not available"}
+                              </p>
                             )}
-                          </div>
+                          </button>
                         );
                       })}
                     </div>
